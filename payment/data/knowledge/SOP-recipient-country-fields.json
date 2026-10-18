@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Use the receiving bank's instructions and the Portal fields for the actual country and currency.\n\n| Arrangement | Requirement |\n|---|---|\n| US local route | Nine-digit ABA routing number. |\n| UK local route | Six-digit sort code. |\n| Australian route | Supply the BSB and account number in their requested fields; the combined form uses the six-digit BSB and the supported account field. |\n| New Zealand local account | Ten-digit account field: seven-digit account plus three-digit suffix. Prefix a two-digit suffix with zero. |\n| Kazakhstan, any supported currency | Both IBAN and SWIFT code. |\n| CNY company account | Bank-branch clearing code required. |\n| CNY personal account | Branch clearing code optional. |\n| Canadian or Australian bank | Recipient address required. |\n\nFor a New Zealand account, `1234567-02` becomes `1234567002` in the ten-digit field. Do not add a different country's routing code to that field.\n\nAn offshore account opened in mainland China still uses China as the bank location. Confirm the bank country from the actual bank details; the fifth and sixth BIC characters identify the country in that code.\n\nFor a Hong Kong CNH recipient, use the individual's residence address or the company's registered/business address. For an Indonesian IDR company recipient, record residency according to the company's registration country. Third-party company recipients use their own registered or business address.",
+  "id": "SOP-recipient-country-fields",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Use the receiving bank's instructions and the Portal fields for the actual country and currency.",
+  "source_ids": [
+    "B15",
+    "B16"
+  ],
+  "title": "Recipient bank fields by country and currency",
+  "topic": "beneficiaries"
+}

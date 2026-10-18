@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "The current incoming account_id is its current book entry. Its reference is a bank transmission identifier, which can differ from a platform payout label.\n\nSame-amount incoming records remain separate transfers. Every trace has an incoming_id linking the evidence to exactly one transfer.\n\nThe advice result is available through the public traces resource after READY status.",
+  "id": "KB-tracing-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "The current incoming account_id is its current book entry. Its reference is a bank transmission identifier, which can differ from a platform payout label.",
+  "title": "Linking a bank trace to its incoming payment",
+  "topic": "tracing"
+}

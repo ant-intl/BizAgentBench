@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-NOTICES",
+  "title": "Notification and economic-transaction identity",
+  "topic": "Duplicate credit notifications",
+  "applicability": "Duplicate credit notifications",
+  "content": "Synthetic product: notices have delivery IDs, while bank_transactions have economic IDs. a_ingest_credit_notice deduplicates using bank_transaction_id and credits every distinct real transaction once. a_archive_credit_notice is irreversible within the operations window and books no money. a_return_duplicate_transfer reverses one credited real transaction to its origin; customer intent_reference and original bank evidence determine which real transfer is an overpayment. Same amount and latest delivery are not identity rules. When original transaction records already establish intent_reference, a later sender confirmation that repeats it need not be awaited for closure. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_archive_credit_notice`\n\nArchive a notification without booking it. Archiving is irreversible for this operations window and should only be used when another processed notice represents the same bank transaction.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `notice_id` | string | yes | Notification delivery ID. |\n| `reason` | string | yes | Operator's reason for archiving. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_ingest_credit_notice`\n\nProject a credit notice using the immutable bank transaction ID. Replayed deliveries of the same bank transaction do not create a second credit; distinct bank transactions do.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `notice_id` | string | yes | Notification delivery ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_archive_credit_notice",
+    "a_ingest_credit_notice"
+  ]
+}

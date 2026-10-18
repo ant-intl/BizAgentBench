@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-RECOVERY-ADVANCE",
+  "title": "Accepted supplier advances during credential recovery",
+  "topic": "accepted supplier advance lost credential settlement reserve",
+  "applicability": "Supplier recovery contracts with an accepted-advance schedule",
+  "content": "The original supplier invoice has an early advance condition as well as a final balance deadline. The advance options are alternative bank-accepted instructions signed before credential loss. Releasing one reserves its nominal cash and charges its fee; the bank accepts release even if it will arrive after the customer’s supplier deadline. Its settlement publishes actual supplier principal, within minimum_settlement_minor and nominal_minor, and returns the unused reservation to source cash. Bank-accepted advances survive a later credential reset. The original invoice face is unchanged economically: apply_supplier_advance_receipt subtracts only actual received principal from the remaining cash obligation. Supplier settlement plus the eventual authenticated balance must equal the original face. Fees never count toward the supplier’s deposit. Each option’s delay is measured from release.\n\nAn already accepted advance may be released before the payment-channel recovery request or review completes; release does not use the new credential. A new authenticated balance payment requires the active current credential and a challenge bound to its version.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional advance settlement, instruction and corporate execution mandate terms."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "`propose_cny_withdrawal` sends posted CNY to a VERIFIED CNY beneficiary. It names the account, beneficiary and CNY amount in minor units. Settlement takes ten minutes; CORE charges no additional fee for this leg.\n\nUSD principal and a pending conversion are not posted CNY. A conversion creates the CNY balance at its settlement event; an existing CNY balance needs no further USD conversion before withdrawal.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_cny_withdrawal`\n\nSend CNY from an account to an existing verified CNY beneficiary.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `beneficiary_id` | string | yes | The receiving bank record. |\n| `amount_minor` | integer | yes | The requested principal in CNY minor units. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "OPS-posted-cny-withdrawal",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "`propose_cny_withdrawal` sends posted CNY to a VERIFIED CNY beneficiary. It names the account, beneficiary and CNY amount in minor units. Settlement takes ten minutes; CORE charges no additional fee for this leg.",
+  "title": "Withdrawing an existing CNY balance",
+  "topic": "conversion",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_cny_withdrawal"
+  ]
+}

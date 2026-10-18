@@ -1,0 +1,12 @@
+{
+  "id": "PX-A-R-PROMOTION-PERFORMANCE",
+  "title": "Promotion fulfilment qualification and price adjustments",
+  "topic": "Promotion fulfilment qualification and price adjustments",
+  "applicability": "Merchant dispatch, transport allotment and promotion fulfilment contracts registered for this customer.",
+  "content": "A promotion can specify fulfilment_families. Paying with the promotion does not remove that ongoing condition. Dispatching any covered original item with another provider family causes the consumed promotion discount to be repaid once through REASONING_PROMOTION_REPAYMENT. A later merchant refund also tests its retained-spend floor. When both conditions fail, only the discount value not already repaid is collected. The second test cannot debit the same discount again, even temporarily. Carriage is not qualifying merchandise spend. Net customer outlay includes actual checkout and carriage, any lost-promotion repayment, and actual same-goods price refund. Standard checkout delivery labels do not promise an arrival date; the actual carrier booking determines physical receipt.",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "boundary": "New synthetic commercial capacity, price and fulfilment rules; not a claim about a source institution."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "PX-C-R50",
+  "title": "Wallet payroll batches and post-capture operating bands",
+  "topic": "wallet payroll batches and post-capture operating bands",
+  "applicability": "Current customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "A payroll batch uses the same operating wallet as the merchant purchase and automatic sweeps. The payroll notice is issued only after the merchant capture has actually run; it publishes the next payroll amount and due cycle. The batch may be funded by the existing automation or by an explicit manual wallet transfer with its quoted fee. settle_wallet_payroll pays the actual amount from the wallet and records its real controller cycle. Neither a payroll reservation nor bank cash outside the wallet pays staff. A sweep may remove payroll funding before settlement. After the payroll debit, both automatic services must remain enabled and the final actual configuration must complete the ordinary observation window. All automatic and manual funding fees share the fee cap.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `settle_wallet_payroll`\n\nPay the actual payroll notice from the wallet at its current controller cycle. A late bank-accepted payment retains its true execution cycle.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `payroll_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Additional commercial rights, funding and due dates."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "settle_wallet_payroll"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "case_046",
+  "number": 46,
+  "family": "statement_completeness",
+  "opening": "The opening and closing balances agree, but the statement export seems to have missing lines. Please get a reliable day-end close. Our finance team also needs a consolidated close across the two accounts. Transfers between our own accounts must not inflate sales, and we still need the original detailed bank days. Once reconciled, please use the available cash for the owner distribution and supplier invoice within their deadlines.",
+  "instructions": "Play the actual business customer, not a banking operator. The small incoming credit described as supplier return belongs to a supplier refund, not sales. Its matching debit is a supplier payment. You need every bank line allocated and a complete close; a summary-only report is not sufficient. You can spend at most USD 1.00 on statement retrieval and want the original archive retained. Disclose these facts when relevant questions are asked; never volunteer internal record IDs, bank outcomes you have not received, or a tool sequence. Use list_my_files and upload_file when real evidence is requested. Approve only a request consistent with the disclosed commercial limits; otherwise explain the specific mismatch. Correct misunderstandings when relevant evidence becomes available; do not repeatedly recreate a misunderstanding that has already been resolved. After each user tool, report what happened in ordinary language and allow the assistant to respond before ending the conversation. Our finance team also needs a consolidated close across the two accounts. Transfers between our own accounts must not inflate sales, and we still need the original detailed bank days. After the two accounts are reconciled, distribute forty percent of actual outside sales income to the owner by minute 3 and pay the USD 6 supplier invoice by minute 6. The deposit cash is partly encumbered; I accept up to USD 2 of redemption fees. The supplier offers its published early discount, but full payment is also acceptable. Keep all original statement evidence and do not count internal transfers as income.",
+  "required_documents": [
+    "PX-C-46",
+    "PX-C-R46",
+    "IFACE-STATEMENT-DISTRIBUTION",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 46,
+    "account_id": "C46-USD",
+    "target": "C46-DAY",
+    "fee_cap_minor": 100,
+    "category_by_reference": {
+      "SALE-INV-41": "sales",
+      "SUP-REF-19": "supplier_refund",
+      "SUP-PAY-20": "supplier_payment",
+      "SUP-PAY-21": "supplier_payment",
+      "RESERVE-SALE-12": "sales",
+      "RESERVE-FEE-12": "bank_fee",
+      "TREASURY-XFER-18": "internal_transfer"
+    },
+    "statements": [
+      "C46-DAY",
+      "C46-RESERVE-DAY"
+    ],
+    "linked_contract_id": "C46-LINKED-CONTRACT",
+    "reasoning_id": "C46-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R46"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "commerce"
+}

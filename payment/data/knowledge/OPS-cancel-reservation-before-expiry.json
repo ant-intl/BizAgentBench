@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Cancelling an active reservation releases its cash and quota occupancy. It neither creates cash nor changes `expires_minute`.\n\nReleased capacity can support a current conversion only while its validity interval still covers execution. A quote does not extend the interval. Historical allocation amendments use their own tests against the original conversion date and the amendment date.",
+  "id": "OPS-cancel-reservation-before-expiry",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Cancelling an active reservation releases its cash and quota occupancy. It neither creates cash nor changes `expires_minute`.",
+  "title": "Released reservations and quota validity",
+  "topic": "quota"
+}

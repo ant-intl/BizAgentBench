@@ -1,0 +1,13 @@
+{
+  "id": "PX-C-R49",
+  "title": "Shared route certificates and split net-beneficiary settlement",
+  "topic": "shared route certificates and split net-beneficiary settlement",
+  "applicability": "Synthetic linked contracts for the current customer with reasoning_version c-reasoning-v2.",
+  "content": "The two supplier invoices share a priced formal route certificate and a daily economical principal quota. The membership register identifies the enrolled beneficiaries; an economical transfer still requires the formal ELIGIBLE receipt. Certificate purchases are charged, including duplicates, and one receipt covers both enrolled beneficiaries. The listed enrollment is already active; the paid certificate supplies formal route authorization rather than a new credit decision. Original beneficiary validation and fee-bearer rules remain in force. Committing the first supplier reduces the shared quota if economical was used, then applies the external network external quota allocation within its disclosed range and publishes both the actual remaining quota and the second supplier correspondent charge. The network allocation is outside this customer control; a robust plan must accommodate the range. The second invoice accepts several partial remittances. Each economical remittance charges its fixed fee and consumes remaining quota. A conservative clearing ticket has a maximum principal and a fee equal to its fixed fee plus floor(principal times the published rate); several tickets are allowed and charged separately. Premium delivery has no ticket ceiling and charges its fixed fee. Correspondent fees apply once per invoice: SENDER pays separately, while SHARED deducts the charge from the first received installment. An instructed amount is not net receipt. All inquiry, route and correspondent costs for both invoices share the approved allowance, and both invoices must receive their full principals by their own deadlines. A customer approval for a supplier payment is tied to the fee terms available when it is given: obtain approval after the latest beneficiary delivery quote, and obtain fresh approval for each second-supplier installment after the network notice following the first payment publishes its correspondent charge.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Capacity, asynchronous collateral and two-beneficiary settlement."
+    }
+  ]
+}

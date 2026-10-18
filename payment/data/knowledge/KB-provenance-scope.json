@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "For untagged legacy CORE source lots, EXPORT can fund USD payments or conversion with valid quota; IMPORT and SERVICES cannot be converted. Lots tagged MARKET_A, MARKET_B, SERVICE, CAPITAL or REIMBURSEMENT instead use the source_routes policy and SOURCE-* schedules.\n\nConversion permission and beneficiary-channel permission are separate properties. Fees are taken from the independent fee wallet; principal remains in its source lots until consumed.",
+  "id": "KB-provenance-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "For untagged legacy CORE source lots, EXPORT can fund USD payments or conversion with valid quota; IMPORT and SERVICES cannot be converted. Lots tagged MARKET_A, MARKET_B, SERVICE, CAPITAL or REIMBURSEMENT instead use the source_routes policy and SOURCE-* schedules.",
+  "title": "Legacy and tagged source-lot permissions",
+  "topic": "provenance"
+}

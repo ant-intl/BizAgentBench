@@ -1,0 +1,21 @@
+{
+  "id": "PX-BR-TAX-DISPOSITION",
+  "title": "Cash refunds, period offsets and short-term liquidity",
+  "topic": "tax credit lots period eligibility refund cash liquidity appeal deadline",
+  "applicability": "Enrolled consecutive-period overpayment schedules",
+  "content": "For an enrolled schedule, dispose_tax_credit requires credit_lot_id and accepts period_id for offset. The claim’s total available_minor remains the sum of unused lots. Cash requests arrive after the claim refund_delay, cannot be cancelled, and cannot fund an earlier debit. Offset immediately reduces only the selected eligible liability; a fully offset liability is cleared at that time. pay_next_tax_period pays the remaining amount of either period from actual source cash. Opening cash plus refunds actually received must fund every tax payment and appeal charge; pending refunds and unused credit are not cash.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `dispose_tax_credit`\n\nUse an authority-approved credit by offsetting the next period or requesting a cash refund. Cash refund is irreversible and arrives only after refund_delay; offset immediately reduces the named next liability. amount_minor cannot exceed approved unused credit. Enrolled consecutive-period schedules require credit_lot_id and accept period_id for offset; actual lot eligibility and cumulative period ceilings apply.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `claim_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `mode` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n| `credit_lot_id` | string | no | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `period_id` | string | no | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `pay_next_tax_period`\n\nPay the remaining next-period liability in cash after approved offsets. Cash debit cannot use an unreceived requested refund.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `period_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional authority credit scopes, appeal guarantees and timing, not real tax law."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "dispose_tax_credit",
+    "pay_next_tax_period"
+  ]
+}

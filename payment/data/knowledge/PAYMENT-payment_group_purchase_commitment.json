@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_group_purchase_commitment",
+  "content": "# Group-purchase commitment and contributor restitution\n\nScope: `payment_group_purchase_commitment`.\n\nGroup qualification is assessed when the merchant commitment is accepted. It requires both minimum_people with actually received, nonwithdrawn contributions and minimum_contribution_minor. More money from fewer people cannot replace the participant count. The accepted group price survives a participant's later contractual withdrawal. Before a commitment, a withdrawn participant no longer counts. A retail offer remains available at the separately recorded retail price.\n\nCommitting debits deposit_minor immediately; that deposit counts toward the group's merchant price. Later merchant payments settle the remaining price. Each group's funds belong only to that group even though the banking interface exposes a shared wallet. The bank can accept a payment from that wallet while the resulting commercial use breaches a group's ownership of its money.\n\nA withdrawing participant receives its entire actual contribution back. After merchant settlement, any remaining savings are refunded to continuing contributors proportionally to their contributions. Round down each share to cents, then assign leftover cents in descending fractional-remainder order, breaking ties by contributor reference. A pending contribution becomes available only after the bank event. No extra contribution may be invented.\n\nUnlock propose_payment_group_purchase_commitment. commit_group data {group_id, offer: GROUP or RETAIL}; pay_merchant data {group_id, amount_minor}; refund_participant data {participant_id, amount_minor}. The bank checks available cash and received contribution totals, but does not choose the economical offer or calculate participant refunds. Group deadlines and participant refund deadlines are inclusive.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_group_purchase_commitment`\n\nPrepare an owner-approved group purchase commitment instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_group_purchase_commitment",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Group-purchase commitment and contributor restitution",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_group_purchase_commitment"
+  ]
+}

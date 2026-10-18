@@ -1,0 +1,23 @@
+{
+  "id": "PX-BR-CUSTOMS-CORRECTION",
+  "title": "Entry classification correction and award installments",
+  "topic": "Entry classification correction and award installments",
+  "applicability": "Enrolled importer-owned customs awards with a corrected entry schedule.",
+  "content": "The original initial review decides eligible entries and duty. A genuine correction for a reviewed entry may support submit_customs_classification_review(schedule_id,entry_id,channel). The review requires the matching classification_amendment document contents and publishes additional_award_minor; the public range is not an entitlement. Initial eligible duty may be accepted before this separate result or left for one consolidated disbursement. A positive later award remains part of the same original entry claim, not another copy of initial duty. Withdrawing confirmed duty forfeits that value; undisclosed future amounts cannot be accepted. Existing entry-specific liens and their release certificates remain independent of eligibility.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `submit_customs_classification_review`\n\nSubmit the existing classification correction for a reviewed entry owned by the importer. Requires the genuine classification_amendment for that entry; pays the published review-channel fee. Review can confirm additional eligible duty, including zero; filing is not approval.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `entry_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "normalized_source"
+    },
+    {
+      "kind": "synthetic",
+      "scope": "All review amounts, minute clocks, costs, installment channels, sealing licenses, field lineage and consent semantics are fictional commercial product extensions."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "submit_customs_classification_review"
+  ]
+}

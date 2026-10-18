@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Use a letter for the exact account under review and compare its bank version with the current entity version. A letter from a different currency account cannot be substituted simply because the owner is related.\n\nExisting historical letters remain valid evidence of what the bank profile said when they were issued, but not evidence that the current platform requirements are met. A store review refers to a specific letter ID, so issuing a corrected letter afterward does not silently amend a previously submitted review.",
+  "id": "KB-letters-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Use a letter for the exact account under review and compare its bank version with the current entity version. A letter from a different currency account cannot be substituted simply because the owner is related.",
+  "title": "Account-letter references and historical certificates",
+  "topic": "letters"
+}

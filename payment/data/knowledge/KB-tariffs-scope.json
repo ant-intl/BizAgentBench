@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "The TARIFF_BANK service uses billing slots 0, 30 and 60 logical minutes. An enrolment names account_id, plan and slot_minute; it may be lodged before or at that slot.\n\nOnly the latest pending enrolment for the account/slot becomes effective. The current plan persists absent another instruction.\n\nChanging to a different plan charges its activation fee at effectiveness; keeping the same plan costs no second activation fee. Posted activation fees are not refundable on a later switch.\n\nEach TARIFF_BANK commercial invoice requires one whole remittance, settles in 10 minutes and counts toward period volume at execution.",
+  "id": "KB-tariffs-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "The TARIFF_BANK service uses billing slots 0, 30 and 60 logical minutes. An enrolment names account_id, plan and slot_minute; it may be lodged before or at that slot.",
+  "title": "TARIFF_BANK billing slots and plan enrolment",
+  "topic": "tariffs"
+}

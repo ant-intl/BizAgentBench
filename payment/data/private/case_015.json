@@ -1,0 +1,54 @@
+{
+  "agreement_id": "JOINT14-18-AGREEMENT",
+  "case_id": "D34-REPRESENTMENT-CASE",
+  "components": [
+    {
+      "case_id": "D34-REPRESENTMENT-CASE",
+      "family": " Actual refund and network compensation offset the same concession., Having accepted the defense and received the documents are not the same status.; Subsequent actual results change the remaining refund and defense amount. ",
+      "id": "trade_representment",
+      "kind": "overlapping_remedies",
+      "scope": "JOINT14-18",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY43-CASE",
+      "extension_service": true,
+      "family": " Partial refund after multi-merchant split ",
+      "id": "payment_marketplace_split_refund",
+      "kind": "payment_marketplace_split_refund",
+      "number": 43,
+      "payment_service": true,
+      "scope": "JOINT14-18",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "family": " Actual refund and network compensation offset the same concession., Having accepted the defense and received the documents are not the same status.; Subsequent actual results change the remaining refund and defense amount. ",
+  "id": "case_015",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\n\nOpening: Several customers are still chasing refunds while the card disputes are going on. Please finish the refunds we owe and protect the parts of the sales we are entitled to keep. Also, a customer returned part of a combined order after we paid the sellers. Please refund the returned items and finish the sellers’ remaining payouts. These are part of the same business spending plan.\n\nYour own facts and preferences: I manage Juniper Webstore. Please honor our final agreed concessions and keep our defenses for the remaining genuine sales within the network deadlines. Use the merchant wallet; we cannot request more funds from customers or take back a refund. I can approve refunds and responses. I do not know which bank credits have actually arrived, or whether the Cedar acknowledgement was accepted.\n\nFor the related procurement matter: Return exactly the accepted returned-item price to the buyer and settle each seller’s remaining entitlement, including the accessories seller’s earlier payout deadline. Only the seller of a returned item may bear its reversal. Retain the platform’s correctly adjusted commission. There is no extra funding and the pending buyer refund must not be duplicated. I do not yet have the warehouse decision or the bank result.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "overlapping_remedies",
+  "number": 15,
+  "opening": "Several customers are still chasing refunds while the card disputes are going on. Please finish the refunds we owe and protect the parts of the sales we are entitled to keep. Also, a customer returned part of a combined order after we paid the sellers. Please refund the returned items and finish the sellers’ remaining payouts. These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-overlapping_remedies",
+    "PAYMENT-common",
+    "PAYMENT-payment_marketplace_split_refund",
+    "JOINT-CASH-delivery",
+    "DESK-protocol"
+  ],
+  "scope": "JOINT14-18",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

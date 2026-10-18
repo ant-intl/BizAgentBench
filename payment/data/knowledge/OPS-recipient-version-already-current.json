@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A VERIFIED beneficiary can be quoted without another details update when its recorded bank instructions match the intended destination. The quote records that version and checks it again at execution.\n\nThe beneficiary ID remains the same across bank changes, while its bank reference and version can change. Uploading a replacement letter does not update the record. Where an update is needed, use assessed bank-details evidence and wait for its review result before relying on the new version.",
+  "id": "OPS-recipient-version-already-current",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A VERIFIED beneficiary can be quoted without another details update when its recorded bank instructions match the intended destination. The quote records that version and checks it again at execution.",
+  "title": "Reusing unchanged beneficiary instructions",
+  "topic": "beneficiaries"
+}

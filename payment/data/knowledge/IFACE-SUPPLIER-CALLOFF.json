@@ -1,0 +1,21 @@
+{
+  "id": "IFACE-SUPPLIER-CALLOFF",
+  "title": "Supplier advance call-off service interfaces",
+  "topic": "supplier advance reversal call off delivery",
+  "applicability": "PSP product accounts; Existing supplier advances, reversible applications and later call-off delivery releases.",
+  "content": "Existing supplier advances, reversible applications and later call-off delivery releases.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `release_supplier_calloff`\n\nUse units of existing supplier advance to release actual next-delivery units at unit_price_minor. Partial releases are permitted and final for those units; unreleased advance remains an asset.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `advance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `units` | integer | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `request_supplier_calloff_notice`\n\nObtain the supplier notice for the next call-off delivery supported by an existing advance. The bank publishes the actual required units and their existing advance price; this does not pay new cash.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `advance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `reverse_supplier_advance`\n\nReverse an unfinalized advance application and restore both its supplier asset right and outstanding payable. Applications remain reversible until a supplier call-off delivery is released.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `application_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "release_supplier_calloff",
+    "request_supplier_calloff_notice",
+    "reverse_supplier_advance"
+  ],
+  "business_area": "supplier_accounting",
+  "service": "advance_calloff",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Once an incoming is CREDITED and any pledged advance has been recovered, the account balance records the remaining cash. The incoming's face amount is not an additional balance to add again.\n\nAn advance requires an IN_TRANSIT receivable with unused advance capacity. It cannot be originated against an already credited incoming. Holds and covenants continue to apply to posted balances, and advance recovery may leave less cash than the gross receipt.",
+  "id": "OPS-receivable-already-credited",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Once an incoming is CREDITED and any pledged advance has been recovered, the account balance records the remaining cash. The incoming's face amount is not an additional balance to add again.",
+  "title": "Credited collections and advance recovery",
+  "topic": "liquidity"
+}

@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "After submission, an application may be under review, accepted or rejected. The usual review period is two business days. Results are sent by email or SMS. Check the registered email account, including spam, for requests for more information.\n\nSubmitting additional information starts a new review period. If an application remains unresolved after that period and no further-information request is visible, contact support with the application details.\n\nThe application record separately indicates whether a reminder can be submitted. If it can, obtain the customer's agreement and submit the reminder. Receipt of a reminder request does not mean that registration has been approved or that completion is guaranteed on the same day.\n\nIf registration is rejected, report that recorded result. Do not describe a rejected application as still awaiting its original review.",
+  "id": "SOP-onboarding-review",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "After submission, an application may be under review, accepted or rejected. The usual review period is two business days. Results are sent by email or SMS. Check the registered email account, including spam, for requests for more information.",
+  "source_ids": [
+    "A14",
+    "C08"
+  ],
+  "title": "Registration review and requests for faster handling",
+  "topic": "evidence"
+}

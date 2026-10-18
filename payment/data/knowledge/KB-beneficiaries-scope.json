@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_beneficiary_update accepts assessed bank_details evidence for the beneficiary. The beneficiary enters CHANGE_PENDING and becomes VERIFIED with its incremented version after 30 minutes.\n\nQuotes carry beneficiary_version. A quote for a superseded version cannot be executed after details change, even if the beneficiary ID remains identical.\n\nA filename suggesting current bank details is not sufficient; the contents must be current, signed when required, and scoped to this beneficiary.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_beneficiary_update`\n\nApply current verified bank details; the beneficiary version increments after review.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `beneficiary_id` | string | yes | The receiving bank record. |\n| `submission_id` | string | yes | The actual uploaded evidence submission. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-beneficiaries-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_beneficiary_update accepts assessed bank_details evidence for the beneficiary. The beneficiary enters CHANGE_PENDING and becomes VERIFIED with its incremented version after 30 minutes.",
+  "title": "Changing a CORE beneficiary bank instruction",
+  "topic": "beneficiaries",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_beneficiary_update"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A file inventory describes private documents the customer possesses. A file label, a saved draft and a previous upload are three different observations.\n\nupload_file creates a submission tied to target_id and purpose; it does not approve the document. A support agent can discover assess_evidence and use it to check the actual contents.\n\nThe submitted target and purpose must match the contents. Expired documents or missing required signatures are rejected.\n\nRegistry and translation evidence must identify the current entity identity version. An old approved upload cannot be retargeted by mentioning another account in conversation.",
+  "id": "KB-evidence-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A file inventory describes private documents the customer possesses. A file label, a saved draft and a previous upload are three different observations.",
+  "title": "Uploading and assessing supporting documents",
+  "topic": "evidence"
+}

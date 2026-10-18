@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "When the entity's translation requirement is false, platform review can omit `translation_submission_id`. The appropriate bank letter and assessed registry evidence remain required.\n\nWhere translation is required, it must match the target, purpose and current identity version. The filename's language is not the requirement field. Registry assessment does not create a translation submission.",
+  "id": "OPS-registry-without-translation",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "When the entity's translation requirement is false, platform review can omit `translation_submission_id`. The appropriate bank letter and assessed registry evidence remain required.",
+  "title": "Reviews that do not require a translation",
+  "topic": "platform"
+}

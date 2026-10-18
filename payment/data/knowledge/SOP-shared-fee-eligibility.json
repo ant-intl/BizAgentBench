@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Fee-sharing requests can be considered for qualifying relationships between account holders or authorized persons, associated companies, an employee and company, and the supported close-family or spouse relationships.\n\nAn ordinary commercial partner, external operator or friend does not qualify merely because the accounts cooperate. Identify the relationship and the relevant account holders when requesting the arrangement. Cases outside the published categories can be referred for review; referral does not guarantee the shared rate.\n\nThis service describes relationship-based fee-sharing eligibility. It is distinct from CORE's `SHARED` settlement plan and from a Collection Profile tariff.",
+  "id": "SOP-shared-fee-eligibility",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Fee-sharing requests can be considered for qualifying relationships between account holders or authorized persons, associated companies, an employee and company, and the supported close-family or spouse relationships.",
+  "source_ids": [
+    "A16"
+  ],
+  "title": "Requesting a shared Portal fee arrangement",
+  "topic": "pricing"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "PX-A-D31",
+  "title": "Segregated incoming dispute escrow",
+  "topic": "Segregated incoming dispute escrow",
+  "applicability": "Segregated incoming dispute escrow business records.",
+  "content": "xp_a_quarantine_disputes separates the original quarantine account, operating cash and named trustee accounts. An origin investigation establishes the remitter. The genuine two-party escrow_direction is separately reviewed to publish disputed_minor and authorized_trustee_id. Return undisputed principal to origin and preserve the agreed disputed security in that trustee account. The transport also accepts voluntary whole-principal return, operating claim, or another listed trustee, but those choices may surrender security or misappropriate money. No escrow deposit becomes operating cash. The original a_dispose_incoming_balance whole-return or whole-claim interface consumes this same segregated principal; once either that disposition or a partition executes, no second disposition is possible. Completion of the requested segregation does not assert adjudication of the underlying commercial claim.\na_submit_quarantine_escrow_direction: Submit the existing two-party dispute direction. The bank publishes the disputed amount and named escrow trustee; it neither credits operating cash nor pays a substitute claimant. Parameters: incoming_id — Quarantined original incoming ID.\na_partition_quarantined_funds: Dispose the whole segregated principal into original-route return, trustee escrow and operating claim amounts. Every amount is nonnegative and their sum must equal principal. These bank-supported dispositions do not certify the customer is entitled to claim or waive disputed security. Parameters: incoming_id — Original incoming ID., return_minor — Amount returned to original sender, USD minor units., escrow_minor — Amount transferred to trustee account, USD minor units., claim_minor — Amount credited to operating cash, USD minor units., trustee_id — Directory trustee account ID.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_submit_quarantine_escrow_direction`\n\nSubmit the existing two-party dispute direction. The bank publishes the disputed amount and named escrow trustee; it neither credits operating cash nor pays a substitute claimant.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Quarantined original incoming ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n\nSubmitting an escrow direction and registering the owner investigation are independent preparatory actions; neither allocates quarantined principal. Actual partition requires the completed owner decision and the completed direction review.",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "04_simple_50_to_75pct/unknown-funds-handling.sop.md:N1-N3; lines13-36",
+      "01_most_complex_top_10pct/fund-return-request.sop.md:N1-N4,N7-N8; lines19-55,77-92"
+    ],
+    "source_nodes_and_rows": [
+      "04_simple_50_to_75pct/unknown-funds-handling.sop.md:N1-N3; lines13-36",
+      "01_most_complex_top_10pct/fund-return-request.sop.md:N1-N4,N7-N8; lines19-55,77-92"
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_submit_quarantine_escrow_direction"
+  ]
+}

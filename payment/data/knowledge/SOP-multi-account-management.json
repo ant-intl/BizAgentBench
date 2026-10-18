@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "This product links separate customer accounts. It is different from adding operators within one account.\n\n| Action | Self-service eligibility |\n|---|---|\n| Become a parent account | L3 verification and R90 turnover strictly greater than USD 100,000. |\n| Become a child account | L1 or L3 status. |\n| Request additional child-account capacity | E-commerce parent with R90 turnover strictly greater than USD 150,000 and all ten initial child places already bound. |\n\nChoose Become parent or Become child in Multi-account Management. A child supplies the parent details and submits a binding request. Accounts below the verification requirement must complete the required onboarding step first.\n\nIf fewer than ten child places are used, use the remaining places before requesting expansion. An account that does not qualify can submit a manual request for consideration; this does not guarantee approval. Other product types should contact their account manager. AER account expansion is unavailable following that product's retirement on 2025-03-31.\n\nTo close the parent's multi-account product, first unbind all children, then use More actions → Close multi-account product. A child's unbinding becomes effective after 48 hours; submitting the request is not immediate effective separation.",
+  "id": "SOP-multi-account-management",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "This product links separate customer accounts. It is different from adding operators within one account.",
+  "source_ids": [
+    "C06"
+  ],
+  "title": "Parent and child account management",
+  "topic": "permissions"
+}

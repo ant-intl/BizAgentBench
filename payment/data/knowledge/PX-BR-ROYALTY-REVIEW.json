@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-ROYALTY-REVIEW",
+  "title": "Residency review publication and provisional payment instructions",
+  "topic": "royalty residency effective review withdrawal instruction",
+  "applicability": "Royalties with pending residency and delivery review",
+  "content": "The royalty contract’s review_delay_minutes states when requested residency review becomes effective. Its signed result determines the published withholding rate and route eligibility together. The earlier largest-remainder contract continues to determine each gross beneficial entitlement. Until publication, a pending outcome is not a known rate. A beneficiary unaffected by the pending review can be paid under its already-final mandate; review of another person does not suspend that beneficiary’s own obligation. Instruction cancellation does not recall an already transmitted distribution. A delivered amount and a withheld amount must be attributed to the same beneficial owner whose contractual entitlement they discharge.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Cross-effect of residency review on distribution and channel eligibility."
+    }
+  ]
+}

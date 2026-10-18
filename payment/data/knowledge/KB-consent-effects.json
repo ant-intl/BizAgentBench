@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_request_cancellation cancels a request that has not executed, including an older approved or revoked request. It does not recall a payment already submitted to a bank.\n\nRevoking an operator invalidates earlier approvals by changing that operator epoch; the immutable business arguments remain available for inspection. If a new operator needs to approve an obligation, support may cancel an obsolete draft and create a new correctly scoped proposal.",
+  "id": "KB-consent-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_request_cancellation cancels a request that has not executed, including an older approved or revoked request. It does not recall a payment already submitted to a bank.",
+  "title": "Cancelling drafts and changes to approval authority",
+  "topic": "consent"
+}

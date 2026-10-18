@@ -1,0 +1,18 @@
+{
+  "id": "PX-A-R-INVOICE-COLLECTION",
+  "title": "Legal bank payees and merchant invoice application",
+  "topic": "Legal bank payees and merchant invoice application",
+  "applicability": "Original supplier invoices with account-specific collection services.",
+  "content": "A bank-confirmed legal holder can offer more than one bank account. Legal identity and signed bank execution authority are necessary for paying the contractual entity; they do not determine when the merchant applies the receipt to its commercial invoice. invoice_collection_services specify recipient_id, fee_minor and delay_minutes for each service. Before the merchant timetable response, quoted_delay_minutes and maximum_delay_minutes describe the uncertainty. The independent account-verification event also publishes current collection processing times. a_choose_invoice_collection_service(contract_id,service_id) pays its fee and selects the account-specific service; replacement before bank payment is permitted, without refunding an earlier fee. The original a_pay_business_invoice must use the selected service recipient and its separately confirmed legal identity and bank authority. The service becomes fixed once any bank principal is paid. Actual invoice application occurs only once the full original principal has settled, at the last completing payment time plus the current service delay; a partial payment cannot apply the whole invoice.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_choose_invoice_collection_service`\n\nBuy the merchant application service for a bank-valid legal account and this original invoice. An unused selection may be replaced, retaining all previous fees. The service controls commercial invoice application after bank payment, not legal ownership verification.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original invoice collection contract. |\n| `service_id` | string | yes | Merchant collection service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_choose_invoice_collection_service"
+  ]
+}

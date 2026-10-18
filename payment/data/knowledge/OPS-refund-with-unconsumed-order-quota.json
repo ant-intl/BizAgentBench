@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A refund reduces the original order's quota, source lot and account cash. If that order's own quota still covers the refund, the deduction need not create negative capacity. Cash must also be available.\n\nAn order whose quota was consumed can instead leave quota debt. Positive capacity from another order does not automatically absorb the debit. Historical allocation amendments, where valid, update the recorded consumption rather than treating all quotas as one balance.",
+  "id": "OPS-refund-with-unconsumed-order-quota",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A refund reduces the original order's quota, source lot and account cash. If that order's own quota still covers the refund, the deduction need not create negative capacity. Cash must also be available.",
+  "title": "Refunding an order with remaining quota",
+  "topic": "refunds"
+}

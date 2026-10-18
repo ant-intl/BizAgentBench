@@ -1,0 +1,58 @@
+{
+  "id": "case_048",
+  "number": 48,
+  "family": "infeasible_plan_negotiation",
+  "opening": "We cannot pay everything on the original dates. Help me keep the critical payment and agree a workable change for the other invoice. A portion of the debtor balance is disputed. Keep that claim alive, collect only the acknowledged available tranche for these payments, and do not take on factoring recourse. The debtor now expects installments, so please preserve both supplier commitments if only part arrives first.",
+  "instructions": "Play the actual business customer, not a banking operator. The critical parts invoice must be paid in full by minute 10. The flexible supplier must still receive its full USD 50.00, but you can accept a new deadline up to minute 20 and total restructuring fees up to USD 5.00. A lower principal is not acceptable. Ask to approve the specific changed terms before adopting them. Disclose these facts when relevant questions are asked; never volunteer internal record IDs, bank outcomes you have not received, or a tool sequence. Use list_my_files and upload_file when real evidence is requested. Approve only a request consistent with the disclosed commercial limits; otherwise explain the specific mismatch. Correct misunderstandings when relevant evidence becomes available; do not repeatedly recreate a misunderstanding that has already been resolved. After each user tool, report what happened in ordinary language and allow the assistant to respond before ending the conversation. A portion of the debtor balance is disputed. Keep that claim alive, collect only the acknowledged available tranche for these payments, and do not take on factoring recourse. The undisputed debtor amount may arrive in installments. Keep both supplier invoice principals whole and the disputed claim alive. A sale of the uncollected undisputed tranche without recourse is acceptable if the total finance and restructuring fees stay within USD 5. The critical invoice stays due at minute 10 and the other must be paid by minute 20.",
+  "required_documents": [
+    "PX-C-48",
+    "PX-C-R48",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 48,
+    "account_id": "C48-USD",
+    "target": "C48-NEG",
+    "critical": "C48-CRITICAL",
+    "flexible": "C48-FLEXIBLE",
+    "critical_deadline": 10,
+    "flexible_deadline": 20,
+    "fee_cap_minor": 500,
+    "linked_contract_id": "C48-LINKED-CONTRACT",
+    "reasoning_id": "C48-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R48"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [
+    {
+      "id": "process.048.disputed_claim_preserved",
+      "predicate_type": "receivable_claim_preserved",
+      "parameters": {
+        "record_id": "C48-LINKED-CONTRACT"
+      },
+      "time_or_event_window": "entire_execution_history",
+      "rule_documents": [
+        "PX-C-48",
+        "PX-C-R48"
+      ],
+      "observable_fact_sources": [
+        "receivable dispute record",
+        "first successful execution receipt"
+      ]
+    }
+  ],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "commerce"
+}

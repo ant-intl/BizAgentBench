@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "A credit note with a row in `credit_redemptions` is a conditional instrument. Its face appears in `credit_notes`, but allocation is unavailable until redemption. The instrument records a trigger obligation, its required settled cash and the early-redemption haircut. Ordinary notes without a redemption row retain their existing allocation rules.\n\n`propose_credit_redemption` accepts EARLY or SETTLEMENT. EARLY immediately makes the note available, permanently reducing its face by the published haircut. SETTLEMENT preserves the full face but requires the trigger obligation's actual recorded settled cash to reach the stated threshold. A pending transfer, payment approval, allocated commercial credit or discount election is not settled cash. Each instrument can be redeemed once.\n\nAfter redemption, the note retains its original eligible-obligation set. A haircut is a commercial cost in addition to bank fees and return losses. Redemption does not settle an invoice; `propose_credit_note_allocation` remains a separate allocation instruction. Where an invoice requires pure cash for a discount, commercial credits continue to affect that eligibility.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_credit_redemption`\n\nRedeem a supplier credit using EARLY or SETTLEMENT terms.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `note_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `method` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-redemption",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "A credit note with a row in `credit_redemptions` is a conditional instrument. Its face appears in `credit_notes`, but allocation is unavailable until redemption. The instrument records a trigger obligation, its required settled cash and the early-redemption haircut. Ordinary notes without a redemption row retain their existing allocation rules.",
+  "title": "Conditional supplier credits",
+  "topic": "redemption",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_credit_redemption"
+  ]
+}

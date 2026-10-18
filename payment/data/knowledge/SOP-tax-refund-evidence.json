@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Identify the incoming payment as a tax-authority refund and retain the authority's refund evidence. Submit that evidence against the actual held payment using the tax-refund category where available.\n\nIf the Portal does not offer an appropriate category, contact support to arrange submission. Do not describe the refund as an unrelated marketplace sale merely to access a different form.\n\nThe payment remains subject to the incoming review process. Uploading the refund evidence does not itself establish that the amount has been credited.",
+  "id": "SOP-tax-refund-evidence",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Identify the incoming payment as a tax-authority refund and retain the authority's refund evidence. Submit that evidence against the actual held payment using the tax-refund category where available.",
+  "source_ids": [
+    "B05"
+  ],
+  "title": "Supporting evidence for a tax-authority refund",
+  "topic": "evidence"
+}

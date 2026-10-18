@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-FX-EXPOSURE",
+  "title": "Final FX stock and zero-balance settlement",
+  "topic": "supplier FX installment credit refund partial fill exposure",
+  "applicability": "Supplier invoices with an installment schedule",
+  "content": "A scheduled fill after an installment still creates real foreign currency. Final held stock equals actual fills plus spot purchases less installment payments and actual sales. After confirmed order cancellation, this stock must match the remaining payable exactly; settlement leaves zero exposure. With no remaining payable and no held foreign currency, confirm_supplier_fx_settlement may close the supplier settlement directly without a zero-value payment. Cash refunds are distinct source-currency receipts, not free foreign-currency stock. Dealer and treasury sale fees come from the listed quotes, and the unrelated supplier order remains unchanged.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `confirm_supplier_fx_settlement`\n\nConfirm the paid revised invoice and actual unspent currency. Does not conceal surplus or repair an incorrect credit allocation. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Installment, credit-split and foreign currency conservation terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "confirm_supplier_fx_settlement"
+  ]
+}

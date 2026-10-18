@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-EXPORT-CALENDAR",
+  "title": "Export proceeds and customs allocation calendar",
+  "topic": "export shipment certificate pooled capacity customs allocation deadlines",
+  "applicability": "Enrolled multi-shipment export schedules",
+  "content": "The first shipment has an early cash-and-reporting settlement deadline. Its actual cash settlement starts a later customs allocation for the second shipment, after allocation_delay minutes. The pending shipment publishes a reportable range; the result publishes actual basis in the original lot. The second declaration must use that actual value. Declaration documents may issue after cash settlement; each lot’s document_deadline applies to actual delivery. Adjustment-only proceeds stay ordinary, and historical withdrawals acquire no new rights. Certificate fees, product fees and every new lot principal share the original source account.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional certificate allocation and shipment timing; no tax refund guarantee."
+    }
+  ]
+}

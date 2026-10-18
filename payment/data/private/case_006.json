@@ -1,0 +1,57 @@
+{
+  "agreement_id": "JOINT14-7-AGREEMENT",
+  "case_id": "D34-COLLATERAL-CASE",
+  "components": [
+    {
+      "case_id": "D34-COLLATERAL-CASE",
+      "extension_service": true,
+      "family": " Allocation of rights. × Time eligibility × Replan after observation ",
+      "id": "trade_collateral",
+      "kind": "dated_collateral",
+      "scope": "JOINT14-7",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY41-CASE",
+      "extension_service": true,
+      "family": " Partial shipment, Partial authorization and actual debit ",
+      "id": "payment_split_capture",
+      "kind": "payment_split_capture",
+      "number": 27,
+      "payment_service": true,
+      "scope": "JOINT14-7",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Allocation of rights. × Time eligibility × Replan after observation ",
+  "id": "case_006",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\n\nOpening: Can you release the securities we have promised to our counterparties and take care of the equipment bill? We also have a receivable arriving into custody. Also, my equipment order is shipping in two parts. One card payment is still pending, and I need to finish paying for the items that are actually shipping. These are part of the same business spending plan.\n\nYour own facts and preferences: I manage Cedar Components. Deliver all five securities covered by the existing delivery instructions on time and pay the equipment supplier in full. Keep our existing property security and guarantee certificate in place. Repay as little loan principal as necessary; if plans repay the same principal, choose the lower servicing charge. I authorize up to USD 15 in repayment fees. Maintain at least USD 100 in operating cash, including through the already arranged debit. Use our existing assets and cash only. I do not know the bank's internal record IDs or the final custody value.\n\nFor the related procurement matter: Pay only the goods that are actually dispatched, in both shipments, and pay the courier by its agreed date. Release every unused authorization when it is no longer needed. Keep at least USD 50 in the cash wallet throughout. I can approve specific payment requests. I do not know the bank’s approved amounts or the final second-shipment quantity; use the recorded merchant confirmation.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "dated_collateral",
+  "number": 6,
+  "opening": "Can you release the securities we have promised to our counterparties and take care of the equipment bill? We also have a receivable arriving into custody. Also, my equipment order is shipping in two parts. One card payment is still pending, and I need to finish paying for the items that are actually shipping. These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-dated_collateral",
+    "PAYMENT-common",
+    "PAYMENT-payment_split_capture",
+    "JOINT-CASH-delivery",
+    "TRADE-common",
+    "DESK-protocol"
+  ],
+  "scope": "JOINT14-7",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

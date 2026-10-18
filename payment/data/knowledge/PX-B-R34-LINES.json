@@ -1,0 +1,21 @@
+{
+  "id": "PX-B-R34-LINES",
+  "title": "Storefront delivery lines, physical stock and dispatch bookings",
+  "topic": "Paid order fulfilment",
+  "applicability": "Store orders with separately scheduled delivery lines",
+  "content": "An order can be fully paid from captured principal net of refunds while physical delivery remains incomplete. xp_b_dispatch_lines identifies line quantities, required_socket, minimum_rating and actual receipt deadline. These requirements specialize the overall minimum in the original order. xp_b_dispatch_stock lists actual individual units after the warehouse result; original units need not all have the same rating. A purchased substitution creates additional physical units with that catalog grade. Stock is consumed exactly once when dispatch_store_delivery_line selects its IDs. The warehouse accepts a physical unit selection even if it does not meet the buyer line rating. The order must not be recharged to resolve a warehouse shortage. Old merchant and order-reference attribution rules still govern all receipt replays.\nThe delivery schedule exposes channels with instruction capacity, delay, booking fee and book_until. reserve_store_dispatch_channel reserves one line instruction and charges its nonrefundable fee before the cutoff. dispatch_store_delivery_line uses that reservation and creates carrier delivery after the channel delay. Routing a flexible line on a scarce priority service can prevent a different line meeting its deadline. Original and replacement units are interchangeable only when the intended line requirements are met. Closing the final carrier receipt requires all scheduled lines to have actually arrived. A bulk delivery that fails an individual line deadline does not fulfil that buyer instruction.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `dispatch_store_delivery_line`\n\nIrrevocably dispatch specific physical units for one paid order line through a booked channel. Stock is consumed once. The warehouse accepts the selected units; contractual grade and destination deadline remain the merchant responsibility.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Storefront delivery schedule. |\n| `line_id` | string | yes | Delivery line ID. |\n| `stock_ids` | array | yes | Distinct original or substitute physical stock IDs. |\n| `booking_id` | string | yes | Unused dispatch booking. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `reserve_store_dispatch_channel`\n\nReserve one dispatch instruction on a published channel. Capacity counts dispatched lines, and the booking fee is retained even if the chosen stock later proves unsuitable.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Original storefront delivery schedule. |\n| `channel` | string | yes | Channel key in dispatch services. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Stock-grade allocation and shared time-constrained dispatch capacity"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "dispatch_store_delivery_line",
+    "reserve_store_dispatch_channel"
+  ]
+}

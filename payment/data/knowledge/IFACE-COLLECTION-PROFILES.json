@@ -1,0 +1,21 @@
+{
+  "id": "IFACE-COLLECTION-PROFILES",
+  "title": "Collection profile account service interfaces",
+  "topic": "collection profile pricing application and payout",
+  "applicability": "PSP product accounts; Collection Profile product selection, account application and profile-specific payout.",
+  "content": "Collection Profile product selection, account application and profile-specific payout.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `inspect_profile_pricing`\n\nQuote the current Collection Profile payout fee for an account and amount in its settlement currency.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `amount_minor` | integer | yes | The requested principal in the account settlement currency minor units. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `propose_collection_application`\n\nApply for a Collection Profile account matching an accessible legal entity registration region. Profile account terms are separate from CORE.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `entity_id` | string | yes | The registered legal entity. |\n| `profile_id` | string | yes | The Collection Profile identifier. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `propose_profile_payout`\n\nPay from a Collection Profile account in its settlement currency, enforcing its per-payment minimum and daily principal cap.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `beneficiary_id` | string | yes | The receiving bank record. |\n| `amount_minor` | integer | yes | The requested principal in the account settlement currency minor units. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "inspect_profile_pricing",
+    "propose_collection_application",
+    "propose_profile_payout"
+  ],
+  "business_area": "collection_accounts",
+  "service": "profile_accounts",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

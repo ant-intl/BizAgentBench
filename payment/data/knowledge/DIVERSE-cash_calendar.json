@@ -1,0 +1,13 @@
+{
+  "applicability": "Service case kind: cash_calendar",
+  "category": "Specialist service contracts",
+  "content": "# Deposit calendars and operating reserves\n\nApplies to `cash_calendar`. A term deposit is unavailable cash until redeemed. `redeem(record_id, tax_exempt)` closes one active deposit and credits its principal plus any earned interest, less tax and any early fee. The boolean tax declaration must reflect the institution's tax letter. Interest is earned only at or after the contractual maturity minute; early redemption returns principal minus its recorded early fee with no interest. Each deposit can be redeemed once. The bank accepts a signed tax declaration without resolving the customer's exemption interpretation.\n\nInterest eligibility uses the contractual maturity minute, not the later redemption minute: an exemption effective after maturity does not retroactively exempt that interest. Nonexempt interest is multiplied by the receipt's tax basis points and rounded down to minor units. A protected security deposit is operationally redeemable but remains subject to the customer's mandate.\n\nScheduled deposit-maturity events report availability; they do not automatically redeem principal. Automatic service debits draw available wallet cash at their recorded minutes. `pay_bill(record_id, amount_minor)` pays invoices independently of those recurring debits. A continuous reserve instruction applies after each individual executed cash transaction and automatic event, including intervals before later maturities. Finishing the chat does not waive already scheduled service obligations.\n\n## Service interface\n\nUnlock `propose_deposit_calendar` and pass `case_id`, `action`, and an object `data` containing exactly the action fields above. The action name omits the parenthesized fields. Each proposed instruction requires a separate portal approval.\n",
+  "id": "DIVERSE-cash_calendar",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "note": "New author-defined mechanism; earlier SOP themes provide business context, not these parameters.",
+    "source_ids": []
+  },
+  "scope": "Service case kind: cash_calendar",
+  "title": "Deposit calendars and operating reserves"
+}

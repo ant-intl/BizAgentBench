@@ -1,0 +1,20 @@
+from copy import deepcopy
+from payment.runtime.products.dependencies.specification import SPECS as PARENT_SPECS, CAPABILITIES
+
+SPECS = deepcopy(PARENT_SPECS)
+SPECS["search_records"][
+    "description"
+] = """Search accessible public business records using resource, filters, cursor=0, limit=20 (1..100). DB-index maps business products to their record collections; DB-<resource> documents fields and joins. Read these IDs directly with read_document.
+Trade Services and typed Payment services use service_cases -> service_records/service_bookings. Operations Desk uses dedicated entry collections: desk_portfolios for receivables; onboarding_applications for onboarding; rail_sites/desk_accounts for collection paths; treasury_obligations/card_loss_cases for treasury/loss; restricted_lots/payment_batch_items for restricted funds/batches; currency_obligations/tax_transfers for FX/tax. service_cases is not a universal directory. Private files are accessed by the user's list_my_files; actual uploads appear in submissions. files and documents are not public resource names.
+Each record's own key is id. joint_agreements is filtered by id; joint_sources/joint_routes/joint_fundings are joined by agreement_id. scope denotes an access namespace, not an agreement or case ID. Other joins are specified per collection.
+Filters use top-level fields and are ANDed. Scalar equality is exact and case-sensitive. Example: {"resource":"business_documents","filters":{"body":{"contains":"tax"}}}. contains is an operator inside a field's value, not itself a field. Most collections support in/contains/gte/lte; joint_agreements, joint_sources, joint_routes, joint_fundings and link_contracts support exact equality only. Unknown scalar fields can produce an empty list.
+Results contain records (summaries), total and next_cursor, sorted by ID. Pass next_cursor back as cursor; get_record returns full public details. One search returning many records is one tool call. Empty results establish no accessible match for this collection/filter only. DB-inherited-collections lists compatibility endpoints without populated shapes in the release-wide admitted inventory."""
+SPECS["get_record"][
+    "description"
+] = """Read one full public record using resource and record_id. record_id is the returned record's id; for joint_agreements it is the agreement's own id. agreement_id is a foreign key on its source, route and funding records. scope is not a record lookup key. DB-<resource> defines fields and joins. Monetary _minor fields use integer minor units; cumulative and historical amounts can overlap as documented in DB-money-and-status. Nested JSON paths describe output, not supported search-filter paths."""
+SPECS["read_document"][
+    "description"
+] = """Read a complete public article by document_id. Interface references open directly: DB-index (product entry points and active shapes), DB-inherited-collections (compatibility appendix), DB-query-syntax, DB-money-and-status, DB-<resource> and DB-service-<kind>. No knowledge search or unlock is needed for these known IDs. Business policy document IDs are unchanged."""
+POLICY_SUFFIX = """\n\nDatabase reference: read DB-index directly for product-specific entry collections and DB-query-syntax for filters. service_cases is the directory for typed Trade Services/Payment services; Operations Desk has separate receivables, onboarding, rails, treasury, restrictions and currency/tax collections listed there. Read an agreement by joint_agreements.id and follow agreement_id on its related source/route/funding records. Customer private files use user-side tools; actual uploads use submissions. Customers provide business facts, preferences and documents; public database IDs come from queries.\n"""
+
+POLICY_SUFFIX += "\nWhen an active link_contracts record connects two service matters, its condition and milestone_scope are public contract terms. Read its named LINK article for current-episode, posting, and executed-request definitions. Unused drafts and approvals can be replaced.\n"

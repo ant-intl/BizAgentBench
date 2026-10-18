@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_cargo_title_instruction",
+  "content": "`pay_lien` takes {record_id, amount_minor}; it immediately pays freight from cash and adds to that bill's freight-paid total. Historical freight payments count toward the lien. Extra payment does not buy additional goods or endorse the bill.\n\n`endorse` takes {record_id, consignee, bill_version}. Only the current bill version is accepted. It records the named consignee. Endorsement conveys title only to quantities subsequently released under that endorsement.\n\n`release` takes {record_id, cartons}. The bill must be endorsed and freight fully paid. It releases the requested quantity up to original cartons less prior releases. Each release after logical minute 5 costs a further USD 30 demurrage charge. The bank does not decide which cartons the warehouse has accepted, or which consignee the customer intended. Released title cannot be reclaimed through this service; un-released cartons retain shipper title.\n\nOperations are available through `propose_cargo_title_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_cargo_title_instruction`\n\nFreight liens, cargo title and delivery orders. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-freight",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Freight liens and partial cargo title",
+  "topic": "freight",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_cargo_title_instruction"
+  ]
+}

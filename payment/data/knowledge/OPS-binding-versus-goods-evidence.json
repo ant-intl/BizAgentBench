@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Binding evidence identifies the collection association for the batch's sampled incoming. Remittance evidence must identify the same batch and sample. An uploaded filename does not replace the content's purpose and target fields.\n\nItem-level `source_goods` evidence supports a specified reclassification amount. It is not a replacement for binding evidence. Assessment rejects a mismatch between the declared purpose and actual contents; separate submissions may refer to the same sample for different purposes.",
+  "id": "OPS-binding-versus-goods-evidence",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Binding evidence identifies the collection association for the batch's sampled incoming. Remittance evidence must identify the same batch and sample. An uploaded filename does not replace the content's purpose and target fields.",
+  "title": "Binding evidence and goods reconciliation",
+  "topic": "evidence"
+}

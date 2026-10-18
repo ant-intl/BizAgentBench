@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A supported capture refund is requested once and settles after 25 minutes, crediting the original funding account and recording refunded_minor. Earlier genuine captures are separate obligations and may continue to settle.\n\nA change to the card default affects new purchases, not old holds. Bank remittances and new card purchases each charge 500 USD cents.\n\nSpendable reserve means posted principal minus live holds and active reservations, including at the point the case is finalized.",
+  "id": "KB-card_adjustments-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A supported capture refund is requested once and settles after 25 minutes, crediting the original funding account and recording refunded_minor. Earlier genuine captures are separate obligations and may continue to settle.",
+  "title": "Refunding an advised card capture",
+  "topic": "card_adjustments"
+}

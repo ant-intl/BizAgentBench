@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Identify the transaction, receiving currency, submission date and recorded payment status. Foreign-currency payments normally take one to five business days; holidays can extend the period. CNY payments are normally received the same day, with some completing in about a minute. These are typical times, not guarantees for a payment under investigation.\n\nIf a trace is needed, submit the transaction ID and relevant details to support. An MT103 or GPI tracking request concerns the actual payment's progress. A request for the sending bank's account details is a different request and needs its business purpose identified.\n\nOnce a Portal transfer is submitted, it cannot normally be cancelled. If a VAT reference, recipient account, name or address was wrong, support can attempt a bank-message amendment using the corrected details. Whether the bank can accept an amendment depends on its processing state and rules.\n\nThe recipient should not send a fresh payment to the sending account to return the funds. Ask the recipient bank to return the original transfer through its return process. The sending account is not provided as a general receiving destination.\n\nThe Portal selects the outgoing payment route based on the recipient's country, currency and bank; support cannot promise a customer-selected route.",
+  "id": "SOP-outgoing-payment-investigation",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Identify the transaction, receiving currency, submission date and recorded payment status. Foreign-currency payments normally take one to five business days; holidays can extend the period. CNY payments are normally received the same day, with some completing in about a minute. These are typical times, not guarantees for a payment under investigation.",
+  "source_ids": [
+    "A15",
+    "B03"
+  ],
+  "title": "A recipient has not received a Portal payment",
+  "topic": "payments"
+}

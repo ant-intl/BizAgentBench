@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Record the exact platform error, currency and destination account. For `VA invalid` or `payment failed` affecting CITI US, Canada, Hong Kong, Singapore, Australia, Netherlands or New Zealand collection channels, supply the account details and screenshot to support.\n\nA mismatch between the platform's payout currency and the collection account's currency can cause rejection. Ask the platform to confirm its payout and failure status before another payment is initiated.\n\nFor PayPal, verify the actual destination VA, the ACH reference and any bank review request. A first payment or a long-unused account may be subject to review. Where a CITI review is confirmed, the historical support range is three weeks to six months; obtain and respond to the actual request for information. Do not apply that range to an unconfirmed ordinary delay.\n\nIf the paying platform reports that its payout failed before dispatch, obtain its instructions for correcting the failure. If dispatch remains uncertain, investigate the reference instead of requesting a duplicate payment.",
+  "id": "SOP-platform-payout-errors",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Record the exact platform error, currency and destination account. For `VA invalid` or `payment failed` affecting CITI US, Canada, Hong Kong, Singapore, Australia, Netherlands or New Zealand collection channels, supply the account details and screenshot to support.",
+  "source_ids": [
+    "B10"
+  ],
+  "title": "Platform-side payout failures and channel review",
+  "topic": "tracing"
+}

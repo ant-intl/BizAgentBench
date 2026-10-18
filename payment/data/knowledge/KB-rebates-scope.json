@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "COMMIT invoices with qualifying_rebate=true contribute principal only after actual settlement. Invoices executed under another plan, and those marked false, do not qualify even if they contribute to general period volume.\n\nOnce qualifying settled principal reaches 3000000 USD cents, propose_tariff_rebate credits 3000 cents to the fee wallet. It may be claimed once per account/period.\n\nThe credit is not automatically posted; a pending payment is insufficient.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_tariff_rebate`\n\nClaim the available fixed contractual rebate on settled qualifying invoices in the current period.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-rebates-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "COMMIT invoices with qualifying_rebate=true contribute principal only after actual settlement. Invoices executed under another plan, and those marked false, do not qualify even if they contribute to general period volume.",
+  "title": "Claiming the COMMIT settlement rebate",
+  "topic": "rebates",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_tariff_rebate"
+  ]
+}

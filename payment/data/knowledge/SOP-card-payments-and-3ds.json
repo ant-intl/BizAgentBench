@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Common failure reasons include insufficient available balance, a card limit, incorrect CVV, an invalid card and an issuer decline. Read the transaction's recorded reason before selecting a remedy.\n\nThe default funding source is the e-commerce balance. Same-name balance funding requires an eligible same-name collection account and configuration through the account manager. Check the card's current funding selection; cash in another account is not automatically the card's available funding.\n\nCard limits can apply per transaction, day or card. Changing a limit is different from adding balance. For an issuer decline or unresolved card lock, provide the error for investigation.\n\nThe paying platform determines whether to request 3DS; CedarPay cannot manually suppress or force it. If SMS is unavailable, the supported card 3DS flow can deliver the code to the security email or display it under outstanding tasks / World Card → 3DS verification. These options do not replace the SMS requirement of a different bank-payment flow.",
+  "id": "SOP-card-payments-and-3ds",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Common failure reasons include insufficient available balance, a card limit, incorrect CVV, an invalid card and an issuer decline. Read the transaction's recorded reason before selecting a remedy.",
+  "source_ids": [
+    "B09",
+    "B03"
+  ],
+  "title": "World Card payment failures, funding and 3DS",
+  "topic": "cards"
+}

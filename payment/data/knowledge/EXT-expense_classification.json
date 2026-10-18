@@ -1,0 +1,17 @@
+{
+  "applicability": "Only expense_classification service cases; synthetic contract edition 8.0.",
+  "content": "# Expense reimbursements\n\nScope: the expense_classification service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nMerchant category is a screening field, not a reimbursement decision. Personal receipt items are excluded. A business_meal is capped at meal_cap_usd_minor per claimant; work_space items are capped at workspace_cap_usd_minor per claimant. Convert each item using the approved EUR/USD numerator and denominator, rounded down, before applying the claimant's purpose cap. Exclude any item named in the current void_items notice. Sum the capped eligible amounts and subtract that claimant's recorded advance, with a zero floor. Employee advances are already paid and are not a new bank debit.\n\n`reimburse` takes {record_id, amount_minor} for an expense claimant and increases that claimant's reimbursement. Bank execution checks funds, not employer reimbursement policy. Processor charges are separate obligations and do not reduce a claimant's entitlement.\n\nService interface: `propose_expense_classification_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_expense_classification_instruction`\n\nExpense reimbursements. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-expense_classification",
+  "scope": "expense_classification",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Expense reimbursements",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_expense_classification_instruction"
+  ]
+}

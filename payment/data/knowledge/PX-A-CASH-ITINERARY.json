@@ -1,0 +1,13 @@
+{
+  "id": "PX-A-CASH-ITINERARY",
+  "title": "Cash agent bookings and staged field payroll handovers",
+  "topic": "Physical cash delivery",
+  "applicability": "Cash instructions with more than one handover window",
+  "content": "An agent may accept a reservation before its physical desk opens. book_until governs when capacity can be reserved, handover_from governs earliest physical handover, and reservation_expiry governs latest handover. Inventory counting is separate from reservation. A reservation holds principal capacity and charges its nonrefundable fee; it does not guarantee a provisional denomination mix. a_request_cash_inventory publishes the actual mix after the agent's count delay. a_allocate_cash_notes assigns only counted stock. These fields live on xp_a_cash_agents and the ordinary cash pickup tools apply.\nA staged cash instruction is recorded as handover_windows on the linked xp_a_settlement_terms row. Each window contains from_minute, due_minute, amount_minor and minimum_notes. Actual handovers must fall in a window and together meet that window's principal and denomination requirements. A recipient may not be ready or authorized to receive later payroll early. The system can still physically hand over cash outside the customer's window; that does not satisfy the instruction. A delivery cannot be counted in two windows. Requested denominations refer to physical notes, not an electronic wallet balance. Agent capacity, denomination stock, per-pickup authority, wallet balance limit and the common fee budget all remain independent constraints. Money transferred into a wallet cannot be recalled during this business session.",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Cash instructions with more than one handover window"
+    }
+  ]
+}

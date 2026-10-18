@@ -1,0 +1,18 @@
+{
+  "id": "PX-A-R-CREDIT-CASH",
+  "title": "Supplier credit cash redemption, fees and value dates",
+  "topic": "Supplier credit cash redemption, fees and value dates",
+  "applicability": "Cash refunds of the same original-purchase credit notes.",
+  "content": "a_redeem_supplier_credit_note(credit_note_id,service) uses a confirmed unused note and STANDARD or EXPRESS from its published refund_services. The fee is immediately debited from operating cash; actual principal arrives at request time plus delay_minutes through the bank refund event. A note cannot both reduce an invoice and refund cash. A refund request pending after the customer date has not realized its value. Notes may have different express fees although both are eligible for the same invoice. Credit value realized by the deadline equals actual invoice reduction plus cash actually received, and refund fees are separate expenses. Customer fee limits apply to all redemption attempts that charged cash. The final supplier statement must describe the resulting original invoice balances.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_redeem_supplier_credit_note`\n\nRedeem a confirmed unused supplier credit note as cash using its current published refund service. The fee is charged now and the principal arrives at the stated value date. This consumes the note and cannot also reduce an invoice.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `credit_note_id` | string | yes | Confirmed supplier credit-note ID. |\n| `service` | string | yes | STANDARD or EXPRESS. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic trustee onboarding and supplier credit terms added to the original bank products."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_redeem_supplier_credit_note"
+  ]
+}

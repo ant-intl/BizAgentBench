@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Search results contain excerpts, not guaranteed complete policy. Read the article before relying on an exception.\n\nTo find a specialized capability, search its business function and discover its exact name in the relevant operation reference. unlock_discoverable_agent_tool returns its description and typed arguments.\n\ncall_discoverable_agent_tool invokes an unlocked capability. A propose_ capability prepares one immutable request.\n\nThe user must inspect that request with get_my_requests and approve it with decide_request before execute_request can commit it.",
+  "id": "KB-protocol-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Search results contain excerpts, not guaranteed complete policy. Read the article before relying on an exception.",
+  "title": "Finding operations and submitting approved requests",
+  "topic": "protocol"
+}

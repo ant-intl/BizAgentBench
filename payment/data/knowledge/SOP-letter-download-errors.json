@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "The Portal may display “We cannot provide a verification letter; the information supplied is invalid” when an account-letter or statement request is restricted.\n\nA risk or location review is one possible cause. The message alone does not establish the customer's physical location. Check the actual restriction and customer circumstances; where the customer is outside a restricted location, an ordinary network/session problem can be investigated.\n\nIf the failure persists, provide the exact error and account details to support. A support request does not waive a confirmed service restriction. Retrying a download is separate from satisfying a marketplace's review of the resulting document.",
+  "id": "SOP-letter-download-errors",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "The Portal may display “We cannot provide a verification letter; the information supplied is invalid” when an account-letter or statement request is restricted.",
+  "source_ids": [
+    "B19",
+    "B21"
+  ],
+  "title": "Account-letter download failures",
+  "topic": "letters"
+}

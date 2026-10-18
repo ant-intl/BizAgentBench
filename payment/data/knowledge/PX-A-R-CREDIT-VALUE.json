@@ -1,0 +1,18 @@
+{
+  "id": "PX-A-R-CREDIT-VALUE",
+  "title": "Posted incoming credits and available transfer value",
+  "topic": "Posted incoming credits and available transfer value",
+  "applicability": "Credited buyer transfers with bank value-date custody.",
+  "content": "A bank credit can be posted before its value date. In credit_value_batches, unreleased transfer value is held in the separate bank value account. Projecting another delivery of the same bank transaction does not create another batch. Estimated value dates are not confirmed dates. The bank intent-confirmation result publishes each batch actual value_minute; its scheduled value event releases that existing custody principal exactly once. Available operating cash, held transfer value and transaction identity are distinct. Original sale funds may already be needed by a genuine supply invoice before a separate duplicate transfer becomes available. a_accelerate_transfer_value(batch_id,service_id) is available only after value-date confirmation. It charges the published nonrefundable service fee immediately and moves the same held principal to operating cash after the service release_delay_minutes. A zero delay moves it immediately; otherwise the acceleration value event performs the existing-principal release. Only one acceleration can be pending for a batch. A later scheduled value event is idempotent, and cannot release accelerated principal again.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_accelerate_transfer_value`\n\nBring forward one bank-confirmed credited transfer value using a published acceleration service. This schedules or immediately moves its existing held cash once and pays the service charge; it does not create a new transfer or change who intended the original payment.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `batch_id` | string | yes | Published held transfer-value batch. |\n| `service_id` | string | yes | Transfer-value acceleration service. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_accelerate_transfer_value"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Find the recipient, open its details and select Edit. Modify only the fields that the interface permits. If the required field is disabled, delete the incorrect recipient and add a new record with the correct bank information.\n\nA submitted change normally takes one to two business days to review. While Processing, the edit entry is unavailable. This is separate from the recipient becoming usable after review.\n\nHarborPay and international HarborPay recipient details cannot be edited through this flow; delete and add the recipient again when those details need changing.\n\nFor Guangxi Rural Credit and Suning Bank, use the replacement bank names offered by the Portal: Guangxi Rural Commercial United Bank and Jiangsu Sushang Bank respectively. Delete the old recipient and add the new bank selection. These bank changes require individual recipient creation rather than bulk binding.",
+  "id": "SOP-recipient-editing",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Find the recipient, open its details and select Edit. Modify only the fields that the interface permits. If the required field is disabled, delete the incorrect recipient and add a new record with the correct bank information.",
+  "source_ids": [
+    "B15",
+    "B16"
+  ],
+  "title": "Editing recipient details and processing states",
+  "topic": "beneficiaries"
+}

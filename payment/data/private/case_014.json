@@ -1,0 +1,58 @@
+{
+  "agreement_id": "JOINT14-17-AGREEMENT",
+  "case_id": "D34-NETTING-CASE",
+  "components": [
+    {
+      "case_id": "D34-NETTING-CASE",
+      "extension_service": true,
+      "family": " Obligation recalculation × Entity cash × Instruction signing ",
+      "fee_cap_minor": 2000,
+      "id": "trade_netting",
+      "kind": "revised_netting",
+      "scope": "JOINT14-17",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY50-CASE",
+      "extension_service": true,
+      "family": " Electronic check stop payment, Endorsement rights and substitute payment ",
+      "id": "payment_cheque_stop_and_replacement",
+      "kind": "payment_cheque_stop_and_replacement",
+      "number": 30,
+      "payment_service": true,
+      "scope": "JOINT14-17",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Obligation recalculation × Entity cash × Instruction signing ",
+  "fee_cap_minor": 2000,
+  "id": "case_014",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. Give your own agreed-settlement goal, disputed-invoice preference, broker requirement and fee budget when asked. Do not compute company net positions, select invoices for a cycle, assess a signature, or tell support which cycle to refresh. Other staff signatures come from the registered service, not from your assertions. You may authorize support to send instructions through that channel, but cannot impersonate colleagues.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\n\nOpening: Could you finish our intercompany settlement and the brokerage payment? There is a group clearing draft in the portal, and some staff approvals are already on it. Also, our contractor says one of our electronic cheques went to the wrong place. There is another cheque due soon as well. Please make sure the right people are paid without paying either bill twice. These are part of the same business spending plan.\n\nYour own facts and preferences: I am Nina, the finance director for Alpine Manufacturing, Copper Trading and Cedar Procurement. Settle the agreed intercompany balances by their recorded deadlines and pay Copper Trading's USD 200 brokerage bill from Copper's own account. The equipment-quality disputed invoice is still under discussion; please leave it outside this settlement. Our total clearing-fee budget is USD 20. Use the money already in these companies' accounts; I cannot add cash or borrow. Please follow our two-person treasury control. I can give the bank owner approval for all three companies, but other people must sign in their own capacity through our registered staff channel. I do not know the final credit-note amounts or which existing staff approvals will apply.\n\nFor the related procurement matter: Settle both supplier invoices with the people currently entitled to the money, and pay the urgent inspection fee on time. I want the equipment cheque stopped and replaced if the bank can still stop it; if it has already been presented, count its actual payment and do not pay it again. Keep at least USD 50 available at completion. I have no extra funding and do not know the bank’s actual stop or clearing result.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "revised_netting",
+  "number": 14,
+  "opening": "Could you finish our intercompany settlement and the brokerage payment? There is a group clearing draft in the portal, and some staff approvals are already on it. Also, our contractor says one of our electronic cheques went to the wrong place. There is another cheque due soon as well. Please make sure the right people are paid without paying either bill twice. These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-revised_netting",
+    "PAYMENT-common",
+    "PAYMENT-payment_cheque_stop_and_replacement",
+    "JOINT-CASH-delivery",
+    "DESK-protocol"
+  ],
+  "scope": "JOINT14-17",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

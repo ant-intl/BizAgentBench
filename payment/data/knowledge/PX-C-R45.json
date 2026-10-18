@@ -1,0 +1,13 @@
+{
+  "id": "PX-C-R45",
+  "title": "Earlier tax refunds and current-period credits",
+  "topic": "earlier tax refunds and current-period credits",
+  "applicability": "Only current-customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "The prior-period customer overcollection is separate from the return events in the current tax batch. Refund its actual tax amount to the named buyer. The refund notice then certifies an authority credit, identifying its jurisdiction and amount. CURRENT reserves that new credit for the current merchant remittance; CARRY_FORWARD preserves it as an unused future right. Neither changes platform-collected tax or the existing prepaid credit. New credit can reduce actual cash only in its certified jurisdiction; each remittance records original prepaid and newly generated refund credit separately. A bank can refund a wrong eligible recipient, which does not discharge the original buyer claim.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Bank cash, offset, authority and timing terms."
+    }
+  ]
+}

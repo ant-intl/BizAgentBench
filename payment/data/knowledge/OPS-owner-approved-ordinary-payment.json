@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "The owner can approve an ordinary BANK request, binding its account, beneficiary, amount and quotation. An invited operator is not a general prerequisite for that payment method.\n\nAUTHORIZED_BANK instead requires the relevant active PAY authority and current epoch. Administrative access is separate from the recorded identity approving a payment. The approval log retains the identity that actually supplied consent.",
+  "id": "OPS-owner-approved-ordinary-payment",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "The owner can approve an ordinary BANK request, binding its account, beneficiary, amount and quotation. An invited operator is not a general prerequisite for that payment method.",
+  "title": "Owner and operator payment approval",
+  "topic": "permissions"
+}

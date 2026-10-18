@@ -1,0 +1,21 @@
+{
+  "id": "PAY-V9-LIFECYCLE",
+  "title": "External payment lifecycle, uncertainty, recall and reconciliation",
+  "topic": "payment submitted accepted settled returned recall duplicate exposure",
+  "applicability": "External bank, payroll, supplier, tax, government and platform payments",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "allocate_payment_funds",
+    "cancel_payment_allocation",
+    "submit_external_payment",
+    "recall_external_payment",
+    "publish_payment_case_reconciliation"
+  ],
+  "content": "A prepared or approved request is not a payment. Submission creates external exposure and debits cash. Submitted, status-unknown, accepted, settled, returned and recalled are different states. When status is unknown, a second submission can create a duplicate obligation even if a later recall restores cash. Recall and return fees remain real, and reconciliation cannot erase earlier exposure. The allocation's amount_minor is the instructed gross payment amount. The obligation's recorded fee_minor applies separately to each payment instruction. With OUR, the sender's cash debit is allocation amount plus the fee, and the beneficiary receives the full allocation amount. With SHA or BEN in this service, the sender's cash debit is the allocation amount, and the beneficiary's net receipt is the allocation amount minus the fee. For example, with a USD 1.00 fee and a required USD 150.00 net receipt, OUR uses a USD 150.00 allocation and debits USD 151.00; SHA uses a USD 151.00 allocation and also debits USD 151.00. Both deliver USD 150.00 net when settled. Each separately settled installment or top-up must account for its own fee. Returned or recalled payments do not create a beneficiary net receipt; their separate return or recall fees still apply. Use allocate_payment_funds to bind an obligation to a recorded source. An unsubmitted allocation can be released with cancel_payment_allocation; submitted exposure requires recall. Use submit_external_payment for the explicit beneficiary, fee-bearer and reference versions, recall_external_payment for existing exposure, and publish_payment_case_reconciliation only after the actual terminal receipts are known.",
+  "provenance": {
+    "source": "Payment v9 synthetic lifecycle specification"
+  }
+}

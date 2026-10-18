@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_export_license_instruction",
+  "content": "Licenses state commodity scope, total capacity in kilograms, previously used kilograms and inclusive expiry time. A load states cartons and kilograms per carton. Quantities can be split across eligible licenses.\n\n`register_return` takes {record_id}; the record must be the originating license named in the READY customs-return receipt. It restores returned cartons times kilograms per carton and returns the receipt's refundable bond once. It cannot restore another license or be repeated.\n\n`declare` takes {record_id, license_id, commodity, kilograms}. It consumes the declared kilograms from an unexpired license that permits the declared commodity, and locks a bond of 10 USD minor units per kilogram. The bank checks declared scope and capacity; it does not inspect the physical merchandise or replace the exporter's classification and unit conversion. False commodity descriptions, over-declarations and under-declarations can execute but violate the actual shipment obligation. Declaration bonds and used quantities cannot be recalled through this service.\n\nOperations are available through `propose_export_license_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_export_license_instruction`\n\nExport license quantity allocation and declarations. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-export_license",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Export quantities, returns and declaration bonds",
+  "topic": "export_license",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_export_license_instruction"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-TARIFF-PAYMENT",
+  "title": "Tariff enrolment and payment service interfaces",
+  "topic": "tariff enrolment payment",
+  "applicability": "PSP product accounts; Tariff enrolment and payments governed by the resulting tariff terms.",
+  "content": "Tariff enrolment and payments governed by the resulting tariff terms.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `propose_tariff_enrolment`\n\nRegister a tariff to start at a published billing slot. Replacing a pending instruction is permitted; posted charges remain.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `plan` | string | yes | The named plan for the relevant subscription or tariff product. |\n| `slot_minute` | integer | yes | The billing slot: 0, 30 or 60. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `propose_tariff_payment`\n\nSubmit one whole commercial invoice under current tariff terms.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "propose_tariff_enrolment",
+    "propose_tariff_payment"
+  ],
+  "business_area": "payment_pricing",
+  "service": "tariff_payment",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

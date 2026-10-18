@@ -1,0 +1,19 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Quota supports conversion of eligible export-trade proceeds into CNY. It is separate from the cash received in the account.\n\n| Route | How records reach the service |\n|---|---|\n| Store authorization | The supported platform connection retrieves eligible orders. |\n| Platform export upload | Upload the platform's supported original export using its customized-format entry. |\n| Generic template | Complete store details, download the CedarPay template, copy the required order data and submit it. |\n| Linked RA collection | Eligible linked receipts generate quota without a second authorization or record upload. |\n\nPlatforms may support more than one route. Use the platform article and the store's operating model. Shopify Payments, PayPal, Backmarket, Salemonster, Mercado Libre and TEMU have platform-export arrangements; this list does not eliminate separately supported authorization routes.\n\nSupported linked RA arrangements include AliExpress USD, Lazada cross-border and Achoice, Miravia, Asiabill and supported TikTok cross-border arrangements. AliExpress or Miravia receipts using a VA instead of the linked RA need the applicable manual records.\n\nImport-marketplace proceeds cannot be justified by export-trade orders for this service. Examples include Tmall Global, JD International, PDD International, Suning's import service, Douyin import commerce and POIZON. Use foreign-currency withdrawal or transfer for those funds.",
+  "id": "SOP-quota-acquisition",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Quota supports conversion of eligible export-trade proceeds into CNY. It is separate from the cash received in the account.",
+  "source_ids": [
+    "B17",
+    "B18",
+    "A06",
+    "A08",
+    "A10",
+    "A13"
+  ],
+  "title": "Routes for obtaining Portal conversion quota",
+  "topic": "quota"
+}

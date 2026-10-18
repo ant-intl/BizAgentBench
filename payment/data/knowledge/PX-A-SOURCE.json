@@ -1,0 +1,23 @@
+{
+  "id": "PX-A-SOURCE",
+  "title": "PSP source chains and partial release",
+  "topic": "Incoming PSP funds",
+  "applicability": "Incoming PSP funds",
+  "content": "Source-derived: PSP withdrawals require linked shop, PSP and order evidence; source submission alone does not establish bank acceptance. Synthetic extension: a fixed bank review publishes accepted_order_ids. a_submit_source_chain links sales.psp_batch and remitter_reference to the incoming record. a_claim_incoming_orders releases each accepted submitted order once. Rejected orders remain quarantined. Supplier stock packages are optional lawful purchases; the customer determines the required quantity and cash reserve. All amounts and package prices are public minor-unit records. a_select_stock_order(invoice_id, offer_id) fixes the observed package quantity and amount before any invoice payment. a_pay_business_invoice(invoice_id, recipient_id, amount_minor, payment_key, purpose='COMMERCIAL') creates an irrevocable economic payment, with account-scoped key deduplication; identical keys require identical invoice, recipient and amount. The bank verifies cash and recipient availability, while the commercial obligation determines whether that payment is owed. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_claim_incoming_orders`\n\nCredit only bank-accepted and submitted orders from a PSP incoming payment. Each order can be credited once; rejected or unreviewed orders remain quarantined.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Incoming payment ID. |\n| `order_ids` | array | yes | Distinct accepted sales order IDs to release. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_select_stock_order`\n\nChoose a supplier's currently offered stock package. Selection fixes the invoice quantity and price; subsequent payment must match the selected offer.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `invoice_id` | string | yes | Stock invoice ID. |\n| `offer_id` | string | yes | Supplier package offer ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_submit_source_chain`\n\nSubmit actual uploaded shop, PSP and remitter evidence for review. Submission does not release funds; an independent bank result may accept only some orders.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Pending incoming payment ID. |\n| `order_ids` | array | yes | Sales order IDs covered by this evidence chain. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "pending-fund-claim.sop.md"
+    ],
+    "source_nodes_and_rows": "N1-N4,N10; source worksheet rows 948-949"
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_claim_incoming_orders",
+    "a_select_stock_order",
+    "a_submit_source_chain"
+  ]
+}

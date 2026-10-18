@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_collateral_instruction",
+  "content": "The borrowing covenant specifies coverage in basis points. An asset contributes floor(current market value times (10,000 minus haircut_bp) divided by 10,000). Required collateral is ceil(principal times coverage_bp divided by 10,000). A new external valuation changes current market value when its receipt arrives; face value is not a current valuation.\n\n`repay` takes {amount_minor}; it immediately reduces both cash and facility principal and cannot exceed debt. Repayment is irreversible. `pledge` takes {record_id}; it encumbers a free eligible spare bond. `release` takes {record_id}; it releases a pledged bond to the other custodian only if remaining collateral still covers debt. An already released bond cannot be pledged through this case.\n\nThe bank prevents an under-collateralized release. It does not prevent an otherwise lawful repayment from using cash intended for a later supplier or minimum cash reserve. Coverage must hold throughout the process, including after valuation updates.\n\nOperations are available through `propose_collateral_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_collateral_instruction`\n\nSecured facility margin and substitution. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-collateral",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Facility margin and collateral substitution",
+  "topic": "collateral",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_collateral_instruction"
+  ]
+}

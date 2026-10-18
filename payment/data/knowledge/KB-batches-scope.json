@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A batch records a sample incoming and its explicitly associated incoming_ids. propose_batch_review accepts assessed binding and remittance evidence for that batch and sample.\n\nReview takes 30 minutes. For ordinary batches it produces one source lot and a quota with first_release_minor spendable and the rest held until remaining_release_delay.\n\nFor a classification_review batch it produces a source mix recorded in lot_ids; the classification article specifies partial reclassification. The total first release is still the recorded cash amount, but it is not all the same source type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_batch_review`\n\nSubmit binding evidence and remittance evidence for the same sampled transfer. Review can release its linked batch in stages.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `batch_id` | string | yes | The batch under review. |\n| `binding_submission_id` | string | yes | Assessed binding evidence for this batch and sample. |\n| `remittance_submission_id` | string | yes | Assessed remittance evidence for the same batch and sample. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-batches-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A batch records a sample incoming and its explicitly associated incoming_ids. propose_batch_review accepts assessed binding and remittance evidence for that batch and sample.",
+  "title": "Reviewing a sampled collection batch",
+  "topic": "batches",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_batch_review"
+  ]
+}

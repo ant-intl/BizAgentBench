@@ -1,0 +1,21 @@
+{
+  "id": "SUPPLEMENT-a71c92159204",
+  "title": "Equipment commissioning reservations and replacement timing",
+  "topic": "Protected procurement performance",
+  "applicability": "Protected purchase orders with a commissioning calendar",
+  "content": "A protected equipment purchase has independent payment, received-equipment and commissioning states. The original delivery contract establishes which shortage claims survive and what the paid protection covers. xp_b_delivery_schedules links that contract to a commissioning deadline and service catalog. book_equipment_commissioning purchases one service before book_until; its fee is retained even if no shortage occurs. commission_received_equipment begins only after the original shipment and necessary replacement units are accepted. Commissioning completes after the booked delay. The replacement remedy delay runs before, not concurrently with, installation. The customer budget includes the revised order, protection, replacement fees and commissioning fees. A faster replacement and a faster installer may have different total costs and completion times. Original inspection publishes actual shortages. Quantities accepted by the carrier do not certify that the equipment has been commissioned.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `book_equipment_commissioning`\n\nReserve a listed commissioning service before its booking deadline. The fee is nonrefundable; the reservation does not inspect the equipment or replace missing components.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Equipment performance schedule. |\n| `service` | string | yes | Listed commissioning service key. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `commission_received_equipment`\n\nStart the booked installation only after the original paid equipment and any replacement kit have been accepted. Completion follows the service delay; accepting equipment is not commissioning it.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Equipment performance schedule. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Shared procurement budget and actual commissioned-equipment deadline"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "book_equipment_commissioning",
+    "commission_received_equipment"
+  ]
+}

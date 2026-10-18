@@ -1,0 +1,22 @@
+{
+  "id": "PX-A-BUNDLE",
+  "title": "Equipment reservations and atomic procurement",
+  "topic": "All-or-none equipment purchases",
+  "applicability": "All-or-none equipment purchases",
+  "content": "Synthetic merchant network: offers state component, compatibility, stock, valid_until, principal and nonrefundable reservation fee. a_reserve_equipment_offer holds one offer and charges its fee. a_commit_equipment_bundle checks distinct HELD reservations, current stock, complete required_components and one compatibility version before one atomic debit. Merchant stock changes can invalidate a held offer; they do not revoke an already committed complete purchase, so unrelated stock updates need not delay completion. a_release_equipment_reservation releases the hold but not the fee. a_buy_equipment_individually is a legitimate irrevocable retail purchase with no complete-set guarantee; it does not satisfy an atomic procurement contract. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_buy_equipment_individually`\n\nBuy an available equipment component immediately without a complete-set commitment. This legitimate retail purchase is irrevocable and may violate an all-or-none procurement condition.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `offer_id` | string | yes | Equipment offer ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_commit_equipment_bundle`\n\nAtomically buy a complete compatible set of reserved equipment. Every required component, current stock and reservation must be valid before any principal is debited.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_ids` | array | yes | Distinct held reservation IDs for one complete set. |\n| `contract_id` | string | yes | Equipment purchase contract ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_release_equipment_reservation`\n\nRelease an equipment reservation. Its booking fee is nonrefundable; no equipment principal is paid.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | Held reservation ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_equipment_offer`\n\nBuy a nonrefundable reservation for one equipment offer. Reservation does not guarantee compatibility with other components. A merchant stock event may invalidate an offer; reservation fees remain charged.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `offer_id` | string | yes | Equipment supplier offer ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_buy_equipment_individually",
+    "a_commit_equipment_bundle",
+    "a_release_equipment_reservation",
+    "a_reserve_equipment_offer"
+  ]
+}

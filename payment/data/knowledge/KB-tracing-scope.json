@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_bank_trace registers independent advice on one incoming. It becomes READY after 30 minutes.\n\nTransfers without a mandate report intended_account_id. Mandate-based transfers instead report mandate_id, value_minute and original_payee_entity.\n\nThe assignments articles define entitlement of those transfers. A trace does not change the posting, cash, quota or reservations.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_bank_trace`\n\nRequest independent bank advice for a credited incoming transfer.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | The specific incoming transfer. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-tracing-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_bank_trace registers independent advice on one incoming. It becomes READY after 30 minutes.",
+  "title": "Requesting independent bank advice",
+  "topic": "tracing",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_bank_trace"
+  ]
+}

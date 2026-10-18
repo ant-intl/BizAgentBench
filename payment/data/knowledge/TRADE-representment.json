@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_representment_instruction",
+  "content": "A full chargeback may include goods actually delivered or amounts already refunded. Unsupported missing-goods loss is undelivered units times invoice unit price, reduced by posted refunds and floored at zero. A merchant should concede that residual and defend the rest of the disputed amount. These are merchant claims, not additional compensation to the buyer.\n\n`concede` takes {amount_minor}; it irrevocably consumes that much of the held disputed amount. `defend` takes {amount_minor, delivery_reference, refund_reference}. It must be submitted by logical minute 5 inclusive, cannot exceed remaining held money, and costs 1,000 USD minor units. One defense is allowed. A decision arrives two logical minutes later. The institution examines its source evidence even when support has not requested the separate correspondence copy. The delivery and posted-refund references must match the source receipt for evidence acceptance.\n\nThe evidence check verifies reference identity, not the commercial calculation entered by the merchant. Accepted defenses release the declared amount; unfounded over-defense remains a commercial error. A submitted defense is not cash and cannot fund a purchase until its decision books proceeds.\n\nOperations are available through `propose_representment_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_representment_instruction`\n\nMerchant chargeback defense and concessions. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-representment",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Merchant chargeback defense",
+  "topic": "representment",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_representment_instruction"
+  ]
+}

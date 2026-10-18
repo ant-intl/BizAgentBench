@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A completed final release sets the batch to RELEASED and removes holds from its original source lots. The funds remain subject to their source permissions: released SERVICE funds are still nonconvertible, but can pay a GENERAL beneficiary.\n\nA permitted source payment may combine available lots from one account. Its fee is the sum of the charges for its nonzero source allocations. The actual release event, not an expected release time, determines when the principal becomes available.",
+  "id": "OPS-batch-without-remaining-holds",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A completed final release sets the batch to RELEASED and removes holds from its original source lots. The funds remain subject to their source permissions: released SERVICE funds are still nonconvertible, but can pay a GENERAL beneficiary.",
+  "title": "Using funds after a batch's final release",
+  "topic": "classification"
+}

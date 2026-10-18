@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-TAX-AGENCY-CAPACITY",
+  "title": "Tax agency processing capacity service interfaces",
+  "topic": "tax agency processing capacity reservations and transfers",
+  "applicability": "PSP product accounts; Jurisdiction-specific agency capacity, reservation fees and unused-capacity transfers.",
+  "content": "Jurisdiction-specific agency capacity, reservation fees and unused-capacity transfers.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `reserve_tax_agency_processing`\n\nBuy agency processing capacity for one jurisdiction before the public booking cutoff. Pending agent approval does not prevent a reservation. Capacity is denominated in tax principal, shares the contract limit across jurisdictions, and charges a nonrefundable reservation fee. It neither pays tax nor creates a tax credit.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `capacity_contract_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `jurisdiction` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `transfer_unused_tax_agency_capacity`\n\nMove unused reserved processing principal between the contract jurisdictions before its transfer cutoff. Used capacity cannot be transferred. The amendment charge is real cash and the total agency limit is unchanged.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `booking_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `jurisdiction` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "reserve_tax_agency_processing",
+    "transfer_unused_tax_agency_capacity"
+  ],
+  "business_area": "tax_agency",
+  "service": "processing_capacity",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

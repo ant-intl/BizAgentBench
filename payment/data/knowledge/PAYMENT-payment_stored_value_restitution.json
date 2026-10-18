@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_stored_value_restitution",
+  "content": "# Mixed tender cancellations and stored-value restitution\n\nScope: `payment_stored_value_restitution`.\n\nCash top-ups and promotional stored value remain separate lots. A cancelled order restores the exact amount originally consumed from each lot, preserving its source and expiry. Promotional value is not redeemable cash. Restoring cancelled tender changes the relevant lot; cash restoration also restores the cash wallet. A bank cash refund is a different operation and cannot satisfy a customer's request for original wallet-tender restoration.\n\nAn order can combine available lots within its recorded promotional allowance across all partial payments together. Promotional value is valid strictly before expires_minute; at that update, unused promotional value expires. Ordinary cash is debited both from the source lot and the cash wallet. The bank's duplicate-top-up report determines how much of the investigated cash lot is a duplicate. Only that amount is returned, by the recorded top-up correction deadline; any remainder belongs to the customer. The amount being investigated remains technically spendable until the bank report, and using it may impair later correction.\n\nUnlock propose_payment_stored_value_restitution. restore_tender data {lot_id, amount_minor}; cash_refund_cancelled data {amount_minor}; return_topup data {amount_minor}; pay_order data {allocations: {lot_id: positive amount_minor}}. The return_topup action opens after the bank report. Restoration is limited by the original total cancelled payment; choosing its source allocation remains the caller's responsibility.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_stored_value_restitution`\n\nPrepare an owner-approved stored value restitution instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_stored_value_restitution",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Mixed tender cancellations and stored-value restitution",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_stored_value_restitution"
+  ]
+}

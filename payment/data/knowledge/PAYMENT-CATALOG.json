@@ -1,0 +1,14 @@
+{
+  "id": "PAYMENT-CATALOG",
+  "title": "Payment products and record namespaces",
+  "topic": "Database interface",
+  "applicability": "All Payment products",
+  "content": "The shared library covers Operations Desk/Trade Services and PSP product accounts. The signed-in portal determines account access, not the document search corpus. Operations Desk/Trade Services use DB-index and its documented business collections. PSP product accounts use xp_cases and PX-DATABASE; customer_id restricts records to the signed-in customer. A record ID in one namespace is not an ID in the other. All published capability schemas can be unlocked. Execution requires that product to be enabled for the current portal; otherwise PRODUCT_NOT_ENABLED_FOR_CURRENT_PORTAL is returned. Money, eligibility, consent and event rules remain in the corresponding product articles.\n## Standardized interface organization\n\nThe public library contains 323 canonical business-service interface documents covering 595 exact specialized capabilities. Search by business object, operation and product scope. Each canonical document names only interfaces for that service and states their parameter sources and local effects. There is no fuzzy action search and no universal business-action endpoint. Full types and enumerations are returned only after exact-name unlock.\n",
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Shared product namespaces and executable adapter"
+  },
+  "document_layers": [
+    "business_catalog"
+  ]
+}

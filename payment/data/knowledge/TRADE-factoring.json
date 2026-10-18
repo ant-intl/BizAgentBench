@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_factoring_instruction",
+  "content": "A prior senior lien prevents another assignment of the same receivable. `repay_senior` takes {amount_minor}; full repayment releases the senior liens in this case. A repayment cannot exceed the outstanding debt.\n\n`assign` takes {record_id, offer_id, face_minor}. The receivable must be free and unassigned. Bank advance equals declared face multiplied by advance_bp, rounded down; the fee equals declared face multiplied by fee_bp, rounded up. Net proceeds credit the wallet immediately. The receivable becomes assigned and a debtor notice is scheduled using the offer's notification_delay. Registration is not delivery of that notice. A receivable can be assigned only once through this service.\n\nThe declared face may not exceed the original note. The seller remains responsible for reducing it by issued credit notes and for respecting any separate insurance or export-cover assignment prohibition. The bank does not enforce those separate commercial covenants. Assignments and their fees are irreversible within this service. Different advance percentages and fees apply only to the named factor offer.\n\nOperations are available through `propose_factoring_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_factoring_instruction`\n\nInvoice assignment, advance and repayment. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-factoring",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Factoring advances and debtor notification",
+  "topic": "factoring",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_factoring_instruction"
+  ]
+}

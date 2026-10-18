@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Distinguish direct eBay collection from eBay sales paid through PayPal. The record-submission entry depends on the receipt route.\n\nAuthorization retrieves records for the preceding 90 days. Manual submission can cover eligible records up to one year old. The same order number contributes only once, including when a record appears through both authorization and an uploaded PayPal file.\n\nFor the PayPal route, complete the store information to make the manual upload entry available. Use the manual route for records outside the 90-day authorization window but within the manual-submission period.\n\nFor direct eBay collection, ask support to enable manual uploading when that entry is needed. This differs from the PayPal self-service entry.\n\nIf authorization fails, provide the error screenshot, seller ID and collection-account details. The platform authorization can use the relevant eBay or PayPal account, according to the receipt arrangement.",
+  "id": "SOP-ebay-quota",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Distinguish direct eBay collection from eBay sales paid through PayPal. The record-submission entry depends on the receipt route.",
+  "source_ids": [
+    "A08"
+  ],
+  "title": "eBay direct receipts and PayPal sales records",
+  "topic": "quota"
+}

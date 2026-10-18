@@ -1,0 +1,26 @@
+{
+  "id": "SUPPLEMENT-679aa3ccc5fc",
+  "title": "PSP order net settlement",
+  "topic": "PSP order net settlement",
+  "applicability": "PSP order net settlement business records.",
+  "content": "xp_a_psp_net_batches and xp_a_psp_adjustments join remittance, shop sale, PSP fee and sale refund. The original bank acceptance applies to orders, not to their unadjusted gross values. A provider deduction belongs to the sale identified by its sale_reference and remitter_reference. Include all matching deductions exactly once; unrelated-shop deductions do not reduce this remittance. a_fix_psp_net_release changes the original sales.amount_minor used by a_claim_incoming_orders.\na_obtain_psp_net_statement: Obtain the PSP settlement statement for this incoming remittance; publishes gross-sale references and provider deductions, not bank acceptance. Parameters: incoming_id — Incoming remittance ID.\na_allocate_psp_deduction: Allocate a provider deduction to one sale, or correct its allocation before that sale is released. A supported statement line can belong to another shop or batch. Parameters: adjustment_id — Published statement deduction ID., sale_id — Sale receiving this deduction.\na_fix_psp_net_release: Fix the included deduction IDs before claiming accepted orders. This changes each original sale release amount to gross less its allocated deductions. Omitted deductions remain unapplied; repeated fixing is allowed before release. Parameters: batch_id — PSP net batch ID., adjustment_ids — Distinct allocated statement line IDs to include.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_allocate_psp_deduction`\n\nAllocate a provider deduction to one sale, or correct its allocation before that sale is released. A supported statement line can belong to another shop or batch.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `adjustment_id` | string | yes | Published statement deduction ID. |\n| `sale_id` | string | yes | Sale receiving this deduction. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_fix_psp_net_release`\n\nFix the included deduction IDs before claiming accepted orders. This changes each original sale release amount to gross less its allocated deductions. Omitted deductions remain unapplied; repeated fixing is allowed before release.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `batch_id` | string | yes | PSP net batch ID. |\n| `adjustment_ids` | array | yes | Distinct allocated statement line IDs to include. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_obtain_psp_net_statement`\n\nObtain the PSP settlement statement for this incoming remittance; publishes gross-sale references and provider deductions, not bank acceptance.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Incoming remittance ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "01_most_complex_top_10pct/pending-fund-claim.sop.md:N1-N4,N8,N10; lines13-47,76-100,122,135-136"
+    ],
+    "source_nodes_and_rows": [
+      "01_most_complex_top_10pct/pending-fund-claim.sop.md:N1-N4,N8,N10; lines13-47,76-100,122,135-136"
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_allocate_psp_deduction",
+    "a_fix_psp_net_release",
+    "a_obtain_psp_net_statement"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_sales_import uses an approved sales submission scoped to an account. Each sale has a stable order_reference, amount_minor, eligibility flag and expiry minute.\n\nOnly eligible, unexpired and previously uncredited order references create quotas. Uploading the same file twice does not create capacity twice.\n\nA syntactically correct expired statement can pass file assessment yet create no live quota; file validity and order eligibility are separate questions. An import response identifies the quotas actually created rather than promising that the entire nominal statement amount is usable.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_sales_import`\n\nImport eligible, nonduplicate sales from an approved current statement; records generate quota, not cash.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `submission_id` | string | yes | The actual uploaded evidence submission. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-sales-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_sales_import uses an approved sales submission scoped to an account. Each sale has a stable order_reference, amount_minor, eligibility flag and expiry minute.",
+  "title": "Importing eligible sales records",
+  "topic": "sales",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_sales_import"
+  ]
+}

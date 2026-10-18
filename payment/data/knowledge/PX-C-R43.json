@@ -1,0 +1,20 @@
+{
+  "id": "PX-C-R43",
+  "title": "Replacement generations and old-capture invoice allocation",
+  "topic": "replacement generations and old-capture invoice allocation",
+  "applicability": "Current-customer linked records marked reasoning_version c-reasoning-v2 only.",
+  "content": "An essential merchant can have an old-generation capture for the same due invoice. Card replacement changes credentials, not that already-authorized capture. A presented capture receives its actual settlement or void notice after review. Settled cash may be allocated to the same merchant invoice through reconcile_essential_capture; invoice_offset reduces the remaining recurring charge, while separate_advance retains an advance asset and leaves the original invoice due in full. Voiding an unpresented capture leaves the full invoice to current-generation billing. The current invoice face is unchanged by credential refresh. Original capture and new billing must be considered together when assessing payment of that invoice; an unnecessary advance is not settlement of another merchant's debt.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `reconcile_essential_capture`\n\nAllocate the actual settled old capture to its own service invoice or retain it as a separate merchant advance. An invoice allocation reduces the subsequent current-generation invoice charge.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `capture_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `treatment` | string: `invoice_offset`, `separate_advance` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Linked commercial contract terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "reconcile_essential_capture"
+  ]
+}

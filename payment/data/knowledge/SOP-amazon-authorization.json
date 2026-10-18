@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Confirm the marketplace site and Seller ID before connecting the store. Check account health, a valid payment card, whether the collection account has been bound for more than 24 hours, and outstanding platform charges. Individual sellers must upgrade to the professional arrangement for this authorization route; foreign-currency withdrawal remains an option where conversion quota is not available.\n\n| Error | Handling |\n|---|---|\n| `AE15115181000176` | Investigate the platform-side authorization issue. |\n| `AE15115181000260` | Check whether the Seller ID is already bound to another account; clear the old binding before the new one. |\n| `MD9000` | Investigate the platform-side issue. |\n\nIf the checks do not resolve the failure, provide screenshots of account health, the payment-card information relevant to the error, the site and the authorization error to support.\n\nFor European stores sharing a Seller ID, authorization in one supported European country can cover that Seller ID. A store from a different marketplace site cannot be authorized against an incompatible site account. Cancel the wrong-site authorization and use an account for the correct site.\n\nIf the authorization-update date is stale, cancel and authorize again. Cancellation is available through the store authorization entry or quota management; multiple collection accounts may require checking both associations. Obtain the customer's confirmation before cancelling a connection.",
+  "id": "SOP-amazon-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Confirm the marketplace site and Seller ID before connecting the store. Check account health, a valid payment card, whether the collection account has been bound for more than 24 hours, and outstanding platform charges. Individual sellers must upgrade to the professional arrangement for this authorization route; foreign-currency withdrawal remains an option where conversion quota is not available.",
+  "source_ids": [
+    "A13",
+    "C01"
+  ],
+  "title": "Amazon store authorization and connection errors",
+  "topic": "quota"
+}

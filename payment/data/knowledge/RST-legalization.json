@@ -1,0 +1,20 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "`legalization_slots` contains customer booking offers with an account, receiving platform, booking deadline and processing duration. `propose_legalization_booking` reserves an open offer. CURRENT binds the appointment to the account's current bank identity version. FORWARD binds it to the next identity version already announced in the entity registry. Booking does not issue a certificate, update bank records or register platform intake.\n\nA booking's identity binding is immutable, and an offer can be used once. `propose_letter_legalization` accepts an issued bank letter for the same account and booked identity version. It enters PROCESSING; a scheduled event changes it to SEALED. A reservation or submitted original is not a sealed original.\n\nWhere a customer shipment requires legalization, the original used in platform review must have reached SEALED before submission of that review. Bank-letter age, addressee and platform intake rules still apply independently. An upcoming identity may be booked before it becomes effective, but a bank letter cannot attest to a bank identity which has not yet become current.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_legalization_booking`\n\nReserve a CURRENT or FORWARD legalization slot before intake closes.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `slot_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `mode` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_letter_legalization`\n\nSubmit an issued bank letter to a reserved legalization slot.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `slot_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `letter_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-legalization",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "`legalization_slots` contains customer booking offers with an account, receiving platform, booking deadline and processing duration. `propose_legalization_booking` reserves an open offer. CURRENT binds the appointment to the account's current bank identity version. FORWARD binds it to the next identity version already announced in the entity registry. Booking does not issue a certificate, update bank records or register platform intake.",
+  "title": "Legalization appointments for bank originals",
+  "topic": "legalization",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_legalization_booking",
+    "propose_letter_legalization"
+  ]
+}

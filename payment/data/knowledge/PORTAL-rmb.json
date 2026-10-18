@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal API integration v4.0.0. Applies from service minute 0.",
+  "content": "The HK RMB service follows the reporting-party distinction in `SOP-hk-rmb-service`. `propose_rmb_registration` is available to Hong Kong COMPANY accounts. It accepts `RECIPIENT` or `ASSOCIATED_EXPORTER`; these names represent declarations, not numbered marketing methods.\n\nA RECIPIENT declaration becomes active immediately, with the payee as the reporting party. It is appropriate only when that payee is the actual exporter under the SOP conditions. The declaration service records the customer's selection; it cannot establish the economic substance of the customer's trade from that selection alone. An incorrectly selected declaration is not corrected automatically by a later payment.\n\nASSOCIATED_EXPORTER requires assessed `exporter_registration` evidence containing the associated exporter's identity, authorization and legal representative. This integration supports the offline signed authority route. Review activates the declared associated exporter after 480 minutes. The sole-director online-signing variant described in the SOP is not exposed by this integration.\n\nAn active declaration cannot be switched during a payment session. Recipient bank verification is an independent process. Each CNY payment stores the reporting party effective at its submission. A manufacturing payee and the actual exporter can be different legal entities.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_rmb_registration`\n\nRegister the declared reporting party for an HK company CNY service.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `reporting_party` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `submission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PORTAL-rmb",
+  "provenance": {
+    "classification": "new_synthetic_portal_execution_contract"
+  },
+  "quoted_text": "The HK RMB service follows the reporting-party distinction in `SOP-hk-rmb-service`. `propose_rmb_registration` is available to Hong Kong COMPANY accounts. It accepts `RECIPIENT` or `ASSOCIATED_EXPORTER`; these names represent declarations, not numbered marketing methods.",
+  "title": "RMB reporting-party registration contract",
+  "topic": "portal_rmb",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_rmb_registration"
+  ]
+}

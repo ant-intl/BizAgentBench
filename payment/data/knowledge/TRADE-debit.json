@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_direct_debit_instruction",
+  "content": "`refund` takes {record_id, amount_minor}. It pays cash back against a settled collection, up to its unrefunded collected total. It does not calculate whether the customer has actually overpaid an invoice. Repeated new refund requests create additional refunds.\n\n`cancel_mandate` takes {record_id}. It deactivates that mandate for future instructions. An instruction already ACCEPTED remains independent of later mandate cancellation.\n\n`recall` takes {record_id}. An ACCEPTED instruction may be recalled through its inclusive recall_before_minute. A scheduled instruction that is still ACCEPTED settles at its event and increases collected cash. A settled instruction cannot be recalled. Earlier bank transfers and collections against the same invoice must be distinguished from collections for other periods when assessing an overpayment.\n\nOperations are available through `propose_direct_debit_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_direct_debit_instruction`\n\nDirect debit mandate and refund administration. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-debit",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Direct debit instructions, mandates and refunds",
+  "topic": "debit",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_direct_debit_instruction"
+  ]
+}

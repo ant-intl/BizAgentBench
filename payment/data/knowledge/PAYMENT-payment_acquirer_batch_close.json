@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_acquirer_batch_close",
+  "content": "# Acquirer batch cash and merchant proceeds\n\nScope: `payment_acquirer_batch_close`.\n\nThe bank net amount for a batch equals gross_minor minus refund_minor minus fee_minor plus signed carry_minor plus signed reserve_delta_minor. Positive carry is received from an earlier batch, negative carry is transferred into another batch. A negative reserve delta is a new hold; a positive value releases an earlier hold. Carries and releases must not be treated as a new merchant sale. Final fees supersede provisional statement fees when the acquirer publishes the final statement.\n\nThe bank reference links a credit to its actual batch. Separate imports with the same physical_id describe one receipt. The same physical credit can be posted only once, regardless of import ID. Posting reconciles a real receipt into the settlement wallet; an authorized declaration can balance arithmetically while assigning the receipt or components to the wrong batch. Each merchant invoice is entitled to sales_minor minus refund_minor minus commission_minor. Bank charges are borne by the platform's retained commission, rather than deducted a second time from these merchant invoices.\n\nUnlock propose_payment_acquirer_batch_close. post_batch data {batch_id, bank_id, gross_minor, refund_minor, fee_minor, carry_minor, reserve_delta_minor}. Nonnegative gross/refund/fee and signed integer carry/reserve fields are required. Their sum must equal the bank credit, which must actually be settled. pay_merchant data {invoice_id, amount_minor} pays the named merchant from the reconciled wallet. Merchant deadlines are independent of the other batch's publication date.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_acquirer_batch_close`\n\nPrepare an owner-approved acquirer batch close instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_acquirer_batch_close",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Acquirer batch cash and merchant proceeds",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_acquirer_batch_close"
+  ]
+}

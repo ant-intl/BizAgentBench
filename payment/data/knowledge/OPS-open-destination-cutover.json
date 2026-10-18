@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An OPEN destination does not require another activation request. Routing still requires the recorded cutover minimum and assessed, signed ownership evidence for that store and destination entity.\n\n`propose_platform_cutover` names the store, destination and submission. Its later event changes routing and ownership. Payments already transmitted retain their original destination; opening an account or uploading an agreement does not retarget them.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_platform_cutover`\n\nChange future platform routing and store ownership after account activation and ownership evidence.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `store_id` | string | yes | The platform store. |\n| `account_id` | string | yes | The account used by this operation. |\n| `submission_id` | string | yes | The actual uploaded evidence submission. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "OPS-open-destination-cutover",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "An OPEN destination does not require another activation request. Routing still requires the recorded cutover minimum and assessed, signed ownership evidence for that store and destination entity.",
+  "title": "Routing to an account that is already open",
+  "topic": "migration",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_platform_cutover"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "SUPPLEMENT-842ca3d63824",
+  "title": "Merchant receipt and usable service credit",
+  "topic": "Merchant receipt and usable service credit",
+  "applicability": "Only the named synthetic benchmark product and its published customer records; no claim of real law or present provider availability.",
+  "content": "pay_service_merchant credits the service provider, not the customer's service wallet. apply_service_credit requires exact merchant_id and subaccount_ref in xp_b_business_accounts. Identically named directory entries are distinct payees. The provider retains the published hold_minor once per business account, cumulatively across receipts: a receipt smaller than the remaining hold is fully retained, and later receipts complete the hold before adding usable credit. held_minor records retained funds and hold_applied means the entire required hold has been collected. Only usable_minor can fund the requested service. Transfers cannot be recalled. Customer identifies the intended campaign or logistics account; directory records identify eligible merchant IDs.\n\nCoupled business records: xp_b_campaign_launches. Campaign placements consume the SAME service wallet credited by pay_service_merchant/apply_service_credit. Usable balance plus campaign_spent_minor equals net provider credits after its hold. The campaign requires required_minor of delivered placements, not merely a funded wallet. Provider capacity can be partial; release only the unserved portion before booking another placement. Booking to another campaign consumes the same released credits.\nreserve_campaign_launch_capacity: Reserve provider capacity against real usable credit in wallet_id; allocation event publishes accepted capacity. Reserving does not itself activate advertising. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nrelease_unserved_campaign_capacity: Release the portion the provider cannot serve. Original accepted capacity stays reserved, and only released capacity can fund a makegood placement. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nbook_campaign_makegood: Book released capacity into one listed placement. Placement campaign and booking fee are public; a different campaign consumes credit without advancing this launch. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nactivate_campaign_launch: Consume the actual booked provider credits and activate the selected campaigns. Original wallet cash cannot be spent a second time; wrong-campaign booking remains a real loss. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `apply_service_credit`\n\nApply a received merchant receipt to business_account_id after exact merchant and subaccount matching. A published merchant hold_minor is retained, so credited usable balance may be less than the transfer.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `receipt_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `business_account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `pay_service_merchant`\n\nTransfer amount_minor from source account in USD to merchant_id with subaccount_ref. Payment is irreversible. Merchants share display names; merchant legal entity, supported service and subaccount directory determine whether later application is possible.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `merchant_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `subaccount_ref` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `release_unserved_campaign_capacity`\n\nRelease the portion the provider cannot serve. Original accepted capacity stays reserved, and only released capacity can fund a makegood placement. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "State transitions, numeric terms, review outcomes and deadlines"
+    },
+    {
+      "kind": "source-derived",
+      "file": "service-provider-fast-pay.sop.md",
+      "scope": "N1-N3 and merged C0463/C0447/C0393: directory, immediate provider receipt and no recall; subaccount/hold synthetic",
+      "line_start": 16,
+      "line_end": 132,
+      "normalization": "Only the node/merged-rule scope stated beside this citation is adopted; all synthetic extensions are separately labeled."
+    },
+    {
+      "kind": "synthetic",
+      "scope": "Coupled business state, resources, deadlines and authority evidence introduced in candidate v4."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "apply_service_credit",
+    "pay_service_merchant",
+    "release_unserved_campaign_capacity"
+  ]
+}

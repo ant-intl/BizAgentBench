@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-TAX-CREDIT-LOTS",
+  "title": "Authority credit origins and eligible liability periods",
+  "topic": "tax credit lots period eligibility refund cash liquidity appeal deadline",
+  "applicability": "Enrolled consecutive-period overpayment schedules",
+  "content": "Enrolled schedules distinguish the initial overpayment credit lot from an additional appeal credit lot. Each actual authority event publishes a separate credit_lot_id, available_minor and allowed_period_ids. Initial credit can offset either listed period, subject to the schedule’s cumulative per-period offset ceilings. Appeal credit covers only its published periods. Neither a bank payment nor a pending appeal is credit. A lot’s cash refund or offset consumes the same available amount irreversibly; credit cannot be transferred from a paid period or applied twice. The original payment remains intact.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional authority credit scopes, appeal guarantees and timing, not real tax law."
+    }
+  ]
+}

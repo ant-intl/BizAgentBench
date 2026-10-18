@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "credit_notes has a remaining balance and a list of eligible obligations. propose_credit_note_allocation consumes credit and increments that invoice credit_minor without changing cash or actual paid_minor.\n\nThe cash still due is the current invoice amount less posted cash payments less applied commercial credit. An invoice may receive partial credit, and an allocation is final through this API.\n\nExisting transfers remain independently capable of settling.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_credit_note_allocation`\n\nApply available commercial credit to one eligible invoice. Applied credit is not cash and is not refundable through this operation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `note_id` | string | yes | The commercial credit note. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-credits-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "credit_notes has a remaining balance and a list of eligible obligations. propose_credit_note_allocation consumes credit and increments that invoice credit_minor without changing cash or actual paid_minor.",
+  "title": "Applying commercial credit to an invoice",
+  "topic": "credits",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_credit_note_allocation"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "SUPPLEMENT-4cecb19c89dd",
+  "title": "Historical receivable and legal succession",
+  "topic": "Historical receivable and legal succession",
+  "applicability": "Historical receivable and legal succession business records.",
+  "content": "xp_a_receivable_successions keeps historical economic shop ownership separate from legal collection rights. The contract timestamp determines which lease owns the sale. A registry response confirms whether that shop receivable is transferred: the deed covers original dispatch dates in [claim_start_minute,claim_end_minute) and only predecessor_shop_id. Covered claims belong to successor_payee_id; uncovered claims remain with original_payee_id. Both accounts are bank-valid; the current virtual-account lessee is not automatically the historical claimant or its successor. The chosen bound payee becomes the original payout actual legal recipient. Registry-copy and registered-agent channels obtain the same deed; a higher fee does not change scope.\na_obtain_receivable_succession: Obtain the registry response for an existing shop succession deed. It publishes effective scope and the legal payee account; historical shop attribution remains a separate question. Parameters: receipt_id — Delayed virtual receipt ID., channel — registry_copy or registered_agent. Both publish the same legal record.\na_bind_successor_receivable_payee: Choose a bank-valid legal payee for the attributed historical receipt. The deed may transfer only certain historical claims. Binding is reversible before payout; current shop ownership alone does not transfer every older receivable. Parameters: receipt_id — Receipt ID., payee_id — Bank payee directory key.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_bind_successor_receivable_payee`\n\nChoose a bank-valid legal payee for the attributed historical receipt. The deed may transfer only certain historical claims. Binding is reversible before payout; current shop ownership alone does not transfer every older receivable.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `receipt_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `payee_id` | string | yes | Bank payee directory key. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_obtain_receivable_succession`\n\nObtain the registry response for an existing shop succession deed. It publishes effective scope and the legal payee account; historical shop attribution remains a separate question.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `receipt_id` | string | yes | Delayed virtual receipt ID. |\n| `channel` | string | yes | registry_copy or registered_agent. Both publish the same legal record. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "04_simple_50_to_75pct/deleted-collection-account-history-query.sop.md:N1-N3; lines23-46",
+      "05_simplest_75_to_100pct/collection-account-migration.sop.md:lines16-19"
+    ],
+    "source_nodes_and_rows": [
+      "04_simple_50_to_75pct/deleted-collection-account-history-query.sop.md:N1-N3; lines23-46",
+      "05_simplest_75_to_100pct/collection-account-migration.sop.md:lines16-19"
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_bind_successor_receivable_payee",
+    "a_obtain_receivable_succession"
+  ]
+}

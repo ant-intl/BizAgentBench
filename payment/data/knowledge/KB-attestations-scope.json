@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A platform with intake_closes_minute requires a registered intake through propose_platform_intake by that minute, inclusive. Intake uses approved registry evidence of the entity version current at intake and records intake_identity_version.\n\nAn opened case remains available for subsequent reverification after the intake window closes. Intake itself does not restore collections or freeze the legal identity for later review.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_platform_intake`\n\nRegister a platform review case within its published intake window using current registry evidence.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `store_id` | string | yes | The platform store. |\n| `submission_id` | string | yes | The actual uploaded evidence submission. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-attestations-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A platform with intake_closes_minute requires a registered intake through propose_platform_intake by that minute, inclusive. Intake uses approved registry evidence of the entity version current at intake and records intake_identity_version.",
+  "title": "Registering a platform review before its intake deadline",
+  "topic": "attestations",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_platform_intake"
+  ]
+}

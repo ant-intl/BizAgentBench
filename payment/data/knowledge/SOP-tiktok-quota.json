@@ -1,0 +1,16 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Determine the site and whether the store is local, cross-border or fully managed. A local US store's ownership classification also affects its route.\n\n| Arrangement | Quota route |\n|---|---|\n| US ACCU local store: US company with Chinese ultimate ownership | Supported store authorization |\n| US local store outside ACCU | Manual sales-record upload |\n| Supported UK, Singapore and Indonesia local stores | Store authorization |\n| Supported Southeast Asian and US cross-border stores using the linked RA route | Automatic quota from the linked collection arrangement |\n| Fully managed linked RA arrangement | Automatic quota from the linked collection arrangement |\n\nRA-generated quota does not require a second CedarPay store authorization. A manually created VA is a different collection route.\n\n## Authorizing a supported store\n\nUse the primary TikTok account. Check the account and site if authorization fails; retrying in a clean browser session may resolve a session problem. For a store-link request in the supported TikTok authorization flow, a public brand-store link or an active product link is acceptable.\n\nTo cancel authorization, use the CedarPay authorization-management page or TikTok's applications and services page. Authorized records normally process within about 24 hours. If the period has passed and quota is missing, provide the affected store and collection-account details with the sales records to support.\n\nFor non-ACCU US stores, complete the store information before using the manual upload entry.",
+  "id": "SOP-tiktok-quota",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Determine the site and whether the store is local, cross-border or fully managed. A local US store's ownership classification also affects its route.",
+  "source_ids": [
+    "A10",
+    "B12",
+    "B17"
+  ],
+  "title": "TikTok Shop sites and quota routes",
+  "topic": "quota"
+}

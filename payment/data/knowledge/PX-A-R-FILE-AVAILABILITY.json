@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-R-FILE-AVAILABILITY",
+  "title": "Payment file acceptance and beneficiary availability",
+  "topic": "Payment file acceptance and beneficiary availability",
+  "applicability": "Customer-contracted bank application windows or original file availability services.",
+  "content": "a_request_file_processing_terms(contract_id) charges review_fee_minor and publishes actual service delay_minutes after bank review. Quoted delays remain provisional until then. a_reserve_payment_line_service(contract_id,invoice_id,service_id) books capacity for one original file obligation and charges its listed fee. Replacing a still RESERVED booking returns capacity but not its fee. a_execute_payment_file_line preserves the original parsing, recipient and economic-key rules. Bank acceptance debits original principal and sender fee immediately; beneficiary funds become available only on the service event. A rejected branch charges its original rejection fee but does not consume the processing booking; use the same original obligation booking and key for a genuine repair. A fresh key after settlement is another economic payment. Salary and supplier availability dates may differ even in one source file; an accepted slow service does not satisfy an earlier customer date.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_execute_payment_file_line`\n\nExecute a reviewed payment-file line. The original obligation reference survives beneficiary repair. A rejected line charges its stated rejection fee; a successful line cannot be paid again using the same obligation key. Operator-selected parsing semantics are honored by the bank.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `file_record_id` | string | yes | Uploaded payment export metadata ID. |\n| `line_id` | string | yes | Line ID within the export. |\n| `schema` | string | yes | MAJOR_NET, MINOR_NET, or MAJOR_GROSS. |\n| `recipient_id` | string | yes | Current bank recipient ID. |\n| `payment_key` | string | yes | Idempotency key retaining the original obligation reference. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_request_file_processing_terms`\n\nBuy the current bank processing-window review for the original file. The fixed review charge is nonrefundable; the bank returns actual availability delays for the listed services.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original file processing contract. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_payment_line_service`\n\nReserve processing capacity for one original file obligation. The booking fee is paid from the same operating account as sender and rejection fees. A rejected beneficiary can be repaired using this same booking.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original payment file processing contract. |\n| `invoice_id` | string | yes | Original invoice or payroll obligation ID. |\n| `service_id` | string | yes | Bank processing service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New bank capacity, fee and value-date terms; original principal and immutable payment identities remain original product semantics."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_execute_payment_file_line",
+    "a_request_file_processing_terms",
+    "a_reserve_payment_line_service"
+  ]
+}

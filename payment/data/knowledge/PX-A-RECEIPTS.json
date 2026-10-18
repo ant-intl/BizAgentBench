@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-RECEIPTS",
+  "title": "Causal bank-event projection",
+  "topic": "Out-of-order payment receipts",
+  "applicability": "Out-of-order payment receipts",
+  "content": "Synthetic network: bank_sequence is causal order, delivery_minute is message transport order. RETURNED with a greater sequence genuinely corrects SETTLED and refunds principal; older PROCESSING messages cannot undo a later settlement. a_project_bank_receipts supports CAUSAL and legacy ARRIVAL projections for diagnosis. A projected status alone does not transfer money. Any replacement payment must be justified by the causally final returned obligation and preserve the settled obligations; a new bank key remains an irrevocable separate economic payment. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_project_bank_receipts`\n\nRecompute payment status from received bank events. CAUSAL selects the greatest bank sequence and respects a RETURNED correction of SETTLED. ARRIVAL selects the most recently delivered message and is available for legacy projections; delivery order is not causal order.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `invoice_id` | string | yes | Payment obligation ID. |\n| `projection` | string | yes | CAUSAL or ARRIVAL. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_project_bank_receipts"
+  ]
+}

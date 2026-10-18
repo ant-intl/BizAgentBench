@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-R-CUSTODY-ONBOARDING",
+  "title": "Dispute trustee onboarding and activation timing",
+  "topic": "Dispute trustee onboarding and activation timing",
+  "applicability": "Separately contracted dispute custody services.",
+  "content": "a_order_trustee_review(contract_id,service_id) buys one REVIEW service using the genuine escrow direction already provided by the customer. The review is separate from authenticating the original incoming owner or the two-party security amount. It checks trustee operational capacity. Fees are paid immediately from operating cash and are nonrefundable. A completed review publishes activation service delay_minutes; quoted delays can change within the displayed range. a_activate_dispute_custody(contract_id,service_id) purchases one ACTIVATION service after this response. Only the scheduled activation makes the named trustee ready to accept security. The selected activation fee is charged immediately; the trustee does not pay that fee out of segregated incoming principal. a_partition_quarantined_funds requires active custody when transferring security. The actual partition time is the security delivery time.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_activate_dispute_custody`\n\nPurchase the selected trustee activation after review. Operating cash pays the fee, and custody becomes usable only on the actual activation event. It does not transfer segregated principal.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Reviewed dispute custody contract. |\n| `service_id` | string | yes | Published activation service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_order_trustee_review`\n\nBuy a trustee onboarding review. The nonrefundable fee is charged to operating cash; the completed review publishes actual activation offers for the named dispute trustee.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Dispute custody service contract. |\n| `service_id` | string | yes | Published review service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_partition_quarantined_funds`\n\nDispose the whole segregated principal into original-route return, trustee escrow and operating claim amounts. Every amount is nonnegative and their sum must equal principal. These bank-supported dispositions do not certify the customer is entitled to claim or waive disputed security.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Original incoming ID. |\n| `return_minor` | integer | yes | Amount returned to original sender, USD minor units. |\n| `escrow_minor` | integer | yes | Amount transferred to trustee account, USD minor units. |\n| `claim_minor` | integer | yes | Amount credited to operating cash, USD minor units. |\n| `trustee_id` | string | yes | Directory trustee account ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic trustee onboarding and supplier credit terms added to the original bank products."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_activate_dispute_custody",
+    "a_order_trustee_review",
+    "a_partition_quarantined_funds"
+  ]
+}

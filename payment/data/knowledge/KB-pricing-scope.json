@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "These subscription plans apply only to PLAN_BANK obligations. TARIFF_BANK obligations use the separate tariffs and rebates policies.\n\nCORE STANDARD charges 40 basis points with a 100-cent minimum per payment and no activation charge. PRO charges 10 basis points with a 100-cent minimum, costs 2000 cents to activate and becomes active after 30 minutes.\n\nSHARED charges 15 basis points with a 200-cent minimum, no activation fee, and activates after 5 minutes. These amounts use USD cents.\n\nPercentage charges round upward to the next cent. inspect_plan_charge quotes the selected invoice using the currently effective subscription.\n\nEach obligation explicitly lists accepted_payment_methods. BANK, AUTHORIZED_BANK, PLAN_BANK and CARD are distinct recipient instructions.\n\nA bank-only invoice cannot be paid as a card merchant purchase; an operator-authorized or plan-priced obligation must use its declared method.",
+  "id": "KB-pricing-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "These subscription plans apply only to PLAN_BANK obligations. TARIFF_BANK obligations use the separate tariffs and rebates policies.",
+  "title": "STANDARD, PRO and SHARED subscription terms",
+  "topic": "pricing"
+}

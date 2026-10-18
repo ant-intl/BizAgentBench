@@ -1,0 +1,23 @@
+{
+  "schema": "top-level-replace-remove-v1",
+  "base": "base_world.json",
+  "replace": {
+    "_customer_id": "CUST-C48",
+    "xp_c_receivable_disputes": {
+      "C48-LINKED-CONTRACT": {
+        "id": "C48-LINKED-CONTRACT",
+        "customer_id": "CUST-C48",
+        "name": "Invoice payment schedule",
+        "source_collection": "xp_c_negotiations",
+        "source_id": "C48-NEG",
+        "_bank": {
+          "undisputed_minor": 3300,
+          "disputed_minor": 700,
+          "debt_reference": "DEBTOR-SEP-19"
+        },
+        "claim_waiver_irreversible": true
+      }
+    }
+  },
+  "remove": []
+}

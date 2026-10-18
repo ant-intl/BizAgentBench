@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-FEE-INVOICE-CREDIT",
+  "title": "Fee invoice credit adjustment service interfaces",
+  "topic": "fee invoice correction credit notes",
+  "applicability": "PSP product accounts; Issued fee invoices, correction evidence and credit-note application.",
+  "content": "Issued fee invoices, correction evidence and credit-note application.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `issue_fee_invoice_credit_note`\n\nIssue and deliver a negative adjustment tied to one line of a delivered original fee invoice. It does not free that line’s invoice occupancy. The transport service accepts an amount within the original line, charges the public note fee, and snapshots actual buyer acceptance. The refund and line identity still determine whether the note is economically justified; another fee’s refund is not interchangeable.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `invoice_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `fee_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "issue_fee_invoice_credit_note"
+  ],
+  "business_area": "fee_billing",
+  "service": "invoice_adjustment",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

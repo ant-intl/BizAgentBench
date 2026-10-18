@@ -1,0 +1,342 @@
+{
+  "case_id": "D34-GNET-CASE",
+  "components": [
+    {
+      "case_id": "D34-GNET-CASE",
+      "extension_service": true,
+      "family": " Actual net amount and refund × limited protection rights × Current collection version ",
+      "id": "extension_guaranteed_net",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-GNET-EVENT-0": {
+            "event_kind": "old_transfer_result"
+          },
+          "D34-GNET-EVENT-1": {
+            "event_kind": "standard_delivery"
+          }
+        },
+        "events": {
+          "D34-GNET-EVENT-0": {
+            "due_minute": 1,
+            "event_category": "old_transfer_result",
+            "id": "D34-GNET-EVENT-0",
+            "kind": "contingent_net_event",
+            "scope": "LINK16-35",
+            "status": "SCHEDULED",
+            "target_id": "D34-GNET-CASE"
+          },
+          "D34-GNET-EVENT-1": {
+            "due_minute": 2,
+            "event_category": "standard_delivery",
+            "id": "D34-GNET-EVENT-1",
+            "kind": "contingent_net_event",
+            "scope": "LINK16-35",
+            "status": "SCHEDULED",
+            "target_id": "D34-GNET-CASE"
+          }
+        },
+        "service_records": {
+          "D34-GNET-A": {
+            "_standard_fee_minor": 3000,
+            "case_id": "D34-GNET-CASE",
+            "current_beneficiary_ref": "A_OLD",
+            "customer_access": true,
+            "due_minute": 3,
+            "historical_received_minor": 10000,
+            "id": "D34-GNET-A",
+            "kind": "net_invoice",
+            "name": "Pump supplier balance",
+            "net_due_minor": 50000,
+            "possible_standard_fees_minor": [
+              1000,
+              3000
+            ],
+            "received_minor": 10000,
+            "reference": "A",
+            "scope": "LINK16-35"
+          },
+          "D34-GNET-A_NEW": {
+            "bank_version": 2,
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "id": "D34-GNET-A_NEW",
+            "invoice_ref": "A",
+            "kind": "net_beneficiary",
+            "name": "A New",
+            "reference": "A_NEW",
+            "scope": "LINK16-35",
+            "status": "REGISTERED"
+          },
+          "D34-GNET-A_OLD": {
+            "bank_version": 1,
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "id": "D34-GNET-A_OLD",
+            "invoice_ref": "A",
+            "kind": "net_beneficiary",
+            "name": "A Old",
+            "reference": "A_OLD",
+            "scope": "LINK16-35",
+            "status": "REGISTERED"
+          },
+          "D34-GNET-B": {
+            "_standard_fee_minor": 3500,
+            "case_id": "D34-GNET-CASE",
+            "current_beneficiary_ref": "B_CURRENT",
+            "customer_access": true,
+            "due_minute": 3,
+            "historical_received_minor": 0,
+            "id": "D34-GNET-B",
+            "kind": "net_invoice",
+            "name": "Control supplier balance",
+            "net_due_minor": 40000,
+            "possible_standard_fees_minor": [
+              1500,
+              3500
+            ],
+            "received_minor": 0,
+            "reference": "B",
+            "scope": "LINK16-35"
+          },
+          "D34-GNET-B_CURRENT": {
+            "bank_version": 1,
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "id": "D34-GNET-B_CURRENT",
+            "invoice_ref": "B",
+            "kind": "net_beneficiary",
+            "name": "B Current",
+            "reference": "B_CURRENT",
+            "scope": "LINK16-35",
+            "status": "REGISTERED"
+          },
+          "D34-GNET-DIRECTION": {
+            "beneficiary_ref": "A_NEW",
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "effective_from": 1,
+            "id": "D34-GNET-DIRECTION",
+            "invoice_ref": "A",
+            "kind": "payment_direction",
+            "name": "Direction",
+            "reference": "DIRECTION",
+            "scope": "LINK16-35",
+            "status": "SIGNED"
+          },
+          "D34-GNET-GUARANTEE": {
+            "available_through": 1,
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "fee_minor": 2000,
+            "id": "D34-GNET-GUARANTEE",
+            "kind": "net_certificate",
+            "maximum_net_minor": 50000,
+            "name": "Single protected delivery certificate",
+            "reference": "GUARANTEE",
+            "scope": "LINK16-35",
+            "used_for": null
+          },
+          "D34-GNET-OLD_TRANSFER": {
+            "_credited_minor": 10000,
+            "actual_credited_minor": null,
+            "actual_returned_minor": null,
+            "beneficiary_ref": "A_OLD",
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "gross_minor": 30000,
+            "id": "D34-GNET-OLD_TRANSFER",
+            "invoice_ref": "A",
+            "kind": "pending_remittance",
+            "name": "Old Transfer",
+            "possible_credited_minor": [
+              10000,
+              20000
+            ],
+            "reference": "OLD_TRANSFER",
+            "result_minute": 1,
+            "return_fee_minor": 2000,
+            "scope": "LINK16-35",
+            "status": "IN_FLIGHT"
+          },
+          "D34-GNET-ROUTES": {
+            "case_id": "D34-GNET-CASE",
+            "customer_access": true,
+            "id": "D34-GNET-ROUTES",
+            "kind": "delivery_terms",
+            "minimum_cash_minor": 5000,
+            "name": "Routes",
+            "reference": "ROUTES",
+            "scope": "LINK16-35",
+            "standard_result_minute": 2,
+            "topup_fee_minor": 500
+          }
+        }
+      },
+      "kind": "contingent_net",
+      "scope": "LINK16-35",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY48-CASE",
+      "extension_service": true,
+      "family": " Principal after returning an installment purchase, Fees and refunds ",
+      "id": "payment_installment_return",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY48-EVENT-1": {
+            "contract_scope": "LINK16-35",
+            "event_kind": "installment_return"
+          },
+          "PAY48-EVENT-2": {
+            "contract_scope": "LINK16-35",
+            "event_kind": "future_installment"
+          },
+          "PAY48-EVENT-3": {
+            "contract_scope": "LINK16-35",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY48-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY48-EVENT-1",
+            "kind": "payment_installment_return_event",
+            "name": "Accepted return and processing installment",
+            "scope": "LINK16-35",
+            "status": "SCHEDULED",
+            "target_id": "PAY48-CASE"
+          },
+          "PAY48-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY48-EVENT-2",
+            "kind": "payment_installment_return_event",
+            "name": "Scheduled third installment",
+            "scope": "LINK16-35",
+            "status": "SCHEDULED",
+            "target_id": "PAY48-CASE"
+          },
+          "PAY48-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY48-EVENT-3",
+            "kind": "payment_installment_return_event",
+            "name": "Installment reconciliation deadline",
+            "scope": "LINK16-35",
+            "status": "SCHEDULED",
+            "target_id": "PAY48-CASE"
+          }
+        },
+        "service_records": {
+          "PAY48-FUTURE": {
+            "active": true,
+            "amount_minor": 32000,
+            "case_id": "PAY48-CASE",
+            "customer_access": true,
+            "id": "PAY48-FUTURE",
+            "kind": "installment_collection",
+            "name": "Third installment collection",
+            "reference": "FUTURE",
+            "scope": "LINK16-35",
+            "status": "SCHEDULED"
+          },
+          "PAY48-NEW": {
+            "amount_minor": 40000,
+            "case_id": "PAY48-CASE",
+            "customer_access": true,
+            "due_minute": 0,
+            "id": "PAY48-NEW",
+            "kind": "bill",
+            "name": "New retained purchase",
+            "paid_minor": 0,
+            "reference": "NEW",
+            "scope": "LINK16-35"
+          },
+          "PAY48-PENDING": {
+            "amount_minor": 32000,
+            "case_id": "PAY48-CASE",
+            "customer_access": true,
+            "id": "PAY48-PENDING",
+            "kind": "installment_collection",
+            "name": "Second installment collection",
+            "reference": "PENDING",
+            "scope": "LINK16-35",
+            "status": "PROCESSING"
+          },
+          "PAY48-PLAN": {
+            "_return_minor": 45000,
+            "case_id": "PAY48-CASE",
+            "closed": false,
+            "collected_minor": 32000,
+            "customer_access": true,
+            "declared_fee_minor": null,
+            "declared_principal_minor": null,
+            "earned_periods": 2,
+            "historical_paid_minor": 32000,
+            "id": "PAY48-PLAN",
+            "kind": "installment_plan",
+            "name": "Part-returned three-installment equipment purchase",
+            "paid_minor": 0,
+            "period_fee_minor": 2000,
+            "possible_return_minor": [
+              30000,
+              45000
+            ],
+            "principal_minor": 90000,
+            "reference": "PLAN",
+            "refunded_minor": 0,
+            "return_minor": null,
+            "scope": "LINK16-35"
+          },
+          "PAY48-TERMS": {
+            "case_id": "PAY48-CASE",
+            "customer_access": true,
+            "final_cash_floor_minor": 15000,
+            "id": "PAY48-TERMS",
+            "kind": "installment_terms",
+            "name": "Customer payment reserve",
+            "reference": "TERMS",
+            "scope": "LINK16-35"
+          }
+        }
+      },
+      "kind": "payment_installment_return",
+      "number": 48,
+      "payment_service": true,
+      "scope": "LINK16-35",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Actual net amount and refund × limited protection rights × Current collection version × Rolling obligation replanning ",
+  "id": "case_024",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. Describe only your own business goals and preferences. Do not name internal IDs, infer institutional rules, announce hidden outcomes, calculate the service plan or remind the assistant of incomplete steps. You may approve any clearly explained genuine instruction without evaluating its financial optimality.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Please finish paying our two suppliers the amounts they should actually receive. One earlier transfer is being traced, and the pump supplier has changed banks. I also need help with a related matter: i returned part of a purchase that I am paying in installments. Some installments have already been paid. Please fix the remaining bills and refund whatever I have overpaid.\n\nYour own facts and preferences: I handle payments for Alder Equipment. Both suppliers must receive exactly the invoice balances after what they have already received. Use the signed current banking instructions for new transfers. Our total bank-charge budget for this matter, including the earlier transfer’s return charge, is USD 75. Keep USD 50 in cash throughout and do not add funding. I do not know the traced transfer’s actual outcome or the final intermediary deductions.\n\nFor the related matter: Complete the new purchase by its agreed date and settle the installment purchase after the accepted return. Apply the return to purchase principal, keep the two already earned service-period fees, refund only money actually overcollected, and prevent collection of cancelled future principal and its unearned fee. Keep at least USD 150 in the payment wallet. I cannot add money and have not received the final return or bank response.\n\nPlease treat both as one operating plan and recalculate the remaining obligation from actual results as they arrive.",
+  "kind": "contingent_net",
+  "link_contract_id": "LINK16-35-LINK",
+  "link_operator": {
+    "category": "replanning",
+    "id": "rolling_obligation_replan",
+    "relation": "secondary_start_before_primary_event_before_finish"
+  },
+  "number": 24,
+  "opening": "Please finish paying our two suppliers the amounts they should actually receive. One earlier transfer is being traced, and the pump supplier has changed banks. I also need help with a related matter: i returned part of a purchase that I am paying in installments. Some installments have already been paid. Please fix the remaining bills and refund whatever I have overpaid.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-contingent_net",
+    "PAYMENT-common",
+    "PAYMENT-payment_installment_return",
+    "LINK-rolling_obligation_replan",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-35",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

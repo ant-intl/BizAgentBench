@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "| Marketplace or arrangement | Requirement |\n|---|---|\n| Lazada, Allegro, Walmart cross-border | Same-name collection; choose the default holder for the letter. |\n| Amazon, outside a stricter currency arrangement | The standard workflow offers default or other-holder letters. Match the holder and address required in the seller identity information. |\n| SHEIN US collection confirmation | Company name and address must match the company licence and tax records; the account holder is the company on the licence. |\n| Daraz | English-language account letter. |\n| Approved AED collection | Strict same-name holder; no custom third-party letter, including manual issuance. |\n\nOther supported platforms may offer the default or custom-holder workflow, subject to the selected currency and account restrictions. A platform offering a document-upload field does not establish that an uploaded letter has passed its review.\n\nThe account letter and a company-registry update are different records. For an unusual platform request, supply its written requirements to support.",
+  "id": "SOP-platform-letter-requirements",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "| Marketplace or arrangement | Requirement |\n|---|---|\n| Lazada, Allegro, Walmart cross-border | Same-name collection; choose the default holder for the letter. |\n| Amazon, outside a stricter currency arrangement | The standard workflow offers default or other-holder letters. Match the holder and address required in the seller identity information. |\n| SHEIN US collection confirmation | Company name and address must match the company licence and tax records; the account holder is the company on the licence. |\n| Daraz | English-language account letter. |\n| Approved AED collection | Strict same-name holder; no custom third-party letter, including manual issuance. |",
+  "source_ids": [
+    "B19",
+    "B13",
+    "B01",
+    "B02",
+    "B04"
+  ],
+  "title": "Account-letter requirements by marketplace",
+  "topic": "letters"
+}

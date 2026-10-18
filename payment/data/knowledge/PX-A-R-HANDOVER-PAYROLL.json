@@ -1,0 +1,18 @@
+{
+  "id": "PX-A-R-HANDOVER-PAYROLL",
+  "title": "Accepted old bank work and payroll continuity",
+  "topic": "Accepted old bank work and payroll continuity",
+  "applicability": "Supplier handover portfolios with an additional original payroll obligation.",
+  "content": "Revoking future old-workstation authority suppresses its queued fallback but does not cancel accepted old bank work. DRAIN preserves the existing bank instruction; CANCEL depends on the actual acknowledgement. The remaining supplier principal can change when the old bank result arrives. a_execute_handover_payroll(contract_id,allocation_id) consumes the selected desk payroll allocation, debits the original salary from operating cash and schedules employee availability after clearing_minutes. It does not discharge the supplier invoice. Waiting for a slow supplier-bank result can forfeit an earlier salary date, while consuming the finance desk limit for replacement supplier payment can leave insufficient payroll capacity. Customer dates and fee caps are in the handover portfolio; actual payroll availability is required, not just a reserved limit.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_execute_handover_payroll`\n\nExecute the original payroll obligation through a reserved successor allocation. Actual operating cash is debited and the employee receives it after the published payroll clearing interval. The used desk limit is consumed for this period.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Finance handover portfolio. |\n| `allocation_id` | string | yes | Reserved payroll capacity ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New portfolio mandates and desk capacity; preserves source bank identity, succession and original execution semantics."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_execute_handover_payroll"
+  ]
+}

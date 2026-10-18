@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Updating beneficiary details does not recall a sent payment and does not credit a pending refund. The existing bank instruction remains attached to the existing payment.\n\nEach original transfer retains its own payment status and settlement outcome. A new quote binds the beneficiary version current at quotation; execution requires that version and the corresponding approved request.\n\nAn unchanged principal does not make an old approval valid for a new bank version. Approval remains bound to the quoted bank version.",
+  "id": "KB-beneficiaries-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Updating beneficiary details does not recall a sent payment and does not credit a pending refund. The existing bank instruction remains attached to the existing payment.",
+  "title": "Existing payments and beneficiary-version changes",
+  "topic": "beneficiaries"
+}

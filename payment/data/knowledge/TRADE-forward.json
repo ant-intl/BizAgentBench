@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_forward_instruction",
+  "content": "The contract lists deliver_minor, receive_minor and margin_minor. Foreign currency amounts belong to their named wallets, not to a dollar equivalent. A pending expected transfer is unavailable until its source receipt is delivered and the credited amount is booked.\n\n`deliver` takes {}. By logical minute 5 inclusive it debits the entire dollar delivery leg, credits the full euro receiving leg and releases dollar margin to cash. Delivery is indivisible. It closes the forward as DELIVERED.\n\n`closeout` takes {}. It charges USD 150 and releases the margin without receiving the euro leg. It closes the contract as CLOSED_OUT. Neither action can be repeated or reversed. Released margin cannot fund the cash prerequisite of the same delivery before that delivery executes. Commercial currency reserves and vendor payment requirements are separate from bank eligibility.\n\nOperations are available through `propose_forward_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_forward_instruction`\n\nDeliverable forward settlement and closeout. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-forward",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Deliverable forwards and margin settlement",
+  "topic": "forward",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_forward_instruction"
+  ]
+}

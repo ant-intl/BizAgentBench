@@ -1,0 +1,23 @@
+{
+  "id": "PX-A-D33",
+  "title": "Causal bank corrections and supplier payables",
+  "topic": "Causal bank corrections and supplier payables",
+  "applicability": "Causal bank corrections and supplier payables business records.",
+  "content": "xp_a_supplier_payables starts at zero because the original invoices were paid. Bank RETURNED corrections reopen that invoice debt; old PROCESSING deliveries cannot override causally later settlement. a_post_bank_receipt_to_payables is a legacy posting interface, so it also accepts older processing receipts; the caller must use the highest actual bank_sequence for that invoice. It creates real signed xp_a_payable_postings and replaces open_minor. Original replacement a_pay_business_invoice now needs enough reopened payable and subtracts its actual payment from that same debt ledger. A bank projection alone does not change payables. A delivered supplier statement identifies each requested invoice, its actual residual debt and its causal receipt reference. A correct repost before payment recovers a mistaken preliminary ledger projection.\na_post_bank_receipt_to_payables: Post a bank receipt into the supplier payable ledger. RETURNED or PROCESSING reopens the invoice amount; SETTLED clears it. This legacy posting interface accepts any receipt for the invoice, so causal sequence and corrections must govern selection. Reposting before payment can correct an earlier projection. Parameters: invoice_id — Original invoice ID., receipt_id — Actual bank receipt ID.\na_deliver_supplier_payable_statement: Deliver the actual supplier payable balances and their source references. The document does not alter debt or cash and cannot convert a stale processing notice into a new obligation. Parameters: payable_ids — Distinct supplier payable records to include.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_deliver_supplier_payable_statement`\n\nDeliver the actual supplier payable balances and their source references. The document does not alter debt or cash and cannot convert a stale processing notice into a new obligation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `payable_ids` | array | yes | Distinct supplier payable records to include. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_post_bank_receipt_to_payables`\n\nPost a bank receipt into the supplier payable ledger. RETURNED or PROCESSING reopens the invoice amount; SETTLED clears it. This legacy posting interface accepts any receipt for the invoice, so causal sequence and corrections must govern selection. Reposting before payment can correct an earlier projection.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `invoice_id` | string | yes | Original invoice ID. |\n| `receipt_id` | string | yes | Actual bank receipt ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": [
+      "No SOP claims: fully synthetic protocol."
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_deliver_supplier_payable_statement",
+    "a_post_bank_receipt_to_payables"
+  ]
+}

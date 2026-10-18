@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "covenants records funded reserve obligations. A COLLECTION_RETENTION covenant is already active.\n\nA ROUTING_CONTINUITY covenant becomes active when a routing cutover is submitted. Accounts can require cutover_minimum_minor before submission.\n\nTransferring principal below an ACTIVE covenant minimum before its until_minute is system-permitted, but immediately marks BREACHED and charges a nonrefundable 2000-cent fee. Restoring the balance later does not reverse the breach.\n\nAt until_minute, an unbreached covenant is RELEASED. Posted cash and fee-wallet cash are separate.",
+  "id": "KB-liquidity-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "covenants records funded reserve obligations. A COLLECTION_RETENTION covenant is already active.",
+  "title": "Collection retention and routing reserve covenants",
+  "topic": "liquidity"
+}

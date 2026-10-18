@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "When the entity record indicates translation_required, a current assessed translation submission must accompany the registry submission. It can be supplied with the initial review, or support can respond to a CERTIFIED_TRANSLATION_REQUIRED result with a new complete proposal.\n\nA specific previous review does not automatically acquire documents uploaded afterward. Restored eligibility is indicated by ACTIVE status and the accepted letter reference.\n\nThe user can possess a correct translation without having uploaded it; the portal receipt, not the conversation alone, establishes its submission.",
+  "id": "KB-platform-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "When the entity record indicates translation_required, a current assessed translation submission must accompany the registry submission. It can be supplied with the initial review, or support can respond to a CERTIFIED_TRANSLATION_REQUIRED result with a new complete proposal.",
+  "title": "Translation requirements and review results",
+  "topic": "platform"
+}

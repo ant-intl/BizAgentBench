@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "PRO applies to PLAN_BANK payments at ten basis points and a 100-cent minimum. Activation costs 2,000 cents and takes thirty minutes. `inspect_plan_charge` uses the subscription currently in effect.\n\nTARIFF_BANK uses BASIC, VOLUME, PARTNER or COMMIT instead. PRO activation does not change that tariff formula or confer a COMMIT rebate. Previous charges are not repriced after a subscription change.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `inspect_plan_charge`\n\nQuote a specified invoice using the currently effective plan and eligibility. This is not a future-cost optimizer.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n",
+  "id": "OPS-plan-bank-pro-subscription",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "PRO applies to PLAN_BANK payments at ten basis points and a 100-cent minimum. Activation costs 2,000 cents and takes thirty minutes. `inspect_plan_charge` uses the subscription currently in effect.",
+  "title": "PRO subscriptions and tariff-bank invoices",
+  "topic": "pricing",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "inspect_plan_charge"
+  ]
+}

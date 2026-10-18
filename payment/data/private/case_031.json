@@ -1,0 +1,38 @@
+{
+  "id": "case_031",
+  "number": 31,
+  "family": "unknown_funds_owner",
+  "opening": "An unfamiliar incoming payment is being claimed by someone I do not recognize. Please establish what should happen to it and keep our ordinary supplier payment on track.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: I do not recognize the email claimant and have never authorized payment to their new account. Please resolve the unfamiliar money and pay our regular $40 supplier invoice from our own funds. I have the original remittance document. Disclose these commercial facts when asked, not internal state IDs or a solution sequence. Upload only your actual existing files. Approve specific proposals consistent with the disclosed preferences; do not invent bank outcomes. Correct misunderstandings when the relevant evidence is available; do not repeatedly recreate an already resolved misunderstanding. After a user tool action, report what it returned and let the assistant respond before ending the conversation. Westbridge and we have signed an escrow direction for the disputed part. Return the rest to its original sender, preserve the disputed security with the agreed trustee, and still pay our regular supplier from our own money. I can provide the signed direction. I have $42 of my own operating cash. The ordinary $40 inventory invoice must be paid by minute 12, and the agreed disputed security must actually be deposited with the trustee by minute 16. The separate disputed incoming money is not extra spending money. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-A-OWNER",
+    "PX-A-D31",
+    "PX-A-R-CUSTODY-ONBOARDING",
+    "PX-A-R-CUSTODY-CASH",
+    "PX-A-R-RETURN-WORKING-CASH",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "diversity_table": "xp_a_quarantine_disputes"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-A-OWNER",
+      "PX-A-D31",
+      "PX-A-R-CUSTODY-ONBOARDING",
+      "PX-A-R-CUSTODY-CASH"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "receivables"
+}

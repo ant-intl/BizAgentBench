@@ -1,0 +1,17 @@
+{
+  "id": "PAY-V9-CONTROLS",
+  "title": "Payment instruction versions, controls, funding restrictions and value availability",
+  "topic": "beneficiary version screening authorization quote government reference source restriction value date",
+  "applicability": "Payments with versioned instructions, reviews or restricted funding",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "request_payment_prerequisite_review"
+  ],
+  "content": "The current beneficiary instruction, government reference, charge election, authorization and screening result are independent versioned records. An older recorded value can remain technically submittable while no longer satisfying the business obligation. A review request is pending until its completion event. Funding sources retain their stated purpose, value-availability time, reserve and safeguarding restrictions; moving money back later does not erase an impermissible use. request_payment_prerequisite_review schedules the recorded review. Allocation does not waive a restriction, and a payment must be planned against actual value availability and all remaining goals.",
+  "provenance": {
+    "source": "Payment v9 synthetic control specification"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "record_case_outcome is a final submission and must be called exactly once after verifying the agreed endpoint. Allowed labels are COMPLETED, PENDING_EXTERNAL_ACTION, CUSTOMER_DECLINED and ESCALATED; a label alone does not establish completion.\n\nOrdinary waiting for a scheduled bank or platform update is not final external handoff. The service prevents later business writes after final submission.\n\nRejected operations and harmless read-only checks are not inherently violations. Queries do not advance logical time.\n\nThe user wait_for_update advances to the next scheduled event, with its actual outcome, without real-world waiting.",
+  "id": "KB-protocol-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "record_case_outcome is a final submission and must be called exactly once after verifying the agreed endpoint. Allowed labels are COMPLETED, PENDING_EXTERNAL_ACTION, CUSTOMER_DECLINED and ESCALATED; a label alone does not establish completion.",
+  "title": "Final case submission and scheduled updates",
+  "topic": "protocol"
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A cash_discount_eligible invoice may claim a 10000-cent reduction through propose_invoice_cash_discount while no credit has been allocated and no later than minute 30. The full reduced amount must settle by minute 40.\n\nApplying commercial credit to that invoice later cancels the concession and restores the unreduced face amount. A concession does not reduce bank-return losses or the 500-cent charge for each new bank remittance.\n\nAn invoice without a cash concession can accept its listed commercial credit normally.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_invoice_cash_discount`\n\nRegister an invoice cash-settlement concession if its recorded terms remain eligible.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-credits-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A cash_discount_eligible invoice may claim a 10000-cent reduction through propose_invoice_cash_discount while no credit has been allocated and no later than minute 30. The full reduced amount must settle by minute 40.",
+  "title": "Cash concessions and commercial-credit exclusions",
+  "topic": "credits",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_invoice_cash_discount"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "## Permitted uses\n\n| Property | Term |\n|---|---|\n| Source | MARKET_B |\n| USD-to-CNY conversion | Permitted |\n| Beneficiary segments | GENERAL, LICENSED |\n| Charge per nonzero allocation | 100 USD cents |\n\nA source payment may combine permitted lots from one account. Add the charges for each nonzero source allocation. Current holds and available principal are checked at execution. See `KB-source_routes-scope` and `KB-source_routes-effects`.",
+  "id": "SOURCE-MARKET_B",
+  "provenance": {
+    "classification": "existing_synthetic_source_schedule"
+  },
+  "quoted_text": "## Permitted uses",
+  "title": "MARKET_B source permissions and charge",
+  "topic": "source_routes"
+}

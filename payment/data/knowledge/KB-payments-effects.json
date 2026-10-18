@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A successful new payment does not automatically cancel, replace or deduplicate older transfers with the same obligation reference. Fees in fee_balance_minor and principal in balance_minor are different balances and must be reported separately.\n\nA PROCESSING payment is not a settled contribution to the recipient obligation. A CNY withdrawal has its own recipient, currency and final settlement receipt.",
+  "id": "KB-payments-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A successful new payment does not automatically cancel, replace or deduplicate older transfers with the same obligation reference. Fees in fee_balance_minor and principal in balance_minor are different balances and must be reported separately.",
+  "title": "Multiple payments against one commercial obligation",
+  "topic": "payments"
+}

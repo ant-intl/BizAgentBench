@@ -1,0 +1,20 @@
+{
+  "id": "PX-C-R48",
+  "title": "Partial debtor collections and nonrecourse residual assignments",
+  "topic": "partial debtor collections and nonrecourse residual assignments",
+  "applicability": "Current customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "The debtor confirmation states the undisputed face, while bank collection may arrive in two tranches. The first available collection notice publishes its actual amount and the remaining undisputed balance. The original disputed portion remains separate and cannot be included in a residual assignment. assign_residual_receivable transfers only the uncollected undisputed remainder without recourse; the factor advances face minus its posted fee. Holding the claim waits until its later cash date. Factoring changes both cash and ownership of the residual claim, so it cannot later be collected again. Restructuring fees and factoring discounts share the customer finance-fee budget. Choice of the flexible payment deadline must remain feasible after the first actual collection and factor costs.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `assign_residual_receivable`\n\nAssign only the actual remaining undisputed debtor tranche to the selected nonrecourse factor. The factor fee is deducted from its cash advance and the transferred claim can no longer be collected.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `tranche_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `factor_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Additional commercial rights, funding and due dates."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "assign_residual_receivable"
+  ]
+}

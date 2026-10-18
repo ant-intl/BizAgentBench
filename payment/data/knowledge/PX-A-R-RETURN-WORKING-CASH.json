@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-R-RETURN-WORKING-CASH",
+  "title": "Accidental-transfer refunds and ordinary supply cash",
+  "topic": "Accidental-transfer refunds and ordinary supply cash",
+  "applicability": "Buyer duplicate-transfer handling with a concurrent original supply obligation.",
+  "content": "a_return_duplicate_transfer retains its original-route and immutable economic-identity behavior. Bank acceptance of the refund does not certify that enough available cash remains for a separate supply invoice. a_pay_business_invoice pays that original invoice using the same operating balance. Actual refund and invoice timestamps, together with value release, determine whether both commercial dates can be met. Waiting for maturity costs no acceleration fee but can miss a customer commitment; a faster supported value service may consume a protected end balance. Fee limits count every acceleration charge, including repeated service attempts that actually debit cash. The customer may choose either order of the two genuine outgoing payments when the whole plan remains feasible.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_pay_business_invoice`\n\nSend an irrevocable bank payment against an invoice. The bank checks cash, recipient availability and account-scoped idempotency, not whether the customer's commercial obligation permits another payment.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `invoice_id` | string | yes | Invoice record ID. |\n| `recipient_id` | string | yes | Bank recipient record ID. |\n| `amount_minor` | integer | yes | Positive integer amount in the invoice currency's minor units. |\n| `payment_key` | string | yes | Account-scoped immutable business idempotency key. |\n| `purpose` | string | no | Truthful commercial purpose label. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_return_duplicate_transfer`\n\nReturn a real credited bank transfer to the original sender. Identical notification amounts do not establish that a bank transfer was economically duplicated.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `bank_transaction_id` | string | yes | Actual bank transaction ID to return. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_pay_business_invoice",
+    "a_return_duplicate_transfer"
+  ]
+}

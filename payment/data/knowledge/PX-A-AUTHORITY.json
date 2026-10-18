@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-AUTHORITY",
+  "title": "Invoice-scoped payment authority and capacity",
+  "topic": "Signed invoice payment authority",
+  "applicability": "Invoices, historical shop payouts and enterprise orders with authority_scope_id",
+  "content": "Synthetic extension. A verified bank holder is not itself a mandate to collect every invoice. authority_scopes identify the commercial subjects, beneficiary mappings and required principal. authority_instructions publish requested capacity, price and application deadline. a_submit_invoice_authority needs the genuine payment_instruction file targeted to scope_id; its nonrefundable fee buys a fixed bank review, not a guaranteed requested limit. The later a_authority_decision publishes approved_limit_minor, invoice_ids, beneficiary_ids, version and validity. a_reserve_invoice_authority locks a positive part of remaining approved capacity and charges the scope reservation fee. Reservations expire or can be canceled without refunding fees. a_bind_invoice_instruction binds a current invoice reservation to an approved beneficiary. Original invoice payments and shop payouts consume that binding capacity at execution, requiring the exact subject, beneficiary, current version and sufficient remaining amount. The payment records the authorization version actually used. Different legitimate instructions have different limits, scope and costs; repeated fees remain part of the customer allowance. Reads, uploads or final messages do not create authority.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_bind_invoice_instruction`\n\nBind a held invoice-capacity reservation to an approved beneficiary instruction. This establishes the beneficiary mapping used by subsequent bank payments, but does not itself pay an invoice. The approved invoice scope and recipient mapping are preserved in the binding.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | Held INVOICE authority reservation ID. |\n| `beneficiary_id` | string | yes | Approved beneficiary identifier; a shop ID or recipient instruction ID depending on the scope. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_invoice_authority`\n\nReserve part of an approved authorization for its named commercial scope. The reservation locks that authorization capacity until used, canceled or expired; its fee is nonrefundable. A bank-legal reservation can leave too little capacity for another obligation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `authorization_id` | string | yes | Approved authorization ID. |\n| `amount_minor` | integer | yes | Positive authorized-capacity amount in USD minor units. |\n| `allocation` | string | yes | INVOICE or DISCRETIONARY use of the reserved capacity. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_submit_invoice_authority`\n\nSubmit a genuine signed payment instruction for bank approval of its scope, version and limit. The stated nonrefundable submission fee is charged. A later bank decision can narrow the requested capacity or beneficiary scope.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `scope_id` | string | yes | Commercial payment-authority scope ID. |\n| `instruction_id` | string | yes | Signed instruction candidate ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All authority scope, capacity, fees and review mechanics are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_bind_invoice_instruction",
+    "a_reserve_invoice_authority",
+    "a_submit_invoice_authority"
+  ]
+}

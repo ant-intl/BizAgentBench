@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_platform_reverification submits a letter and current registry submission for a PAUSED or NEEDS_INFORMATION store. The review returns after 20 minutes.\n\nThe platform compares the letter account, identity version and legal name with the store current entity, and checks the required collection currency. Review submission is not restored collection eligibility.\n\nA failed comparison produces NEEDS_INFORMATION with a factual reason rather than silently changing the bank or platform data.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_platform_reverification`\n\nSubmit a bank letter and current registry evidence for platform account review. An optional translation submission may be supplied.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `store_id` | string | yes | The platform store. |\n| `letter_id` | string | yes | The issued account letter submitted for this review. |\n| `submission_id` | string | yes | The actual uploaded evidence submission. |\n| `translation_submission_id` | string | no | Assessed translation evidence where the entity requires it. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-platform-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_platform_reverification submits a letter and current registry submission for a PAUSED or NEEDS_INFORMATION store. The review returns after 20 minutes.",
+  "title": "Submitting a platform reverification",
+  "topic": "platform",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_platform_reverification"
+  ]
+}

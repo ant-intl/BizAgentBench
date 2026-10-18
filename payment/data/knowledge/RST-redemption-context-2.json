@@ -1,0 +1,12 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "A note without a credit_redemptions record is already governed by its usual eligibility and remaining-face fields. No redemption election is required. Conditional notes retain their eligibility sets after becoming usable; early redemption does not widen them.\n\nDetailed local effects and operation names: `RST-redemption`.",
+  "id": "RST-redemption-context-2",
+  "provenance": {
+    "classification": "functional_scope_distractor",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "A note without a credit_redemptions record is already governed by its usual eligibility and remaining-face fields. No redemption election is required. Conditional notes retain their eligibility sets after becoming usable; early redemption does not widen them.",
+  "title": "Ordinary credit notes without settlement triggers",
+  "topic": "redemption"
+}

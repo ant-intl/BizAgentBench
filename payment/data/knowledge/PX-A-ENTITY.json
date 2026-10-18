@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-ENTITY",
+  "title": "Recipient holder and contractual identity",
+  "topic": "Same-name corporate suppliers",
+  "applicability": "Same-name corporate suppliers",
+  "content": "Synthetic verification: bank-enabled accounts can belong to different legal persons despite identical trade names. EXACT and ALIAS_CONFIRMED results establish a published holder_registration; REVIEW_PENDING and CLOSE_MATCH do not. a_confirm_recipient_entity requires actual entity_proof and equality with the invoice contract_registration. A bank holder result may arrive later as a fixed event. A pending review for an unused alternative account need not delay payment or closure using an already confirmed holder. An ordinary bank transfer remains technically possible to another valid account, but name similarity or a director relationship alone does not discharge the corporate obligation. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_confirm_recipient_entity`\n\nRecord entity verification using actual uploaded contractual identity evidence and the bank's published holder/alias result. Verification does not itself pay the recipient.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `recipient_id` | string | yes | Candidate recipient bank account ID. |\n| `invoice_id` | string | yes | Commercial invoice ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_confirm_recipient_entity"
+  ]
+}

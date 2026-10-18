@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An account posted balance, a fund lot remaining amount, a card hold and a withdrawal reservation are different records. inspect_resource_occupancy reports account availability plus actual holds and reservations.\n\nA customer statement that a transaction failed does not remove a hold. A cancellation request may release a draft immediately, while a merchant void or bank refund takes a separate event.\n\nWhere a payment uses a source lot, both lot availability and account availability must support the principal at execution.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `inspect_resource_occupancy`\n\nInspect current holds and reservations on an account; the result does not forecast a complete payment plan.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n",
+  "id": "KB-occupancy-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "An account posted balance, a fund lot remaining amount, a card hold and a withdrawal reservation are different records. inspect_resource_occupancy reports account availability plus actual holds and reservations.",
+  "title": "Posted balances, holds and reservations",
+  "topic": "occupancy",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "inspect_resource_occupancy"
+  ]
+}

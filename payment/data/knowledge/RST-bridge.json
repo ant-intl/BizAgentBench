@@ -1,0 +1,20 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "A bridge facility is a temporary cash advance. Available offers are listed in `bridge_facilities`; an offer states eligible borrowing accounts, maximum principal, interest and collateral source. `propose_bridge_draw` credits one eligible account immediately. It does not move any receipt, quota or reservation and does not increase the company's own funds. A facility cannot have two outstanding draws.\n\nA collateral-backed draw encumbers the stated source for the life of the agreement. A later repayment does not erase the fact that collateral was used. A bridge without a collateral source is unsecured. Facilities have independent limits; their presence does not authorize using protected customer assets.\n\n`propose_bridge_repayment` debits the whole outstanding principal from the borrowing account. Existing reservations remain deductible from that account's available cash. The facility closes only when repayment succeeds. Repayment must be arranged using actual account balances; a final credit posting is not itself a repayment instruction. These facilities are distinct from external funding or a permanent balance transfer.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_bridge_draw`\n\nDraw a receivable bridge under the selected facility; collateral and repayment remain live.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `facility_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_bridge_repayment`\n\nRepay the entire outstanding bridge from its borrowing account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `facility_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-bridge",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "A bridge facility is a temporary cash advance. Available offers are listed in `bridge_facilities`; an offer states eligible borrowing accounts, maximum principal, interest and collateral source. `propose_bridge_draw` credits one eligible account immediately. It does not move any receipt, quota or reservation and does not increase the company's own funds. A facility cannot have two outstanding draws.",
+  "title": "Receivable bridges and borrowing accounts",
+  "topic": "bridge",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_bridge_draw",
+    "propose_bridge_repayment"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-DELEGATE-PROJECTIONS",
+  "title": "Minimum transaction projections and immutable disclosure scope",
+  "topic": "minimum transaction projections and immutable disclosure scope",
+  "applicability": "Synthetic current-customer incident or delegation records with reasoning_version b-reasoning-1.",
+  "content": "A transaction report can be delivered as selected catalog columns with deliver_projected_delegate_transactions. The grant review lists permitted columns; the customer can ask for a smaller subset. Amount, status and a supplier identity column provide an invoice-level transaction report; either supplier_alias or supplier_name can identify the supplier when requested. A bank account or internal margin is additional disclosure and requires both grant permission and customer need. The ordinary unprojected transactions transport sends every catalog column. Transport can also carry a caller-supplied stale revision or mismatched company; bank transport success does not create authorization. Every irreversible disclosure must match its company, effective revision, current field permission, audience session and minimum requested columns at that time. Later correction cannot retract an earlier overdisclosure.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `deliver_projected_delegate_transactions`\n\nPermanently deliver selected transaction columns for one company, stamped with an explicit authority_revision. This is a transport operation and permits any catalog columns; company, effective grant revision, column authorization and customer minimum disclosure remain the caller responsibility. A later grant change does not authorize earlier disclosure.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `grant_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `business_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `column_names` | array | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `authority_revision` | integer | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Network finality, emergency replacement and revision-bound disclosure contracts."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "deliver_projected_delegate_transactions"
+  ]
+}

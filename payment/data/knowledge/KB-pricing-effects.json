@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "SHARED requires the linked account settled external receipts less settled refunds over 90 days to be at least 15000000 cents. Internal transfers and pending items do not count.\n\nA scheduled refund changes eligibility when it settles. An ineligible SHARED account is charged STANDARD rates at execution.\n\nPlan activation fees are not refunded on another switch and historical payments are not repriced. An obligation earliest_minute is enforced; its deadline is a customer requirement.",
+  "id": "KB-pricing-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "SHARED requires the linked account settled external receipts less settled refunds over 90 days to be at least 15000000 cents. Internal transfers and pending items do not count.",
+  "title": "SHARED eligibility and treatment of prior charges",
+  "topic": "pricing"
+}

@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Apply for the JPY account corresponding to Seller Central or Vendor. When binding the account, use the holder name displayed in its details: `World First Japan K.K.`. Do not substitute the merchant's own company name for this field.\n\nChoose the ordinary checking-account type where the platform asks for account type. Select CedarPay as the financial institution where that selection is offered; an English interface without browser translation may help locate it.\n\nFor a rejected account letter, compare the letter's holder information and address with the information required by the platform. Obtain the specific rejection reason if the information already matches. Before changing a collection binding, notify Amazon and follow its instructions.",
+  "id": "SOP-amazon-japan",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Apply for the JPY account corresponding to Seller Central or Vendor. When binding the account, use the holder name displayed in its details: `World First Japan K.K.`. Do not substitute the merchant's own company name for this field.",
+  "source_ids": [
+    "B04",
+    "B13"
+  ],
+  "title": "Amazon Japan collection-account binding",
+  "topic": "accounts"
+}

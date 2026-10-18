@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_escrow_instruction",
+  "content": "An escrow deposit covers merchandise units at their invoice unit price. Accepted units create supplier entitlement; missing units create a buyer refund. The retention percentage applies to accepted merchandise value and is rounded down, leaving the remainder payable to the supplier. Retention remains in escrow until a separate warranty release, which is outside this case.\n\n`record_acceptance` data is {units: {shipment_reference: integer_units}}. A source receipt must be READY and quantities must be within the original delivery. The bank records the submitted acceptance declaration; it does not replace the signed warehouse acceptance with its own commercial judgment.\n\n`distribute` data is {beneficiary: \"supplier\" or \"buyer\", amount_minor: integer}. It immediately pays from the escrow wallet. Both beneficiaries are authorized counterparties. Distribution cannot be recalled through this service; a customer's approval of an amount does not change the underlying sale or retention clause.\n\nOperations are available through `propose_escrow_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_escrow_instruction`\n\nEscrow acceptance, retention and distribution. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-escrow",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Escrow acceptance and warranty balances",
+  "topic": "escrow",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_escrow_instruction"
+  ]
+}

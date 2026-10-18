@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "For CNY recipients, use Chinese characters, parentheses, a middle dot, a full stop, hyphens or dashes as appropriate to the registered account name. Special-purpose account restrictions remain applicable to names identifying capital, reserves, foreign debt, funds, banks, payment services, factoring, investment management or dedicated accounts.\n\nFor foreign-currency recipients, use the bank-confirmed English name. The name limit is 70 characters. Do not use angle brackets, ampersands, single quotes or double quotes. Replace an ampersand with `and` or the supported `+` form after confirming the receiving details. Do not use consecutive spaces; Chinese names should not contain inserted spaces. Obtain the bank's English spelling for names containing accented Latin characters.\n\nThe recipient-bank name limit is 35 characters. The Portal can identify a bank from its IBAN or SWIFT details; check the returned name. Use a recognised bank abbreviation where appropriate, such as HSBC, ICBC, ABC, BOC or CCB. For an unresolved length or character problem, request manual review rather than inventing an unrelated bank name.\n\nIf the bank cannot be found, search a shorter distinctive part of the name and check whether it has been renamed. The supported Ginza rural-bank entry is used for its relevant branches.",
+  "id": "SOP-recipient-name-format",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "For CNY recipients, use Chinese characters, parentheses, a middle dot, a full stop, hyphens or dashes as appropriate to the registered account name. Special-purpose account restrictions remain applicable to names identifying capital, reserves, foreign debt, funds, banks, payment services, factoring, investment management or dedicated accounts.",
+  "source_ids": [
+    "B15",
+    "B16"
+  ],
+  "title": "Recipient names, characters and bank-name length",
+  "topic": "beneficiaries"
+}

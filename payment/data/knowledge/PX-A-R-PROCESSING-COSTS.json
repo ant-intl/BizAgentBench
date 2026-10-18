@@ -1,0 +1,11 @@
+{
+  "id": "PX-A-R-PROCESSING-COSTS",
+  "title": "Commercial processing fees and shared bank windows",
+  "topic": "Commercial processing fees and shared bank windows",
+  "applicability": "Customer-contracted bank application windows or original file availability services.",
+  "content": "Bank processing service fees are additional to trace, amendment, allocation, file sender and rejection fees. Each published fee budget applies to its stated scope; a broader customer total includes all named charges. The bank may accept a paid window that is too slow for one customer obligation, or an express option that spends the cash required by another. Booking before execution does not make the underlying monetary instruction correct. Subject identities remain original receivables or original payment-file obligations.",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New bank capacity, fee and value-date terms; original principal and immutable payment identities remain original product semantics."
+  }
+}

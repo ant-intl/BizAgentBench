@@ -1,0 +1,20 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "Some accounts carry a `tariff_continuity_balance` and a fixed `continuity_surcharge_minor`. On a payment using a shared relationship tariff, falling below that balance adds the stated surcharge unless a qualifying margin guarantee covers the principal. This is an account-specific continuation condition, additional to relationship eligibility, corridor floors and application fees.\n\n`propose_fee_guarantee` accepts CASH or MARGIN. Both place a refundable deposit in a separate guarantee record by debiting the fee wallet, not principal cash. CASH deposits are administrative security and do not replace the continuing principal-balance condition. MARGIN coverage equals one thousand times the deposit in the same USD minor unit. A held MARGIN guarantee that covers the whole principal binds to the payment at submission. Small guarantees cannot be combined automatically.\n\nThe deposit is not a fee, but it reduces the fee wallet available to pay application and payment charges while held. `propose_fee_guarantee_release` returns an unbound deposit on cancellation, or a bound deposit after its payment settles. A held CASH deposit can bind to a payment without waiving any continuity surcharge. Actual charges include relationship applications, transfer fees and any continuity surcharge. Fee estimates exclude refundable deposits; a case whose customer requires deposits returned remains incomplete while a deposit is held.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_fee_guarantee`\n\nDeposit a refundable tariff guarantee under CASH or MARGIN coverage.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `coverage` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_fee_guarantee_release`\n\nCancel an unbound deposit or release it after its remittance settles.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `guarantee_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-fee-guarantee",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "Some accounts carry a `tariff_continuity_balance` and a fixed `continuity_surcharge_minor`. On a payment using a shared relationship tariff, falling below that balance adds the stated surcharge unless a qualifying margin guarantee covers the principal. This is an account-specific continuation condition, additional to relationship eligibility, corridor floors and application fees.",
+  "title": "Relationship tariff continuity and refundable security",
+  "topic": "fee-guarantee",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_fee_guarantee",
+    "propose_fee_guarantee_release"
+  ]
+}

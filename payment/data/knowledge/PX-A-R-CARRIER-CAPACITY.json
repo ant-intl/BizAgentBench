@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-R-CARRIER-CAPACITY",
+  "title": "Purchase carrier capacity and booking rights",
+  "topic": "Purchase carrier capacity and booking rights",
+  "applicability": "Merchant dispatch, transport allotment and promotion fulfilment contracts registered for this customer.",
+  "content": "Carrier timetable entries list provisional commercial capacity. a_request_carrier_allotment(contract_id) obtains the actual allotment and its booking deadline from the carriers. The published result replaces provisional capacity. Services marked conditional_reservations accept bookings before that result up to quoted capacity; these consume real provisional allotment and charge booking_fee_minor immediately. If the carrier confirms fewer units, bookings retain only the confirmed quantity in booking-ID order, with a declined or reduced booking published; booking fees are not returned. Some conditional booking windows close before the carrier result. The confirmed remainder can be covered by a different carrier if its time, price and capacity permit. Waiting for all facts may forfeit an earlier commercial booking window. a_reserve_goods_dispatch(contract_id,service_id,subject_ids,quantity) reserves real capacity for original purchase items. A single subject may have multiple units; a grouped subject list carries one unit of each item. Reservations jointly consume the same service capacity. Published capacity_floor is guaranteed; quoted capacity above the floor is conditional. A customer may commit within that known uncertainty or choose a firm later service with a different price and arrival time. a_cancel_goods_dispatch(reservation_id) returns unused capacity before dispatch, without changing the merchandise payment. Another customer or purchase contract cannot borrow the capacity.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_cancel_goods_dispatch`\n\nCancel an unexecuted carrier booking, returning its actual reserved capacity. Delivered goods and already charged carriage cannot be recalled through this operation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | Unexecuted carrier booking ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_request_carrier_allotment`\n\nRequest the actual carrier allotment for this existing purchase. Published timetable entries are provisional until carriers return their commercial capacity and departure window. This does not buy goods or reserve transport.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Purchase delivery contract ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_goods_dispatch`\n\nReserve published carrier capacity for the listed paid-or-planned goods. One item can have multiple units; a grouped order list carries one unit of each item. A booking does not buy those goods. A booking may be cancelled before dispatch; the capacity then returns to the same carrier.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Purchase delivery contract ID. |\n| `service_id` | string | yes | Confirmed carrier service ID. |\n| `subject_ids` | array | yes | Original order IDs or the stock invoice ID. |\n| `quantity` | integer | yes | Total original units carried by this booking. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "boundary": "New synthetic commercial capacity, price and fulfilment rules; not a claim about a source institution."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_cancel_goods_dispatch",
+    "a_request_carrier_allotment",
+    "a_reserve_goods_dispatch"
+  ]
+}

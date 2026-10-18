@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Supported authorization covers Shopee cross-border stores and supported Indonesian, Malaysian, Philippine and Thai local stores. Authorized data covers the preceding 180 days and normally processes within about 24 hours.\n\n## “Already authorized” or another-account binding\n\nA seller ID entered against another account and an active authorization against another account are different associations. Check which association exists.\n\nIf the cross-border seller-ID field is held on the old account, remove that association there. Where the old interface offers no editing entry, authorize the old account and then cancel that authorization to clear the association. Complete authorization on the intended new account afterwards.\n\nFor an active old authorization, cancel it before authorizing the same store on the new account. If the problem persists, provide the exact error screenshot and the affected seller and account references to support.",
+  "id": "SOP-shopee-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Supported authorization covers Shopee cross-border stores and supported Indonesian, Malaysian, Philippine and Thai local stores. Authorized data covers the preceding 180 days and normally processes within about 24 hours.",
+  "source_ids": [
+    "A11"
+  ],
+  "title": "Shopee authorization and existing seller bindings",
+  "topic": "quota"
+}

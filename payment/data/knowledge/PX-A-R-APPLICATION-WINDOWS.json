@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-R-APPLICATION-WINDOWS",
+  "title": "Beneficiary application capacity and value dates",
+  "topic": "Beneficiary application capacity and value dates",
+  "applicability": "Customer-contracted bank application windows or original file availability services.",
+  "content": "a_reserve_receivable_application_window(contract_id,receivable_id,service_id) buys one slot for an original receivable. remaining_slots is shared across the listed commercial statement, not granted separately to every invoice. The fee is charged on reservation and is nonrefundable. Replacing a RESERVED booking returns its previous capacity and charges the new fee, but cannot erase earlier spending. a_apply_beneficiary_invoice commits allocated original value to that reservation. The value remains in bank clearing until the actual application event at submission plus service delay_minutes. Only the event consumes the held value and creates the commercial application and incoming available cash. Processing cannot be cancelled by assigning the same value elsewhere. Compare application timing against the customer deadlines, using the actual bank trace and allocation response times.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_apply_beneficiary_invoice`\n\nApply allocated beneficiary value to a published receivable. This consumes value once and creates the merchant or receiving-bank application receipt; a settled sending-bank payment alone is not this commercial receipt.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `settlement_id` | string | yes | Reviewed settlement case ID. |\n| `commercial_account` | string | yes | Beneficiary account from which allocated value will be applied. |\n| `receivable_id` | string | yes | Published beneficiary receivable ID. |\n| `amount_minor` | integer | yes | Positive receivable amount in minor units. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_receivable_application_window`\n\nReserve capacity in a published beneficiary application service for one original receivable. The booking fee is nonrefundable. Unexecuted reservations may be replaced; the consumed capacity is returned but its fee is not.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Commercial application window contract. |\n| `receivable_id` | string | yes | Original receivable ID. |\n| `service_id` | string | yes | Bank processing service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New bank capacity, fee and value-date terms; original principal and immutable payment identities remain original product semantics."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_apply_beneficiary_invoice",
+    "a_reserve_receivable_application_window"
+  ]
+}

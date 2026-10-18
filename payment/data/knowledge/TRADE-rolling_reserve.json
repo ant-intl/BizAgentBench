@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_reserve_cohort_instruction",
+  "content": "Each cohort has its own held balance, maturity and remaining chargeback exposure. `refund` takes {record_id, amount_minor}; it pays the buyer from that original cohort and reduces its held balance. `withdraw` takes the same fields and reduces held principal, crediting the wallet net of any advance fee.\n\nA withdrawal before cohort maturity costs USD 20 per withdrawal; on or after maturity it has no fee. The gross withdrawal must exceed the advance fee. Cohort principal cannot be overdrawn. The platform permits an authorized merchant to withdraw held principal, but the merchant remains responsible for retaining funds assigned to open chargebacks. Exposure in one cohort cannot be offset merely by retaining another cohort's principal.\n\nA refund does not reset maturity or return an earlier advance charge. Maturity notices do not automatically issue cash. Vendor obligations have their own actual payment deadlines.\n\nOperations are available through `propose_reserve_cohort_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_reserve_cohort_instruction`\n\nMarketplace reserve cohorts and refunds. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-rolling_reserve",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Reserve cohorts, advances and buyer returns",
+  "topic": "rolling_reserve",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_reserve_cohort_instruction"
+  ]
+}

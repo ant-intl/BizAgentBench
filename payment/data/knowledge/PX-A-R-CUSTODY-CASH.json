@@ -1,0 +1,11 @@
+{
+  "id": "PX-A-R-CUSTODY-CASH",
+  "title": "Operating payments and segregated dispute balances",
+  "topic": "Operating payments and segregated dispute balances",
+  "applicability": "Custody fees and ordinary invoices paid by the same operating account.",
+  "content": "The disputed incoming principal remains in its separate quarantine account. Only original-route return, the signed trustee deposit and a separately authorized owner claim may dispose that principal. Review and activation fees compete with ordinary supplier invoices for existing operating cash. A fee quote or bank acceptance says nothing about the ability to fund the other payment or its customer deadline. The trustee activation event does not itself pay a supplier. A slow review can require faster activation; buying both fastest services can cost more than the remaining operating balance permits. Customer deadlines are recorded in the custody contract.",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic trustee onboarding and supplier credit terms added to the original bank products."
+  }
+}

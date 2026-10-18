@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "`marketplace_adjustments` records platform notices against specific orders, stores and accounts. A notice includes the platform's current signed classification, amount and version. BUYER_REFUND reduces eligible sales; it is booked as SALES_RETURN. A platform service charge is booked as SERVICE_FEE and does not reverse sales principal. Similar debit descriptions do not make the two categories interchangeable.\n\n`propose_marketplace_adjustment` books the selected classification once. A SALES_RETURN debits quota on the notified account immediately. It leaves the original credited-order identity in the ledger, so re-importing that order remains a duplicate. SERVICE_FEE records a non-sales charge without adding or removing quota. An incorrect classification can execute and leave an incorrect business ledger; the interface does not determine the customer's accounting intent.\n\nA quota debit does not remove cash already present in the account. Subsequent valid new sales can contribute quota under the normal authorization, age and deduplication rules. The debit notice and the credited-order record should remain separately traceable. Adjustments are not instructions to modify another store with a similar seller name.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_marketplace_adjustment`\n\nBook a notified marketplace debit as SALES_RETURN or SERVICE_FEE.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `adjustment_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `classification` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-adjustments",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "`marketplace_adjustments` records platform notices against specific orders, stores and accounts. A notice includes the platform's current signed classification, amount and version. BUYER_REFUND reduces eligible sales; it is booked as SALES_RETURN. A platform service charge is booked as SERVICE_FEE and does not reverse sales principal. Similar debit descriptions do not make the two categories interchangeable.",
+  "title": "Marketplace debit notices and sales quota",
+  "topic": "adjustments",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_marketplace_adjustment"
+  ]
+}

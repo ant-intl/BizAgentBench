@@ -1,0 +1,328 @@
+{
+  "case_id": "D34-CA-CASE",
+  "components": [
+    {
+      "case_id": "D34-CA-CASE",
+      "extension_service": true,
+      "family": " Actual acceptance × Assignment of receivables × Documents against payment right ",
+      "id": "extension_collection_acceptance",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-CA-EVENT-0": {
+            "event_kind": "acceptance"
+          },
+          "D34-CA-EVENT-1": {
+            "event_kind": "early_receipt"
+          },
+          "D34-CA-EVENT-2": {
+            "event_kind": "final_receipt"
+          }
+        },
+        "events": {
+          "D34-CA-EVENT-0": {
+            "due_minute": 1,
+            "event_category": "acceptance",
+            "id": "D34-CA-EVENT-0",
+            "kind": "actual_collections_event",
+            "scope": "LINK16-23",
+            "status": "SCHEDULED",
+            "target_id": "D34-CA-CASE"
+          },
+          "D34-CA-EVENT-1": {
+            "due_minute": 2,
+            "event_category": "early_receipt",
+            "id": "D34-CA-EVENT-1",
+            "kind": "actual_collections_event",
+            "scope": "LINK16-23",
+            "status": "SCHEDULED",
+            "target_id": "D34-CA-CASE"
+          },
+          "D34-CA-EVENT-2": {
+            "due_minute": 3,
+            "event_category": "final_receipt",
+            "id": "D34-CA-EVENT-2",
+            "kind": "actual_collections_event",
+            "scope": "LINK16-23",
+            "status": "SCHEDULED",
+            "target_id": "D34-CA-CASE"
+          }
+        },
+        "service_records": {
+          "D34-CA-A": {
+            "_accepted_minor": 80000,
+            "acceptance_minute": 1,
+            "accepted_minor": null,
+            "assigned_outstanding_minor": 0,
+            "buyer": "Bay Industrial",
+            "case_id": "D34-CA-CASE",
+            "customer_access": true,
+            "delivered_units": 0,
+            "delivery_due_minute": 3,
+            "discount_fee_minor": 2000,
+            "discount_used": false,
+            "discounted_minor": 0,
+            "document_mode": "DA",
+            "face_minor": 100000,
+            "historical_received_minor": 20000,
+            "id": "D34-CA-A",
+            "kind": "collection_bill",
+            "name": "September pumps",
+            "possible_accepted_minor": [
+              80000,
+              100000
+            ],
+            "received_minor": 20000,
+            "reference": "A",
+            "returned_units": 0,
+            "scope": "LINK16-23",
+            "status": "PRESENTED",
+            "unit_price_minor": 20000
+          },
+          "D34-CA-AGENCY": {
+            "amount_minor": 10000,
+            "case_id": "D34-CA-CASE",
+            "customer_access": true,
+            "due_minute": 3,
+            "id": "D34-CA-AGENCY",
+            "kind": "payable",
+            "name": "Export shipping agency",
+            "paid_minor": 0,
+            "reference": "AGENCY",
+            "scope": "LINK16-23"
+          },
+          "D34-CA-B": {
+            "_accepted_minor": 50000,
+            "acceptance_minute": 1,
+            "accepted_minor": null,
+            "assigned_outstanding_minor": 0,
+            "buyer": "Bay Industrial",
+            "case_id": "D34-CA-CASE",
+            "customer_access": true,
+            "delivered_units": 0,
+            "delivery_due_minute": 3,
+            "discount_fee_minor": 1000,
+            "discount_used": false,
+            "discounted_minor": 0,
+            "document_mode": "DP",
+            "face_minor": 70000,
+            "historical_received_minor": 10000,
+            "id": "D34-CA-B",
+            "kind": "collection_bill",
+            "name": "September control units",
+            "possible_accepted_minor": [
+              50000,
+              70000
+            ],
+            "received_minor": 10000,
+            "reference": "B",
+            "returned_units": 0,
+            "scope": "LINK16-23",
+            "status": "PRESENTED",
+            "unit_price_minor": 10000
+          },
+          "D34-CA-DOC_A": {
+            "bill_ref": "A",
+            "case_id": "D34-CA-CASE",
+            "custody": "BANK",
+            "customer_access": true,
+            "id": "D34-CA-DOC_A",
+            "kind": "original_collection_title",
+            "name": "Doc A",
+            "reference": "DOC_A",
+            "scope": "LINK16-23"
+          },
+          "D34-CA-DOC_B": {
+            "bill_ref": "B",
+            "case_id": "D34-CA-CASE",
+            "custody": "BANK",
+            "customer_access": true,
+            "id": "D34-CA-DOC_B",
+            "kind": "original_collection_title",
+            "name": "Doc B",
+            "reference": "DOC_B",
+            "scope": "LINK16-23"
+          },
+          "D34-CA-OLD_A": {
+            "bill_ref": "A",
+            "case_id": "D34-CA-CASE",
+            "customer_access": true,
+            "id": "D34-CA-OLD_A",
+            "indicated_accepted_minor": 100000,
+            "kind": "bank_advice",
+            "name": "Old A",
+            "period": "2026-08",
+            "reference": "OLD_A",
+            "scope": "LINK16-23",
+            "status": "HISTORICAL_COPY"
+          },
+          "D34-CA-SUPPLIER": {
+            "amount_minor": 70000,
+            "case_id": "D34-CA-CASE",
+            "customer_access": true,
+            "due_minute": 1,
+            "id": "D34-CA-SUPPLIER",
+            "kind": "payable",
+            "name": "Assembly equipment supplier",
+            "paid_minor": 0,
+            "reference": "SUPPLIER",
+            "scope": "LINK16-23"
+          },
+          "D34-CA-TERMS": {
+            "case_id": "D34-CA-CASE",
+            "customer_access": true,
+            "early_receipts": {
+              "A": 20000,
+              "B": 30000
+            },
+            "final_receipt_minute": 3,
+            "id": "D34-CA-TERMS",
+            "kind": "collection_cash_terms",
+            "minimum_cash_minor": 5000,
+            "name": "Terms",
+            "receipt_minute": 2,
+            "reference": "TERMS",
+            "scope": "LINK16-23"
+          }
+        }
+      },
+      "kind": "actual_collections",
+      "scope": "LINK16-23",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY43-CASE",
+      "extension_service": true,
+      "family": " Partial refund after multi-merchant split ",
+      "id": "payment_marketplace_split_refund",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY43-EVENT-1": {
+            "contract_scope": "LINK16-23",
+            "event_kind": "returns"
+          },
+          "PAY43-EVENT-3": {
+            "contract_scope": "LINK16-23",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY43-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY43-EVENT-1",
+            "kind": "payment_marketplace_split_refund_event",
+            "name": "Warehouse acceptance and original refund status",
+            "scope": "LINK16-23",
+            "status": "SCHEDULED",
+            "target_id": "PAY43-CASE"
+          },
+          "PAY43-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY43-EVENT-3",
+            "kind": "payment_marketplace_split_refund_event",
+            "name": "Buyer refund and final merchant settlement deadline",
+            "scope": "LINK16-23",
+            "status": "SCHEDULED",
+            "target_id": "PAY43-CASE"
+          }
+        },
+        "service_records": {
+          "PAY43-A": {
+            "_return_minor": 20000,
+            "accepted_return_minor": null,
+            "additional_paid_minor": 0,
+            "case_id": "PAY43-CASE",
+            "commission_bp": 2000,
+            "customer_access": true,
+            "gross_minor": 60000,
+            "id": "PAY43-A",
+            "kind": "seller_allocation",
+            "name": "Alder seller equipment",
+            "payout_due_minute": 3,
+            "possible_return_minor": [
+              20000,
+              40000
+            ],
+            "reference": "A",
+            "reversed_minor": 0,
+            "scope": "LINK16-23",
+            "transferred_minor": 48000
+          },
+          "PAY43-B": {
+            "accepted_return_minor": 0,
+            "additional_paid_minor": 0,
+            "case_id": "PAY43-CASE",
+            "commission_bp": 1000,
+            "customer_access": true,
+            "gross_minor": 40000,
+            "id": "PAY43-B",
+            "kind": "seller_allocation",
+            "name": "Birch seller accessories",
+            "payout_due_minute": 0,
+            "reference": "B",
+            "reversed_minor": 0,
+            "scope": "LINK16-23",
+            "transferred_minor": 20000
+          },
+          "PAY43-REFUND": {
+            "_outcome": "SETTLED",
+            "case_id": "PAY43-CASE",
+            "customer_access": true,
+            "due_minute": 3,
+            "id": "PAY43-REFUND",
+            "kind": "buyer_refund",
+            "manual_paid_minor": 0,
+            "name": "Buyer partial refund already submitted",
+            "paid_minor": 0,
+            "possible_outcomes": [
+              "SETTLED",
+              "FAILED"
+            ],
+            "reference": "REFUND",
+            "scope": "LINK16-23",
+            "status": "PROCESSING",
+            "submitted_minor": 5000
+          }
+        }
+      },
+      "kind": "payment_marketplace_split_refund",
+      "number": 43,
+      "payment_service": true,
+      "scope": "LINK16-23",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Actual acceptance × Assignment of receivables × Documents against payment right × Wrap up after actual receipt. ",
+  "id": "case_017",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. Describe only your own business goals and preferences. Do not name internal IDs, infer institutional rules, announce hidden outcomes, calculate the service plan or remind the assistant of incomplete steps. You may approve any clearly explained genuine instruction without evaluating its financial optimality.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Please handle our two export collections, pay the assembly supplier and shipping agency, and send the buyers their documents. The collecting bank is still confirming what was accepted. I also need help with a related matter: a customer returned part of a combined order after we paid the sellers. Please refund the returned items and finish the sellers’ remaining payouts.\n\nYour own facts and preferences: I manage Bay Export Services. Pay the agreed supplier and shipping charges by their recorded due dates, without extra funding. Complete the shipments and return documents for goods the buyer does not accept. Keep USD 50 available throughout. Minimize the bill principal financed; among equal-principal plans use the lower bank charge. I can spend at most USD 20 on collection financing. I do not know the bank acceptance or actual buyer payment amounts.\n\nFor the related matter: Return exactly the accepted returned-item price to the buyer and settle each seller’s remaining entitlement, including the accessories seller’s earlier payout deadline. Only the seller of a returned item may bear its reversal. Retain the platform’s correctly adjusted commission. There is no extra funding and the pending buyer refund must not be duplicated. I do not yet have the warehouse decision or the bank result.\n\nOur linked processing schedule puts the final instruction for the second matter after the first matter's actual bank credit. I cannot see the bank posting time.",
+  "kind": "actual_collections",
+  "link_contract_id": "LINK16-23-LINK",
+  "link_operator": {
+    "category": "obligation",
+    "id": "refund_recalculation_gate",
+    "relation": "primary_credit_before_secondary_last_execution"
+  },
+  "number": 17,
+  "opening": "Please handle our two export collections, pay the assembly supplier and shipping agency, and send the buyers their documents. The collecting bank is still confirming what was accepted. I also need help with a related matter: a customer returned part of a combined order after we paid the sellers. Please refund the returned items and finish the sellers’ remaining payouts.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-actual_collections",
+    "PAYMENT-common",
+    "PAYMENT-payment_marketplace_split_refund",
+    "LINK-refund_recalculation_gate",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-23",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

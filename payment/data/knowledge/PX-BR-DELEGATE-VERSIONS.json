@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-DELEGATE-VERSIONS",
+  "title": "Company mandates and effective delegation revisions",
+  "topic": "company mandates and effective delegation revisions",
+  "applicability": "Synthetic current-customer incident or delegation records with reasoning_version b-reasoning-1.",
+  "content": "A grant has a company-specific authority_revision. A pending application requests an identified revision, and the actual review publishes the effective revision and permitted transaction columns. Officer countersignature is a separate amount mandate bound to a revision and company. A current channel signs the grant revision effective when requested; an application channel issues a delayed conditional mandate for the submitted application revision. A stale acknowledgement can be renewed through a current channel after review. Only a mandate for the same effective company grant revision authorizes payment, even when the bank technically accepts an active pay permission and amount limit. Historical payment snapshots remain authoritative after temporary permission expiry.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Network finality, emergency replacement and revision-bound disclosure contracts."
+    }
+  ]
+}

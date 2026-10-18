@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-BILLING-FINAL-BASIS",
+  "title": "Posted fee rebates and changing final billing bases",
+  "topic": "billing fee investigation one shot capacity final tier rebate deadline",
+  "applicability": "Enrolled billing review schedules",
+  "content": "A pending billing-volume record is provisional. A finalized transaction refund can lower eligible volume and change the retrospective rate tier; published b_billing_volume events update the actual original bill. A correction uses the currently posted formula and is irreversible once accepted. Existing posted rebates occupy the same line’s recovery entitlement after actual reference tracing and allocation. A legal partial claim can permanently leave an unclaimed amount; a claim supported only by the provisional higher tier can exceed the final correct refund. Investigation capacity does not determine the correct monetary claim.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Finite review file capacity and deadlines; not a statutory appeal limit."
+    }
+  ]
+}

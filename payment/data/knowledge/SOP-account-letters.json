@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "An account letter provides the collection-account details requested by a marketplace. Select the actual collection account first, then the permitted holder option.\n\n1. Open Store Management and select Details for the relevant store.\n2. Select the collection account and open View account details.\n3. Select Issue account letter.\n4. Choose Default account holder name or the supported Other account holder name option.\n5. Complete the holder type, name and address fields. Choose whether to include a statement; the statement period can cover up to one year.\n6. Accept the authorization declaration and select Apply to download.\n\nFor a letter without a statement, select Do not include. Same-name collection accounts and marketplace collection accounts have separate selection entries. That account-type distinction is separate from the choice of holder printed on the letter.\n\nIf a marketplace rejects a letter, compare its holder information and address with the platform's requirements. When the details match, obtain the specific rejection reason. A custom-content request should include the platform's message so support can review the requested format.",
+  "id": "SOP-account-letters",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "An account letter provides the collection-account details requested by a marketplace. Select the actual collection account first, then the permitted holder option.",
+  "source_ids": [
+    "B19",
+    "C03",
+    "B01",
+    "B02",
+    "B04"
+  ],
+  "title": "Obtaining a Portal account letter or statement",
+  "topic": "letters"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "case_040",
+  "number": 40,
+  "family": "minimum_disclosure",
+  "opening": "A buyer needs sealed proof of one payment now and final proof after bank confirmation. Please provide enough evidence while protecting our other banking information.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: You are the business customer. Start with the opening symptom only. When asked about intent, explain the customer_preferences brief naturally without internal IDs. List and upload only existing files for the requested purpose; never invent bank outcomes. Approve only the concrete proposed action after the assistant explains its commercial effect and charges. Corrections are finite: point out a conflict with your stated scope at most twice. After every user tool, report what you did and let the assistant respond before ending. Never reveal the evaluator or a solution sequence. Your own business facts, available before any file lookup: Buyer One needs an initial sealed proof of our single $9 payment by minute 1 to keep the shipment open, then the final proof of the recipient’s actual credited amount when the bank confirms it. Buyer One must have read that final proof by minute 4. They may see the payer, payee, original amount, payment date, bank reference, fee and net credited amount for this transfer only. Do not reveal account balances, other customers or other transactions, including source attachments. Only Buyer One may use the temporary link; close it after their read receipt. Keep all verification, sealing, document and revision fees within $0.50. These are your preferences to explain naturally when the assistant asks about scope or proposes a conflicting action; they are not bank rules or an operation sequence. Do not approve actions outside this stated scope. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-B-40",
+    "PX-BR-PROOF-VERSIONS",
+    "PX-BR-PROOF-LINEAGE",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "budget_minor": 50,
+    "account_id": "B-40-CASH",
+    "request": "PROOF-BUYER",
+    "allowed_fields": [
+      "payer",
+      "payee",
+      "amount",
+      "date",
+      "bank_reference",
+      "net_received",
+      "transfer_fee"
+    ],
+    "allowed_transactions": [
+      "WIRE-ONE"
+    ],
+    "enhancement_record_id": "B-040-BUSINESS-EXTENSION"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-B-40",
+      "PX-BR-PROOF-VERSIONS",
+      "PX-BR-PROOF-LINEAGE"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "accounts"
+}

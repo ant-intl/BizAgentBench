@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "CAPITAL can pay a LICENSED USD beneficiary and carries a 200-cent charge per nonzero source allocation. It cannot be converted. The recipient's recorded segment determines eligibility; its display name or foreign bank address does not define the segment.\n\nOther permitted source lots from the same account may be included in the remittance. Each allocation must remain available at execution and its own source charge is included in the total fee.",
+  "id": "OPS-capital-licensed-remittance",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "CAPITAL can pay a LICENSED USD beneficiary and carries a 200-cent charge per nonzero source allocation. It cannot be converted. The recipient's recorded segment determines eligibility; its display name or foreign bank address does not define the segment.",
+  "title": "CAPITAL receipts paid to a licensed beneficiary",
+  "topic": "source_routes"
+}

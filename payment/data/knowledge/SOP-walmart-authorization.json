@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "This authorization service covers US cross-border Walmart stores registered to mainland Chinese or Hong Kong companies. The CedarPay and Walmart registration entities must match. It does not cover every Walmart local or regional store.\n\n## Connecting a store\n\nUse the correct store credentials and the buyer-facing store link. Where one Walmart login covers US, Canadian and Mexican stores, obtain separate US credentials from Walmart for the US authorization. Compare the registered region and the company's registration identifier when checking entity matching.\n\nA store record created in the Portal is not sufficient to receive funds if the required authorization has failed. Resolve the authorization before using that collection account.\n\n## Conversion quota\n\nQuota processing normally takes two business days after both authorization and receipt of the payment. Eligible records have status `Delivered`; `Shipped` records do not yet contribute. If the relevant conditions are met but quota is still missing after that period, provide the sales records and collection-account details to support.\n\nAuthorization can be cancelled from Store Management → Details → Authorization Management. Cancelling an authorization is separate from closing the bank collection account.",
+  "id": "SOP-walmart-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "This authorization service covers US cross-border Walmart stores registered to mainland Chinese or Hong Kong companies. The CedarPay and Walmart registration entities must match. It does not cover every Walmart local or regional store.",
+  "source_ids": [
+    "A01"
+  ],
+  "title": "Walmart cross-border store authorization",
+  "topic": "quota"
+}

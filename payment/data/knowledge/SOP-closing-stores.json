@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Only the primary operator can close a supported e-commerce store. Developer collection accounts, same-name collection accounts and the specified non-bank World First Asia Limited arrangement do not use this self-service closure entry.\n\nOpen Store Management → Actions → Close store. Review the affected accounts and choose a reason. Closure applies to all collection accounts under that store; the accounts cannot be selected individually in this flow.\n\nThe Portal rejects closure while the store has pending incoming payments, a balance, a migration in progress or an outstanding USD loan. Complete the required identity check before confirming.\n\nClosure cancels authorization and stops further quota acquisition through that connection. The closed collection accounts cannot be restored or receive new payments. Remove their platform bindings before closure.\n\nClosing the entire CedarPay customer account is a separate request. Provide the reason and complete the account-cancellation flow if the customer still wants closure. That account also cannot be reopened after cancellation. Retaining an ordinary unused customer account does not itself create an idle-account charge.",
+  "id": "SOP-closing-stores",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Only the primary operator can close a supported e-commerce store. Developer collection accounts, same-name collection accounts and the specified non-bank World First Asia Limited arrangement do not use this self-service closure entry.",
+  "source_ids": [
+    "B20",
+    "C09"
+  ],
+  "title": "Permanently closing a store's collection accounts",
+  "topic": "accounts"
+}

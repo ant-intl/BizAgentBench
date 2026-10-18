@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "`card_limits` records a company's fixed daily capacity pool. Each card has its own daily allocation and may have a confirmed later merchant commitment. Daily capacity is distinct from account cash and per-transaction limits. `propose_card_limit_transfer` moves a positive amount between two cards in the same pool without changing the company total or moving any cash.\n\nFor a linked purchasing card, used daily capacity includes held and captured amounts on its eligible funding accounts and new purchases made on that card. A void request does not release this capacity; an actual void does. A capture changes a hold into spent capacity and therefore does not by itself release its total daily usage. Per-transaction and available-cash checks remain in force.\n\nTransferring capacity away from another card is allowed even when it has a future merchant commitment. At the scheduled commitment time, the merchant succeeds only if that card retains at least its committed amount. A failed commitment is not repaired by restoring capacity later. Confirmed commitments are in the card-limit records and their dates in `events`. A low current balance or lack of a live authorization is not proof that a card's daily capacity is unused for the remainder of the day.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_card_limit_transfer`\n\nReallocate daily purchase capacity between cards in one company pool.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `source_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `destination_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-card-limits",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "`card_limits` records a company's fixed daily capacity pool. Each card has its own daily allocation and may have a confirmed later merchant commitment. Daily capacity is distinct from account cash and per-transaction limits. `propose_card_limit_transfer` moves a positive amount between two cards in the same pool without changing the company total or moving any cash.",
+  "title": "Shared daily card capacity and merchant commitments",
+  "topic": "card-limits",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_card_limit_transfer"
+  ]
+}

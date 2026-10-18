@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-RETRY",
+  "title": "Uncertain execution and business idempotency",
+  "topic": "Timed-out payment intents",
+  "applicability": "Timed-out payment intents",
+  "content": "Synthetic network: bank_status UNKNOWN is not rejection. A fixed a_bank_execution event publishes whether the original request was accepted and its bank reference. The original account-scoped key deduplicates pending or settled execution; a fresh key creates another economic payment. a_abandon_timeout_screen dismisses UI only and cannot cancel bank execution. Accepted pending requests do not reserve account cash. If execution finds insufficient cash, an unavailable recipient, or a conflicting original-key payment, the event publishes SETTLEMENT_FAILED with bank_failure_reason and no new debit; it does not remain pending. After NOT_ACCEPTED or SETTLEMENT_FAILED either a correct original-key resubmission or a new request can pay once the execution constraint is resolved; after SETTLED no new economic payment is needed. Inspect intent, payments and journal together. All bank payments are irrevocable. a_resubmit_payment_intent(intent_id, payment_key) returns the existing attempt for the original key while bank status is UNKNOWN, ACCEPTED or SETTLED. Following NOT_ACCEPTED it can create a payment; any fresh key creates a separate economic payment. a_pay_business_invoice permits an ordinary transfer but cannot prove that the uncertain original failed. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_abandon_timeout_screen`\n\nDismiss a timed-out payment from the user interface. This changes only the screen state; a bank request already sent can still settle.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `intent_id` | string | yes | Timed-out intent ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_resubmit_payment_intent`\n\nResubmit an uncertain payment with a business key. Reusing its original key returns the existing attempt. A fresh key creates a distinct irrevocable payment, even when another key later settles the same invoice.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `intent_id` | string | yes | Uncertain business payment intent ID. |\n| `payment_key` | string | yes | Original or new account-scoped business key. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_abandon_timeout_screen",
+    "a_resubmit_payment_intent"
+  ]
+}

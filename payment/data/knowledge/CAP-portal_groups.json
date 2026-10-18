@@ -1,0 +1,12 @@
+{
+  "applicability": "Accounts with a published operational coverage agreement. Contract edition 4.2.0.",
+  "content": "The OAK-LICENSES operational agreement uses licensed child-account seats. Its covered activities include Five-seat capacity expansion license, Existing regional child-license renewal, Existing wholesale child-license renewal. These institution-approved commitments are listed under this agreement in the operational ledger. A limit shown for one activity does not enlarge the shared institutional pool. The ledger records compatible sources and any differing coverage multipliers.\n\nThe normal groups product rules continue to determine identity, settlement, monetary balances and business results. Operational coverage is consumed only by the linked operation or its standing execution event. Coverage does not pay an invoice or replace that operation. The two standing instructions represent continuation of previously accepted business, not additional cash transfers charged to the current account.\n\nThe institution review date and the standing execution times appear in the published records. Follow the shared operational coverage contract for version changes and cancellation rights. Tools `propose_capacity_reservation` and `propose_capacity_release` manage these reservations; their requests require the ordinary bound customer approval.",
+  "id": "CAP-portal_groups",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic shared-capacity mechanism; not a verbatim source SOP rule."
+  },
+  "quoted_text": "The OAK-LICENSES operational agreement uses licensed child-account seats. Its covered activities include Five-seat capacity expansion license, Existing regional child-license renewal, Existing wholesale child-license renewal. These institution-approved commitments are listed under this agreement in the operational ledger. A limit shown for one activity does not enlarge the shared institutional pool. The ledger records compatible sources and any differing coverage multipliers.",
+  "title": "OAK-LICENSES operational agreement",
+  "topic": "shared-capacity"
+}

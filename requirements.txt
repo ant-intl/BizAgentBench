@@ -1,0 +1,4 @@
+-e ./third_party/tau2-bench
+httpx[socks]>=0.24
+jsonschema>=4.20
+markdown-it-py>=3,<5

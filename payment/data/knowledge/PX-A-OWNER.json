@@ -1,0 +1,24 @@
+{
+  "id": "PX-A-OWNER",
+  "title": "Unknown-funds ownership and original-route return",
+  "topic": "Quarantined or recalled incoming payments",
+  "applicability": "Quarantined or recalled incoming payments",
+  "content": "Source-derived: investigate unknown funds; unsupported receipts are returned along their original route; initiated return cannot be canceled. Synthetic extension: a_investigate_incoming_owner requires origin_proof. A fixed bank decision gives allowed_dispositions and decision_version. a_dispose_incoming_balance requires the exact current version and an investigation or claim, then disposes of principal once. CLAIM credits cash; RETURN_ORIGIN records original-route return from quarantine. a_submit_receipt_claim requires contract_proof and records RETAIN or CONSENT_RETURN without deciding a parallel recall. Independent payments to a substitute claimant account use the customer's own funds and do not dispose of quarantined principal. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_dispose_incoming_balance`\n\nReturn quarantined funds along their original bank route or claim funds supported by a published ownership decision. Funds cannot be sent to a claimant's substitute account through this tool.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Incoming payment ID. |\n| `disposition` | string | yes | RETURN_ORIGIN or CLAIM. |\n| `decision_version` | integer | yes | Exact currently published bank decision version. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_investigate_incoming_owner`\n\nRegister an ownership investigation using an original remittance proof. Knowing an amount or sending an email does not establish ownership. The bank result is an independent environment event.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Quarantined incoming payment ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_submit_receipt_claim`\n\nRegister a claim while a sender recall is under review. Submission is not an ownership decision and does not cancel the parallel recall.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Incoming payment involved in a recall. |\n| `position` | string | yes | RETAIN or CONSENT_RETURN. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "unknown-funds-handling.sop.md",
+      "fund-return-request.sop.md"
+    ],
+    "source_nodes_and_rows": "unknown N1-N3 row1050; return N5-N8 rows906,911,920,953; escrow semantics synthetic"
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_dispose_incoming_balance",
+    "a_investigate_incoming_owner",
+    "a_submit_receipt_claim"
+  ]
+}

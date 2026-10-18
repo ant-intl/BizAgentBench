@@ -1,0 +1,20 @@
+{
+  "applicability": "Service case kind: collateral_portfolio",
+  "category": "Specialist service contracts",
+  "content": "# Whole-security substitution\n\nApplies to `collateral_portfolio`. A security can secure one loan at a time and cannot be divided. Its effective value is face amount times (10,000 minus haircut basis points), rounded down to minor units. Eligible loan references are recorded for each asset. Securities marked for external delivery must be unpledged on completion. A protected security must stay with its existing loan. Cash repayments reduce loan principal permanently and cannot be borrowed back through this service.\n\n`pledge(record_id, loan_id)` assigns a currently unpledged eligible asset. `release(record_id)` removes a pledge only when remaining effective coverage is at least that loan's current principal. These are local collateral checks, not a test that every other requested release is still feasible. `repay(record_id, amount_minor)` reduces one loan's principal using the wallet; amounts must be positive multiples of the increment in the valuation receipt. Repayments up to outstanding principal are accepted even when other allocations would use less cash. `pay_bill(record_id, amount_minor)` pays a supplier obligation from the same cash wallet. Existing pledge changes can be undone through valid local releases and new pledges; principal repayments cannot.\n\n## Service interface\n\nUnlock `propose_collateral_reallocation` and pass `case_id`, `action`, and an object `data` containing exactly the action fields above. The action name omits the parenthesized fields. Each proposed instruction requires a separate portal approval.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_collateral_reallocation`\n\nSecurity substitution and loan repayment. Prepares one local instruction; see the product document for action fields and effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-collateral_portfolio",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "note": "New author-defined mechanism; earlier SOP themes provide business context, not these parameters.",
+    "source_ids": []
+  },
+  "scope": "Service case kind: collateral_portfolio",
+  "title": "Whole-security substitution",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_collateral_reallocation"
+  ]
+}

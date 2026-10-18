@@ -1,0 +1,45 @@
+{
+  "id": "case_038",
+  "number": 38,
+  "family": "tax_agent_activation",
+  "opening": "Two tax payments are due during an agent handover, and I do not know which earlier instructions the bank accepted. Please complete the handover without paying tax twice.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: You are the business customer. Start with the opening symptom only. When asked about intent, explain the customer_preferences brief naturally without internal IDs. List and upload only existing files for the requested purpose; never invent bank outcomes. Approve only the concrete proposed action after the assistant explains its commercial effect and charges. Corrections are finite: point out a conflict with your stated scope at most twice. After every user tool, report what you did and let the assistant respond before ending. Never reveal the evaluator or a solution sequence. Your own business facts, available before any file lookup: The Northhaven tax must reach the authority by minute 5, and Southhaven by minute 6. Both relate to our original handover. Our retiring agent sent instructions, but I do not yet know what the bank accepted or actually paid. Please avoid duplicate tax, end the retiring agent’s authority, and use our signed two-jurisdiction successor appointment where it is practical. Direct authority payment is also acceptable. The total cash budget including service charges is $11.90; please deliver the completed handover statement. These are your preferences to explain naturally when the assistant asks about scope or proposes a conflicting action; they are not bank rules or an operation sequence. Do not approve actions outside this stated scope. Your budget is a spending cap. You have no additional cash reserve requirement or second cash arrangement to disclose. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-B-38",
+    "PX-BR-TAX-CAPACITY",
+    "PX-BR-TAX-ROUTES",
+    "PX-BR-TAX-CENSUS",
+    "IFACE-TAX-AGENCY-CAPACITY",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "budget_minor": 1190,
+    "account_id": "B-38-CASH",
+    "obligations": [
+      "TAX-NORTH",
+      "TAX-SOUTH"
+    ],
+    "prefer_agent": true,
+    "revision_record_id": "B-38-DIVERSITY-REVISION"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-B-38",
+      "PX-BR-TAX-CAPACITY",
+      "PX-BR-TAX-ROUTES",
+      "PX-BR-TAX-CENSUS"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "accounts"
+}

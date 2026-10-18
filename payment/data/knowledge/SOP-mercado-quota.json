@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Local and cross-border stores have separate record-acquisition arrangements. For supported local stores, including Mexico, authorization covers eligible records from the preceding 1–180 days; manual records can cover up to one year. Local record processing normally takes one business day. Cross-border authorized records normally process within about 24 hours.\n\n## Cross-border seller ID mismatch\n\nUnder the service update dated 2025-07-30, a cross-border seller ID that does not match the URL may require a new collection VA for authorization. The old RA may remain the collection destination. The authorization account and the account receiving the platform payment are distinct in this arrangement.\n\n## Multiple markets\n\nThe rule recorded on 2024-08-23 requires the records for each market to be covered. Authorization for one market does not cover other markets merely because they share a seller ID. Supply the other market records manually where applicable.\n\nComplete store information if the manual upload entry is missing. Upload the complete relevant record set. If complete eligible records still leave a shortfall, provide them and the account details to support.",
+  "id": "SOP-mercado-quota",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Local and cross-border stores have separate record-acquisition arrangements. For supported local stores, including Mexico, authorization covers eligible records from the preceding 1–180 days; manual records can cover up to one year. Local record processing normally takes one business day. Cross-border authorized records normally process within about 24 hours.",
+  "source_ids": [
+    "A12"
+  ],
+  "title": "Mercado Libre local and cross-border records",
+  "topic": "quota"
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_account_retirement permits closure of an OPEN account with zero posted USD and CNY balances. This system check does not guarantee that no money is still in transit.\n\nAlready transmitted incoming funds retain transmitted_account_id even if the platform subsequently changes its route. Arrival at a closed transmitted account produces RETURNED status.\n\nOnce closed, the CORE retirement operation cannot reopen the account. A balance transfer moves posted balance only; it neither reroutes in-transit transfers nor migrates platform ownership.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_account_retirement`\n\nClose an open zero-balance account. Closure does not redirect already transmitted funds.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-accounts-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_account_retirement permits closure of an OPEN account with zero posted USD and CNY balances. This system check does not guarantee that no money is still in transit.",
+  "title": "Closing a CORE collection account and subsequent receipts",
+  "topic": "accounts",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_account_retirement"
+  ]
+}

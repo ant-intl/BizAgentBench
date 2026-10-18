@@ -1,0 +1,17 @@
+{
+  "applicability": "Only daily_windows service cases; synthetic contract edition 8.0.",
+  "content": "# Payment window limits\n\nScope: the daily_windows service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nA payment consumes both the sender's shared window allowance and the specific recipient's allowance. Each allowance has one independently recorded reset boundary for this service session. Usage before its reset does not count after it. Prior usage in bank correspondence belongs to the initial window. Sender capacity is shared by all recipients; recipient capacity is not shared. Logical marker events identify the reset boundaries. A payment exactly at a boundary uses the new allowance. Invoice deadlines are inclusive and independent of allowance resets.\n\n`pay` takes {record_id, amount_minor}. It debits wallet cash immediately and consumes both current allowances. Partial payments are supported. Exceeding either allowance is rejected atomically. A payment may be accepted after its commercial deadline, but acceptance does not waive the deadline.\n\nService interface: `propose_daily_windows_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_daily_windows_instruction`\n\nPayment window limits. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-daily_windows",
+  "scope": "daily_windows",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Payment window limits",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_daily_windows_instruction"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "The Portal offers application categories for supported marketplaces, independent-site builders and payment gateways. Selecting a category starts the appropriate application; it does not establish that every receipt from that platform is acceptable.\n\nSupported categories include regional Amazon and Amazon Vendor, AliExpress, Lazada, Shopee, SHEIN, TikTok Shop, Walmart, Mercado Libre, Fnac, CDiscount and other platform entries offered in the Portal. Independent-site applications distinguish the site builder from its payment gateway. Where the gateway is not separately listed, use Other and identify the actual provider for review. Internal test categories are not customer collection products.\n\nThe collection currencies offered across Portal products include GBP, USD, CAD, JPY, EUR, NZD, SGD, AUD, HKD, CNH, MXN, PLN, CZK, SEK, IDR, MYR, PHP, THB, AED and CHF. Availability remains specific to the selected platform and product; this list is not a promise that every combination can be opened.\n\nCHF is available for same-name collection rather than the e-commerce collection route. AED is restricted to the approved Amazon UAE and SHEIN UAE arrangements with strict same-name collection. AED letters cannot use a custom third-party holder, including through manual issuance.\n\nUse the Portal's supported platform lookup and the selected account's details. For a genuinely unlisted platform, submit a support enquiry describing the platform and business rather than using an unrelated platform name.",
+  "id": "SOP-currency-and-platform-availability",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "The Portal offers application categories for supported marketplaces, independent-site builders and payment gateways. Selecting a category starts the appropriate application; it does not establish that every receipt from that platform is acceptable.",
+  "source_ids": [
+    "B13",
+    "B23",
+    "C02",
+    "C07"
+  ],
+  "title": "Platform categories and collection currencies",
+  "topic": "accounts"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-BUYER-COLLECTION-CALENDAR",
+  "title": "Buyer recollection services and reserved bank capacity",
+  "topic": "Buyer remittance services",
+  "applicability": "Recalled sales with a buyer collection calendar",
+  "content": "A sale can have agreed receipt milestones even while its original bank remittance is under recall. The calendar is recorded in xp_a_settlement_terms (subject_id identifies the sale), and available recollection services in xp_a_buyer_collection_services. The amount collectible remains invoice face less issued commercial credit, original principal retained, and replacement principal already received or requested. Milestones are cumulative actual cash receipt requirements. first_due_minute and final_due_minute are measured on the logical business clock; the first receipt must cover min(first_amount_minor, final commercial debt). A payment request or capacity reservation is not receipt.\nUse a_book_buyer_collection(service_id,capacity_minor) to reserve service capacity. The booking window, delay, maximum principal, booking_fee_minor and fee_unit_minor are contractual terms on that service. Fees are booking_fee_minor times the ceiling of reserved principal divided by fee_unit_minor. Unused reserved capacity is not refunded. Booking is available before final return valuation and bank ownership; collection is not. Each booking has its own remaining capacity.\na_collect_remaining_sale(sale_id,booking_id,amount_minor) requests a specified part of the actual outstanding balance after bank disposition is final. Several outstanding requests share that balance. The service's bank event creates a replacement receipt after delay_minutes. Credit notes, application and original-remittance disposition retain the rules in the recalled-remittances article. The standard a_request_replacement_remittance remains available and retains its normal delay. It does not reserve an expedited service. All charges and principal are integer currency minor units.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_book_buyer_collection`\n\nPurchase reserved buyer recollection capacity under a published service. The booking fee is nonrefundable. Booking holds capacity, does not collect money, and can be made before the return review determines the remaining debt.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `service_id` | string | yes | Buyer recollection service ID. |\n| `capacity_minor` | integer | yes | Positive principal capacity in currency minor units. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_collect_remaining_sale`\n\nRequest a chosen portion of the actual commercial debt through a previously booked buyer service. Concurrent requests count toward the same unpaid debt; bank receipts arrive after the service delay. Collection itself does not apply a receipt to the invoice.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `sale_id` | string | yes | Original sale ID. |\n| `booking_id` | string | yes | Buyer collection booking. |\n| `amount_minor` | integer | yes | Positive principal to collect in minor units. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Recalled sales with a buyer collection calendar"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_book_buyer_collection",
+    "a_collect_remaining_sale"
+  ]
+}

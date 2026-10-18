@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "PARTNER charges 15 basis points with a 200-cent minimum when eligible linked external receipts net of refunds over ninety days remain at least 15,000,000 cents. Only settled external receipts and settled refunds count.\n\nEligibility is checked at execution. A pending refund can change it when settled; a current quote does not freeze the threshold. If the condition is no longer met, BASIC applies to that execution.",
+  "id": "OPS-partner-with-stable-external-eligibility",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "PARTNER charges 15 basis points with a 200-cent minimum when eligible linked external receipts net of refunds over ninety days remain at least 15,000,000 cents. Only settled external receipts and settled refunds count.",
+  "title": "PARTNER eligibility at execution",
+  "topic": "tariffs"
+}

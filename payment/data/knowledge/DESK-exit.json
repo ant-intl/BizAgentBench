@@ -1,0 +1,28 @@
+{
+  "applicability": "Operations Desk product contract edition 5.3, synthetic internal institution terms.",
+  "capability": null,
+  "content": "Desk services have separate service IDs, sites, billing accounts, notice intervals and scheduled billing rules. A shared account is not the same object as a subscription. propose_service_termination takes effect after notice_delay. It stops future acceptance of new bills, but any billing_instance already ACCEPTED remains payable on the account and contract version captured when accepted.\n\npropose_billing_migration changes the account for future accepted instances after migration_delay. It does not move old ACCEPTED instances. The replacement account must be open, same entity and same currency. Ordinary service continuity still requires a working future billing account. A future bill's acceptance and debit are separate observable events. At debit time an accepted bill attempts its exact amount; insufficient funds or a closed account gives FAILED, with no automatic retry in this cycle.\n\nAn expected return is credited only to its recorded account when the event occurs. If that account was closed, its status becomes RETURNED rather than being redirected automatically. propose_account_sweep moves stated principal between open same-entity accounts. propose_desk_account_close permanently closes a zero-balance open account; it does not examine whether closing preserves every subscription, accepted bill or expected return. The customer must distinguish the requested closed account from a shared service that should continue.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_account_sweep`\n\nMove an explicit amount between same-entity, same-currency Desk accounts. This does not migrate accepted bills or expected returns.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `source_account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `destination_account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_billing_migration`\n\nMove future billing for one service to another open account of the same entity. Previously accepted instances keep their original account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `service_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_desk_account_close`\n\nPermanently close an open zero-balance Desk account. Closure does not cancel previously accepted obligations or redirect returns.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_service_termination`\n\nTerminate a subscription after its recorded notice interval. Accepted billing instances remain payable on their original account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `service_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-exit",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-exit"
+  ],
+  "source_ids": [
+    "C09",
+    "B20",
+    "B05"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Subscription termination, accepted billing and account retirement",
+  "topic": "exit",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_account_sweep",
+    "propose_billing_migration",
+    "propose_desk_account_close",
+    "propose_service_termination"
+  ]
+}

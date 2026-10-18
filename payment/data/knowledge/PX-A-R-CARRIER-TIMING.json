@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-R-CARRIER-TIMING",
+  "title": "Carrier departure, physical arrival and carriage charges",
+  "topic": "Carrier departure, physical arrival and carriage charges",
+  "applicability": "Merchant dispatch, transport allotment and promotion fulfilment contracts registered for this customer.",
+  "content": "a_dispatch_purchased_goods(contract_id,reservation_ids) requires real paid merchandise, executes selected unexecuted bookings and charges their published fee once per booking. Physical receipt occurs only at the scheduled arrival, computed from actual dispatch time plus confirmed transit_minutes. Two bookings in one service each incur its fee. Goods paid or in transit have not arrived. Book_until restricts reservation creation, while customer delivery deadlines constrain actual receipt. Listed methods can restrict carrier eligibility for that checkout. Carriage charges come from the same operating cash as the original purchase; a carrier accepting a booking does not certify that the customer can preserve its operating reserve or complete every other item.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_dispatch_purchased_goods`\n\nDispatch actual paid goods under existing carrier bookings. Charges each selected booking fee once and schedules physical delivery from its confirmed transit time. Merchant-funded promotions can lose qualification when their original goods use a different fulfilment provider; lost value is repaid as real cash.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original purchase delivery contract ID. |\n| `reservation_ids` | array | yes | Carrier bookings to execute now. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "boundary": "New synthetic commercial capacity, price and fulfilment rules; not a claim about a source institution."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_dispatch_purchased_goods"
+  ]
+}

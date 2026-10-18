@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Platform ownership and bank routing are recorded on stores. An acquisition agreement must be assessed for that store, be signed, and identify the receiving account entity as the new owner.\n\npropose_platform_cutover schedules acknowledgement after 20 minutes. Until acknowledgement the store is CUTOVER_PENDING; after it, the new entity, collection account and routing version become active together.\n\nThis does not alter settlements already transmitted under the previous routing version.",
+  "id": "KB-migration-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Platform ownership and bank routing are recorded on stores. An acquisition agreement must be assessed for that store, be signed, and identify the receiving account entity as the new owner.",
+  "title": "Acquisition ownership and routing cutover",
+  "topic": "migration"
+}

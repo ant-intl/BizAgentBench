@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Use the platform's card-payment or advertising billing entry. This is different from binding a bank account to receive marketplace payouts.\n\nFor Amazon UK, US, Turkey and other supported sites, compare the card billing address, postcode and street information with the platform record. If the details match but binding fails, obtain the error for investigation. For Amazon Mexico cross-currency MXN timeouts, a same-currency payment after obtaining MXN can be attempted.\n\nFor eBay, contact the platform about its review of the attempted card binding. Walmart advertising uses the advertising-management payment-method page. Supported Shopee card sites include Singapore, Malaysia, Indonesia, the Philippines and Thailand; support on another site must be checked separately.\n\nMexican platform forms may request the holder's INE or IFE identifier. Supply the actual holder information required by the platform. An urgent payment may use another accepted card or payment method while a binding error is investigated.",
+  "id": "SOP-card-platform-binding",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Use the platform's card-payment or advertising billing entry. This is different from binding a bank account to receive marketplace payouts.",
+  "source_ids": [
+    "B09"
+  ],
+  "title": "World Card binding on marketplaces",
+  "topic": "cards"
+}

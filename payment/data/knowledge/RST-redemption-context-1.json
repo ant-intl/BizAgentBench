@@ -1,0 +1,12 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "EARLY redemption is available before a trigger payment settles. It exchanges part of the face for immediate usable credit. The published haircut is final, even when the trigger later settles. It can be appropriate when liquidity is urgent and the customer accepts the commercial cost.\n\nDetailed local effects and operation names: `RST-redemption`.",
+  "id": "RST-redemption-context-1",
+  "provenance": {
+    "classification": "functional_scope_distractor",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "EARLY redemption is available before a trigger payment settles. It exchanges part of the face for immediate usable credit. The published haircut is final, even when the trigger later settles. It can be appropriate when liquidity is urgent and the customer accepts the commercial cost.",
+  "title": "Early redemption for supplier credits",
+  "topic": "redemption"
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_balance_transfer may move credited USD balances between accessible open accounts of the same currency. Source-restricted fund lots must use their source-preserving payment or conversion operations instead; a generic transfer cannot wash a restricted source into an unrestricted one.\n\nA retiring source account must first have zero balance. An acknowledgement of ownership transfer is not a receipt for a transmitted bank payment.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_balance_transfer`\n\nMove a specified credited USD balance between accessible accounts. Source restrictions survive transfers.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `source_id` | string | yes | The source account. |\n| `destination_id` | string | yes | The destination account. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-migration-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_balance_transfer may move credited USD balances between accessible open accounts of the same currency. Source-restricted fund lots must use their source-preserving payment or conversion operations instead; a generic transfer cannot wash a restricted source into an unrestricted one.",
+  "title": "Moving credited balances between accounts",
+  "topic": "migration",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_balance_transfer"
+  ]
+}

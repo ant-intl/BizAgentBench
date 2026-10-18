@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A posted incoming can be reversed only with sufficient current posted cash and no active source reservation. Reassignment then credits its full amount and moves its source quota.\n\nNo temporary overdraft facility is provided. Each correction is checked against the account balance at its execution time.\n\nThe cash available in an account need not equal the total nominal incoming records, because earlier unrelated debits and credits can also be present. Unrelated signed mandates remain enforceable.",
+  "id": "KB-assignments-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A posted incoming can be reversed only with sufficient current posted cash and no active source reservation. Reassignment then credits its full amount and moves its source quota.",
+  "title": "Cash requirements for mandate posting corrections",
+  "topic": "assignments"
+}

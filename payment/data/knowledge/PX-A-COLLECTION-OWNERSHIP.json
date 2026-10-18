@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-COLLECTION-OWNERSHIP",
+  "title": "Agency collection ownership and supplier payment milestones",
+  "topic": "Direct debit collections",
+  "applicability": "Collections with an agency owner and a linked supplier invoice",
+  "content": "A single collection bank account may receive the merchant's own receivables and proceeds held for another merchant. xp_a_settlement_terms.agency_debt_id identifies the collection governed by the recorded agency contract; agency_amount_minor and agency_recipient_id identify the principal owed to its beneficial owner. Bank clearing and entitlement are different: a successful collection is still unavailable until its clearing release. After release, the unremitted owner amount remains protected within the account. Bank tools do not maintain separate virtual balances for these beneficial owners. A transfer may be executable while spending funds owed to the owner; subsequent replenishment does not authorize the earlier use. At any supplier payment, the remaining cash must cover the unremitted released agency amount. Fees may not be charged to that protected principal.\na_remit_collection_owner(debt_id,amount_minor,recipient_id) sends an actual remittance from the designated account. The agency obligation is paid only to its contractual recipient, for exactly the recorded amount by agency_due_minute. Fees are borne by the merchant. The linked supplier invoice can require a cumulative deposit early_amount_minor by early_due_minute as well as the full invoice by due_minute. A collection forecast is not a deposit receipt. The normal direct debit rules, clearing holds, original retry keys, fresh mandates and all-in collection fee allowance continue to apply. Repaying the owner, funding the supplier and collecting original debts are distinct ledger consequences.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_remit_collection_owner`\n\nRemit a portion of a cleared agency collection to its recorded beneficial owner. The collection record and linked agency contract identify the destination. No extra debit is collected from the original debtor.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `debt_id` | string | yes | Cleared agency collection debt ID. |\n| `amount_minor` | integer | yes | Positive minor units to remit. |\n| `recipient_id` | string | yes | Actual bank recipient. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Collections with an agency owner and a linked supplier invoice"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_remit_collection_owner"
+  ]
+}

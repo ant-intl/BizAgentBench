@@ -1,0 +1,26 @@
+{
+  "applicability": "Operations Desk evidence edition 6.4; local economic parameters retain the Desk 5.3 contract.",
+  "capability": null,
+  "content": "A Desk receivable portfolio contains trade invoices and remittances. Invoice amounts and remittance gross amounts are in minor currency units. Bank cash equals gross less external fees. When fee_bearer is MERCHANT, fees are expenses, not unpaid invoice principal. A remittance may serve several invoices; several remittances may serve one invoice. Historical and unrelated portfolios are distinct.\n\nAn advice record has a revision, status and payer_letter. The letter uses commercial purchase orders and invoice periods. READY advice is authoritative for the revision it describes. Each express designation in the letter fixes the amount for the invoice identified by buyer, purchase order and period. An omitted invoice has no fixed amount clause, not an automatic zero allocation. The received buyer_payment_terms states the buyer, currency, invoice period and covered purchase orders; those terms determine which invoices the remittance can fund. Some remittances specify only that scope, without a full line-by-line allocation. A complete reconciliation must satisfy each remittance gross, every fixed designation and each invoice's total receivable together. A received payer_dispatch_notice states the revision dispatched by the payer. An older received advice does not represent that later dispatch. propose_remittance_advice obtains the dispatched advice after the record's trace_delay; it does not change cash. Read the returned remittance_advice record. If no revision is pending, a trace confirms the current advice.\n\npropose_invoice_allocation replaces the entire reversible map for one remittance. Amounts must be positive integers, remain within its gross principal and refer to invoices in its portfolio. The system accepts provisional allocations; it does not establish whether their advice is the latest or whether the customer intent was respected. Gross principal, invoice principal and merchant-paid fees must reconcile separately. propose_receivable_close freezes the portfolio and its allocations. No further invoice-allocation writes are possible in that portfolio; closing it does not itself confirm reconciliation.\n\nSource-document interpretation follows Commercial source records and bank payment responsibility (Operations Desk evidence edition 6.4).\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_invoice_allocation`\n\nReplace the reversible invoice allocation of one posted remittance, recording the advice used. Does not alter bank cash.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `remittance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `advice_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `allocations` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_receivable_close`\n\nClose a receivables portfolio and freeze its allocations. Accepted closure does not certify customer intent or full reconciliation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `portfolio_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_remittance_advice`\n\nRequest an authoritative remittance advice revision. A trace request is not confirmation of invoice allocation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `remittance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-reconciliation",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-reconciliation"
+  ],
+  "source_ids": [
+    "B05",
+    "C10"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Remittance advice and receivable allocation",
+  "topic": "reconciliation",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_invoice_allocation",
+    "propose_receivable_close",
+    "propose_remittance_advice"
+  ]
+}

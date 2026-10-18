@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Use the recorded transaction status to determine the local handling.\n\n| Status | Meaning and handling |\n|---|---|\n| Awaiting credit | Open Submit documents for that payment. Typical evidence includes the platform's account-binding page and its remittance record. |\n| Under review | Submitted information is being assessed. Check registered email, including spam, for additional-information requests. |\n| Processing (`PENDING`) in sampled review | Submit material against the selected transactions marked Awaiting credit. Approval of those selected transactions releases the associated processing transactions together. |\n| Credit failed | Review was unsuccessful and a return is required. |\n| Refunded | The return has been completed. |\n\nReview normally takes two business days. If the payment is still under review after one business day, checking for a request for more information is appropriate; that check does not mean the two-day period has already expired.\n\nA secondary operator may not see the affected payment or submission entry. Ask the primary operator to view or handle it. In a restriction tied to pending incoming material, completion of the required review may also restore the affected payout function.\n\nFor a customer-requested return, confirm the original-route return instruction. Once initiated, it cannot be cancelled. A failed review cannot be reopened through this same process. Deal with pending incoming payments before closing the affected account.",
+  "id": "SOP-incoming-statuses",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Use the recorded transaction status to determine the local handling.",
+  "source_ids": [
+    "B05",
+    "C10"
+  ],
+  "title": "Incoming payments awaiting supporting documents",
+  "topic": "evidence"
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A batch review can produce separate MARKET_B and SERVICE source lots plus a delayed held lot. Their exact IDs, classifications and free balances are outputs of review.\n\nThe first release amount is a cash total, not a promise that every released dollar can be converted. The later batch_release removes the held portion from the batch original lot_ids without altering source classifications.",
+  "id": "KB-classification-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A batch review can produce separate MARKET_B and SERVICE source lots plus a delayed held lot. Their exact IDs, classifications and free balances are outputs of review.",
+  "title": "Source lots created by a classification review",
+  "topic": "classification"
+}

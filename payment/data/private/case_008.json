@@ -1,0 +1,57 @@
+{
+  "agreement_id": "JOINT14-9-AGREEMENT",
+  "case_id": "D34-DEBIT-CASE",
+  "components": [
+    {
+      "case_id": "D34-DEBIT-CASE",
+      "extension_service": true,
+      "family": " Deduction diagnosis × Authorization retirement × Follow-up obligations ",
+      "id": "trade_debit",
+      "kind": "reconciled_debits",
+      "scope": "JOINT14-9",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY48-CASE",
+      "extension_service": true,
+      "family": " Principal after returning an installment purchase, Fees and refunds ",
+      "id": "payment_installment_return",
+      "kind": "payment_installment_return",
+      "number": 48,
+      "payment_service": true,
+      "scope": "JOINT14-9",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Deduction diagnosis × Authorization retirement × Follow-up obligations ",
+  "id": "case_008",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\nFor a requested portal approval, use the displayed purpose, amount and your own authority. You are not a second bank reviewer: do not reconstruct installment accounting, derive the refund amount, or diagnose servicing policy. You may approve the specific instruction support proposes when it is within your stated authority. If the request is unclear, ask one concise question and return control to support. Describe only your facts and the action you actually took.\n\nOpening: Some of our supplier direct debits seem to have gone through twice. Please sort that out and finish moving the utility payments off our old mandate. Also, i returned part of a purchase that I am paying in installments. Some installments have already been paid. Please fix the remaining bills and refund whatever I have overpaid. These are part of the same business spending plan.\n\nYour own facts and preferences: I manage Cedar Parts and Cedar Trading. Recover actual excess supplier debits and keep every legitimate invoice paid in full. Keep the new utility mandate working for the next bill, and retire the old one within the bank's notice window. I thought cancelling an old mandate would cancel every pending debit under it too. If that is not how it works, explain it and proceed with the appropriate arrangement. Use the existing bank balance; keep USD 100 in reserve. I cannot tell from the statement whether the repeated lines are new payments, retries or different invoices. The bank has our accepted invoices and mandate correspondence. I do not know internal IDs or the final merchant-credit amounts.\n\nFor the related procurement matter: Complete the new purchase by its agreed date and settle the installment purchase after the accepted return. Apply the return to purchase principal, keep the two already earned service-period fees, refund only money actually overcollected, and prevent collection of cancelled future principal and its unearned fee. Keep at least USD 150 in the payment wallet. I cannot add money and have not received the final return or bank response.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "reconciled_debits",
+  "number": 8,
+  "opening": "Some of our supplier direct debits seem to have gone through twice. Please sort that out and finish moving the utility payments off our old mandate. Also, i returned part of a purchase that I am paying in installments. Some installments have already been paid. Please fix the remaining bills and refund whatever I have overpaid. These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-reconciled_debits",
+    "PAYMENT-common",
+    "PAYMENT-payment_installment_return",
+    "JOINT-CASH-delivery",
+    "TRADE-common",
+    "DESK-protocol"
+  ],
+  "scope": "JOINT14-9",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

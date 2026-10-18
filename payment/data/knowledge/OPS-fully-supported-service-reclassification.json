@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Assessed goods evidence can support reclassification of a specified SERVICE amount into MARKET_B. The evidence must match the batch and sample, and its unused supported amount must cover the requested amount.\n\nThe operation costs 100 cents and completes after five minutes, creating a separate traceable lot. Principal moves between lots without changing account cash or creating quota. Reuploading the same file does not multiply its supported amount.",
+  "id": "OPS-fully-supported-service-reclassification",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Assessed goods evidence can support reclassification of a specified SERVICE amount into MARKET_B. The evidence must match the batch and sample, and its unused supported amount must cover the requested amount.",
+  "title": "Amount supported by goods evidence",
+  "topic": "classification"
+}

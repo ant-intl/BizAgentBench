@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-ROYALTY-ARCHIVE",
+  "title": "Archived unrestricted royalty remittance service",
+  "topic": "royalty prior unrestricted service instructions",
+  "applicability": "Closed contracts issued before the capacity service",
+  "content": "Archived service contracts had no daily instruction limit. This article does not apply to a current contract that publishes capacity_limits or beneficiary delivery mandates. Current service fees, limits and receipt deadlines must be taken from that current contract.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Explicitly obsolete channel terms for functional document disambiguation."
+    }
+  ]
+}

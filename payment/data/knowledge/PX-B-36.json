@@ -1,0 +1,33 @@
+{
+  "id": "PX-B-36",
+  "title": "Conditional FX cancellation and remaining exposure",
+  "topic": "Conditional FX cancellation and remaining exposure",
+  "applicability": "Only the named synthetic benchmark product and its published customer records; no claim of real law or present provider availability.",
+  "content": "The supplier obligation, order face, acquired amount and supplier credit are in the requirement's currency (EUR). The linked source account, spending cap, purchase fee, refund fee and cash journal are in source_currency (USD). A target amount T costs floor(T*rate_num/rate_den) source minor units plus the source-currency purchase fee. For a cash credit refund, first convert its EUR face by the same integer quote and then subtract the USD refund fee once. Specified-rate orders can request cancellation; optimized orders cannot. request_fx_order_cancellation does not confirm cancellation. A precommitted bank event may fill part of the order during the acknowledgement delay. Events update filled_minor and the linked xp_b_fx_requirements.acquired_minor. buy_foreign_currency buys additional foreign currency at published integer quotes and fees. pay_foreign_obligation uses acquired currency and leaves any excess visible. Replacing the original face amount before reading confirmed fill can overbuy.\n\nCoupled business records: xp_b_supplier_fx_credits. The supplier credit concerns the same revised obligation and arrives during the cancellation window. Applying it reduces need_minor; an elected cash refund leaves gross payable unchanged and returns the credit less its fee after the published delay. Existing fills remain real acquired currency. Selling reduces acquired currency and credits amount*rate_num//rate_den minus the chosen sale fee. The original payment must equal its final payable, with zero remaining foreign currency; credit carried to another contract does not discharge or refund this invoice's credit.\nrequest_supplier_credit_advice: Request the supplier's amended-invoice credit advice. The fixed event can arrive while an older FX cancellation is pending and change the underlying currency requirement. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nallocate_supplier_invoice_credit: Choose invoice_netting, cash_refund, contract_credit or settlement_discount for the confirmed credit. Netting reduces this invoice's payable; a cash refund leaves the gross payment due and returns credit less refund_fee_minor after refund_delay. Contract credit retains it against the separately listed future contract; a settlement discount surrenders it as a commercial concession. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nsell_surplus_supplier_currency: Sell held target currency before supplier payment using a public sale_routes quote. Reduces acquired currency, credits actual net sale proceeds, and cannot reverse an already executed supplier payment. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nconfirm_supplier_fx_settlement: Confirm the paid revised invoice and actual unspent currency. Does not conceal surplus or repair an incorrect credit allocation. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "State transitions, numeric terms, review outcomes and deadlines"
+    },
+    {
+      "kind": "source-derived",
+      "file": "specified-rate-withdrawal-cancel.sop.md",
+      "scope": "N1 cancel product",
+      "line_start": 16,
+      "line_end": 49,
+      "normalization": "Only the node/merged-rule scope stated beside this citation is adopted; all synthetic extensions are separately labeled."
+    },
+    {
+      "kind": "source-derived",
+      "file": "timed-optimized-exchange-cancel.sop.md",
+      "scope": "N1 optimized product noncancellable; race synthetic",
+      "line_start": 13,
+      "line_end": 61,
+      "normalization": "Only the node/merged-rule scope stated beside this citation is adopted; all synthetic extensions are separately labeled."
+    },
+    {
+      "kind": "synthetic",
+      "scope": "Coupled business state, resources, deadlines and authority evidence introduced in candidate v4."
+    }
+  ]
+}

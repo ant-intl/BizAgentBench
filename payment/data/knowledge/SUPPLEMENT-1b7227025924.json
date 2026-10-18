@@ -1,0 +1,13 @@
+{
+  "id": "SUPPLEMENT-1b7227025924",
+  "title": "Deferred currency-reservation releases and secured bridging",
+  "topic": "deferred currency-reservation releases and secured bridging",
+  "applicability": "Synthetic linked contracts for the current customer with reasoning_version c-reasoning-v2.",
+  "content": "Obsolete currency holds remain distinct from the live settlement collateral. Manual cancellation frees its selected hold immediately and charges the owner fee. Completion of the first foreign-currency obligation initiates a two-part release of its other-currency obsolete hold: the first release has the published amount range and due minute; the remainder remains reserved until the final release. A hold is unavailable to every other payment and to loan repayment while active. Atomic coordination pays the swap fee and substitutes matching own-currency holds immediately, avoiding this deferred release. The bridge lender can advance against the actual remaining deferred hold, up to its amount, after the first release notice. A bridge creates repayable principal in the same funding account and charges its separate fee to coordination cash. Repayment uses unreserved same-currency cash; the live settlement collateral cannot repay it. Payment timestamps remain visible even when late transfers are bank-accepted. Cancellation, coordination, expediting and bridging fees share the release-cost allowance. All bridge principal must be repaid.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Capacity, asynchronous collateral and two-beneficiary settlement."
+    }
+  ]
+}

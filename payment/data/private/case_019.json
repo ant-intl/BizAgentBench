@@ -1,0 +1,597 @@
+{
+  "case_id": "D34-CERT-CASE",
+  "components": [
+    {
+      "case_id": "D34-CERT-CASE",
+      "extension_service": true,
+      "family": " Identity validity × Time range. × Downstream eligibility ",
+      "id": "extension_certificate_revocation",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-CERT-EVENT-EARLY": {
+            "event_kind": "marker",
+            "reference": "EARLY"
+          },
+          "D34-CERT-EVENT-FINAL": {
+            "event_kind": "marker",
+            "reference": "FINAL"
+          },
+          "D34-CERT-EVENT-KEY_REVIEW": {
+            "event_kind": "issuer_scope",
+            "reference": "KEY_REVIEW"
+          }
+        },
+        "events": {
+          "D34-CERT-EVENT-EARLY": {
+            "due_minute": 2,
+            "event_category": "marker",
+            "id": "D34-CERT-EVENT-EARLY",
+            "kind": "certificate_event",
+            "scope": "LINK16-26",
+            "status": "SCHEDULED",
+            "target_id": "D34-CERT-CASE"
+          },
+          "D34-CERT-EVENT-FINAL": {
+            "due_minute": 5,
+            "event_category": "marker",
+            "id": "D34-CERT-EVENT-FINAL",
+            "kind": "certificate_event",
+            "scope": "LINK16-26",
+            "status": "SCHEDULED",
+            "target_id": "D34-CERT-CASE"
+          },
+          "D34-CERT-EVENT-KEY_REVIEW": {
+            "due_minute": 3,
+            "event_category": "issuer_scope",
+            "id": "D34-CERT-EVENT-KEY_REVIEW",
+            "kind": "certificate_event",
+            "scope": "LINK16-26",
+            "status": "SCHEDULED",
+            "target_id": "D34-CERT-CASE"
+          }
+        },
+        "service_records": {
+          "D34-CERT-ACCESS": {
+            "accepted_day": -1,
+            "account": "BANK-A",
+            "attributes": [
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "certificate": "CA2",
+            "completed_minute": null,
+            "customer_access": true,
+            "due_minute": 5,
+            "entity": "A",
+            "id": "D34-CERT-ACCESS",
+            "kind": "evidence_reliance",
+            "name": "Access",
+            "period_from_day": -3,
+            "period_through_day": -1,
+            "reference": "ACCESS",
+            "reopened": false,
+            "scope": "LINK16-26",
+            "status": "COMPLETE",
+            "version": 1
+          },
+          "D34-CERT-ARCHIVE": {
+            "accepted_day": -5,
+            "account": "BANK-A",
+            "attributes": [
+              "account"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "certificate": "CA1",
+            "completed_minute": null,
+            "customer_access": true,
+            "due_minute": 5,
+            "entity": "A",
+            "id": "D34-CERT-ARCHIVE",
+            "kind": "evidence_reliance",
+            "name": "Archive",
+            "period_from_day": -20,
+            "period_through_day": -15,
+            "reference": "ARCHIVE",
+            "reopened": false,
+            "scope": "LINK16-26",
+            "status": "COMPLETE",
+            "version": 1
+          },
+          "D34-CERT-ARCHIVED_ACCESS": {
+            "bound_versions": {
+              "ARCHIVE": 1
+            },
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "due_minute": 5,
+            "id": "D34-CERT-ARCHIVED_ACCESS",
+            "kind": "dependent_authority",
+            "name": "Historical contract evidence retention",
+            "rebound": false,
+            "reference": "ARCHIVED_ACCESS",
+            "requires": [
+              "ARCHIVE"
+            ],
+            "scope": "LINK16-26",
+            "status": "ACTIVE"
+          },
+          "D34-CERT-BRANCH": {
+            "accepted_day": -3,
+            "account": "BANK-B",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "certificate": "CB2",
+            "completed_minute": null,
+            "customer_access": true,
+            "due_minute": 5,
+            "entity": "B",
+            "id": "D34-CERT-BRANCH",
+            "kind": "evidence_reliance",
+            "name": "Branch",
+            "period_from_day": -15,
+            "period_through_day": -10,
+            "reference": "BRANCH",
+            "reopened": false,
+            "scope": "LINK16-26",
+            "status": "COMPLETE",
+            "version": 1
+          },
+          "D34-CERT-BRANCH_ACCESS": {
+            "bound_versions": {
+              "BRANCH": 1
+            },
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "due_minute": 5,
+            "id": "D34-CERT-BRANCH_ACCESS",
+            "kind": "dependent_authority",
+            "name": "Other entity bank access",
+            "rebound": false,
+            "reference": "BRANCH_ACCESS",
+            "requires": [
+              "BRANCH"
+            ],
+            "scope": "LINK16-26",
+            "status": "ACTIVE"
+          },
+          "D34-CERT-CA1": {
+            "account": "BANK-A",
+            "attributes": [
+              "account"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -30,
+            "covers_through_day": 10,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "A",
+            "fee_minor": 0,
+            "id": "D34-CERT-CA1",
+            "issued_day": -20,
+            "kind": "evidence_certificate",
+            "name": "Ca1",
+            "reference": "CA1",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-A",
+            "status": "ISSUED"
+          },
+          "D34-CERT-CA2": {
+            "account": "BANK-A",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -30,
+            "covers_through_day": 10,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "A",
+            "fee_minor": 0,
+            "id": "D34-CERT-CA2",
+            "issued_day": -7,
+            "kind": "evidence_certificate",
+            "name": "Ca2",
+            "reference": "CA2",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-B",
+            "status": "ISSUED"
+          },
+          "D34-CERT-CA3": {
+            "account": "BANK-A",
+            "attributes": [
+              "account"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -10,
+            "covers_through_day": 10,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "A",
+            "fee_minor": 0,
+            "id": "D34-CERT-CA3",
+            "issued_day": 0,
+            "kind": "evidence_certificate",
+            "name": "Ca3",
+            "reference": "CA3",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-D",
+            "status": "ISSUED"
+          },
+          "D34-CERT-CA4": {
+            "account": "BANK-A",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -30,
+            "covers_through_day": -9,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "A",
+            "fee_minor": 1000,
+            "id": "D34-CERT-CA4",
+            "issued_day": null,
+            "kind": "evidence_certificate",
+            "name": "Ca4",
+            "reference": "CA4",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-D",
+            "status": "AVAILABLE"
+          },
+          "D34-CERT-CA5": {
+            "account": "BANK-A",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -5,
+            "covers_through_day": 10,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "A",
+            "fee_minor": 500,
+            "id": "D34-CERT-CA5",
+            "issued_day": null,
+            "kind": "evidence_certificate",
+            "name": "Ca5",
+            "reference": "CA5",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-D",
+            "status": "AVAILABLE"
+          },
+          "D34-CERT-CB2": {
+            "account": "BANK-B",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -30,
+            "covers_through_day": 10,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "B",
+            "fee_minor": 0,
+            "id": "D34-CERT-CB2",
+            "issued_day": -7,
+            "kind": "evidence_certificate",
+            "name": "Cb2",
+            "reference": "CB2",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-C",
+            "status": "ISSUED"
+          },
+          "D34-CERT-CB4": {
+            "account": "BANK-B",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "covers_from_day": -30,
+            "covers_through_day": 10,
+            "customer_access": true,
+            "delivery_delay": 1,
+            "entity": "B",
+            "fee_minor": 500,
+            "id": "D34-CERT-CB4",
+            "issued_day": null,
+            "kind": "evidence_certificate",
+            "name": "Cb4",
+            "reference": "CB4",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-D",
+            "status": "AVAILABLE"
+          },
+          "D34-CERT-CURRENT": {
+            "accepted_day": null,
+            "account": "BANK-A",
+            "attributes": [
+              "account"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "certificate": "CA1",
+            "completed_minute": null,
+            "customer_access": true,
+            "due_minute": 2,
+            "entity": "A",
+            "id": "D34-CERT-CURRENT",
+            "kind": "evidence_reliance",
+            "name": "Current",
+            "period_from_day": -5,
+            "period_through_day": -1,
+            "reference": "CURRENT",
+            "reopened": false,
+            "scope": "LINK16-26",
+            "status": "OPEN",
+            "version": 1
+          },
+          "D34-CERT-EXPORT": {
+            "accepted_day": -3,
+            "account": "BANK-A",
+            "attributes": [
+              "account",
+              "signatory"
+            ],
+            "case_id": "D34-CERT-CASE",
+            "certificate": "CA2",
+            "completed_minute": null,
+            "customer_access": true,
+            "due_minute": 5,
+            "entity": "A",
+            "id": "D34-CERT-EXPORT",
+            "kind": "evidence_reliance",
+            "name": "Export",
+            "period_from_day": -15,
+            "period_through_day": -10,
+            "reference": "EXPORT",
+            "reopened": false,
+            "scope": "LINK16-26",
+            "status": "COMPLETE",
+            "version": 1
+          },
+          "D34-CERT-GUARANTEE": {
+            "bound_versions": {
+              "EXPORT": 1
+            },
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "due_minute": 5,
+            "id": "D34-CERT-GUARANTEE",
+            "kind": "dependent_authority",
+            "name": "Continuing export performance guarantee",
+            "rebound": false,
+            "reference": "GUARANTEE",
+            "requires": [
+              "EXPORT"
+            ],
+            "scope": "LINK16-26",
+            "status": "ACTIVE"
+          },
+          "D34-CERT-KEY_REVIEW": {
+            "_actual_interval": [
+              -9,
+              -6
+            ],
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "expected_minute": 3,
+            "id": "D34-CERT-KEY_REVIEW",
+            "kind": "issuer_notice",
+            "mode": null,
+            "name": "Signing-key incident scope review",
+            "possible_invalid_issue_intervals": [
+              [
+                -9,
+                -6
+              ],
+              [
+                -5,
+                -4
+              ]
+            ],
+            "reference": "KEY_REVIEW",
+            "scope": "LINK16-26",
+            "signing_key": "KEY-B",
+            "status": "PENDING"
+          },
+          "D34-CERT-PLATFORM": {
+            "bound_versions": {
+              "ACCESS": 1,
+              "EXPORT": 1
+            },
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "due_minute": 5,
+            "id": "D34-CERT-PLATFORM",
+            "kind": "dependent_authority",
+            "name": "Joint exporter platform collection access",
+            "rebound": false,
+            "reference": "PLATFORM",
+            "requires": [
+              "EXPORT",
+              "ACCESS"
+            ],
+            "scope": "LINK16-26",
+            "status": "ACTIVE"
+          },
+          "D34-CERT-SOURCE": {
+            "_response": {
+              "current_day": 1,
+              "fee_cap_minor": 2000,
+              "grace_through_minute": 5,
+              "minimum_cash_reserve_minor": 10000
+            },
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "delay": 1,
+            "id": "D34-CERT-SOURCE",
+            "kind": "external_correspondence",
+            "name": "Partner evidence and continuing authority terms",
+            "receipt_status": "AVAILABLE",
+            "reference": "SOURCE",
+            "scope": "LINK16-26"
+          },
+          "D34-CERT-WITHDRAWAL": {
+            "case_id": "D34-CERT-CASE",
+            "customer_access": true,
+            "effective_day": 0,
+            "id": "D34-CERT-WITHDRAWAL",
+            "kind": "issuer_notice",
+            "mode": "WITHDRAWAL",
+            "name": "Bank account letter format withdrawal",
+            "reference": "WITHDRAWAL",
+            "scope": "LINK16-26",
+            "status": "PUBLISHED",
+            "target_certificate": "CA1"
+          }
+        }
+      },
+      "kind": "temporal_certificates",
+      "scope": "LINK16-26",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY43-CASE",
+      "extension_service": true,
+      "family": " Partial refund after multi-merchant split ",
+      "id": "payment_marketplace_split_refund",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY43-EVENT-1": {
+            "contract_scope": "LINK16-26",
+            "event_kind": "returns"
+          },
+          "PAY43-EVENT-3": {
+            "contract_scope": "LINK16-26",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY43-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY43-EVENT-1",
+            "kind": "payment_marketplace_split_refund_event",
+            "name": "Warehouse acceptance and original refund status",
+            "scope": "LINK16-26",
+            "status": "SCHEDULED",
+            "target_id": "PAY43-CASE"
+          },
+          "PAY43-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY43-EVENT-3",
+            "kind": "payment_marketplace_split_refund_event",
+            "name": "Buyer refund and final merchant settlement deadline",
+            "scope": "LINK16-26",
+            "status": "SCHEDULED",
+            "target_id": "PAY43-CASE"
+          }
+        },
+        "service_records": {
+          "PAY43-A": {
+            "_return_minor": 20000,
+            "accepted_return_minor": null,
+            "additional_paid_minor": 0,
+            "case_id": "PAY43-CASE",
+            "commission_bp": 2000,
+            "customer_access": true,
+            "gross_minor": 60000,
+            "id": "PAY43-A",
+            "kind": "seller_allocation",
+            "name": "Alder seller equipment",
+            "payout_due_minute": 3,
+            "possible_return_minor": [
+              20000,
+              40000
+            ],
+            "reference": "A",
+            "reversed_minor": 0,
+            "scope": "LINK16-26",
+            "transferred_minor": 48000
+          },
+          "PAY43-B": {
+            "accepted_return_minor": 0,
+            "additional_paid_minor": 0,
+            "case_id": "PAY43-CASE",
+            "commission_bp": 1000,
+            "customer_access": true,
+            "gross_minor": 40000,
+            "id": "PAY43-B",
+            "kind": "seller_allocation",
+            "name": "Birch seller accessories",
+            "payout_due_minute": 0,
+            "reference": "B",
+            "reversed_minor": 0,
+            "scope": "LINK16-26",
+            "transferred_minor": 20000
+          },
+          "PAY43-REFUND": {
+            "_outcome": "SETTLED",
+            "case_id": "PAY43-CASE",
+            "customer_access": true,
+            "due_minute": 3,
+            "id": "PAY43-REFUND",
+            "kind": "buyer_refund",
+            "manual_paid_minor": 0,
+            "name": "Buyer partial refund already submitted",
+            "paid_minor": 0,
+            "possible_outcomes": [
+              "SETTLED",
+              "FAILED"
+            ],
+            "reference": "REFUND",
+            "scope": "LINK16-26",
+            "status": "PROCESSING",
+            "submitted_minor": 5000
+          }
+        }
+      },
+      "kind": "payment_marketplace_split_refund",
+      "number": 43,
+      "payment_service": true,
+      "scope": "LINK16-26",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Identity validity × Time range. × Downstream eligibility × Quote version refresh ",
+  "id": "case_019",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: One bank letter has been withdrawn and there is a signing-key notice. Please keep our partner files usable and make sure our guarantee and collection access are still covered. I also need help with a related matter: a customer returned part of a combined order after we paid the sellers. Please refund the returned items and finish the sellers’ remaining payouts.\n\nYour own facts and preferences: I manage Cedar's main business and its branch. Finish the new partner submission within its recorded window and correct any completed files that are actually affected by the bank notices. Keep valid historical approvals intact. Our export guarantee and platform collection access must remain supported by the required accepted files. I can pay up to USD 20 for replacement certificates and want USD 100 left in the wallet. I thought a withdrawn letter meant every earlier approval using it had to be redone. Please check the bank's actual notice and explain what needs changing. I do not know which signature dates the issuer will finally identify, or the bank's internal IDs.\n\nFor the related matter: Return exactly the accepted returned-item price to the buyer and settle each seller’s remaining entitlement, including the accessories seller’s earlier payout deadline. Only the seller of a returned item may bear its reversal. Retain the platform’s correctly adjusted commission. There is no extra funding and the pending buyer refund must not be duplicated. I do not yet have the warehouse decision or the bank result.\n\nPlease use the current recorded terms for the related matter. I cannot see the bank's internal handoff status.",
+  "kind": "temporal_certificates",
+  "link_contract_id": "LINK16-26-LINK",
+  "link_operator": {
+    "category": "pricing",
+    "id": "quote_version_refresh",
+    "relation": "primary_execution_before_secondary_proposal"
+  },
+  "number": 19,
+  "opening": "One bank letter has been withdrawn and there is a signing-key notice. Please keep our partner files usable and make sure our guarantee and collection access are still covered. I also need help with a related matter: a customer returned part of a combined order after we paid the sellers. Please refund the returned items and finish the sellers’ remaining payouts.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-temporal_certificates",
+    "PAYMENT-common",
+    "PAYMENT-payment_marketplace_split_refund",
+    "LINK-quote_version_refresh",
+    "TRADE-common",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-26",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

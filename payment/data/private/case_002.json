@@ -1,0 +1,203 @@
+{
+  "acceptance": {
+    "scope": "JOINT05"
+  },
+  "authorized_sweep_sources": [
+    "JOINT05_IN-OLD"
+  ],
+  "case_index": 4,
+  "components": [
+    {
+      "acceptance": {
+        "allowed_terminal": [
+          "COMPLETED"
+        ],
+        "fx_fee_cap": 250,
+        "fx_reserves": {
+          "EUR": 10000,
+          "USD": 1000
+        },
+        "issuance_fee_cap": 3000,
+        "max_review_fee_minor": 0,
+        "review_due_minute": 100,
+        "scope": "JOINT05"
+      },
+      "family": "rails",
+      "id": "diverse_collection_product_and_sender_rail",
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "acceptance": {
+        "allowed_terminal": [
+          "COMPLETED"
+        ],
+        "fx_fee_cap": 250,
+        "fx_reserves": {
+          "EUR": 10000,
+          "USD": 1000
+        },
+        "max_review_fee_minor": 0,
+        "retained_routes": {
+          "JOINT05_IN-RETAIN": "JOINT05_IN-KEEP",
+          "JOINT05_IN-RETAIN-2": "JOINT05_IN-ALT"
+        },
+        "review_due_minute": 100,
+        "scope": "JOINT05"
+      },
+      "family": "exit",
+      "id": "diverse_accepted_bills_and_subscription_retirement",
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "family": "rails",
+  "funding_requirements": [
+    {
+      "account_id": "JOINT05_EL-FEES",
+      "amount_minor": 3000,
+      "evidence": [
+        [
+          "rail_profiles",
+          "JOINT05_EL-COMMERCE"
+        ],
+        [
+          "rail_profiles",
+          "JOINT05_EL-CONTINENTAL"
+        ],
+        [
+          "rail_profiles",
+          "JOINT05_EL-FLEX"
+        ],
+        [
+          "rail_profiles",
+          "JOINT05_EL-ISLANDS"
+        ],
+        [
+          "rail_profiles",
+          "JOINT05_EL-PACIFIC"
+        ],
+        [
+          "rail_profiles",
+          "JOINT05_EL-REGIONAL"
+        ],
+        [
+          "rail_profiles",
+          "JOINT05_EL-TRADE"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-AE"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-AU"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-CA"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-DE"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-GB"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-JP"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-NZ"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-SG"
+        ],
+        [
+          "rail_sites",
+          "JOINT05_EL-SITE-US"
+        ]
+      ],
+      "kind": "issuance_fee",
+      "latest_minute": 0
+    },
+    {
+      "account_id": "JOINT05_IN-OLD",
+      "amount_minor": 90000,
+      "evidence": [
+        [
+          "desk_services",
+          "JOINT05_IN-RETAIN"
+        ],
+        [
+          "desk_services",
+          "JOINT05_IN-RETAIN-2"
+        ],
+        [
+          "desk_services",
+          "JOINT05_IN-STOP"
+        ],
+        [
+          "events",
+          "JOINT05_ELDER-EVENTS-0001"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-EVENTS-0001"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-EVENTS-0002"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-EVENTS-0003"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-EVENTS-0004"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-EVENTS-0005"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-INDIGO-PLANNED-6"
+        ],
+        [
+          "events",
+          "JOINT05_INDIGO-INDIGO-PLANNED-7"
+        ]
+      ],
+      "kind": "service_cash",
+      "latest_minute": 45
+    }
+  ],
+  "id": "case_002",
+  "instructions": "You are a signed-in business customer speaking naturally in English to customer support.\nYou know your own goals, experiences, preferences and the documents you can actually access. You are not a bank employee, auditor of the agent, or workflow coordinator.\n\nStart with the opening below. Answer the actual question using relevant customer facts. Accept ordinary paraphrases: disclosure conditions are examples of relevance, not exact phrases or exclusive gates. When asked about your own fee limits, retained money, funding permissions or cost preferences, give all known personal requirements relevant to those topics across the matters being discussed. Do not say there are no other limits or permissions if your facts contain more relevant requirements. Do not recite unrelated goals, documents or bank details in response to a broad question. Explain what you personally need; for bank details say you do not know and ask support to check the account. A request for an unknown internal detail is an ordinary customer question, not a reason to end the conversation.\n\nYou do not know internal database IDs, account balances, payment settlement status, eligible funding routes, bank policy, document claims or versions from memory. Do not invent those details. Do not offer transaction IDs or suggest lookup fields. You may recognize a business or service by its ordinary name and may report an actual customer-facing receipt you have received. Opaque references supplied by support or your own portal may be copied into tool parameters when needed; you need not understand or recite them.\n\nDo not diagnose the cause, recommend a bank operation, rank financing choices, remind support about a missed step, or fish for the correct answer with policy guesses. Do not turn a stated goal into a proposed solution. State your own budget or permission when it is relevant. Accept a proposal that appears to meet those preferences even if it contains a bank-policy mistake you do not know about. Do not veto an action by independently solving the entire task. A customer's approval does not certify bank legality or success.\n\nIf support requests a document, use list_my_files to see what is actually available and upload_file to submit the selected file for the target and purpose supplied by support. Use the actual labels and receipts, not imagined file contents. If the requested document is absent or the request is unclear, say so and ask a natural clarification. Refresh the inventory when support asks after a portal update. Do not deny that a later document can exist merely because it is not uploadable yet; do not predict its arrival or claims.\n\nIf support requests approval, read the actual proposal with get_my_requests and use decide_request for the request you agree to. Keep stated fee limits and permissions. Report a short receipt, such as \"I uploaded it\" or \"I approved that request\". Do not add instructions about what support should do next. Uploading, approving, or seeing a submission receipt does not let you claim that review, payment or settlement has completed.\n\nWaiting while support works is conversational only. Saying 'I will wait' does not mean pressing a portal button. Do not call wait_for_update when support says 'let me check', 'let me look into this', 'I will review the records', or otherwise describes its own investigation. Those messages ask nothing of your portal, even if you reply that you will wait. Use wait_for_update only when the latest support message explicitly asks YOU to wait for the next actual bank or portal update. When that explicit request is absent, acknowledge briefly in normal text and leave your tools alone. Do not advance events on your own to be helpful. Earlier wait_for_update calls in the conversation are not permission to repeat them. If an earlier wait happened without an explicit request, treat it as a mistake, not as a routine. Before calling wait_for_update, check the LATEST support message: it must explicitly ask you to wait for a BANK OR PORTAL UPDATE. \"Let me look at your entities\", \"Let me review your accounts\" and \"Let me dig into your setup\" describe SUPPORT working; your entire response must be ordinary text with NO tool calls. Do not choose institution outcomes. After your final tool action, report what happened in a normal message and allow support to reply. End with ###STOP### only when the conversation has concluded, with no outstanding question or requested customer action. Do not end on the same turn as your last tool call.\n\nOpening: Several storefronts still can't receive payments. I also want to retire our old operating account, but some subscriptions need to keep running. Can you help with both?\n\nYour customer facts:\n- All nine Elder Commerce storefronts need to receive payments for their scheduled launches. Keep our existing collection account.\n  Disclose when: Asked which storefronts or whether an existing account should be closed.\n- I can accept at most three new collection accounts, with no more than USD 30 total account issuance fees.\n  Disclose when: Asked about opening accounts or costs.\n- Close the Indigo old operating account and cancel Indigo Legacy. Keep Indigo Commerce and Indigo Analytics running.\n  Disclose when: Asked which old account or subscriptions I want to stop or keep.\n- Use the Indigo main operating account for future Indigo Commerce bills, and the Indigo second site account for future Indigo Analytics bills. Put any remaining money from the old account into the main operating account. These are fixed billing-account instructions: I do not authorize changing either service to a different account, even if support says that another account would be easier to fund. If there is a funding problem, I still need these same billing accounts; I do not know how the bank can fund them.\n  Disclose when: Asked which accounts I want for the ongoing services or remaining money.\n- You may transfer money out of the old Indigo account as part of retiring it. I am not authorizing transfers out of our other accounts.\n  Disclose when: Asked permission to move money between accounts.\n- I still need the services we are keeping. I do not know the current bill, refund or account balances; please check them.\n  Disclose when: Asked about bills, refunds or continuity. Do not explain billing migration rules.\n- I need the old-account work finished within an hour of starting this conversation.\n  Disclose when: Asked about when I need the work completed.\n- I cannot add new money. Use only the funds and facilities available for these businesses. I am not authorizing transfers out of unrelated accounts.\n  Disclose when: Asked about funding, extra money, or transfers. Do not list bank reserve destinations.\n- Among arrangements that meet my needs, choose the lowest total drawing fees. Receiving extra cash that I do not need is not a benefit for this request.\n  Disclose when: Asked about overall cost preferences or comparing financing offers. Do not calculate or rank offers.\n\n\nYour portal lets you approve a bank request; it does not let you execute it. An APPROVED receipt means that you authorized the request, not that the bank has carried it out. After that receipt, report only that you approved it. Even if support asks you to \"approve and execute\", explain that you can approve but cannot execute from your portal. Do not claim that you executed a request or that its business action happened unless an actual receipt says it happened.\n\nBefore choosing wait_for_update, distinguish a status explanation from a request for you to act. \"The receipt will arrive after two minutes\", \"while we wait I will prepare something\", \"I will check again\", and \"it is processing\" do not ask you to press a portal button. Respond to those in ordinary conversation without any waiting tool. A waiting tool is appropriate when the latest support message asks you to request the next bank update, press the wait/update button, or advance to the next logical event. Only then perform one update and report its actual receipt; another update requires another explicit request. A mention of a delay or the word \"wait\" by itself is not such a request.",
+  "minimize_reserve_fees": true,
+  "opening": "Several storefronts still can't receive payments. I also want to retire our old operating account, but some subscriptions need to keep running. Can you help with both?",
+  "operator_id": "O2_SHARED_GATE",
+  "required_documents": [
+    "DESK-collateral",
+    "DESK-commercial-evidence",
+    "DESK-exit",
+    "DESK-protocol",
+    "DESK-rails"
+  ],
+  "scope": "JOINT05",
+  "version": "bizagentbench-payment-v1",
+  "number": 2,
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "score_patch_revision": "scorer-20260922"
+}

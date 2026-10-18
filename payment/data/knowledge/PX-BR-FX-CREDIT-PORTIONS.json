@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-FX-CREDIT-PORTIONS",
+  "title": "Supplier credit portions after partial invoice payment",
+  "topic": "supplier FX installment credit refund partial fill exposure",
+  "applicability": "Supplier invoices with an installment schedule",
+  "content": "Actual supplier credit advice may arrive after an installment. Its offset portion can reduce only the remaining unpaid EUR invoice. Any credit beyond that remainder must be returned in cash rather than counted again against paid principal. allocate_supplier_credit_portions splits the EUR credit face: offset plus elected refund equals the full advice. The USD cash refund equals floor(EUR refund*rate_num/rate_den) less one USD refund fee. The refund delay applies when a positive cash portion is elected. Standard invoice_netting under this schedule offsets up to the remaining invoice and returns any excess as cash; cash_refund elects the whole credit as cash. The same credit unit cannot discharge an invoice and also be refunded.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Installment, credit-split and foreign currency conservation terms."
+    }
+  ]
+}

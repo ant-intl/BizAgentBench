@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Europe supports the applicable GBP and EUR collection accounts, with Seller Central and Vendor applications identified separately.\n\n## Bank location\n\nUse the location in the particular account's bank details. EUR accounts may have Irish or Dutch bank locations. The channel change recorded on 2025-01-24 introduced Dutch CITI EUR accounts when Irish JPM account inventory was limited. The historical change does not make an existing Irish account a Dutch account.\n\n## Verification when adding EUR\n\nIf the EUR details are correct but Amazon cannot verify an existing account, check whether the store already has a GBP account. At Identify your bank account, that flow may require the last eight digits of the existing GBP IBAN rather than its full IBAN.\n\nUse the Portal's displayed GBP sort code when entering bank or branch details. If a platform requires separate bank and branch fields, confirm its field requirements; splitting a displayed code is not a guarantee of acceptance.\n\nFor letter or statement rejection, compare the name and address with Amazon's seller identity information. Ask Amazon for the rejection reason if the information matches. Notify Amazon before changing the collection binding.",
+  "id": "SOP-amazon-europe",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Europe supports the applicable GBP and EUR collection accounts, with Seller Central and Vendor applications identified separately.",
+  "source_ids": [
+    "B02",
+    "B13"
+  ],
+  "title": "Amazon Europe: bank location and account verification",
+  "topic": "accounts"
+}

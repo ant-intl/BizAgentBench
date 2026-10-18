@@ -1,0 +1,531 @@
+{
+  "case_id": "PAY45-CASE",
+  "components": [
+    {
+      "case_id": "PAY45-CASE",
+      "extension_service": true,
+      "family": " Acquiring net receipt and cross-batch reconciliation ",
+      "id": "payment_acquirer_batch_close",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY45-EVENT-1": {
+            "contract_scope": "LINK16-45",
+            "event_kind": "acquirer_final"
+          },
+          "PAY45-EVENT-2": {
+            "contract_scope": "LINK16-45",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY45-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY45-EVENT-1",
+            "kind": "payment_acquirer_batch_close_event",
+            "name": "Final weekend fees and bank credit",
+            "scope": "LINK16-45",
+            "status": "SCHEDULED",
+            "target_id": "PAY45-CASE"
+          },
+          "PAY45-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY45-EVENT-2",
+            "kind": "payment_acquirer_batch_close_event",
+            "name": "Merchant settlement deadline",
+            "scope": "LINK16-45",
+            "status": "SCHEDULED",
+            "target_id": "PAY45-CASE"
+          }
+        },
+        "service_records": {
+          "PAY45-A1": {
+            "batch_ref": "FRI",
+            "case_id": "PAY45-CASE",
+            "commission_minor": 0,
+            "customer_access": true,
+            "due_minute": 0,
+            "id": "PAY45-A1",
+            "kind": "merchant_invoice",
+            "name": "Alder Friday proceeds",
+            "paid_minor": 0,
+            "reference": "A1",
+            "refund_minor": 10000,
+            "sales_minor": 70000,
+            "scope": "LINK16-45"
+          },
+          "PAY45-A2": {
+            "batch_ref": "WEEKEND",
+            "case_id": "PAY45-CASE",
+            "commission_minor": 10000,
+            "customer_access": true,
+            "due_minute": 2,
+            "id": "PAY45-A2",
+            "kind": "merchant_invoice",
+            "name": "Alder weekend proceeds",
+            "paid_minor": 0,
+            "reference": "A2",
+            "refund_minor": 0,
+            "sales_minor": 30000,
+            "scope": "LINK16-45"
+          },
+          "PAY45-B1": {
+            "batch_ref": "FRI",
+            "carry_minor": 5000,
+            "case_id": "PAY45-CASE",
+            "customer_access": true,
+            "declared": null,
+            "fee_minor": 3000,
+            "gross_minor": 100000,
+            "id": "PAY45-B1",
+            "kind": "acquirer_batch",
+            "name": "Friday card batch",
+            "posted": false,
+            "reference": "B1",
+            "refund_minor": 10000,
+            "reserve_delta_minor": -2000,
+            "scope": "LINK16-45",
+            "status": "FINAL"
+          },
+          "PAY45-B1-SELLER": {
+            "batch_ref": "FRI",
+            "case_id": "PAY45-CASE",
+            "commission_minor": 10000,
+            "customer_access": true,
+            "due_minute": 2,
+            "id": "PAY45-B1-SELLER",
+            "kind": "merchant_invoice",
+            "name": "Birch Friday proceeds",
+            "paid_minor": 0,
+            "reference": "B1-SELLER",
+            "refund_minor": 0,
+            "sales_minor": 30000,
+            "scope": "LINK16-45"
+          },
+          "PAY45-B2": {
+            "_fee_minor": 5000,
+            "batch_ref": "WEEKEND",
+            "carry_minor": -5000,
+            "case_id": "PAY45-CASE",
+            "customer_access": true,
+            "declared": null,
+            "fee_minor": null,
+            "gross_minor": 70000,
+            "id": "PAY45-B2",
+            "kind": "acquirer_batch",
+            "name": "Weekend card batch",
+            "possible_fee_minor": [
+              3000,
+              5000
+            ],
+            "posted": false,
+            "reference": "B2",
+            "refund_minor": 5000,
+            "reserve_delta_minor": 2000,
+            "scope": "LINK16-45",
+            "status": "PROVISIONAL"
+          },
+          "PAY45-B2-SELLER": {
+            "batch_ref": "WEEKEND",
+            "case_id": "PAY45-CASE",
+            "commission_minor": 10000,
+            "customer_access": true,
+            "due_minute": 2,
+            "id": "PAY45-B2-SELLER",
+            "kind": "merchant_invoice",
+            "name": "Birch weekend proceeds",
+            "paid_minor": 0,
+            "reference": "B2-SELLER",
+            "refund_minor": 5000,
+            "sales_minor": 40000,
+            "scope": "LINK16-45"
+          },
+          "PAY45-BANK1": {
+            "amount_minor": 90000,
+            "bank_ref": "FRI",
+            "case_id": "PAY45-CASE",
+            "customer_access": true,
+            "id": "PAY45-BANK1",
+            "kind": "acquirer_receipt",
+            "name": "Bank credit Friday",
+            "physical_id": "PHYSICAL-71",
+            "reference": "BANK1",
+            "scope": "LINK16-45",
+            "status": "SETTLED",
+            "used": false
+          },
+          "PAY45-BANK1-COPY": {
+            "amount_minor": 90000,
+            "bank_ref": "FRI",
+            "case_id": "PAY45-CASE",
+            "customer_access": true,
+            "id": "PAY45-BANK1-COPY",
+            "kind": "acquirer_receipt",
+            "name": "Friday credit imported by second feed",
+            "physical_id": "PHYSICAL-71",
+            "reference": "BANK1-COPY",
+            "scope": "LINK16-45",
+            "status": "SETTLED",
+            "used": false
+          },
+          "PAY45-BANK2": {
+            "amount_minor": null,
+            "bank_ref": "WEEKEND",
+            "case_id": "PAY45-CASE",
+            "customer_access": true,
+            "id": "PAY45-BANK2",
+            "kind": "acquirer_receipt",
+            "name": "Bank credit weekend",
+            "physical_id": "PHYSICAL-72",
+            "reference": "BANK2",
+            "scope": "LINK16-45",
+            "status": "PROCESSING",
+            "used": false
+          }
+        }
+      },
+      "kind": "payment_acquirer_batch_close",
+      "number": 28,
+      "payment_service": true,
+      "scope": "LINK16-45",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "D34-PAY-CASE",
+      "extension_service": true,
+      "family": " Temporal effect × Priority claim × Payroll allocation ",
+      "id": "extension_payroll_attachment",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-PAY-EVENT-EARLY": {
+            "amount_minor": 0,
+            "event_kind": "payroll_window",
+            "reference": "EARLY"
+          },
+          "D34-PAY-EVENT-FINAL": {
+            "amount_minor": 0,
+            "event_kind": "payroll_window",
+            "reference": "FINAL"
+          },
+          "D34-PAY-EVENT-FUNDING": {
+            "amount_minor": 133000,
+            "event_kind": "payroll_funding",
+            "reference": "FUNDING"
+          },
+          "D34-PAY-EVENT-STAY": {
+            "amount_minor": 0,
+            "event_kind": "court_decision",
+            "reference": "STAY"
+          }
+        },
+        "events": {
+          "D34-PAY-EVENT-EARLY": {
+            "due_minute": 2,
+            "event_category": "payroll_window",
+            "id": "D34-PAY-EVENT-EARLY",
+            "kind": "payroll_event",
+            "scope": "LINK16-45",
+            "status": "SCHEDULED",
+            "target_id": "D34-PAY-CASE"
+          },
+          "D34-PAY-EVENT-FINAL": {
+            "due_minute": 5,
+            "event_category": "payroll_window",
+            "id": "D34-PAY-EVENT-FINAL",
+            "kind": "payroll_event",
+            "scope": "LINK16-45",
+            "status": "SCHEDULED",
+            "target_id": "D34-PAY-CASE"
+          },
+          "D34-PAY-EVENT-FUNDING": {
+            "due_minute": 4,
+            "event_category": "payroll_funding",
+            "id": "D34-PAY-EVENT-FUNDING",
+            "kind": "payroll_event",
+            "scope": "LINK16-45",
+            "status": "SCHEDULED",
+            "target_id": "D34-PAY-CASE"
+          },
+          "D34-PAY-EVENT-STAY": {
+            "due_minute": 3,
+            "event_category": "court_decision",
+            "id": "D34-PAY-EVENT-STAY",
+            "kind": "payroll_event",
+            "scope": "LINK16-45",
+            "status": "SCHEDULED",
+            "target_id": "D34-PAY-CASE"
+          }
+        },
+        "service_records": {
+          "D34-PAY-J1": {
+            "case_id": "D34-PAY-CASE",
+            "category": "ORDINARY",
+            "creditor": "Judgment creditor J1",
+            "customer_access": true,
+            "employee": "NINA",
+            "historical_paid_minor": 10000,
+            "id": "D34-PAY-J1",
+            "kind": "attachment_order",
+            "name": "J1",
+            "paid_minor": 0,
+            "principal_minor": 25000,
+            "priority_day": -10,
+            "reference": "J1",
+            "scope": "LINK16-45",
+            "status": "ACTIVE"
+          },
+          "D34-PAY-J2": {
+            "case_id": "D34-PAY-CASE",
+            "category": "ORDINARY",
+            "creditor": "Judgment creditor J2",
+            "customer_access": true,
+            "employee": "NINA",
+            "historical_paid_minor": 0,
+            "id": "D34-PAY-J2",
+            "kind": "attachment_order",
+            "name": "J2",
+            "paid_minor": 0,
+            "principal_minor": 60000,
+            "priority_day": -5,
+            "reference": "J2",
+            "scope": "LINK16-45",
+            "status": "ACTIVE"
+          },
+          "D34-PAY-J3": {
+            "case_id": "D34-PAY-CASE",
+            "category": "ORDINARY",
+            "creditor": "Judgment creditor J3",
+            "customer_access": true,
+            "employee": "LEO",
+            "historical_paid_minor": 20000,
+            "id": "D34-PAY-J3",
+            "kind": "attachment_order",
+            "name": "J3",
+            "paid_minor": 0,
+            "principal_minor": 42000,
+            "priority_day": -12,
+            "reference": "J3",
+            "scope": "LINK16-45",
+            "status": "ACTIVE"
+          },
+          "D34-PAY-L1": {
+            "allocations": {},
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "due_minute": 2,
+            "employee": "LEO",
+            "employee_paid_minor": 0,
+            "expense_repayment_minor": 0,
+            "gross_minor": 45000,
+            "id": "D34-PAY-L1",
+            "kind": "payroll_obligation",
+            "name": "L1",
+            "period": 1,
+            "protected_disposable_minor": 15000,
+            "reference": "L1",
+            "scope": "LINK16-45",
+            "status": "OPEN",
+            "tax_minor": 5000,
+            "tax_paid_minor": 0
+          },
+          "D34-PAY-L2": {
+            "allocations": {},
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "due_minute": 5,
+            "employee": "LEO",
+            "employee_paid_minor": 0,
+            "expense_repayment_minor": 3000,
+            "gross_minor": 60000,
+            "id": "D34-PAY-L2",
+            "kind": "payroll_obligation",
+            "name": "L2",
+            "period": 2,
+            "protected_disposable_minor": 15000,
+            "reference": "L2",
+            "scope": "LINK16-45",
+            "status": "OPEN",
+            "tax_minor": 10000,
+            "tax_paid_minor": 0
+          },
+          "D34-PAY-LEO": {
+            "bank_version": 1,
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "id": "D34-PAY-LEO",
+            "kind": "payroll_employee",
+            "name": "Leo Marsh",
+            "reference": "LEO",
+            "scope": "LINK16-45",
+            "status": "ACTIVE"
+          },
+          "D34-PAY-N1": {
+            "allocations": {},
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "due_minute": 2,
+            "employee": "NINA",
+            "employee_paid_minor": 0,
+            "expense_repayment_minor": 2000,
+            "gross_minor": 60000,
+            "id": "D34-PAY-N1",
+            "kind": "payroll_obligation",
+            "name": "N1",
+            "period": 1,
+            "protected_disposable_minor": 15000,
+            "reference": "N1",
+            "scope": "LINK16-45",
+            "status": "OPEN",
+            "tax_minor": 10000,
+            "tax_paid_minor": 0
+          },
+          "D34-PAY-N2": {
+            "allocations": {},
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "due_minute": 5,
+            "employee": "NINA",
+            "employee_paid_minor": 0,
+            "expense_repayment_minor": 0,
+            "gross_minor": 70000,
+            "id": "D34-PAY-N2",
+            "kind": "payroll_obligation",
+            "name": "N2",
+            "period": 2,
+            "protected_disposable_minor": 15000,
+            "reference": "N2",
+            "scope": "LINK16-45",
+            "status": "OPEN",
+            "tax_minor": 10000,
+            "tax_paid_minor": 0
+          },
+          "D34-PAY-NINA": {
+            "bank_version": 2,
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "id": "D34-PAY-NINA",
+            "kind": "payroll_employee",
+            "name": "Nina Patel",
+            "reference": "NINA",
+            "scope": "LINK16-45",
+            "status": "ACTIVE"
+          },
+          "D34-PAY-NINA_OLD": {
+            "bank_version": 1,
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "employee": "NINA",
+            "id": "D34-PAY-NINA_OLD",
+            "kind": "employee_alias",
+            "name": "Nina P. former payroll display",
+            "reference": "NINA_OLD",
+            "scope": "LINK16-45",
+            "status": "ARCHIVED"
+          },
+          "D34-PAY-S1": {
+            "case_id": "D34-PAY-CASE",
+            "category": "SUPPORT",
+            "creditor": "Family collection office",
+            "customer_access": true,
+            "employee": "NINA",
+            "historical_paid_minor": 30000,
+            "id": "D34-PAY-S1",
+            "kind": "attachment_order",
+            "name": "S1",
+            "paid_minor": 0,
+            "principal_minor": 90000,
+            "priority_day": -20,
+            "reference": "S1",
+            "scope": "LINK16-45",
+            "status": "ACTIVE"
+          },
+          "D34-PAY-SOURCE": {
+            "_response": {
+              "minimum_cash_reserve_minor": 10000,
+              "ordinary_aggregate_cap_bp": 2500,
+              "payroll_obligations": [
+                "N1",
+                "L1",
+                "N2",
+                "L2"
+              ],
+              "prior_remittances_confirmed": [
+                "S1",
+                "J1",
+                "J3"
+              ],
+              "support_cap_bp": 5000
+            },
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "delay": 1,
+            "id": "D34-PAY-SOURCE",
+            "kind": "external_correspondence",
+            "name": "Payroll authority and prior remittance acknowledgement",
+            "receipt_status": "AVAILABLE",
+            "reference": "SOURCE",
+            "scope": "LINK16-45"
+          },
+          "D34-PAY-STAY": {
+            "_decision": "STAY",
+            "case_id": "D34-PAY-CASE",
+            "customer_access": true,
+            "decision": null,
+            "earliest_affected_period": 2,
+            "effective_from_period": null,
+            "expected_minute": 3,
+            "id": "D34-PAY-STAY",
+            "kind": "court_notice",
+            "name": "Nina family order prospective stay review",
+            "order": "S1",
+            "possible_decisions": [
+              "STAY",
+              "DENIED"
+            ],
+            "reference": "STAY",
+            "scope": "LINK16-45",
+            "status": "PENDING"
+          }
+        }
+      },
+      "kind": "dated_payroll",
+      "scope": "LINK16-45",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Acquiring net receipt and cross-batch reconciliation × Reuse of credited funds ",
+  "id": "case_028",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. State your own business goals and preferences. You do not know the bank's rules, internal record identifiers, future corporate-action results, or which operational strategy will work. Report an event result only after it appears in an actual response.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Our card sales do not add up to the deposits in the bank. Please close the two settlement periods and release the merchant payouts that are actually due. I also need help with a related matter: please get this run and the next payroll paid, including the court deductions. There is a review of Nina's order and I am not sure whether it changes what we owe now.\n\nYour own facts and preferences: Reconcile both card batches to their actual bank receipts, then pay each merchant the exact remaining sale proceeds after returns and agreed commission. Alder’s Friday payout has an earlier deadline. Keep the platform’s actual net earnings in the settlement wallet. The second feed sometimes contains another view of an existing bank receipt. There is no other funding.\n\nFor the related matter: I manage Juniper Services payroll. Pay both payroll runs completely and on time, including employees, tax and the proper attachment creditors. Include the expense repayments and keep USD 100 available for operations. Use our payroll wallet and its scheduled funding. Nina told me her application to pause one deduction was submitted; I thought that meant the deduction had already stopped. If the court record says otherwise, use the court's actual decision. Do not change payroll amounts or pay anybody twice. I do not know internal IDs, statutory calculations or the outcome of the review.\n\nAny money actually returned in the first matter may be used for the second, but I cannot add outside money.",
+  "kind": "payment_acquirer_batch_close",
+  "link_contract_id": "LINK16-45-LINK",
+  "link_operator": {
+    "category": "liquidity",
+    "id": "posted_credit_reuse",
+    "relation": "primary_credit_before_secondary_debit"
+  },
+  "number": 28,
+  "opening": "Our card sales do not add up to the deposits in the bank. Please close the two settlement periods and release the merchant payouts that are actually due. I also need help with a related matter: please get this run and the next payroll paid, including the court deductions. There is a review of Nina's order and I am not sure whether it changes what we owe now.",
+  "payment_service": true,
+  "required_documents": [
+    "PAYMENT-common",
+    "PAYMENT-payment_acquirer_batch_close",
+    "DIVERSE-common",
+    "DIVERSE-dated_payroll",
+    "LINK-posted_credit_reuse",
+    "TRADE-common",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-45",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Current conversion requires cash and quota valid at the actual execution minute. Sales import creates quota, not cash; the capacity must also be unconsumed and unreserved.\n\nA historical amendment additionally requires the replacement quota to have covered the old conversion's submission minute. Current capacity that began later cannot support the old transaction. Using another quota does not automatically remove debt recorded on a refunded source.",
+  "id": "OPS-current-sales-current-conversion",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Current conversion requires cash and quota valid at the actual execution minute. Sales import creates quota, not cash; the capacity must also be unconsumed and unreserved.",
+  "title": "Current sales capacity and historical allocations",
+  "topic": "quota_history"
+}

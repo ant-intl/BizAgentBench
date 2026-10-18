@@ -1,0 +1,17 @@
+{
+  "applicability": "Only early_discount service cases; synthetic contract edition 8.0.",
+  "content": "# Early payment discounts\n\nScope: the early_discount service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nAn issued credit note reduces the invoice face before early discount. A full settlement no later than discount_until costs adjusted face less adjusted face times discount_bp rounded down. A later settlement costs the adjusted face in full. The listed future cash is credited only at its scheduled event. Early cash cannot be spent as though that receipt were already available. An operating reserve must remain available throughout. Each invoice has one settlement in this service and an inclusive final deadline.\n\n`pay` takes {record_id, amount_minor}, debits available cash and records the exact settlement time. The bank executes the authorized amount; commercial sufficiency and entitlement to a discount remain the operator's responsibility. The objective 'lowest overall payment' refers to all invoices, not the highest single discount percentage.\n\nService interface: `propose_early_discount_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_early_discount_instruction`\n\nEarly payment discounts. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-early_discount",
+  "scope": "early_discount",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Early payment discounts",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_early_discount_instruction"
+  ]
+}

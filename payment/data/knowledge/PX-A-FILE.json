@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-FILE",
+  "title": "Payment-file monetary semantics and row repair",
+  "topic": "Legacy batch payment exports",
+  "applicability": "Legacy batch payment exports",
+  "content": "Source-derived: batch-payment templates support supplier and salary payments; successful payments cannot be recalled. Synthetic schema: MAJOR_NET interprets decimal amount as major units times100 and pays that amount plus sender fee. MINOR_NET interprets the numeric amount directly as minor units. MAJOR_GROSS interprets amount times100 as including recipient-borne fee and subtracts fee_minor from beneficiary principal. a_preview_payment_file requires actual uploaded export. Obligations specify true principal and beneficiary. a_execute_payment_file_line honors chosen semantics, records bank rejection and its repair recipient; failed lines charge rejection_fee_minor. Keep a stable obligation key when repairing so successful rows are not repeated. Equal file totals do not validate row semantics. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_preview_payment_file`\n\nParse an uploaded payment export with explicit monetary-unit and fee semantics. Returns line-level proposed bank amounts and original obligation references without moving money. MAJOR_NET converts decimal major units to minor units and adds sender fees; MINOR_NET treats values as minor units; MAJOR_GROSS subtracts recipient-borne fees.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `file_record_id` | string | yes | Public export metadata ID with uploaded file contents. |\n| `schema` | string | yes | MAJOR_NET, MINOR_NET, or MAJOR_GROSS. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "batch-payment-function.sop.md"
+    ],
+    "source_nodes_and_rows": "N2-N4 source rows245,252; merged recall source row139"
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_preview_payment_file"
+  ]
+}

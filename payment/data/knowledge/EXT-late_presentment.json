@@ -1,0 +1,17 @@
+{
+  "applicability": "Only late_presentment service cases; synthetic contract edition 8.0.",
+  "content": "# Late card presentments\n\nScope: the late_presentment service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nA declined authorization notice is not proof that a later presentment was unauthorized. Recorded offline consent can support a genuine purchase despite that notice. Merchant proofs in current correspondence establish consent. An unauthorized presentment can be recovered only to the extent it has not already received a posted credit. A received credit must not be claimed twice. Valid purchases remain payable on the card account.\n\n`dispute` takes {record_id}. A dispute is an accepted customer challenge, costs 500 USD minor units, and produces a one-minute decision. Consent causes rejection; otherwise the bank reduces card_due_minor by the uncredited disputed amount. It does not also add wallet cash. `pay_bill` takes {amount_minor}, debits the wallet and pays the card account. Card due is separate from wallet cash. Challenging a valid purchase remains recorded even if the bank rejects the challenge.\n\nService interface: `propose_late_presentment_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_late_presentment_instruction`\n\nLate card presentments. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-late_presentment",
+  "scope": "late_presentment",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Late card presentments",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_late_presentment_instruction"
+  ]
+}

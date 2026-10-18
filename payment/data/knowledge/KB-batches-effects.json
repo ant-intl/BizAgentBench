@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "The batch review result reports new lot and quota identifiers and the actual source records. Later batch_release changes availability on its original lot_ids.\n\nEvidence for a different sample or month does not release this batch. A submitted review does not credit cash.\n\nSource-specific conversion and recipient-channel rules continue to apply after review. Each conversion settles in 10 minutes and a subsequent bank withdrawal in another 10 minutes.\n\nA customer deadline applies to actual recipient settlement.",
+  "id": "KB-batches-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "The batch review result reports new lot and quota identifiers and the actual source records. Later batch_release changes availability on its original lot_ids.",
+  "title": "Batch review results and later cash release",
+  "topic": "batches"
+}

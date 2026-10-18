@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-EXPORT-CERTIFICATES",
+  "title": "Shipment and pooled export reporting certificates",
+  "topic": "export shipment certificate pooled capacity customs allocation deadlines",
+  "applicability": "Enrolled multi-shipment export schedules",
+  "content": "Enrolled exporter schedules list the reporting value for each lot and certificate eligibility. Shipment certificates cover only their listed lot; pooled certificates cover several lots but have one total capacity. reserve_export_reporting_capacity commits amount and fee irreversibly. Capacity cannot be moved to another lot or recovered after cash settlement. The delay is measured from reservation; mature reserved value must cover the actual reporting basis when settling with declaration. Gross cash value is not the reporting basis.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `reserve_export_reporting_capacity`\n\nReserve amount_minor of one published certificate for a named export lot. Reservations are irrevocable, consume the certificate’s shared capacity across all its lots and charge its fee. The lot may use only its own matured reserved capacity. A reservation is reporting eligibility, not settlement cash or an issued declaration.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `lot_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `certificate_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional certificate allocation and shipment timing; no tax refund guarantee."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "reserve_export_reporting_capacity"
+  ]
+}

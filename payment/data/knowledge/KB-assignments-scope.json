@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "For mandate-based transfers, READY bank advice gives mandate_id, value_minute, amount, original payee and transmission reference. It does not give a present-day destination recommendation.\n\nclaims records signed assignments of a mandate to an account with inclusive valid_from_minute and valid_to_minute. DRAFT assignments do not convey title.\n\nEntitlement follows the SIGNED assignment covering the bank value_minute, rather than the date on which a support investigation is performed. Future signed versions can coexist with the historic assignment.",
+  "id": "KB-assignments-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "For mandate-based transfers, READY bank advice gives mandate_id, value_minute, amount, original payee and transmission reference. It does not give a present-day destination recommendation.",
+  "title": "Entitlement under dated collection mandates",
+  "topic": "assignments"
+}

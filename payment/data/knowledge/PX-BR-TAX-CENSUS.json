@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-TAX-CENSUS",
+  "title": "Predecessor allocation estimates and accepted receipts",
+  "topic": "tax agency capacity jurisdiction receipt deadline handover",
+  "applicability": "Tax handovers with a processing capacity contract",
+  "content": "Before the census, allocation_basis=provisional means authority_allocations is an estimate, not a final authority receipt. The accepted instruction record publishes allocation_ranges; the eventual census publishes final jurisdiction allocations, and settlement posts exactly those actual amounts. Pending successor processing may have been reserved against that uncertainty. Either cancellation of a still-queued predecessor instruction or its actual settlement is valid if the two original liabilities are discharged exactly once. A settled receipt for one jurisdiction cannot be applied to another. The successor appointment covers only its recorded jurisdictions; historical unrelated recipients are unchanged.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional service capacity, direct route limits and allocation ranges."
+    }
+  ]
+}

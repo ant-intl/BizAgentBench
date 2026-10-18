@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_guarantee_instruction",
+  "content": "`issue` takes {product_id, amount_minor}. It issues one new active guarantee and charges the product fee. An independent product locks the new amount in addition to existing collateral. A maximum-of-old-and-new replacement locks only the shortfall between the new amount and collateral already held. Only available wallet cash can meet that shortfall.\n\n`return_old` takes {}. A READY beneficiary return authority is required. It deactivates the old guarantee. Collateral above the amount supporting an active replacement returns to cash. If there is no replacement, all old collateral returns. The institution can process an authorized return even if the customer thereby creates a gap under their commercial continuity covenant.\n\nCoverage is determined at each effective issue or return event, not just by the final set of guarantees. Returning the old instrument and later issuing another does not retroactively cover that interval. Product issuance fees and already issued guarantee amounts cannot be undone through this service.\n\nOperations are available through `propose_guarantee_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_guarantee_instruction`\n\nGuarantee issuance, release and collateral. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-guarantee",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Performance guarantees and replacement collateral",
+  "topic": "guarantee",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_guarantee_instruction"
+  ]
+}

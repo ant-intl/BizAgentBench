@@ -1,0 +1,23 @@
+{
+  "id": "PX-A-BASKET",
+  "title": "Order-level benefits and frozen checkout prices",
+  "topic": "Multi-order procurement",
+  "applicability": "Multi-order procurement",
+  "content": "Source-derived: coupons have scope and expiry; red packets restrict eligible payment methods. A guaranteed transaction is only a troubleshooting item in the source and is not prohibited here. Synthetic checkout: a_quote_procurement_basket uses current order prices and revisions; benefits require eligible method, category, minimum subtotal and validity. CROSSBORDER, WALLET and MERCHANT_BUNDLE fees, express surcharge, benefit discounts and budget terms are public. Benefits cannot be stacked and are consumed once. Quoting does not reserve a benefit: payment rechecks that it is unused and unexpired. a_pay_procurement_quote rejects stale revisions or a benefit already consumed by another quote, pays the quoted total and fixes delivery. Splitting orders can lose minimum-spend eligibility and incur another payment fee. Merchant revisions arrive independently and require recomputing the whole remaining basket. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_pay_procurement_quote`\n\nPay an unchanged frozen procurement quote and consume its applicable benefit. The bank does not enforce the customer's total-budget preference across multiple checkouts.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `quote_id` | string | yes | Frozen procurement quote ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_quote_procurement_basket`\n\nCalculate and freeze a quote for selected orders. Basket coupons depend on minimum eligible subtotal and payment method; red packets are restricted to WALLET. Quotes bind each order revision and cannot be paid after merchant changes.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `order_ids` | array | yes | Distinct unpaid order IDs in this checkout. |\n| `method` | string | yes | CROSSBORDER, WALLET or MERCHANT_BUNDLE. |\n| `benefit_id` | string | yes | Coupon or red-packet ID, or empty string for no benefit. |\n| `delivery` | string | yes | STANDARD or EXPRESS. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "1688-cross-border-payment-troubleshooting.sop.md",
+      "coupon-usage.sop.md"
+    ],
+    "source_nodes_and_rows": "troubleshooting N1-N5, SOP lines20-59, source row490; coupon N1-N2, source row322; quote mechanics synthetic"
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_pay_procurement_quote",
+    "a_quote_procurement_basket"
+  ]
+}

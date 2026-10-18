@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-R-PORTFOLIO-MANDATES",
+  "title": "Receivable portfolio collection mandates",
+  "topic": "Receivable portfolio collection mandates",
+  "applicability": "Original delayed receipts and separately retained portfolio claims.",
+  "content": "A succession deed can transfer a dated subset of claims while another original receivable remains with the predecessor. Active collection_mandates specify actual subject_ids and a legal bank payee; they are not ownership evidence. a_revise_receivable_collection_mandate(contract_id,subject_id,payee_id,mode) charges the published fee. REPLACE revokes every existing active mandate and creates the specified single-claim mandate; ADD leaves the existing mandate active and opens the specified separate scope. Revoked unspent scopes can be restored by another paid mandate. Principal already paid cannot be rerouted by changing a mandate. a_pay_out_shop_receipt requires an active mandate matching its bound legal payee; a_pay_retained_receivable_claim(claim_id) pays its actual current mandate beneficiary once. A bank-valid successor payee may not own the retained claim.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_pay_out_shop_receipt`\n\nPay an assigned receipt to the selected shop. Payout is irrevocable; later timestamp corrections cannot move cash already sent to a different shop.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `receipt_id` | string | yes | Assigned virtual-account receipt ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_pay_retained_receivable_claim`\n\nPay a separate retained original receivable through its active collection mandate. Payout transfers real principal to the bank-valid mandate payee and consumes this claim once; portfolio succession does not automatically transfer every claim.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `claim_id` | string | yes | Original retained receivable ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_revise_receivable_collection_mandate`\n\nReplace the portfolio collection mandate or add a separate mandate for one claim. Fees are nonrefundable; replacing revokes previous unspent mandates. A directory payee may be bank-valid without owning this claim.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original receivable portfolio contract. |\n| `subject_id` | string | yes | One original receivable or retained claim ID. |\n| `payee_id` | string | yes | Bank directory legal payee ID. |\n| `mode` | string | yes | REPLACE or ADD. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New portfolio mandates and desk capacity; preserves source bank identity, succession and original execution semantics."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_pay_out_shop_receipt",
+    "a_pay_retained_receivable_claim",
+    "a_revise_receivable_collection_mandate"
+  ]
+}

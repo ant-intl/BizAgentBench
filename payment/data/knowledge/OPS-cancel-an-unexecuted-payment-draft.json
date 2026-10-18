@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Use `propose_request_cancellation` for a request that has not executed. The request becomes CANCELLED. No bank return is needed because that request has not sent a payment.\n\nAPPROVED records consent to the proposal. EXECUTED records execution, while the resulting payment has its own processing or settlement state. Cancelling a draft cannot recall an executed transfer or erase a settled receipt.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_request_cancellation`\n\nCancel an unexecuted customer request. Cancellation does not cancel a sent payment.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `request_id` | string | yes | The unexecuted request to cancel. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "OPS-cancel-an-unexecuted-payment-draft",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Use `propose_request_cancellation` for a request that has not executed. The request becomes CANCELLED. No bank return is needed because that request has not sent a payment.",
+  "title": "Cancelling an approved payment draft",
+  "topic": "consent",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_request_cancellation"
+  ]
+}

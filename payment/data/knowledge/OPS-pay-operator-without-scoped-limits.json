@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An ACTIVE PAY operator without AP_NORTH or AP_SOUTH is not subject to those two policy ceilings. The operator's record, not its title, establishes whether a limit policy applies.\n\nFor an operator with a scoped policy, both beneficiary scope and cumulative executed principal are checked. ADMIN is not PAY. Preparing several requests does not create separate daily allowances, and prior executed amounts retain their approver attribution.",
+  "id": "OPS-pay-operator-without-scoped-limits",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "An ACTIVE PAY operator without AP_NORTH or AP_SOUTH is not subject to those two policy ceilings. The operator's record, not its title, establishes whether a limit policy applies.",
+  "title": "Operators without a delegated limit policy",
+  "topic": "delegated_limits"
+}

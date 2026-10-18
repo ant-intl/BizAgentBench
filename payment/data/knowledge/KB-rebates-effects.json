@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "The rebate is a fixed 3000-cent amount, not a percentage or a reduction to every invoice. It can reduce total net charges below the COMMIT activation charge.\n\nNet cost includes every posted activation and remittance charge less a posted rebate. Switching plans cannot retroactively qualify earlier executions.\n\nQualification flags describe the commercial category on the invoice, not an authorization to change its principal or split its required whole remittance.",
+  "id": "KB-rebates-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "The rebate is a fixed 3000-cent amount, not a percentage or a reduction to every invoice. It can reduce total net charges below the COMMIT activation charge.",
+  "title": "Rebate accounting and qualifying invoice categories",
+  "topic": "rebates"
+}

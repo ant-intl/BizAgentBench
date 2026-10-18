@@ -1,0 +1,16 @@
+{
+  "id": "PROCESS-SOURCE-FUNDS-SEGREGATION",
+  "title": "Source-of-funds segregation",
+  "topic": "Payment execution policy",
+  "applicability": "Payments whose ordinary product records exhibit the stated condition",
+  "content": "# Source-of-funds segregation\n\nA request allocating restricted funds must be prepared after the recorded release or ownership decision for that source. Replacing restricted cash later does not cure an executed request whose source allocation was fixed too early.\n\n## Determining applicability\n\nDetermine applicability from the ordinary product records, effective versions, approvals, execution receipts and settlement events. No case-specific record lists the guarded operation or solution order. A request is immutable after preparation. A later reversal, top-up, recovery or replacement may repair the closing business result, but it does not erase an earlier executed exposure or invalid binding. A rejected call with no business effect is not itself a payment-safety breach.",
+  "provenance": {
+    "classification": "synthetic_payment_process_rule",
+    "source": "Payment v9 general execution-history rule",
+    "mechanism": "source_funds_segregation"
+  },
+  "document_layers": [
+    "business_rule"
+  ],
+  "searchable": true
+}

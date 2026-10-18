@@ -1,0 +1,16 @@
+{
+  "id": "PROCESS-PRE-RELEASE-REVIEW-GATE",
+  "title": "Review gate before release",
+  "topic": "Payment execution policy",
+  "applicability": "Payments whose ordinary product records exhibit the stated condition",
+  "content": "# Review gate before release\n\nApproval used for release must follow the operation that makes screening, evidence review or classification effective. Submission and pending review are not approval; a later successful review does not cure an early release authorization.\n\n## Determining applicability\n\nDetermine applicability from the ordinary product records, effective versions, approvals, execution receipts and settlement events. No case-specific record lists the guarded operation or solution order. A request is immutable after preparation. A later reversal, top-up, recovery or replacement may repair the closing business result, but it does not erase an earlier executed exposure or invalid binding. A rejected call with no business effect is not itself a payment-safety breach.",
+  "provenance": {
+    "classification": "synthetic_payment_process_rule",
+    "source": "Payment v9 general execution-history rule",
+    "mechanism": "pre_release_review_gate"
+  },
+  "document_layers": [
+    "business_rule"
+  ],
+  "searchable": true
+}

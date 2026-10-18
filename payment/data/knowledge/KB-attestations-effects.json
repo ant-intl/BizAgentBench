@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "issue_attested_bank_letter takes account_id and addressee and faithfully records the bank profile at issue time. A store review checks its required_addressee and that the letter age at the review result is no greater than letter_max_age_minutes.\n\nIt also compares the letter, bank and registry identity with the current entity and requires current registry/translation evidence. A registry revision becomes effective at its scheduled event and does not automatically update bank profiles, certificates or earlier evidence.\n\nA later review can therefore require another identity epoch while the original intake remains valid.",
+  "id": "KB-attestations-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "issue_attested_bank_letter takes account_id and addressee and faithfully records the bank profile at issue time. A store review checks its required_addressee and that the letter age at the review result is no greater than letter_max_age_minutes.",
+  "title": "Addressed letters and identity at platform review",
+  "topic": "attestations"
+}

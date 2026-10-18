@@ -1,0 +1,17 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Select the account purpose and the actual registration region of the individual or company. E-commerce, B2B trade and developer products have different collection scopes. The same company can hold both B2B and e-commerce accounts, using separate mobile-number login identifiers. A person may also hold a personal account and a company account where they meet the respective requirements.\n\nBefore verification, a registrant may choose the appropriate personal or company arrangement. After verification, switching between those account types requires a new registration. Changing the trading activity of the same business is a separate request from changing the account's product type or legal owner.\n\n## Regional applications\n\nThe mainland registration portal does not accept Taiwan-registered applicants; they use the Taiwan regional portal. Macau personal applicants are not accepted through the mainland personal-registration route. A qualifying mainland company with a Taiwan legal representative can provide the representative's passport; foreign legal representatives of mainland companies likewise use the required passport evidence.\n\nUse only a registration region corresponding to the actual applicant. If the appropriate region is not available, contact the service for that region; selecting another country is not a substitute.\n\nAn “identity already registered” or verification-attempt message may indicate an existing account. Recover or investigate that account before submitting another application using the same identity.",
+  "id": "SOP-registration",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Select the account purpose and the actual registration region of the individual or company. E-commerce, B2B trade and developer products have different collection scopes. The same company can hold both B2B and e-commerce accounts, using separate mobile-number login identifiers. A person may also hold a personal account and a company account where they meet the respective requirements.",
+  "source_ids": [
+    "A14",
+    "B07",
+    "B08",
+    "C08"
+  ],
+  "title": "Registration, region and account purpose",
+  "topic": "identity"
+}

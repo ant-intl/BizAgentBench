@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-TAX-ROUTES",
+  "title": "Authority remittance amount and delivery conditions",
+  "topic": "tax agency capacity jurisdiction receipt deadline handover",
+  "applicability": "Tax handovers with a processing capacity contract",
+  "content": "The processing contract lists each direct authority recipient’s per-instruction maximum and delivery delay. An instruction above that limit is declined before cash posting. New agency instructions additionally need reserved capacity for the original tax item’s jurisdiction. pay_tax_obligation still pays the item’s entire remaining amount, after actual predecessor receipts have been allocated. Both bank submission time and actual authority receipt time are recorded; the authority receipt must meet the item’s deadline. A census report is evidence of accepted commitments but does not itself reduce unpaid principal. Final bank settlement creates receipts that can be applied. Previously accepted or queued predecessor instructions may settle even after its mandate ends.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `pay_tax_obligation`\n\nPay the full unpaid tax item to recipient_id. The payment network accepts any listed active recipient; product/jurisdiction eligibility and agent appointment must be checked by the caller. Unqualified routing may post cash without discharging the tax obligation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `obligation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `recipient_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional service capacity, direct route limits and allocation ranges."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "pay_tax_obligation"
+  ]
+}

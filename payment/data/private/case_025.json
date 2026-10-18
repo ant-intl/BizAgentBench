@@ -1,0 +1,438 @@
+{
+  "case_id": "D34-BILL-CASE",
+  "components": [
+    {
+      "case_id": "D34-BILL-CASE",
+      "extension_service": true,
+      "family": " Cross-period optimization. × Customer business plan × Shared eligibility ",
+      "id": "extension_billing_plan",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-BILL-EVENT-1": {
+            "reference": "PERIOD1"
+          },
+          "D34-BILL-EVENT-2": {
+            "reference": "PERIOD2"
+          }
+        },
+        "events": {
+          "D34-BILL-EVENT-1": {
+            "due_minute": 2,
+            "event_category": "subscription_billing",
+            "id": "D34-BILL-EVENT-1",
+            "kind": "billing_event",
+            "scope": "LINK16-36",
+            "status": "SCHEDULED",
+            "target_id": "D34-BILL-CASE"
+          },
+          "D34-BILL-EVENT-2": {
+            "due_minute": 5,
+            "event_category": "subscription_billing",
+            "id": "D34-BILL-EVENT-2",
+            "kind": "billing_event",
+            "scope": "LINK16-36",
+            "status": "SCHEDULED",
+            "target_id": "D34-BILL-CASE"
+          }
+        },
+        "service_records": {
+          "D34-BILL-BRANCH": {
+            "case_id": "D34-BILL-CASE",
+            "closed_minute": null,
+            "customer_access": true,
+            "entity": "Laurel Distribution",
+            "group": "Laurel group",
+            "id": "D34-BILL-BRANCH",
+            "kind": "billing_account",
+            "name": "Laurel Distribution operating account",
+            "partner_age_days": 40,
+            "reference": "BRANCH",
+            "role": "OPERATING",
+            "scope": "LINK16-36",
+            "status": "ACTIVE"
+          },
+          "D34-BILL-BULK": {
+            "case_id": "D34-BILL-CASE",
+            "credit_minimum_transactions": 50,
+            "credit_partner_age_days": 180,
+            "customer_access": true,
+            "fixed_minor": 8000,
+            "id": "D34-BILL-BULK",
+            "kind": "subscription_plan",
+            "name": "Bulk",
+            "rates_minor": {
+              "domestic": 200,
+              "fx": 700,
+              "overseas": 400
+            },
+            "reference": "BULK",
+            "scope": "LINK16-36",
+            "status": "AVAILABLE",
+            "usage_credit_minor": 6000
+          },
+          "D34-BILL-EXPORT": {
+            "case_id": "D34-BILL-CASE",
+            "credit_minimum_transactions": 0,
+            "credit_partner_age_days": 180,
+            "customer_access": true,
+            "fixed_minor": 12000,
+            "id": "D34-BILL-EXPORT",
+            "kind": "subscription_plan",
+            "name": "Export",
+            "rates_minor": {
+              "domestic": 400,
+              "fx": 300,
+              "overseas": 100
+            },
+            "reference": "EXPORT",
+            "scope": "LINK16-36",
+            "status": "AVAILABLE",
+            "usage_credit_minor": 0
+          },
+          "D34-BILL-HISTORY": {
+            "case_id": "D34-BILL-CASE",
+            "customer_access": true,
+            "fixed_minor": 20000,
+            "group": "Laurel group",
+            "id": "D34-BILL-HISTORY",
+            "kind": "historical_statement",
+            "name": "September settled subscription bill",
+            "paid_minor": 44000,
+            "plan": "PRO",
+            "reference": "HISTORY",
+            "refundable": false,
+            "scope": "LINK16-36",
+            "status": "SETTLED",
+            "usage": {
+              "domestic": 5,
+              "fx": 35,
+              "overseas": 10
+            }
+          },
+          "D34-BILL-LEGACY": {
+            "case_id": "D34-BILL-CASE",
+            "closed_minute": null,
+            "customer_access": true,
+            "entity": "Laurel Trading",
+            "group": "Laurel group",
+            "id": "D34-BILL-LEGACY",
+            "kind": "billing_account",
+            "name": "Laurel former partner account",
+            "partner_age_days": 240,
+            "reference": "LEGACY",
+            "role": "LEGACY",
+            "scope": "LINK16-36",
+            "status": "ACTIVE"
+          },
+          "D34-BILL-MAIN": {
+            "case_id": "D34-BILL-CASE",
+            "closed_minute": null,
+            "customer_access": true,
+            "entity": "Laurel Trading",
+            "group": "Laurel group",
+            "id": "D34-BILL-MAIN",
+            "kind": "billing_account",
+            "name": "Laurel Trading operating account",
+            "partner_age_days": 20,
+            "reference": "MAIN",
+            "role": "OPERATING",
+            "scope": "LINK16-36",
+            "status": "ACTIVE"
+          },
+          "D34-BILL-PAYG": {
+            "case_id": "D34-BILL-CASE",
+            "credit_minimum_transactions": 0,
+            "credit_partner_age_days": 180,
+            "customer_access": true,
+            "fixed_minor": 0,
+            "id": "D34-BILL-PAYG",
+            "kind": "subscription_plan",
+            "name": "Payg",
+            "rates_minor": {
+              "domestic": 300,
+              "fx": 800,
+              "overseas": 500
+            },
+            "reference": "PAYG",
+            "scope": "LINK16-36",
+            "status": "AVAILABLE",
+            "usage_credit_minor": 0
+          },
+          "D34-BILL-PERIOD1": {
+            "_actual_usage": {
+              "BRANCH": {
+                "domestic": 20,
+                "fx": 0,
+                "overseas": 0
+              },
+              "MAIN": {
+                "domestic": 30,
+                "fx": 0,
+                "overseas": 10
+              }
+            },
+            "actual_usage": null,
+            "billing_minute": 2,
+            "case_id": "D34-BILL-CASE",
+            "charge_minor": null,
+            "coupon_discount_minor": 0,
+            "customer_access": true,
+            "group": "Laurel group",
+            "id": "D34-BILL-PERIOD1",
+            "kind": "billing_period",
+            "name": "October billing",
+            "plan": "PAYG",
+            "reference": "PERIOD1",
+            "scope": "LINK16-36",
+            "status": "OPEN",
+            "usage_credit_applied_minor": 0
+          },
+          "D34-BILL-PERIOD2": {
+            "_actual_usage": {
+              "BRANCH": {
+                "domestic": 0,
+                "fx": 0,
+                "overseas": 20
+              },
+              "MAIN": {
+                "domestic": 10,
+                "fx": 20,
+                "overseas": 30
+              }
+            },
+            "actual_usage": null,
+            "billing_minute": 5,
+            "case_id": "D34-BILL-CASE",
+            "charge_minor": null,
+            "coupon_discount_minor": 0,
+            "customer_access": true,
+            "group": "Laurel group",
+            "id": "D34-BILL-PERIOD2",
+            "kind": "billing_period",
+            "name": "November billing",
+            "plan": "PAYG",
+            "reference": "PERIOD2",
+            "scope": "LINK16-36",
+            "status": "OPEN",
+            "usage_credit_applied_minor": 0
+          },
+          "D34-BILL-PRO": {
+            "case_id": "D34-BILL-CASE",
+            "credit_minimum_transactions": 60,
+            "credit_partner_age_days": 180,
+            "customer_access": true,
+            "fixed_minor": 20000,
+            "id": "D34-BILL-PRO",
+            "kind": "subscription_plan",
+            "name": "Pro",
+            "rates_minor": {
+              "domestic": 100,
+              "fx": 400,
+              "overseas": 200
+            },
+            "reference": "PRO",
+            "scope": "LINK16-36",
+            "status": "AVAILABLE",
+            "usage_credit_minor": 10000
+          },
+          "D34-BILL-SOURCE": {
+            "_response": {
+              "billing_accounts": [
+                "MAIN",
+                "BRANCH"
+              ],
+              "billing_group": "Laurel group",
+              "close_by_minute": 6,
+              "final_minute": 5,
+              "minimum_cash_reserve_minor": 10000,
+              "retired_account": "LEGACY"
+            },
+            "case_id": "D34-BILL-CASE",
+            "customer_access": true,
+            "delay": 1,
+            "id": "D34-BILL-SOURCE",
+            "kind": "external_correspondence",
+            "name": "Laurel consolidated billing arrangement",
+            "receipt_status": "AVAILABLE",
+            "reference": "SOURCE",
+            "scope": "LINK16-36"
+          },
+          "D34-BILL-VOUCHER": {
+            "_owned": true,
+            "_valid_code": "LAUREL-AUTUMN-150",
+            "cap_minor": 15000,
+            "case_id": "D34-BILL-CASE",
+            "consumed_period": null,
+            "customer_access": true,
+            "group": "Laurel group",
+            "id": "D34-BILL-VOUCHER",
+            "kind": "partner_voucher",
+            "name": "Partner subscription credit campaign",
+            "partner_age_days": 180,
+            "reference": "VOUCHER",
+            "reserved_period": null,
+            "scope": "LINK16-36",
+            "status": "AVAILABLE"
+          }
+        }
+      },
+      "kind": "prospective_billing",
+      "scope": "LINK16-36",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY46-CASE",
+      "extension_service": true,
+      "family": " Subscription change, Late usage and actual receipt adjustment ",
+      "id": "payment_subscription_proration",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY46-EVENT-1": {
+            "contract_scope": "LINK16-36",
+            "event_kind": "usage_collection"
+          },
+          "PAY46-EVENT-2": {
+            "contract_scope": "LINK16-36",
+            "event_kind": "renewal"
+          },
+          "PAY46-EVENT-3": {
+            "contract_scope": "LINK16-36",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY46-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY46-EVENT-1",
+            "kind": "payment_subscription_proration_event",
+            "name": "Final metered usage and collection result",
+            "scope": "LINK16-36",
+            "status": "SCHEDULED",
+            "target_id": "PAY46-CASE"
+          },
+          "PAY46-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY46-EVENT-2",
+            "kind": "payment_subscription_proration_event",
+            "name": "Contracted next-period service debit",
+            "scope": "LINK16-36",
+            "status": "SCHEDULED",
+            "target_id": "PAY46-CASE"
+          },
+          "PAY46-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY46-EVENT-3",
+            "kind": "payment_subscription_proration_event",
+            "name": "Current invoice correction deadline",
+            "scope": "LINK16-36",
+            "status": "SCHEDULED",
+            "target_id": "PAY46-CASE"
+          }
+        },
+        "service_records": {
+          "PAY46-PENDING": {
+            "amount_minor": 20000,
+            "case_id": "PAY46-CASE",
+            "customer_access": true,
+            "id": "PAY46-PENDING",
+            "kind": "subscription_collection",
+            "name": "Current-period collection",
+            "recall_fee_minor": 200,
+            "reference": "PENDING",
+            "scope": "LINK16-36",
+            "status": "PROCESSING"
+          },
+          "PAY46-PERIOD": {
+            "_usage_units": 10,
+            "additional_paid_minor": 0,
+            "case_id": "PAY46-CASE",
+            "collected_minor": 30000,
+            "customer_access": true,
+            "days": 30,
+            "declared_due_minor": null,
+            "historical_paid_minor": 30000,
+            "id": "PAY46-PERIOD",
+            "kind": "subscription_invoice",
+            "name": "Current 30-day service period",
+            "new_monthly_minor": 48000,
+            "old_days": 10,
+            "old_monthly_minor": 30000,
+            "possible_usage_units": [
+              8,
+              10
+            ],
+            "reference": "PERIOD",
+            "refunded_minor": 0,
+            "scope": "LINK16-36",
+            "usage_unit_minor": 500,
+            "usage_units": null
+          },
+          "PAY46-RENEWAL": {
+            "active": true,
+            "amount_minor": 43000,
+            "case_id": "PAY46-CASE",
+            "customer_access": true,
+            "due_minute": 2,
+            "id": "PAY46-RENEWAL",
+            "kind": "subscription_renewal",
+            "name": "Next-period service renewal",
+            "paid_minor": 0,
+            "reference": "RENEWAL",
+            "scope": "LINK16-36"
+          },
+          "PAY46-TERMS": {
+            "case_id": "PAY46-CASE",
+            "customer_access": true,
+            "final_cash_floor_minor": 10000,
+            "id": "PAY46-TERMS",
+            "kind": "subscription_terms",
+            "name": "Customer reserve and refund terms",
+            "reference": "TERMS",
+            "refund_fee_minor": 0,
+            "scope": "LINK16-36"
+          }
+        }
+      },
+      "kind": "payment_subscription_proration",
+      "number": 46,
+      "payment_service": true,
+      "scope": "LINK16-36",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Cross-period optimization. × Customer business plan × Shared eligibility × Actual settlement threshold ",
+  "id": "case_025",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Disclose the forecast when asked about expected use, transaction volumes, future business or a comparison that depends on them. Disclose the partner voucher when asked about benefits, offers, vouchers, partner membership or discounts. A broad relevant question is sufficient; do not insist on exact wording. Do not volunteer either as a solution or recommend a plan. You know the customer-facing voucher code but no internal record IDs.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Our payments are changing over the next couple of months. Could you put us on the cheapest suitable plan and finish closing the old partner account? I also need help with a related matter: we changed our subscription partway through the month, but the bill looks wrong. Please fix what we have paid and keep the service we still need running.\n\nYour own facts and preferences: I manage Laurel Trading and Laurel Distribution. Compare the total upcoming October and November service charges. Keep both operating accounts working, and close the former partner account by its recorded closure deadline. Use our existing money and keep USD 100 available. Our commercial plans are firm for these two months. I do not know which bank plan is cheapest. Last month's bill is already paid.\n\nFor the related matter: Correct the current bill for the actual mid-period upgrade and usage, refund any true overcollection, and keep the subscribed service active for the next period. Do not cancel a service or pay an avoidable recall fee. Keep at least USD 100 in the payment wallet after the renewal. I have already agreed to the recorded upgrade and renewal; I do not yet know the final usage or whether the pending charge has settled.\n\nThe two matters belong to the same settlement arrangement, but I do not know when the bank treats a result as posted.\n\nYour privately known forecast, to disclose when asked: For October, Laurel Trading will make 30 domestic payments, 10 overseas payments and no currency conversions; Laurel Distribution will make 20 domestic payments and nothing else. For November, Laurel Trading will make 10 domestic payments, 30 overseas payments and 20 conversions; Laurel Distribution will make 20 overseas payments and nothing else. These are complete committed volumes, with no other transactions planned.\n\nYour privately owned voucher, to disclose when asked: Our partner sent me a subscription voucher, LAUREL-AUTUMN-150. I have not redeemed it. Please use it if it saves us money. I do not know the bank's eligibility or pricing rules.",
+  "kind": "prospective_billing",
+  "link_contract_id": "LINK16-36-LINK",
+  "link_operator": {
+    "category": "settlement",
+    "id": "posted_settlement_gate",
+    "relation": "event_before_secondary_execution"
+  },
+  "number": 25,
+  "opening": "Our payments are changing over the next couple of months. Could you put us on the cheapest suitable plan and finish closing the old partner account? I also need help with a related matter: we changed our subscription partway through the month, but the bill looks wrong. Please fix what we have paid and keep the service we still need running.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-prospective_billing",
+    "PAYMENT-common",
+    "PAYMENT-payment_subscription_proration",
+    "LINK-posted_settlement_gate",
+    "TRADE-common",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-36",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

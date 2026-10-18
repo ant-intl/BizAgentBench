@@ -1,0 +1,24 @@
+{
+  "id": "PX-BR-CUSTOMS-RECEIVING",
+  "title": "Initial and supplemental customs ACH receiving windows",
+  "topic": "Initial and supplemental customs ACH receiving windows",
+  "applicability": "Enrolled customs installment disbursements.",
+  "content": "select_customs_disbursement_channel(schedule_id,channel) selects the next receiving service. receiving_channels lists destination_id, fee_minor, initial_delay_minutes, supplemental_delay_minutes and the per-payout max_principal_minor. The first accepted amount uses initial timing; later accepted balances use supplemental timing. The original accept_customs_award binds the full currently approved outstanding amount and irreversibly commits its charge and value date. A channel selection alone reserves neither funds nor date. Bank acceptance is not spendable receipt: actual payout events credit the linked receiving account and update the importer-owned destination. New classification approval can make a paid initial amount leave an additional outstanding balance. Availability deducts any remaining lien at its actual original receiving account. Customer early-cash and final-full-availability dates concern actual available money; all filing, release, correction and payout service expenses remain in the original processing budget.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `accept_customs_award`\n\nAccept the authority's reviewed customs award into the registered ACH account, or withdraw it. amount_minor must exactly match the published award in USD minor units. Acceptance transfers only that reviewed total; withdrawal forfeits this claim. A registry lien can make part of credited funds unavailable; a receipt does not extinguish that encumbrance.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `importer_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `decision` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `select_customs_disbursement_channel`\n\nSelect a published importer-owned ACH disbursement channel for the next confirmed award balance. Channel fee and cash delay apply when accepting that payout. Original and supplemental amounts can use different published channels; already accepted payouts cannot be recalled.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "normalized_source"
+    },
+    {
+      "kind": "synthetic",
+      "scope": "All review amounts, minute clocks, costs, installment channels, sealing licenses, field lineage and consent semantics are fictional commercial product extensions."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "accept_customs_award",
+    "select_customs_disbursement_channel"
+  ]
+}

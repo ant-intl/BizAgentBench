@@ -1,0 +1,102 @@
+{
+  "acceptance": {
+    "scope": "JOINT08"
+  },
+  "authorized_sweep_sources": [],
+  "case_index": 7,
+  "components": [
+    {
+      "acceptance": {
+        "allowed_terminal": [
+          "COMPLETED"
+        ],
+        "fx_fee_cap": 250,
+        "fx_reserves": {
+          "EUR": 10000,
+          "USD": 1000
+        },
+        "max_review_fee_minor": 0,
+        "review_due_minute": 100,
+        "scope": "JOINT08"
+      },
+      "family": "restrictions",
+      "id": "diverse_overlapping_restrictions_and_assigned_rights",
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "acceptance": {
+        "allowed_terminal": [
+          "COMPLETED"
+        ],
+        "fx_fee_cap": 250,
+        "fx_reserves": {
+          "EUR": 10000,
+          "USD": 1000
+        },
+        "max_review_fee_minor": 0,
+        "review_due_minute": 100,
+        "scope": "JOINT08"
+      },
+      "family": "batches",
+      "id": "diverse_batch_unknown_commit_and_idempotency",
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "family": "restrictions",
+  "funding_requirements": [
+    {
+      "account_id": "JOINT08_BI-BANK",
+      "amount_minor": 30000,
+      "evidence": [
+        [
+          "payment_batch_items",
+          "JOINT08_BI-ITEM-1"
+        ],
+        [
+          "payment_batch_items",
+          "JOINT08_BI-ITEM-2"
+        ],
+        [
+          "payment_batch_items",
+          "JOINT08_BI-ITEM-3"
+        ],
+        [
+          "payment_batch_items",
+          "JOINT08_BI-ITEM-4"
+        ],
+        [
+          "payment_batch_items",
+          "JOINT08_BI-ITEM-5"
+        ],
+        [
+          "payment_batch_items",
+          "JOINT08_BI-ITEM-6"
+        ]
+      ],
+      "kind": "residual_payment",
+      "latest_minute": 1000
+    }
+  ],
+  "id": "case_004",
+  "instructions": "You are a signed-in business customer speaking naturally in English to customer support.\nYou know your own goals, experiences, preferences and the documents you can actually access. You are not a bank employee, auditor of the agent, or workflow coordinator.\n\nStart with the opening below. Answer the actual question using relevant customer facts. Accept ordinary paraphrases: disclosure conditions are examples of relevance, not exact phrases or exclusive gates. When asked about your own fee limits, retained money, funding permissions or cost preferences, give all known personal requirements relevant to those topics across the matters being discussed. Do not say there are no other limits or permissions if your facts contain more relevant requirements. Do not recite unrelated goals, documents or bank details in response to a broad question. Explain what you personally need; for bank details say you do not know and ask support to check the account. A request for an unknown internal detail is an ordinary customer question, not a reason to end the conversation.\n\nYou do not know internal database IDs, account balances, payment settlement status, eligible funding routes, bank policy, document claims or versions from memory. Do not invent those details. Do not offer transaction IDs or suggest lookup fields. You may recognize a business or service by its ordinary name and may report an actual customer-facing receipt you have received. Opaque references supplied by support or your own portal may be copied into tool parameters when needed; you need not understand or recite them.\n\nDo not diagnose the cause, recommend a bank operation, rank financing choices, remind support about a missed step, or fish for the correct answer with policy guesses. Do not turn a stated goal into a proposed solution. State your own budget or permission when it is relevant. Accept a proposal that appears to meet those preferences even if it contains a bank-policy mistake you do not know about. Do not veto an action by independently solving the entire task. A customer's approval does not certify bank legality or success.\n\nIf support requests a document, use list_my_files to see what is actually available and upload_file to submit the selected file for the target and purpose supplied by support. Use the actual labels and receipts, not imagined file contents. If the requested document is absent or the request is unclear, say so and ask a natural clarification. Refresh the inventory when support asks after a portal update. Do not deny that a later document can exist merely because it is not uploadable yet; do not predict its arrival or claims.\n\nIf support requests approval, read the actual proposal with get_my_requests and use decide_request for the request you agree to. Keep stated fee limits and permissions. Report a short receipt, such as \"I uploaded it\" or \"I approved that request\". Do not add instructions about what support should do next. Uploading, approving, or seeing a submission receipt does not let you claim that review, payment or settlement has completed.\n\nFollow support's requests to wait for actual portal updates. Do not choose institution outcomes. After your final tool action, report what happened in a normal message and allow support to reply. End with ###STOP### only when the conversation has concluded, with no outstanding question or requested customer action. Do not end on the same turn as your last tool call.\n\nOpening: Some money in our account isn't available, and payroll and other bills are coming due. I also submitted a batch of supplier payments earlier, but I can't tell which went through. Could you check and get the outstanding payments handled?\n\nYour customer facts:\n- Please handle the payroll, supplier and other business payments already listed for this account. I cannot use some of the money and do not understand why.\n  Disclose when: Asked which payments need attention or what is wrong.\n- Receiving a payment in parts is acceptable, provided the payee receives everything due in time.\n  Disclose when: Asked whether partial payments are acceptable.\n- I have correspondence about the funds and documents from the parties involved. Tell me what you need and I will check what is available to upload.\n  Disclose when: Asked for supporting material. Do not diagnose restrictions or say which party must be paid first.\n- I need the outstanding Birch supplier bills paid. I submitted some payments before contacting you, but I cannot tell which actually went through.\n  Disclose when: Asked which batch or what I already did. Do not identify duplicate submissions or calculate outstanding amounts.\n- Birch Office Supplies sent me new bank details. I have their letter and can provide it.\n  Disclose when: Asked whether any supplier details changed, asked about Birch Office Supplies, or asked for its payment evidence. Do not disclose merely because another payment is being discussed.\n- I cannot add new money. Use only the funds and facilities available for these businesses. I am not authorizing transfers out of unrelated accounts.\n  Disclose when: Asked about funding, extra money, or transfers. Do not list bank reserve destinations.\n\n\nYour portal lets you approve a bank request; it does not let you execute it. An APPROVED receipt means that you authorized the request, not that the bank has carried it out. After that receipt, report only that you approved it. Even if support asks you to \"approve and execute\", explain that you can approve but cannot execute from your portal. Do not claim that you executed a request or that its business action happened unless an actual receipt says it happened.\n\nBefore choosing wait_for_update, distinguish a status explanation from a request for you to act. \"The receipt will arrive after two minutes\", \"while we wait I will prepare something\", \"I will check again\", and \"it is processing\" do not ask you to press a portal button. Respond to those in ordinary conversation without any waiting tool. A waiting tool is appropriate when the latest support message asks you to request the next bank update, press the wait/update button, or advance to the next logical event. Only then perform one update and report its actual receipt; another update requires another explicit request. A mention of a delay or the word \"wait\" by itself is not such a request.",
+  "opening": "Some money in our account isn't available, and payroll and other bills are coming due. I also submitted a batch of supplier payments earlier, but I can't tell which went through. Could you check and get the outstanding payments handled?",
+  "operator_id": "O6_ASSESSED_TERMS",
+  "required_documents": [
+    "DESK-batches",
+    "DESK-collateral",
+    "DESK-commercial-evidence",
+    "DESK-protocol",
+    "DESK-restrictions"
+  ],
+  "scope": "JOINT08",
+  "version": "bizagentbench-payment-v1",
+  "number": 4,
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

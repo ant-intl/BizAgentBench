@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-FULFILLMENT",
+  "title": "Supplier short delivery, refunds and replacement funding",
+  "topic": "Supplier fulfillment replacement",
+  "applicability": "Paid stock packages, compatible equipment sets and multi-order purchases",
+  "content": "Synthetic extension. A paid purchase can later be delivered partially. deliveries link the actual purchase record to required_quantity and required_compatibility. a_book_supplier_dispatch requires the purchase paid, fixes the chosen transport compatibility and charges its nonrefundable fee. Its fixed supplier event publishes delivered_quantity and shortfall_refund_minor. a_claim_supplier_shortfall disposes that one actual refund as CASH or restricted STORE_CREDIT; restricted credit is accepted only by replacement offers listing it. a_order_replacement_units buys actual available units at unit price plus fee before expiry, debiting bank cash or eligible store credit. Offered compatibility can differ even for visually similar items. a_accept_supplier_delivery records original and selected replacement quantities and their actual compatibility; acceptance cannot make incompatible units satisfy the original contract. Original transport, reservation, replacement and payment fees count toward the customer budget; refunds offset actual paid cost but cannot recreate a consumed coupon. Remaining operating reserves and exact required goods must still be satisfied. When a delivery has source_compatibility_field, the actual atomically purchased contract determines the required series. refund_component identifies the purchased component whose actual principal is refundable after supplier short delivery; reservation and transport fees remain nonrefundable.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_book_supplier_dispatch`\n\nBook a paid purchase into a supplier dispatch route. The route fixes product compatibility, nonrefundable transport cost and delivery window. The supplier later publishes actual allocated units and eligible shortfall refund value.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `delivery_id` | string | yes | Paid purchase fulfillment record ID. |\n| `transport_id` | string | yes | Published supplier transport route ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_claim_supplier_shortfall`\n\nClaim the supplier-confirmed undelivered value. CASH restores spendable bank funds; STORE_CREDIT creates restricted replacement credit accepted only by matching supplier offers. This is a one-time disposition of the actual published shortfall.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `delivery_id` | string | yes | Fulfillment record with a published supplier shortfall. |\n| `disposition` | string | yes | CASH or STORE_CREDIT. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All fulfillment, refund, store-credit, compatibility and replacement rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_book_supplier_dispatch",
+    "a_claim_supplier_shortfall"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An IN_TRANSIT receivable can support advances up to its advance_limit_minor across all advances combined. propose_receivable_advance credits an OPEN accessible account in the controlled customer group immediately.\n\nEach advance costs 800 USD cents from that destination fee wallet, regardless of principal. On receipt of the pledged incoming, principal is automatically recovered from the transmitted receiving account; the advance becomes REPAID.\n\nAn advance moves the time at which cash is available, not the final amount of owned principal.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_receivable_advance`\n\nFinance an identified transmitted receivable into a controlled-group accessible account. Principal is recovered from that receivable on arrival.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | The specific incoming transfer. |\n| `destination_id` | string | yes | The destination account. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-liquidity-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "An IN_TRANSIT receivable can support advances up to its advance_limit_minor across all advances combined. propose_receivable_advance credits an OPEN accessible account in the controlled customer group immediately.",
+  "title": "Advances against an in-transit receivable",
+  "topic": "liquidity",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_receivable_advance"
+  ]
+}

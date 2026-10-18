@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-STAFF-FLOAT",
+  "title": "Funded staff float confirmation service interfaces",
+  "topic": "staff float cash room confirmation",
+  "applicability": "PSP product accounts; Cash-room confirmation of staff floats that were already funded.",
+  "content": "Cash-room confirmation of staff floats that were already funded.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `request_staff_float_notice`\n\nRequest the independent cash-room confirmation of the already-funded staff float. The notice supplies its exact value, collector and note restrictions; it does not create another withdrawal.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `allocation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "request_staff_float_notice"
+  ],
+  "business_area": "physical_cash",
+  "service": "staff_float",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

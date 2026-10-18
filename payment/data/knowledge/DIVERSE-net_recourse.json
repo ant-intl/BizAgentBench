@@ -1,0 +1,20 @@
+{
+  "applicability": "Service case kind: net_recourse",
+  "category": "Specialist service contracts",
+  "content": "# Guaranteed net remittance and residual settlement\n\nApplies to `net_recourse`. A guaranteed net instruction commits to cover the published external-fee upper bound when submitted. Its gross amount must cover the promised net plus that bound. The corridor's bank fee is additional and is debited immediately. The bank accepts an authorized gross instruction even if it fails to meet a customer's separate guarantee mandate.\n\n`send_guaranteed(record_id, corridor_id, gross_minor, net_minor, bank_version)` submits one initial instruction for a supplier obligation. The payment debits gross plus bank fee and remains in flight until the receipt event. The corridor discloses a possible partial-credit range but not the realized credit or bank-detail revision in advance. At the event, the bank publishes actual credited principal, actual external charge and any current bank-version change. Residual cash equals gross minus external charge minus actual credit, floored at zero, and returns only after the separate return delay. The unused guarantee margin remains unavailable before that return.\n\n`direct_pay(record_id, amount_minor, bank_version)` transfers principal immediately with a USD 10 bank fee. `topup(record_id, amount_minor, bank_version)` makes a supplemental principal transfer with a USD 5 fee. Both require the current bank version at execution. They are operationally allowed before or after an earlier receipt; the bank does not determine the outstanding commercial obligation. An authorized overpayment is irreversible. Reapproval of a new instruction may be necessary after a bank-version change; it does not cancel an earlier in-flight instruction. `pay_bill(record_id, amount_minor)` pays another USD bill without the remittance corridor fee.\n\n## Service interface\n\nUnlock `propose_net_remittance` and pass `case_id`, `action`, and an object `data` containing exactly the action fields above. The action name omits the parenthesized fields. Each proposed instruction requires a separate portal approval.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_net_remittance`\n\nGuaranteed remittance and residual obligation settlement. Prepares one local instruction; see the product document for action fields and effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-net_recourse",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "note": "New author-defined mechanism; earlier SOP themes provide business context, not these parameters.",
+    "source_ids": []
+  },
+  "scope": "Service case kind: net_recourse",
+  "title": "Guaranteed net remittance and residual settlement",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_net_remittance"
+  ]
+}

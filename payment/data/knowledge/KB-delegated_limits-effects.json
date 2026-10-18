@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An AUTHORIZED_BANK obligation can be paid in multiple remittances; each costs 100 cents. Each executed request is bound to its actual approver, current epoch and PAY role.\n\nRevoking an operator invalidates its earlier unexecuted approvals. The owner can administer accounts and has no delegated ceiling.\n\nThe execution record identifies the actual approving operator. Cancelling an obsolete draft does not recover capacity consumed by an executed remittance.",
+  "id": "KB-delegated_limits-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "An AUTHORIZED_BANK obligation can be paid in multiple remittances; each costs 100 cents. Each executed request is bound to its actual approver, current epoch and PAY role.",
+  "title": "Authorized remittances and consumed capacity",
+  "topic": "delegated_limits"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-LEASE",
+  "title": "Historical virtual-account ownership",
+  "topic": "Late receipts on reused virtual accounts",
+  "applicability": "Late receipts on reused virtual accounts",
+  "content": "Synthetic product: leases cover half-open [start_minute,end_minute) intervals. Contracts specify SEND or ARRIVAL attribution; both modes are available operationally. a_assign_virtual_receipt checks the chosen timestamp and lease, records the current receipt revision and may be corrected before payout. Bank timestamp corrections are independent events and increment revision. a_pay_out_shop_receipt irrevocably pays the assigned shop; a later correction cannot redirect delivered cash. A provisional timestamp is not a final bank confirmation. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_assign_virtual_receipt`\n\nAssign a late receipt to a shop using an explicit historical lease and timestamp basis. SEND and ARRIVAL are operationally supported bases; the customer's contract determines the applicable basis. Assignment can be corrected until shop payout.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `receipt_id` | string | yes | Late virtual-account receipt ID. |\n| `lease_id` | string | yes | Historical virtual-account lease ID. |\n| `timestamp_basis` | string | yes | SEND or ARRIVAL. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_assign_virtual_receipt"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "SUPPLEMENT-13f05c805b95",
+  "title": "Fallback capacity and original-channel settlement windows",
+  "topic": "fallback capacity and original-channel settlement windows",
+  "applicability": "Synthetic linked contracts for the current customer with reasoning_version c-reasoning-v2.",
+  "content": "Supplier instructions retain their original business keys and individual due minutes. Original ACCEPTED instructions can settle immediately; queued instructions settle only at the recovery minute published by the network notice. refresh_channel_settlements records actual delivery time, not the time an instruction was submitted. Standard fallback consumes a shared principal quota. reserve_fallback_capacity protects an explicit amount for one supplier for the stated nonrefundable fee; the unused part can be released, without refunding that fee. A replacement consumes its own protected quota before unprotected quota. The first replacement schedules a network notice: unprotected quota may shrink within the disclosed range, while protected amounts remain available. The notice also publishes original-channel recovery time. Express fallback uses an independent network and the item-specific fee. Neither route recalls an original. Paying an already accepted instruction or an uncancelled queued instruction twice creates two economic transfers. Bank acceptance does not enforce the customer deadline or total fee allowance.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `refresh_channel_settlements`\n\nImport actual original-channel settlement notifications and the public recovery event. Accepted items settle; queued items settle after channel recovery unless explicitly cancelled. A replacement never cancels the original.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `batch_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `reserve_fallback_capacity`\n\nReserve amount_minor of currently free standard-fallback principal for one batch item; the posted reservation fee is nonrefundable. A zero amount releases its unused reservation without a fee refund.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `capacity_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `item_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Capacity, asynchronous collateral and two-beneficiary settlement."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "refresh_channel_settlements",
+    "reserve_fallback_capacity"
+  ]
+}

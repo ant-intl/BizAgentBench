@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-SOURCE-LOT-PAYMENT",
+  "title": "Source-lot payment service interfaces",
+  "topic": "source lot payment quote and execution",
+  "applicability": "PSP product accounts; Quotes and payments that preserve the provenance and permitted use of a source lot.",
+  "content": "Quotes and payments that preserve the provenance and permitted use of a source lot.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `inspect_lot_payment`\n\nQuote a USD payment against a specified source lot. Quotes do not reserve availability.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `lot_id` | string | yes | The source lot to inspect or use. |\n| `beneficiary_id` | string | yes | The receiving bank record. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `propose_lot_payment`\n\nPropose execution of one unexpired fund-lot payment quote.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `quote_id` | string | yes | The quote whose recorded terms are to be used. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "inspect_lot_payment",
+    "propose_lot_payment"
+  ],
+  "business_area": "fund_provenance",
+  "service": "source_lot_payment",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

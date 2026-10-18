@@ -1,0 +1,20 @@
+{
+  "id": "SUPPLEMENT-ffd18286d235",
+  "title": "Retiring-wallet merchant claims and final net exit",
+  "topic": "retiring-wallet merchant claims and final net exit",
+  "applicability": "Current customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "A retiring wallet may carry an existing merchant authorization in addition to closure fees and incoming settlements. Its final claim notice states the actual bill. settle_retiring_merchant pays that claim from EUR or USD as the merchant contract permits; the USD quote is floor(EUR minor units times the published rate) plus its collection fee. Paying more than the bill is a permitted merchant gratuity, not an obligation of the exit plan. A required open claim prevents wallet closure and cannot be eliminated by emptying the account. Merchant principal reduces the value available for final external outflow; collection fees share the original exit budget. An invoice cancelled by the merchant creates no bill. Protected operating cash remains outside the retirement scope.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `settle_retiring_merchant`\n\nPay the actual retiring-wallet merchant bill, plus any explicitly chosen gratuity, in an accepted currency. USD payment uses its published conversion and collection fee.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `claim_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `currency` | string: `EUR`, `USD` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n| `merchant_amount_eur_minor` | integer | yes | merchant amount eur minor (integer minor currency units). |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Additional commercial rights, funding and due dates."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "settle_retiring_merchant"
+  ]
+}

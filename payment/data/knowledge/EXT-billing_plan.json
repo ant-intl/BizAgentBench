@@ -1,0 +1,17 @@
+{
+  "applicability": "Only billing_plan service cases; synthetic contract edition 8.0.",
+  "content": "# Service billing plans\n\nScope: the billing_plan service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nA paid subscription from an earlier period is sunk and non-refundable. New service cost consists of the newly selected plan's fixed fee plus the marginal fee for each job actually processed. first_units jobs use first_fee_minor each; later jobs use later_fee_minor each. Current buyer cancellations remove jobs from the requested workload. An old scheduled row is not a new instruction to pay a cancelled invoice. The lowest future-cost valid plan can change when workload changes.\n\n`select_plan` takes {record_id}, pays the fixed fee and selects a plan once before processing. `process` takes {record_id}, pays the job's face amount, charges its next marginal fee and marks it processed. The bank can process an authorized scheduled job even if commercial correspondence has cancelled it. Such payment remains a commercial error and cannot be undone by choosing a different plan.\n\nService interface: `propose_billing_plan_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_billing_plan_instruction`\n\nService billing plans. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-billing_plan",
+  "scope": "billing_plan",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Service billing plans",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_billing_plan_instruction"
+  ]
+}

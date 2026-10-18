@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Each quota record has an account, a source identifier, remaining_minor and expires_minute. Quota is capacity justified by eligible sales; it is not a cash balance.\n\nA reservation may occupy both an underlying source and a quota. propose_reservation_cancellation releases its active occupancy.\n\nIt does not rewrite expires_minute or create cash. A previously reserved quota can already be expired when the reservation is cancelled.\n\nAt execution a conversion must satisfy both source cash availability and the current quota allocation; neither a draft nor a quote protects the quota from future expiry.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_reservation_cancellation`\n\nCancel an open reservation and release its live resource occupancy. Expiry is not reversed.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | The existing resource reservation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-quota-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Each quota record has an account, a source identifier, remaining_minor and expires_minute. Quota is capacity justified by eligible sales; it is not a cash balance.",
+  "title": "Conversion quota, reservations and expiry",
+  "topic": "quota",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_reservation_cancellation"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "## Store name and address\n\nUse the name associated with the store's `myshopify.com` address. For `yourstore.myshopify.com`, the name is `yourstore`. An incorrect name or URL is one possible cause of “Sorry, this shop is currently unavailable”; the message alone does not establish a unique cause.\n\n## Authorization routes\n\nFor a Shopify independent-store account, open Store Management, select the store and use the authorization entry. Shopify Payments supports authorization from CedarPay or through the CedarPay application in Shopify.\n\nFor the Shopify application route:\n\n1. Find and install the CedarPay application in the Shopify app store.\n2. Sign in to CedarPay when prompted.\n3. Select the store and complete authorization.\n\n## Quota processing\n\nAuthorization normally processes sales records from the preceding 1–180 days within about 24 hours. Shopify also supports manual sales-record upload. Use the upload format for the selected platform; Shopify Payments exports must follow their platform-specific guide.\n\nFor a shortfall after 24 hours, provide the original sales records, seller ID and collection account to support. Select the Portal account type corresponding to Shopify Payments or the independent-store arrangement actually used.",
+  "id": "SOP-shopify-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "## Store name and address",
+  "source_ids": [
+    "A06",
+    "B18"
+  ],
+  "title": "Shopify authorization: store details and connection routes",
+  "topic": "quota"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "SUPPLEMENT-ea2f3efd3651",
+  "title": "Equipment, consumables and returned-card authorization capacity",
+  "topic": "equipment, consumables and returned-card authorization capacity",
+  "applicability": "Current-customer linked records marked reasoning_version c-reasoning-v2 only.",
+  "content": "The employee requires both the named equipment and the consumables order. Existing delivered merchandise remains a commercial debt and occupies cycle capacity until a supplier accepts an actual return. submit_card_goods_return identifies the delivered authorization and quantity value, preserving all other delivered merchandise. The credit notice confirms actual accepted amount after a review interval. It credits the original bank account and reduces the still-open delivered authorization by that amount. It does not erase current-cycle purchase spend. Cancellation of a delivered authorization is not a return. Returning more than the authorized redundant merchandise sacrifices goods the customer still needs. Both new purchases use the original card policy and residual cycle capacity.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `submit_card_goods_return`\n\nSubmit a real return against the selected delivered authorization. The notice confirms the returned value and releases only that much cycle occupancy, with a credit to its original account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `return_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `authorization_reference` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Linked commercial contract terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "submit_card_goods_return"
+  ]
+}

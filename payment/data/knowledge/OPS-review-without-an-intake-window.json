@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A store without `intake_closes_minute` can submit assessed registry evidence and the appropriate letter through direct reverification.\n\nA store with an intake deadline instead requires registration by that inclusive deadline using the identity current at intake. Later evidence is evaluated against the later applicable identity. Bank synchronization and letter issuance do not register or extend intake.",
+  "id": "OPS-review-without-an-intake-window",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A store without `intake_closes_minute` can submit assessed registry evidence and the appropriate letter through direct reverification.",
+  "title": "Direct platform review without an intake deadline",
+  "topic": "attestations"
+}

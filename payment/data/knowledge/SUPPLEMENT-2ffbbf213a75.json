@@ -1,0 +1,27 @@
+{
+  "id": "SUPPLEMENT-2ffbbf213a75",
+  "title": "Marketplace migration and existing deposit rights",
+  "topic": "Marketplace migration and existing deposit rights",
+  "applicability": "Marketplace migration and existing deposit rights business records.",
+  "content": "xp_a_market_deposits is old-provider custody cash, separate from operating cash and from the accepted order payment. The statement identifies deposit_minor and entitled_order_id. Changing exclusive account binding does not automatically transfer the deposit. APPLY pays that portion of the identified new order from custody and reduces its original invoice cash principal; CASH returns it to operating cash while leaving the original invoice full amount due. FUTURE retains the value for another contract. Do not both apply and refund. The accepted order still needs its original servicing snapshot or actual original completion under the existing binding. An old deposit is not a duplicate payment of that accepted order.\na_obtain_legacy_market_deposit: Obtain the old provider statement for the existing marketplace deposit. Account migration does not move this cash or dispose its order rights. The statement names the original deposit and the order to which it belongs. Parameters: binding_id — Original marketplace binding ID.\na_dispose_legacy_market_deposit: Apply the old deposit against one unpaid order, return it as cash, or retain it for a future contract. APPLY reduces the original order invoice principal and pays that portion from the old custody account; CASH returns the same cash to operating balance. A deposit cannot be applied and refunded twice. Parameters: deposit_id — Confirmed old deposit ID., order_id — Marketplace order ID associated with the disposition., disposition — APPLY, CASH or FUTURE.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_dispose_legacy_market_deposit`\n\nApply the old deposit against one unpaid order, return it as cash, or retain it for a future contract. APPLY reduces the original order invoice principal and pays that portion from the old custody account; CASH returns the same cash to operating balance. A deposit cannot be applied and refunded twice.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `deposit_id` | string | yes | Confirmed old deposit ID. |\n| `order_id` | string | yes | Marketplace order ID associated with the disposition. |\n| `disposition` | string | yes | APPLY, CASH or FUTURE. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_obtain_legacy_market_deposit`\n\nObtain the old provider statement for the existing marketplace deposit. Account migration does not move this cash or dispose its order rights. The statement names the original deposit and the order to which it belongs.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `binding_id` | string | yes | Original marketplace binding ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "01_most_complex_top_10pct/1688-account-binding.sop.md:N2-N6; lines28-70",
+      "05_simplest_75_to_100pct/collection-account-migration.sop.md:lines16-19"
+    ],
+    "source_nodes_and_rows": [
+      "01_most_complex_top_10pct/1688-account-binding.sop.md:N2-N6; lines28-70",
+      "05_simplest_75_to_100pct/collection-account-migration.sop.md:lines16-19"
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_dispose_legacy_market_deposit",
+    "a_obtain_legacy_market_deposit"
+  ]
+}

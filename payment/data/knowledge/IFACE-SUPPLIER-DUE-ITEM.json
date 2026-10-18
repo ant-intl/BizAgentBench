@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-SUPPLIER-DUE-ITEM",
+  "title": "Linked supplier due-item payment service interfaces",
+  "topic": "supplier invoice early settlement linked due item",
+  "applicability": "PSP product accounts; Additional supplier invoices whose amount and discount depend on authenticated instructions.",
+  "content": "Additional supplier invoices whose amount and discount depend on authenticated instructions.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `pay_supplier_due_item`\n\nPay one additional supplier invoice. amount_minor is its contractual net due: the early discount requires an independent completed confirmation, the named account, and both invoices paid by discount_until_minute. Public transfer fees are additional.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `item_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_reference` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n| `speed` | string: `standard`, `instant` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "pay_supplier_due_item"
+  ],
+  "business_area": "supplier_settlement",
+  "service": "linked_due_items",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

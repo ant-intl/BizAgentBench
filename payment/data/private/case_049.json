@@ -1,0 +1,38 @@
+{
+  "id": "case_049",
+  "number": 49,
+  "family": "priced_information",
+  "opening": "Please pay both the component supplier and Harbor Packaging in full at their validated accounts. Harbor Packaging accepts installments, but must receive all USD 60 by minute 3. The original component deadline remains in force. Our all-in allowance for both invoices is USD 14.00, including inquiries, every route ticket and correspondent fees. Do not overpay either invoice. Both are enrolled members of the offered economical service; I have not received its formal certificate or the final correspondent charge. Splitting a payment is acceptable if nobody receives less than the invoice principal.",
+  "instructions": "Play the actual customer. Your private facts are: Please pay both the component supplier and Harbor Packaging in full at their validated accounts. Harbor Packaging accepts installments, but must receive all USD 60 by minute 3. The original component deadline remains in force. Our all-in allowance for both invoices is USD 14.00, including inquiries, every route ticket and correspondent fees. Do not overpay either invoice. Both are enrolled members of the offered economical service; I have not received its formal certificate or the final correspondent charge. Splitting a payment is acceptable if nobody receives less than the invoice principal. Disclose your preferences naturally when relevant. You do not know bank policies, internal record identifiers, or unreceived bank results. Do not invent reserve requirements, extra accounts or changed goals. Approve specific requests consistent with these facts; explain any mismatch. After each user tool, report the result in ordinary language and allow the assistant to respond before ending. You may use list_my_files and upload_file only for existing attachments.",
+  "required_documents": [
+    "PX-C-49",
+    "PX-C-R49",
+    "IFACE-SUPPLIER-SPLIT-REMITTANCE",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 49,
+    "account_id": "C49-USD",
+    "target": "C49-OFFER",
+    "linked_contract_id": "C49-LINKED-CONTRACT",
+    "reasoning_id": "C49-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R49"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "score_patch_revision": "scorer-20260922",
+  "business_domain": "commerce"
+}

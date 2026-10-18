@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_installment_return",
+  "content": "# Installment purchase returns and earned period fees\n\nScope: `payment_installment_return`.\n\nAccepted returned-item principal reduces the original financed purchase principal dollar for dollar. Each already earned service period retains period_fee_minor; earned_periods is independent of how many debit attempts succeeded. Future unearned fees are cancelled with their unperformed future service. Final total obligation is original principal minus accepted return plus earned_periods times period_fee_minor.\n\nHistorical installment payments and actual bank collections jointly discharge this obligation. A return decision does not itself cancel an already processing installment or refund cash. Scheduled future collections require explicit cancellation. Processing collections and future scheduled collections are distinct records. Refunds credit the customer's cash wallet from captured funds; balance payments debit it. Closing the servicing plan is an administrative state and does not discharge an unpaid economic balance.\n\nUnlock propose_payment_installment_return. apply_return data {remaining_principal_minor, earned_fee_minor} records the calculated principal and retained fee separately. refund and pay_balance data {amount_minor}; cancel_future data {}; close_plan data {}; pay_bill uses the common schema. The return and in-flight bank result arrive together at the specified update. The unrelated new retained purchase has its own amount and earlier deadline.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_installment_return`\n\nPrepare an owner-approved installment return instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_installment_return",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Installment purchase returns and earned period fees",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_installment_return"
+  ]
+}

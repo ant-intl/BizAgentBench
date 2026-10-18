@@ -1,0 +1,13 @@
+{
+  "applicability": "Shared Payment database interface; all tasks use the same dictionary",
+  "content": "> Inherited interface: no populated public shape in this release's admitted workflow inventory. See DB-inherited-collections and the product entry points in DB-index.\n\n# service_reviews\n\nService review records.\n\nRead this collection using `search_records(resource=\"service_reviews\", filters={}, cursor=0, limit=20)` or `get_record(resource=\"service_reviews\", record_id=\"<returned id>\")`.\n\n**Filters:** exact scalar equality; in, contains, gte and lte operator objects on supported top-level fields. See DB-query-syntax for type and null behavior.\n\nSearch returns selected summary fields, so omission from a summary is not proof of absence from the complete record. Read detail before interpreting an optional field. Fields depend on the record type and processing stage; null and absent fields are not zero amounts. Types below describe public record shapes, rather than mandatory properties on every row.\n\n## Explicit identifier relationships\n\n- `case_id` references a `service_cases` record ID when present. See `DB-service_cases`.\n\nCommercial references can require entity, period or issuer matching. An ID relationship does not imply that every related record repeats the same case_id.\n\n## Service-specific fields\n\nUse the kind on the parent service_cases record to choose its shared schema page. These pages describe record kinds and field meanings; they contain no customer-specific values.\n\n| Service kind | Field dictionary |\n| --- | --- |\n\nNo public populated record shape for this collection was produced by the current admitted workflows. The inherited endpoint remains available; a session can return an empty records array. No universal case_id or field layout is inferred from its name.",
+  "id": "DB-service_reviews",
+  "provenance": {
+    "classification": "interface_documentation",
+    "contains_task_specific_values": false,
+    "kind": "interface_documentation",
+    "source": "Public record shapes plus query/transition implementation; reviewed field semantics"
+  },
+  "title": "Database reference: service_reviews",
+  "topic": "Database interface"
+}

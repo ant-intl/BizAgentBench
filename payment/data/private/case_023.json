@@ -1,0 +1,442 @@
+{
+  "case_id": "D34-TOL-CASE",
+  "components": [
+    {
+      "case_id": "D34-TOL-CASE",
+      "extension_service": true,
+      "family": " Actual quote revision × Tolerance range × Natural person cumulative authorized allocation ",
+      "id": "extension_approval_tolerance",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-TOL-EVENT-0": {
+            "event_kind": "quote_revision"
+          }
+        },
+        "events": {
+          "D34-TOL-EVENT-0": {
+            "due_minute": 2,
+            "event_category": "quote_revision",
+            "id": "D34-TOL-EVENT-0",
+            "kind": "revised_tolerances_event",
+            "scope": "LINK16-34",
+            "status": "SCHEDULED",
+            "target_id": "D34-TOL-CASE"
+          }
+        },
+        "service_records": {
+          "D34-TOL-A": {
+            "_revision": {
+              "beneficiary_version": 1,
+              "fee_minor": 500
+            },
+            "beneficiary_version": 1,
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "due_minute": 1,
+            "fee_minor": 2000,
+            "id": "D34-TOL-A",
+            "kind": "authorized_invoice",
+            "name": "Assembly line deposit",
+            "paid_minor": 0,
+            "possible_revisions": [],
+            "principal_minor": 50000,
+            "quote_revision_minute": null,
+            "quote_status": "CURRENT",
+            "quote_version": 1,
+            "reference": "A",
+            "scope": "LINK16-34"
+          },
+          "D34-TOL-ALICE": {
+            "beneficiary_versions": [
+              1,
+              2
+            ],
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "effective_from": 0,
+            "effective_through": 3,
+            "fee_ceiling_minor": 5000,
+            "id": "D34-TOL-ALICE",
+            "invoice_refs": [
+              "A",
+              "B",
+              "C"
+            ],
+            "kind": "corporate_authority",
+            "name": "Alice Green signed authority",
+            "natural_person": "Alice Green",
+            "reference": "ALICE",
+            "scope": "LINK16-34",
+            "status": "SIGNED",
+            "total_gross_limit_minor": 90000,
+            "used_gross_minor": 0
+          },
+          "D34-TOL-ALICE_COPY": {
+            "beneficiary_versions": [
+              1,
+              2
+            ],
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "effective_from": 0,
+            "effective_through": 3,
+            "fee_ceiling_minor": 5000,
+            "id": "D34-TOL-ALICE_COPY",
+            "invoice_refs": [
+              "A",
+              "B",
+              "C"
+            ],
+            "kind": "corporate_authority",
+            "name": "Alice Green second certified copy",
+            "natural_person": "Alice Green",
+            "original_ref": "ALICE",
+            "reference": "ALICE_COPY",
+            "scope": "LINK16-34",
+            "status": "COPY",
+            "total_gross_limit_minor": 90000,
+            "used_gross_minor": 0
+          },
+          "D34-TOL-B": {
+            "_revision": {
+              "beneficiary_version": 2,
+              "fee_minor": 3000
+            },
+            "beneficiary_version": 1,
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "due_minute": 3,
+            "fee_minor": 1000,
+            "id": "D34-TOL-B",
+            "kind": "authorized_invoice",
+            "name": "Control unit balance",
+            "paid_minor": 0,
+            "possible_revisions": [
+              {
+                "beneficiary_version": 2,
+                "fee_minor": 3000
+              },
+              {
+                "beneficiary_version": 1,
+                "fee_minor": 500
+              }
+            ],
+            "principal_minor": 40000,
+            "quote_revision_minute": 2,
+            "quote_status": "CURRENT",
+            "quote_version": 1,
+            "reference": "B",
+            "scope": "LINK16-34"
+          },
+          "D34-TOL-BOB": {
+            "beneficiary_versions": [
+              1,
+              2
+            ],
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "effective_from": 0,
+            "effective_through": 3,
+            "fee_ceiling_minor": 5000,
+            "id": "D34-TOL-BOB",
+            "invoice_refs": [
+              "A",
+              "B",
+              "C"
+            ],
+            "kind": "corporate_authority",
+            "name": "Bob Miller signed authority",
+            "natural_person": "Bob Miller",
+            "reference": "BOB",
+            "scope": "LINK16-34",
+            "status": "SIGNED",
+            "total_gross_limit_minor": 80000,
+            "used_gross_minor": 0
+          },
+          "D34-TOL-C": {
+            "_revision": {
+              "beneficiary_version": 1,
+              "fee_minor": 500
+            },
+            "beneficiary_version": 1,
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "due_minute": 3,
+            "fee_minor": 3000,
+            "id": "D34-TOL-C",
+            "kind": "authorized_invoice",
+            "name": "Packaging equipment balance",
+            "paid_minor": 0,
+            "possible_revisions": [
+              {
+                "beneficiary_version": 1,
+                "fee_minor": 500
+              }
+            ],
+            "principal_minor": 30000,
+            "quote_revision_minute": 2,
+            "quote_status": "CURRENT",
+            "quote_version": 1,
+            "reference": "C",
+            "scope": "LINK16-34"
+          },
+          "D34-TOL-CAROL": {
+            "beneficiary_versions": [
+              1
+            ],
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "effective_from": 0,
+            "effective_through": 1,
+            "fee_ceiling_minor": 2000,
+            "id": "D34-TOL-CAROL",
+            "invoice_refs": [
+              "A"
+            ],
+            "kind": "corporate_authority",
+            "name": "Carol Davis signed authority",
+            "natural_person": "Carol Davis",
+            "reference": "CAROL",
+            "scope": "LINK16-34",
+            "status": "SIGNED",
+            "total_gross_limit_minor": 52000,
+            "used_gross_minor": 0
+          },
+          "D34-TOL-DAVID": {
+            "beneficiary_versions": [
+              2
+            ],
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "effective_from": 2,
+            "effective_through": 3,
+            "fee_ceiling_minor": 3000,
+            "id": "D34-TOL-DAVID",
+            "invoice_refs": [
+              "B"
+            ],
+            "kind": "corporate_authority",
+            "name": "David Hill signed authority",
+            "natural_person": "David Hill",
+            "reference": "DAVID",
+            "scope": "LINK16-34",
+            "status": "SIGNED",
+            "total_gross_limit_minor": 45000,
+            "used_gross_minor": 0
+          },
+          "D34-TOL-HELEN": {
+            "beneficiary_versions": [
+              1
+            ],
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "effective_from": 0,
+            "effective_through": 3,
+            "fee_ceiling_minor": 1500,
+            "id": "D34-TOL-HELEN",
+            "invoice_refs": [
+              "B"
+            ],
+            "kind": "corporate_authority",
+            "name": "Helen Chen signed authority",
+            "natural_person": "Helen Chen",
+            "reference": "HELEN",
+            "scope": "LINK16-34",
+            "status": "SIGNED",
+            "total_gross_limit_minor": 42000,
+            "used_gross_minor": 0
+          },
+          "D34-TOL-OLD_B": {
+            "beneficiary_version": 1,
+            "case_id": "D34-TOL-CASE",
+            "customer_access": true,
+            "fee_minor": 1000,
+            "id": "D34-TOL-OLD_B",
+            "invoice_ref": "B",
+            "kind": "approval_notice",
+            "name": "Earlier supplier payment approval",
+            "principal_minor": 40000,
+            "reference": "OLD_B",
+            "scope": "LINK16-34",
+            "status": "CORRESPONDENCE"
+          }
+        }
+      },
+      "kind": "revised_tolerances",
+      "scope": "LINK16-34",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY41-CASE",
+      "extension_service": true,
+      "family": " Partial shipment, Partial authorization and actual debit ",
+      "id": "payment_split_capture",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY41-EVENT-1": {
+            "contract_scope": "LINK16-34",
+            "event_kind": "fulfillment"
+          },
+          "PAY41-EVENT-2": {
+            "contract_scope": "LINK16-34",
+            "event_kind": "clearing"
+          },
+          "PAY41-EVENT-3": {
+            "contract_scope": "LINK16-34",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY41-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY41-EVENT-1",
+            "kind": "payment_split_capture_event",
+            "name": "Final second-shipment confirmation",
+            "scope": "LINK16-34",
+            "status": "SCHEDULED",
+            "target_id": "PAY41-CASE"
+          },
+          "PAY41-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY41-EVENT-2",
+            "kind": "payment_split_capture_event",
+            "name": "Card clearing cycle",
+            "scope": "LINK16-34",
+            "status": "SCHEDULED",
+            "target_id": "PAY41-CASE"
+          },
+          "PAY41-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY41-EVENT-3",
+            "kind": "payment_split_capture_event",
+            "name": "Second shipment payment deadline",
+            "scope": "LINK16-34",
+            "status": "SCHEDULED",
+            "target_id": "PAY41-CASE"
+          }
+        },
+        "service_records": {
+          "PAY41-CARD": {
+            "case_id": "PAY41-CASE",
+            "customer_access": true,
+            "id": "PAY41-CARD",
+            "kind": "card_terms",
+            "limit_minor": 150000,
+            "name": "Equipment purchase card",
+            "new_approval_cap_minor": 40000,
+            "new_authorized_minor": 0,
+            "reference": "CARD",
+            "reserve_minor": 5000,
+            "scope": "LINK16-34"
+          },
+          "PAY41-COURIER": {
+            "amount_minor": 10000,
+            "case_id": "PAY41-CASE",
+            "customer_access": true,
+            "due_minute": 0,
+            "id": "PAY41-COURIER",
+            "kind": "bill",
+            "name": "First-shipment courier",
+            "paid_minor": 0,
+            "reference": "COURIER",
+            "scope": "LINK16-34"
+          },
+          "PAY41-FIRST": {
+            "captured_minor": 0,
+            "case_id": "PAY41-CASE",
+            "cash_paid_minor": 0,
+            "cleared_minor": 0,
+            "customer_access": true,
+            "due_minute": 1,
+            "final_minor": 60000,
+            "fulfilled": true,
+            "id": "PAY41-FIRST",
+            "kind": "fulfillment_line",
+            "name": "Confirmed first shipment",
+            "provisional_minor": 60000,
+            "reference": "FIRST",
+            "scope": "LINK16-34"
+          },
+          "PAY41-OLD": {
+            "approved_minor": 100000,
+            "captured_minor": 0,
+            "case_id": "PAY41-CASE",
+            "customer_access": true,
+            "expires_minute": 3,
+            "id": "PAY41-OLD",
+            "kind": "capture_authorization",
+            "name": "Original equipment authorization",
+            "order_refs": [
+              "FIRST",
+              "SECOND"
+            ],
+            "reference": "OLD",
+            "released_minor": 0,
+            "remaining_minor": 100000,
+            "scope": "LINK16-34"
+          },
+          "PAY41-SECOND": {
+            "_final_minor": 25000,
+            "captured_minor": 0,
+            "case_id": "PAY41-CASE",
+            "cash_paid_minor": 0,
+            "cleared_minor": 0,
+            "customer_access": true,
+            "due_minute": 3,
+            "final_minor": null,
+            "fulfilled": false,
+            "id": "PAY41-SECOND",
+            "kind": "fulfillment_line",
+            "name": "Second equipment shipment",
+            "possible_final_minor": [
+              25000,
+              40000
+            ],
+            "provisional_minor": 40000,
+            "reference": "SECOND",
+            "scope": "LINK16-34"
+          }
+        }
+      },
+      "kind": "payment_split_capture",
+      "number": 27,
+      "payment_service": true,
+      "scope": "LINK16-34",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Actual quote revision × Tolerance range × Natural person cumulative authorized allocation × Member capacity release ",
+  "id": "case_023",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. Describe only your own business goals and preferences. Do not name internal IDs, infer institutional rules, announce hidden outcomes, calculate the service plan or remind the assistant of incomplete steps. You may approve any clearly explained genuine instruction without evaluating its financial optimality.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Please make the three equipment payments using our company approvals. One supplier has sent updated banking details and the bank says two quotes are being revised. I also need help with a related matter: my equipment order is shipping in two parts. One card payment is still pending, and I need to finish paying for the items that are actually shipping.\n\nYour own facts and preferences: I manage Willow Manufacturing. Complete the three equipment payments by their invoice deadlines, using the company authorities on file. Our overall service-fee limit is USD 55. Do not bring in extra money. Keep our signed authorities available for the rest of the batch where possible; the bank should have the letters. I cannot tell whether the earlier approval still covers a revised quote.\n\nFor the related matter: Pay only the goods that are actually dispatched, in both shipments, and pay the courier by its agreed date. Release every unused authorization when it is no longer needed. Keep at least USD 50 in the cash wallet throughout. I can approve specific payment requests. I do not know the bank’s approved amounts or the final second-shipment quantity; use the recorded merchant confirmation.\n\nThe bank has a recorded service-episode condition covering the timing of these two matters. I do not know its internal milestones; please check the bank records.\n\nThe USD 50 wallet floor belongs only to the related card purchase. It is not an extra cash floor or fee limit for the three company payments. If support asks which matter it covers, clarify this scope.",
+  "kind": "revised_tolerances",
+  "link_contract_id": "LINK16-34-LINK",
+  "link_operator": {
+    "category": "membership",
+    "id": "membership_capacity_release",
+    "relation": "secondary_start_inside_primary_span"
+  },
+  "number": 23,
+  "opening": "Please make the three equipment payments using our company approvals. One supplier has sent updated banking details and the bank says two quotes are being revised. I also need help with a related matter: my equipment order is shipping in two parts. One card payment is still pending, and I need to finish paying for the items that are actually shipping.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-revised_tolerances",
+    "PAYMENT-common",
+    "PAYMENT-payment_split_capture",
+    "LINK-membership_capacity_release",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-34",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "case_042",
+  "number": 42,
+  "family": "credential_incident",
+  "opening": "Integration credentials may be compromised, two transfers are unrecognized, and one genuine supplier payment is urgent. Please contain the incident while preserving legitimate business.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: You are the business customer. Start with the opening symptom only. When asked about intent, explain the customer_preferences brief naturally without internal IDs. List and upload only existing files for the requested purpose; never invent bank outcomes. Approve only the concrete proposed action after the assistant explains its commercial effect and charges. Corrections are finite: point out a conflict with your stated scope at most twice. After every user tool, report what you did and let the assistant respond before ending. Never reveal the evaluator or a solution sequence. Your own business facts, available before any file lookup: The integration API secrets were posted publicly, including access used by both unrecognized wires. Those two wires are unauthorized. The September parts supplier invoice for $10 is genuine and must arrive by minute 3, exactly once. It was already sent before the incident, but I do not know its final bank result. Our interactive finance session was not exposed and should remain usable. Please also stop the old integration standing authority and send the genuine supplier its confirmation. Total cash spent including all fees must stay within $10.50. These are your preferences to explain naturally when the assistant asks about scope or proposes a conflicting action; they are not bank rules or an operation sequence. Do not approve actions outside this stated scope. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-B-42",
+    "PX-BR-INCIDENT-FINALITY",
+    "PX-BR-INCIDENT-CONTINUITY",
+    "IFACE-INCIDENT-SUPPLIER-REPLACEMENT",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "budget_minor": 1050,
+    "account_id": "B-42-CASH",
+    "compromised_family": "integration",
+    "legitimate": "SUPPLIER-URGENT",
+    "suspicious": [
+      "SUSPICIOUS-ACCEPTED",
+      "SUSPICIOUS-QUEUED"
+    ],
+    "enhancement_record_id": "B-042-BUSINESS-EXTENSION"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-B-42",
+      "PX-BR-INCIDENT-FINALITY",
+      "PX-BR-INCIDENT-CONTINUITY"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "accounts"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-PVP-FINALITY",
+  "title": "Value-date delivery and exchange finality",
+  "topic": "PvP partial exchange preparation reverse leg capacity source cash finality",
+  "applicability": "Enrolled partial PvP schedules",
+  "content": "The schedule’s early_target_minor must be actually delivered by early_deadline, with the exact full target by final_deadline. Dealer range, confirmation delay, cumulative capacity and per-slice fee differ. The booked original window must be live and assigned to the pair for each actual slice. When a customer requests final settlement confirmation for a partial schedule, obtain it after all intended slices settle and unused source holds are released. confirm_currency_settlement_finality then reports cumulative executed source and target across all pairs and remaining held source; it does not retroactively remove unilateral exposure. Customer consent can prohibit even temporary exposure. Every source hold, released hold, execution and fee remains auditable in the original account and settlement records.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `confirm_currency_settlement_finality`\n\nConfirm actual received target currency and the committed pair after settlement. Does not reverse unsecured release or expired execution. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional dealer capacity, segregated holds and value dates."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "confirm_currency_settlement_finality"
+  ]
+}

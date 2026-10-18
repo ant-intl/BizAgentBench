@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Conversion debits USD principal and quota at execution and settles the CNY output after 10 minutes. A fee of 100 USD cents is taken separately from fee_balance_minor.\n\nThe output is amount_minor multiplied by 7, still in minor units. Receiving CNY in the account is distinct from withdrawing it to a bank beneficiary.\n\npropose_cny_withdrawal consumes posted CNY and settles after 10 minutes without a second fee in CORE. Cancellation of an older reservation does not reverse quota expiry, and importing sales records creates quota without creating cash.",
+  "id": "KB-conversion-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Conversion debits USD principal and quota at execution and settles the CNY output after 10 minutes. A fee of 100 USD cents is taken separately from fee_balance_minor.",
+  "title": "Conversion settlement and CNY withdrawal",
+  "topic": "conversion"
+}

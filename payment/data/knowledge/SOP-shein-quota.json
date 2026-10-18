@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Identify the store's operating model before selecting a record-submission route.\n\n| Store model | Available route |\n|---|---|\n| Self-operated marketplace store | Store authorization |\n| Direct-operated model | Manual upload; store authorization is unavailable |\n| Fully managed | Store authorization or manual upload |\n| Semi-managed | Store authorization or manual upload |\n\nUse the collection-account type corresponding to the store model. Authorized data normally processes within about 24 hours, using the eligible records from the preceding 1–180 days.\n\n## Record types\n\nFor fully managed stores, procurement orders contribute to automatic quota. Consumer orders do not contribute through that route; the merchant may submit them manually for review.\n\nFreight subsidies from semi-managed stores do not automatically generate quota. Manual submission can be attempted, but successful quota generation is not guaranteed. Where conversion is not required, foreign-currency withdrawal is another available use of the funds.\n\n## Missing upload entry\n\nIf the store page shows Complete store information, supply the required information and return to the page to access Upload sales records. For an unresolved authorization or quota issue, provide the store reference, collection account and relevant original records to support.",
+  "id": "SOP-shein-quota",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Identify the store's operating model before selecting a record-submission route.",
+  "source_ids": [
+    "A07"
+  ],
+  "title": "SHEIN sales records and conversion quota",
+  "topic": "quota"
+}

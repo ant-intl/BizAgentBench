@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-COLLECTION-CLEARING",
+  "title": "Debit collections, availability and supplier-funded settlement",
+  "topic": "Collection clearing",
+  "applicability": "Debts with clearing_plan_id and linked supplier invoices",
+  "content": "a_select_collection_clearing(debt_id,service_id) assigns a service before resubmitting that debit. Both listed services collect the same debt principal; delay_minutes and fee_minor determine the available cash and release time. The original debit retry and mandate rules continue to apply. A successful a_retry_direct_debit initially credits a bank clearing holding account, not spendable collection proceeds. The bank event at collection time plus delay_minutes releases principal less the chosen fee into the designated operating collection account. Holding cash cannot fund an invoice or accelerate its own release. Repeating the original successful debit key creates neither a new hold nor another release. a_pay_collection_funded_supplier(invoice_id,amount_minor,recipient_id) pays only from the invoice account and records actual time. The bank can process a late or excessive payment; the supplier contract still determines the amount, creditor and due_minute. A collection received after that deadline does not repair late supplier performance. The all-in fee cap includes clearing and failed retry fees, not principal. Original debt forgiveness remains a real waiver and is not collection. No other customer or unrelated account may be used to fund the linked supplier invoice. Logical time advances to the next bank event through the customer wait tool; multiple collections can clear together. Amounts are integer USD minor units.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_pay_collection_funded_supplier`\n\nPay a supplier from the designated available collection account. A completed debit receipt still in the clearing holding account is unavailable cash. The transfer records actual execution time; it does not change the supplier contractual due date.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `invoice_id` | string | yes | Supplier invoice financed by collections. |\n| `amount_minor` | integer | yes | Positive USD minor units to pay. |\n| `recipient_id` | string | yes | Bank-enabled recipient ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_select_collection_clearing`\n\nSelect a clearing service for one returned debit before resubmission. The successful debit first becomes a held receivable. Its service determines actual cash release time and the nonrefundable clearing charge.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `debt_id` | string | yes | Returned debit obligation ID. |\n| `service_id` | string | yes | Collection clearing-service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Clearing holds, net release, fee/time alternatives and linked supplier obligation"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_pay_collection_funded_supplier",
+    "a_select_collection_clearing"
+  ]
+}

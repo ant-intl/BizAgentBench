@@ -1,0 +1,32 @@
+{
+  "applicability": "Operations Desk evidence edition 6.4; local economic parameters retain the Desk 5.3 contract.",
+  "capability": null,
+  "content": "Operations Desk rail_profiles identify product contracts, currency and billing information. The received collection_product_terms for the matching commercial reference states supported entity regions, payment networks, markets, business categories and new-account availability. A legacy_only profile can serve existing open accounts but cannot be newly opened. The entity's actual registration region is immutable. A new account consumes one openings_remaining issuance credit from the entity, permanently. Account closure does not restore a credit. An account opening does not prove platform acceptance. Account fields identify its product contract; CORE and Marketplace Portal fees and account-opening rules do not apply to these Desk profiles.\n\nA rail_site declares currency, actual entity, market, operating category and sender rail requirements. propose_rail_binding saves an explicit proposed account and rail. After validation_delay, the platform checks those attributes and records ACCEPTED or REJECTED with observed reasons. A valid-looking account can be operationally wrong for a site. An accepted binding requires a separate test settlement. propose_payout_validation schedules that test. The test can reveal the platform's published pending sender configuration; inspect the site and test receipt afterward. Failed tests do not overwrite an already functioning binding for a different site.\n\nA successful test marks that site's active_binding and the binding READY. Opening another account, changing a binding and attempting a test do not terminate unrelated sites. Every target site requires a live, attribute-compatible binding and its actual successful test result. Different currency or product profiles cannot be made equivalent by changing a customer label.\n\nA profile can state issuance_fee_minor and billing_account_id. A successful opening immediately charges that USD fee and consumes its issuance credit; neither is restored by closure. Rejected openings do not charge. Sites may record a customer-agreed ready_due_minute for their launch; acceptance of a binding is separate from a successful test, and a later successful test does not establish readiness at an earlier launch time.\n\nSource-document interpretation follows Commercial source records and bank payment responsibility (Operations Desk evidence edition 6.4).\n\n## Exact service interfaces\n\n- Use `propose_desk_account_opening(profile_id, entity_id)` to prepare an account-opening request after the profile and entity have been identified from public records.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_desk_account_opening`\n\nOpen an Operations Desk collection account under an available product for the stated legal entity. Opening is separate from platform acceptance.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `profile_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `entity_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_payout_validation`\n\nInitiate the platform test settlement of an accepted binding. Examine the actual test receipt before relying on that path.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `binding_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_rail_binding`\n\nSubmit an explicit site, collection account and payment rail to platform validation. A saved binding is not an operational collection path.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `site_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `rail` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-rails",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-rails"
+  ],
+  "source_ids": [
+    "A10",
+    "A13",
+    "B01",
+    "B02",
+    "B04",
+    "B13",
+    "C02",
+    "C07"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Desk collection products, site bindings and test settlements",
+  "topic": "rails",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_desk_account_opening",
+    "propose_payout_validation",
+    "propose_rail_binding"
+  ]
+}

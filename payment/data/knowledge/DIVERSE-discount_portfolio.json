@@ -1,0 +1,20 @@
+{
+  "applicability": "Service case kind: discount_portfolio",
+  "category": "Specialist service contracts",
+  "content": "# Invoice discounts with scheduled receipts\n\nApplies to `discount_portfolio`. Signed credit notes reduce the invoice face before a discount is computed. Within an invoice's inclusive discount window, the settlement amount is adjusted face minus floor(adjusted face times discount basis points / 10,000). After that window the adjusted face is due. A credit note cannot be moved to another invoice. Cash receipts at a minute are available after their bank event; future receipts cannot fund earlier discounts.\n\n`settle(record_id, amount_minor)` sends one positive settlement instruction against a currently open invoice. It debits the specified amount and records the invoice's paid minute and amount. Processing does not certify the calculation or the customer's minimum-cost mandate; amounts cannot be recalled or corrected by a second settlement through this contract. Consider a customer's stated reserve across the whole payment calendar and its automatic debits. Ordinary invoice deadlines, discount deadlines and lease debit times are distinct. A customer asking for minimum total invoice cost expects the least achievable sum among lawful schedules, including their actual cash and reserve constraints. Different equally cheap schedules are acceptable.\n\n## Service interface\n\nUnlock `propose_invoice_discounting` and pass `case_id`, `action`, and an object `data` containing exactly the action fields above. The action name omits the parenthesized fields. Each proposed instruction requires a separate portal approval.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_invoice_discounting`\n\nInvoice discount settlement and credit notes. Prepares one local instruction; see the product document for action fields and effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-discount_portfolio",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "note": "New author-defined mechanism; earlier SOP themes provide business context, not these parameters.",
+    "source_ids": []
+  },
+  "scope": "Service case kind: discount_portfolio",
+  "title": "Invoice discounts with scheduled receipts",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_invoice_discounting"
+  ]
+}

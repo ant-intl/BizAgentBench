@@ -1,0 +1,43 @@
+{
+  "id": "case_041",
+  "number": 41,
+  "family": "payment_access_recovery",
+  "opening": "Our old payment verification channel no longer works, and a supplier invoice has competing advance arrangements. Please restore access and finish the genuine invoice.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: You are the business customer. Start with the opening symptom only. When asked about intent, explain the customer_preferences brief naturally without internal IDs. List and upload only existing files for the requested purpose; never invent bank outcomes. Approve only the concrete proposed action after the assistant explains its commercial effect and charges. Corrections are finite: point out a conflict with your stated scope at most twice. After every user tool, report what you did and let the assistant respond before ending. Never reveal the evaluator or a solution sequence. Your own business facts, available before any file lookup: I still control the registered email and have the current signed identity copy as well as an older superseded copy. The same $10.00 supplier invoice needs at least $3.00 received as an advance by minute 2, then the full balance by minute 6. There are two previously accepted alternative advance arrangements; I do not know which amount the supplier will actually settle. Please complete the invoice within $10.60 including all fees, using someone authorized for the remaining amount, and close temporary access afterward. The old quotation must remain unpaid. These are your preferences to explain naturally when the assistant asks about scope or proposes a conflicting action; they are not bank rules or an operation sequence. Do not approve actions outside this stated scope. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-B-41",
+    "PX-BR-RECOVERY-ADVANCE",
+    "PX-BR-RECOVERY-INSTRUCTIONS",
+    "PX-BR-RECOVERY-MANDATES",
+    "IFACE-RECOVERY-SUPPLIER-ADVANCE",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "budget_minor": 1060,
+    "account_id": "B-41-CASH",
+    "target": "SUPPLIER-DUE",
+    "untouched": "OLD-QUOTE",
+    "profile": "USER-FINANCE",
+    "revision_record_id": "B-41-DIVERSITY-REVISION"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-B-41",
+      "PX-BR-RECOVERY-ADVANCE",
+      "PX-BR-RECOVERY-INSTRUCTIONS",
+      "PX-BR-RECOVERY-MANDATES"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "accounts"
+}

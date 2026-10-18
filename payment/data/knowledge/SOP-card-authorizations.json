@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "An authorization reserves funds before the merchant clears the payment. A Processing or Awaiting clearing state is therefore different from a completed charge.\n\nMerchants normally clear within one to three business days. Ordinary authorizations can remain open for up to seven days and preauthorizations for up to 30 days; an unclaimed amount is released when its authorization expires.\n\nA cancelled authorization should be checked with the merchant. Small verification authorizations, including some platform card-binding checks, may be deliberately cancelled after verification.\n\nMerchant refunds normally arrive within five to ten business days after the merchant submits the refund. Contact the merchant if its refund has not arrived after ten business days. The refund is in the original transaction currency.\n\nWhen a card payment fails, inspect its recorded reason. An authorization hold, a merchant refund and the current spendable balance are different records; the original purchase amount alone does not identify the available funds.",
+  "id": "SOP-card-authorizations",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "An authorization reserves funds before the merchant clears the payment. A Processing or Awaiting clearing state is therefore different from a completed charge.",
+  "source_ids": [
+    "B09"
+  ],
+  "title": "World Card authorizations, clearing and refunds",
+  "topic": "cards"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-PRICED-PAYMENT",
+  "title": "Priced payment plan service interfaces",
+  "topic": "payment plan switch and priced payment",
+  "applicability": "PSP product accounts; Plan changes and payments whose fees depend on the active pricing plan.",
+  "content": "Plan changes and payments whose fees depend on the active pricing plan.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `propose_plan_switch`\n\nActivate a selected published plan. Charges already incurred and activation charges are not retroactively refunded.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `plan` | string | yes | The named plan for the relevant subscription or tariff product. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `propose_priced_payment`\n\nPay an existing eligible invoice under the plan effective at execution time.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "propose_plan_switch",
+    "propose_priced_payment"
+  ],
+  "business_area": "payment_pricing",
+  "service": "priced_payment",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

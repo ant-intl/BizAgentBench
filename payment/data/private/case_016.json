@@ -1,0 +1,56 @@
+{
+  "agreement_id": "JOINT14-20-AGREEMENT",
+  "case_id": "D34-DEPOSIT-CASE",
+  "components": [
+    {
+      "case_id": "D34-DEPOSIT-CASE",
+      "family": " Temporal semantics × Shared product hierarchy. × Automatic obligation ",
+      "id": "trade_term_deposit",
+      "kind": "tiered_deposit_calendar",
+      "reserve_minor": 1000,
+      "scope": "JOINT14-20",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY48-CASE",
+      "extension_service": true,
+      "family": " Principal after returning an installment purchase, Fees and refunds ",
+      "id": "payment_installment_return",
+      "kind": "payment_installment_return",
+      "number": 48,
+      "payment_service": true,
+      "scope": "JOINT14-20",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "family": " Temporal semantics × Shared product hierarchy. × Automatic obligation ",
+  "id": "case_016",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\n\nOpening: Please sort out our payroll and the upcoming business bills using our deposits. I would like to keep as much of the deposit return as possible. Also, i returned part of a purchase that I am paying in installments. Some installments have already been paid. Please fix the remaining bills and refund whatever I have overpaid. These are part of the same business spending plan.\n\nYour own facts and preferences: I run Cedar Manufacturing. Pay all four current payroll and business obligations on time, and let the already arranged rent debit complete. Use our existing deposits, the operating wallet and any reimbursement that actually arrives; we cannot add money or borrow. Keep at least USD 10 in the wallet at every stage. Among complete plans, leave us the most final operating cash. I can authorize full early redemptions and the payments. I have not heard the reimbursement decision and do not know whether breaking one deposit affects the rates on the others.\n\nFor the related procurement matter: Complete the new purchase by its agreed date and settle the installment purchase after the accepted return. Apply the return to purchase principal, keep the two already earned service-period fees, refund only money actually overcollected, and prevent collection of cancelled future principal and its unearned fee. Keep at least USD 150 in the payment wallet. I cannot add money and have not received the final return or bank response.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "tiered_deposit_calendar",
+  "number": 16,
+  "opening": "Please sort out our payroll and the upcoming business bills using our deposits. I would like to keep as much of the deposit return as possible. Also, i returned part of a purchase that I am paying in installments. Some installments have already been paid. Please fix the remaining bills and refund whatever I have overpaid. These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-tiered_deposit_calendar",
+    "PAYMENT-common",
+    "PAYMENT-payment_installment_return",
+    "JOINT-CASH-delivery",
+    "DESK-protocol"
+  ],
+  "reserve_minor": 1000,
+  "scope": "JOINT14-20",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

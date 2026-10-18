@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Registry evidence and translations must describe the current legal identity. A related company has its own registry code and cannot supply equivalent evidence merely because its trading name is similar.\n\nThe account used for a platform review must match the store entity and required collection currency. A certificate can be authentic while still describing the wrong account or an obsolete bank profile.\n\nNew certificates receive new identifiers; existing certificate contents are retained.",
+  "id": "KB-identity-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Registry evidence and translations must describe the current legal identity. A related company has its own registry code and cannot supply equivalent evidence merely because its trading name is similar.",
+  "title": "Identity evidence for a platform account",
+  "topic": "identity"
+}

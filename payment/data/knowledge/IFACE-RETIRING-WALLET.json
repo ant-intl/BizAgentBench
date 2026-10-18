@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-RETIRING-WALLET",
+  "title": "Retiring wallet exit service interfaces",
+  "topic": "retiring currency wallet merchant claim external outflow",
+  "applicability": "PSP product accounts; Final merchant claims and external outflows for retiring currency wallets.",
+  "content": "Final merchant claims and external outflows for retiring currency wallets.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `request_retiring_merchant_notice`\n\nRetrieve the final amount of an existing merchant authorization tied to the retiring wallets. This creates no new order.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `claim_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `submit_exit_outflow`\n\nDebit gross_amount_minor, subtract the selected tariff fee and deliver the net to external_account_id. The destination-currency net minimum or a current permission_id must be satisfied. Use an empty permission_id when relying on the normal minimum.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `wallet_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `external_account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `gross_amount_minor` | integer | yes | gross amount minor (integer minor currency units). |\n| `tariff_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `permission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "request_retiring_merchant_notice",
+    "submit_exit_outflow"
+  ],
+  "business_area": "wallet_exit",
+  "service": "retirement",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

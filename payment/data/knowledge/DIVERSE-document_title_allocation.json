@@ -1,0 +1,19 @@
+{
+  "applicability": "document_title_allocation services for titled cargo release.",
+  "content": "# Current title documents, pickup windows and storage charges\n\nScope: `document_title_allocation` services. A cargo lot may leave only under an `ACTIVE` title document whose `covers` list contains that exact lot and whose endorsement names the actual destination. A draft or pending-split document conveys no current release right. Similar names and later version numbers do not override status or scope.\n\nAn active joint title can be endorsed as a whole, but every covered lot is then controlled by that one destination. That endorsement is irreversible. If its recorded `split_child_refs` are pending, `activate_split` instead retires the joint title and activates those exact child titles; the split is also irreversible. Each active unendorsed child can then be endorsed separately. The split fee is charged once and the endorsement fee once per newly endorsed document.\n\nPickup window 0 is open initially. Later windows open through scheduled events; opening one closes the previous window and unused capacity expires. A `dispatch` consumes the lot's full `handling_units`; lots cannot be divided or moved twice. Successful dispatch is irreversible. Deadlines are inclusive.\n\nFor dispatch minute `m`, let `d = max(0, m - free_through)`. The first positive storage interval costs `handling_units × first_window_rate_minor`; every further interval costs `handling_units × later_window_rate_minor`. Add the lot's window-specific `loading_fees_minor` once. The engine checks current rights, capacity, cash and time, but it does not choose the customer's lowest-cost complete schedule.\n\nUnlock `propose_title_release`. Use `case_id`, an `action`, and `data`:\n\n| action | data |\n| --- | --- |\n| `activate_split` | `title_id` |\n| `endorse_title` | `title_id`, `destination_id` |\n| `dispatch` | `lot_id`, `window_id`, `destination_id` |\n\nEvery instruction requires approval before execution. The wallet must fund the actual document and cargo charges. A prepared or approved request neither reserves window capacity nor changes a title.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_title_release`\n\nPrepare a title split activation, document endorsement or cargo dispatch under the release contract.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-document_title_allocation",
+  "provenance": {
+    "kind": "synthetic_extension",
+    "parent_documents": [
+      "TRADE-freight"
+    ]
+  },
+  "title": "Current title documents, pickup windows and storage charges",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_title_release"
+  ]
+}

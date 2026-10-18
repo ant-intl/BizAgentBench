@@ -1,0 +1,21 @@
+{
+  "id": "PX-BR-BILLING-FILES",
+  "title": "Fee investigation files and shared review capacity",
+  "topic": "billing fee investigation one shot capacity final tier rebate deadline",
+  "applicability": "Enrolled billing review schedules",
+  "content": "The enrolled billing schedule lists channels and a finite capacity_units allowance for the current review cycle. reserve_fee_investigation opens one immutable file. Individual review covers one eligible line; a consolidated file can cover several original lines, including a pending one. Receipt-assisted review covers only bill references for which the archive already holds matched transaction receipts. File units and fees are committed even if only one covered line is later claimed. Files cannot be enlarged, transferred or cancelled. Each original request_fee_correction still consumes the original line’s one correction opportunity; having another file does not reopen a reviewed bill.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `request_fee_correction`\n\nClaim a service-fee correction for fee_id and amount_minor. Only bank-provider overcharges under the published billing record are credited; third-party charges and missed optional coupons are ineligible. Review can legally reject a claim and charges the published review fee. Existing refund_minor occupies the entitlement: a claim above gross overcharge minus previously allocated credits is rejected after its review fee. Enrolled billing review schedules additionally require a previously reserved investigation file covering this exact fee.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `fee_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `reserve_fee_investigation`\n\nOpen one paid investigation file through channel_id for actual fee_ids. Published eligibility, per-file line capacity, units and fee apply. This irreversibly reserves shared current-cycle review units but does not request any refund or alter fee basis.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `fee_ids` | array | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Finite review file capacity and deadlines; not a statutory appeal limit."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "request_fee_correction",
+    "reserve_fee_investigation"
+  ]
+}

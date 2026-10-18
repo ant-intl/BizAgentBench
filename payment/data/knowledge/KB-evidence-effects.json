@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Evidence is scoped to a business object. ownership targets a store and identifies the acquired entity.\n\nbank_details targets the beneficiary. registry and translation target the legal entity.\n\nsales targets the receiving account. binding and remittance target the batch and identify its sampled incoming transfer.\n\nEvidence approval does not itself activate an account, update bank details, release funds or prove that a platform accepted the materials. A business request carries the actual submission IDs.\n\nAssessment records the submitted contents and the result of checking them against the declared purpose.",
+  "id": "KB-evidence-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Evidence is scoped to a business object. ownership targets a store and identifies the acquired entity.",
+  "title": "Document purpose and business-object binding",
+  "topic": "evidence"
+}

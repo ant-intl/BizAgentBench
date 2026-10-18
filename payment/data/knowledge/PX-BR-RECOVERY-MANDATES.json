@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-RECOVERY-MANDATES",
+  "title": "Temporary executor monetary mandates",
+  "topic": "executor amount capacity preparation authority time window",
+  "applicability": "Supplier recovery contracts with an accepted-advance schedule",
+  "content": "The recovery provider publishes actual desk availability with the recovery response. Provisional desk terms show possible authority and price before that response; they do not activate a desk. Each desk’s maximum_invoice_balance_minor is the company’s monetary limit for the recovered remaining balance, not a bank transfer limit. The bank can accept a technically authenticated payment above that company limit, but this is not an authorized company execution. Desk readiness, execute permission, monetary limit and published time window must all hold at actual payment. Preparation authority never expands into execution authority. The supplier advance consumes original invoice principal but does not consume a recovered desk’s balance limit. Temporary access must be closed afterward; later recovery cannot invalidate a previously authorized payment.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional advance settlement, instruction and corporate execution mandate terms."
+    }
+  ]
+}

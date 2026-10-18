@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "MARKET_A source can be converted and can pay GENERAL USD beneficiaries. MARKET_B can be converted and can pay GENERAL or LICENSED beneficiaries.\n\nSERVICE can pay GENERAL only, CAPITAL can pay LICENSED only, and REIMBURSEMENT can pay either; these last three cannot be converted. The segment is recorded on each beneficiary.\n\nThe SOURCE-* profile articles define these terms and charges. Eligibility is a property of each allocated source and is unchanged by a quote or the aggregate account balance.",
+  "id": "KB-source_routes-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "MARKET_A source can be converted and can pay GENERAL USD beneficiaries. MARKET_B can be converted and can pay GENERAL or LICENSED beneficiaries.",
+  "title": "Tagged sources and recipient segments",
+  "topic": "source_routes"
+}

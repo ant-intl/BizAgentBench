@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-FX-INSTALLMENTS",
+  "title": "Supplier installment deadlines and acquired currency",
+  "topic": "supplier FX installment credit refund partial fill exposure",
+  "applicability": "Supplier invoices with an installment schedule",
+  "content": "The supplier schedule adds an early minimum cash installment and a final invoice settlement deadline to the same original foreign-currency invoice. Previously filled FX can fund an installment while cancellation is pending. pay_supplier_foreign_installment reduces actual acquired foreign currency and unpaid invoice principal, but does not stop later fills. An unconfirmed cancellation does not fix final exposure. Original invoice value remains original_face_minor; installments, final cash and credit offsets together must cover it exactly. A later cash refund cannot retroactively satisfy an earlier cash-receipt deadline.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `pay_supplier_foreign_installment`\n\nPay a positive part of the same supplier invoice from actual acquired foreign currency. It reduces both held currency and the remaining original invoice, and cannot be recalled. It does not cancel a still-open FX order or anticipate unconfirmed supplier credit.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `requirement_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Installment, credit-split and foreign currency conservation terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "pay_supplier_foreign_installment"
+  ]
+}

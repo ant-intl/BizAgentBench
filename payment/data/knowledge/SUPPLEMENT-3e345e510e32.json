@@ -1,0 +1,25 @@
+{
+  "id": "SUPPLEMENT-3e345e510e32",
+  "title": "Synthetic payment-versus-payment settlement",
+  "topic": "Synthetic payment-versus-payment settlement",
+  "applicability": "Only the named synthetic benchmark product and its published customer records; no claim of real law or present provider availability.",
+  "content": "Pairs publish source/target principal, preparation fees, synchronous fee and counterparty bank readiness. prepare_currency_leg returns a readiness receipt and charges once per attempt. settle_currency_pair(synchronous) requires both prepared and transfers both legs atomically. unilateral is legally permitted but exposes the full source principal before receipt, even if the counterparty later performs. A customer can prohibit any such exposure. release_currency_preparations releases unused commitments but not fees. Only one pair is normally needed; settling two overbuys.\n\nCoupled business records: xp_b_currency_windows. Capacity confirmation can withdraw a shortlisted pair's readiness. A booked window has a real expiry; only its assigned pair can execute the original settlement. Pair preparation charges, window fee and principal share the original cash budget. Actual target delivery must match the obligation, and preparations for other pairs cannot remain held. Finality evidence identifies the pair actually settled, not merely the one initially quoted.\nbook_currency_settlement_window: Book a published settlement window and its fee. A counterparty capacity event may withdraw readiness of a shortlisted pair before principal is committed. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nassign_currency_window_pair: Assign one observed pair to the effective window. Pair selection controls which original prepare/settle operations can use the window; published principal and target amounts remain authoritative. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nconfirm_currency_settlement_finality: Confirm actual received target currency and the committed pair after settlement. Does not reverse unsecured release or expired execution. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `assign_currency_window_pair`\n\nAssign one observed pair to the effective window. Pair selection controls which original prepare/settle operations can use the window; published principal and target amounts remain authoritative. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `choice` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `book_currency_settlement_window`\n\nBook a published settlement window and its fee. A counterparty capacity event may withdraw readiness of a shortlisted pair before principal is committed. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `choice` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "State transitions, numeric terms, review outcomes and deadlines"
+    },
+    {
+      "kind": "synthetic",
+      "scope": "Coupled business state, resources, deadlines and authority evidence introduced in candidate v4."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "assign_currency_window_pair",
+    "book_currency_settlement_window"
+  ]
+}

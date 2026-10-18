@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Match the READY advice's `mandate_id` and `value_minute` to a SIGNED claim whose inclusive validity interval contains that minute. A DRAFT does not convey title. The applicable signed interval must be unique.\n\nA later signed assignment applies to transfers in its own interval. An earlier payment from the same payer can remain governed by the earlier interval. Use the transmission reference to link the advice to its particular incoming payment.",
+  "id": "OPS-assignment-effective-on-value-date",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Match the READY advice's `mandate_id` and `value_minute` to a SIGNED claim whose inclusive validity interval contains that minute. A DRAFT does not convey title. The applicable signed interval must be unique.",
+  "title": "Which assignment applies to a bank value date?",
+  "topic": "assignments"
+}

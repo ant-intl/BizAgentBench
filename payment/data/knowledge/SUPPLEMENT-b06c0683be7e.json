@@ -1,0 +1,23 @@
+{
+  "id": "SUPPLEMENT-b06c0683be7e",
+  "title": "Rotating credit-notification identities",
+  "topic": "Rotating credit-notification identities",
+  "applicability": "Rotating credit-notification identities business records.",
+  "content": "xp_a_notice_registers publishes xp_a_notice_aliases. Match the tuple provider_reference, epoch, remitter_reference from each notice to the registered alias; only the resulting bank_transaction_id is an economic identity. The same delivery reference may name a different economic payment in another epoch. A rotating alias can also name the same original economic payment. a_bind_credit_notice_alias permits same-amount candidates for diagnosis, so equal amount is not verification. Binding must precede ingestion, and may be corrected while the notice is NEW. Original ingestion still deduplicates real bank transactions; archiving a notice does not credit its money. Source intent_reference or genuine sender confirmation decides whether a distinct payment is excess.\na_request_notice_alias_register: Retrieve the bank alias register covering delivered notification epochs. Provider delivery references rotate independently of stable economic transactions. Parameters: register_id — Public alias register ID.\na_bind_credit_notice_alias: Bind a delivered notice to a published alias record with equal currency and amount. Epoch, provider reference and remitter scope determine economic identity; equal money alone is insufficient. Binding may be corrected before ingestion. Parameters: notice_id — Delivered notice ID., alias_id — Published alias record ID.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_bind_credit_notice_alias`\n\nBind a delivered notice to a published alias record with equal currency and amount. Epoch, provider reference and remitter scope determine economic identity; equal money alone is insufficient. Binding may be corrected before ingestion.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `notice_id` | string | yes | Delivered notice ID. |\n| `alias_id` | string | yes | Published alias record ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_request_notice_alias_register`\n\nRetrieve the bank alias register covering delivered notification epochs. Provider delivery references rotate independently of stable economic transactions.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `register_id` | string | yes | Public alias register ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": [
+      "No SOP claims: fully synthetic protocol."
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_bind_credit_notice_alias",
+    "a_request_notice_alias_register"
+  ]
+}

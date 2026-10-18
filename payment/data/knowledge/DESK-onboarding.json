@@ -1,0 +1,25 @@
+{
+  "applicability": "Operations Desk product contract edition 5.3, synthetic internal institution terms.",
+  "capability": null,
+  "content": "These synthetic Operations Desk review terms are not a statement of real KYC law. Companies and natural persons appear in company_profiles. An ownership_edges row states a percentage in basis points, from an owner to an owned company. Graphs are acyclic. For each natural person, sum the products of ownership fractions along every path to the applicant. A person at or above the application's ownership_threshold_bp must be evidenced. A listed direct controller must also be evidenced regardless of their percentage. A person with two accounts remains one person.\n\nEvidence must establish the applicant company's current registry and the current identity of every required natural person. The registry claim is for the applicant company; each required natural person needs an identity claim. Assessing a document establishes its actual claims, not whether the complete application is sufficient. A document's claims map subject ID to claim type and version. Approved subjects must match their current company_profiles versions at review. A certified exemption claims only the explicitly listed subjects and claim types; a general group letter is not an exemption. Equivalent valid evidence sets are accepted. Extra truthful, applicable evidence is allowed.\n\npropose_onboarding_bundle assembles specific approved submissions; assembling is not submitting. propose_onboarding_submission starts an independent review after review_delay. At that time the institution recomputes ownership and evidence validity and may return NEEDS_EVIDENCE with missing subject/claim facts. Every replacement submission restarts that review delay; old bundles do not silently acquire newly uploaded evidence. Complete bundles are APPROVED. Earlier accepted identity documents can become outdated after a published registry event; the event changes only the named profile/version.\n\nAn application may state submission_fee_minor and billing_account_id. Each actual submission charges that fee in USD from the named account immediately, including replacement reviews and reviews that later need more evidence. These review fees are non-refundable. A document upload or bundle assembly alone does not incur the fee. A customer's total fee budget and requested completion deadline are separate from the institution's local acceptance rules.\n\nA certificate may certify a published registry edition whose profile change takes effect later. Its claim version is compared with the registry version at the institution's review time, while its valid_until must also cover that time. Evidence assessment checks authenticity and upload binding; it does not predict the complete application's result. Ownership percentages are aggregated with exact fractions before comparison with the threshold; display rounding does not change eligibility.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_onboarding_bundle`\n\nAssemble a versioned set of assessed evidence for an application. submission_ids is an object with submission IDs as keys and true as values.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `application_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `submission_ids` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_onboarding_submission`\n\nSubmit one assembled evidence bundle for independent institution review. The review may request additional current evidence.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `bundle_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-onboarding",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-onboarding"
+  ],
+  "source_ids": [
+    "A14",
+    "C08"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Corporate control evidence and institution review bundles",
+  "topic": "onboarding",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_onboarding_bundle",
+    "propose_onboarding_submission"
+  ]
+}

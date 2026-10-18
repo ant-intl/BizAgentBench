@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-DEBIT",
+  "title": "Returned direct-debit retry eligibility",
+  "topic": "Debtor collections",
+  "applicability": "Debtor collections",
+  "content": "Synthetic debit network: NSF retries consume max_attempts even if the debtor still lacks cash, and failed retries charge failed_retry_fee_minor. TECHNICAL returns must retain original_key. REVOKED requires a signed new_mandate upload and exact replacement_mandate_reference before further debit; a top-up cannot restore consent. a_retry_direct_debit deduplicates an already successful debt/key but a different allowed key can create another collection. a_waive_debt legally extinguishes collection authority without collecting funds. Debtor balance changes are fixed environment events. a_register_debit_mandate(debt_id, mandate_reference) requires the actual debtor-signed new_mandate file bound to that debt and an exact match with replacement_mandate_reference; it changes only mandate status and reference, not collected cash. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_register_debit_mandate`\n\nRegister a replacement debit mandate from an actual debtor-signed upload. A revoked mandate is never reactivated by a balance top-up.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `debt_id` | string | yes | Debt requiring a new mandate. |\n| `mandate_reference` | string | yes | Mandate reference appearing in the debtor-signed evidence. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_retry_direct_debit`\n\nRetry a returned direct debit under the synthetic network rules. NSF has a finite retry count and each attempted retry can consume it; REVOKED requires a replacement mandate; TECHNICAL retains the original retry key. Successful repeated keys deduplicate.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `debt_id` | string | yes | Returned debt ID. |\n| `retry_key` | string | yes | Network retry idempotency key. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_waive_debt`\n\nIrrevocably waive an unpaid commercial debt. Waiving is a legitimate customer choice but does not constitute collection.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `debt_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_register_debit_mandate",
+    "a_retry_direct_debit",
+    "a_waive_debt"
+  ]
+}

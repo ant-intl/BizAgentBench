@@ -1,0 +1,23 @@
+{
+  "id": "PX-A-TRACE",
+  "title": "Missing-transfer investigation",
+  "topic": "Missing incoming transfers",
+  "applicability": "Missing incoming transfers",
+  "content": "Source-derived: platform payout status and bank payment proof describe different payment legs. Synthetic extension: a_open_bank_trace requires a payment_proof upload and charges the selected trace channel fee. Only a sender-responsibility trace plus the published located_bank and address_proof permits a_amend_transfer_instruction; instruction must equal required_instruction. The original held transfer then credits once. a_recall_incoming_transfer irrevocably returns principal to origin and charges recall_fee_minor; it does not receive the money. Paid receiving-bank inquiries remain legitimate but may not resolve an intermediary hold. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type. Sender-responsibility trace services publish the same fixed bank finding within response_delay_minutes of purchase: standard service costs less; expedited service advances that publication at its displayed higher fee. Receiving-bank searches do not accelerate an intermediary finding. Both service choices remain subject to the customer's all-in investigation budget.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_amend_transfer_instruction`\n\nSubmit the missing address or purpose instruction to the responsible intermediary after a trace locates the payment. The published amendment fee is charged and the original transfer is released once.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Located incoming transfer ID. |\n| `responsible_bank` | string | yes | Bank named in the trace result. |\n| `instruction` | string | yes | Complete corrected instruction from the customer evidence. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_open_bank_trace`\n\nBuy a formal bank trace for a missing incoming transfer. Fees are nonrefundable. Sender-bank and receiving-bank traces have different responsibility scopes; the environment publishes the actual finding.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Missing incoming payment ID. |\n| `channel_id` | string | yes | Trace channel and fee record ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_recall_incoming_transfer`\n\nRequest irrevocable return of a held transfer to its original sender. This is a lawful alternative to correcting the transfer, but it does not credit the recipient.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | Held incoming transfer ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "payment-not-received-troubleshooting.sop.md"
+    ],
+    "source_nodes_and_rows": "N12, SOP lines110-117, source worksheet row1067; only bank proof and investigation submission derived. Trace fees, responsibility and publication timing are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_amend_transfer_instruction",
+    "a_open_bank_trace",
+    "a_recall_incoming_transfer"
+  ]
+}

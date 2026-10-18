@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An approved unexecuted request remains executable if its terms are still the requested operation and its approver remains active at the recorded epoch. A second identical proposal is not required for that unchanged approval.\n\nRevocation invalidates older approvals even if a request still displays APPROVED. Retrying an already executed request returns the saved receipt without paying again; creating a new proposal with similar terms creates a separate operation.",
+  "id": "OPS-reuse-an-unchanged-authority-approval",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "An approved unexecuted request remains executable if its terms are still the requested operation and its approver remains active at the recorded epoch. A second identical proposal is not required for that unchanged approval.",
+  "title": "Existing approvals and idempotent execution",
+  "topic": "consent"
+}

@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_split_capture",
+  "content": "# Partial shipment card authorizations\n\nScope: `payment_split_capture`.\n\nAn authorization reserves card capacity but is not a paid shipment. The original authorization is a grandfathered issuer commitment and remains capturable until expires_minute. New authorization capacity is subject to the issuer's new_approval_cap_minor, aggregated across all new authorizations. Releasing an old commitment does not increase that new-approval cap. A new attempt may be approved for less than its requested amount.\n\nCaptures may be allocated to order lines covered by the authorization. A merchant can technically submit a capture before fulfillment, but the servicing agreement permits charging only confirmed dispatched goods. In this case the first line is already dispatched. The second line's final amount and dispatch confirmation arrive in the fulfillment update. Cash payments and cleared card captures can jointly settle a dispatched line. Card capture submissions clear at the next later scheduled card clearing event; the fulfillment and deadline updates also include a clearing cycle. A same-minute submitted capture has not yet cleared. Release unused authorization amounts once they are no longer required. Released or cleared amounts cannot be captured a second time.\n\nUnlock propose_payment_split_capture. Actions: capture data {authorization_id, line_id, amount_minor}; release data {authorization_id, amount_minor}; new_authorization data {amount_minor}; cash_payment data {line_id, amount_minor}; pay_bill uses the common schema. Captures debit authorization remaining amount. Cash payments debit the separate cash wallet. Release changes only the card hold. A new authorization receipt contains the actual approved amount and new record ID.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_split_capture`\n\nPrepare an owner-approved split capture instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_split_capture",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Partial shipment card authorizations",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_split_capture"
+  ]
+}

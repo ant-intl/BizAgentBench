@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "AP_NORTH delegates 500000 USD cents of executed payments per logical day and permits NORTH or COMMON obligations. AP_SOUTH delegates 400000 cents and permits SOUTH or COMMON.\n\nAn operator record identifies its limit_policy and beneficiary_scopes. Invitation acceptance and PAY activation are separate; PAY activation takes 30 minutes.\n\nThe daily capacity is consumed by principal actually executed under that approver, including payments still in processing. Approval without execution consumes no capacity.",
+  "id": "KB-delegated_limits-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "AP_NORTH delegates 500000 USD cents of executed payments per logical day and permits NORTH or COMMON obligations. AP_SOUTH delegates 400000 cents and permits SOUTH or COMMON.",
+  "title": "Delegated payment scopes and daily capacity",
+  "topic": "delegated_limits"
+}

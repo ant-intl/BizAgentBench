@@ -1,0 +1,20 @@
+{
+  "applicability": "Service case kind: succession_refund",
+  "category": "Specialist service contracts",
+  "content": "# Corporate succession and refund rights\n\nApplies to `succession_refund`. The latest signed registry receipt replaces earlier registry versions for current payments. Follow transfers in effective-date order. An asset transfer changes only the claims explicitly listed in its transferred assets; excluded claims remain with the original entity. A purchase of shares does not replace the legal entity, even if the new shareholder has a similar name. A statutory merger extinguishes the old entity and transfers the listed rights to its successor. Refunds are the claim face amount less prior refunds. Previously paid amounts cannot be refunded again.\n\nContinuing entities retain their existing account product. An extinguished entity's product must be resolved into a new account for its successor. `resolve_product` takes `record_id` for the product, `mode` (`KEEP` or `NEW`) and `entity_id`. One resolution is available per product. KEEP is an immediate administrative instruction. NEW incurs the receipt's nonrefundable setup fee and creates an account-review event after its delay. The bank accepts the customer's selected resolution but does not certify corporate continuity merely by processing it. A pending new account cannot receive these refunds.\n\n`refund(record_id, recipient_id, amount_minor)` pays a claim to a verified entity with an available account. The bank validates the recipient account and available cash, while commercial ownership and remaining entitlement remain the instructing party's responsibility. The actual recipient, amount and minute are recorded for each irreversible payment. New-account fees and customer reserve requirements are independent of refund principal.\n\n## Service interface\n\nUnlock `propose_corporate_entitlement` and pass `case_id`, `action`, and an object `data` containing exactly the action fields above. The action name omits the parenthesized fields. Each proposed instruction requires a separate portal approval.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_corporate_entitlement`\n\nCorporate succession, refund rights and account continuity. Prepares one local instruction; see the product document for action fields and effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-succession_refund",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "note": "New author-defined mechanism; earlier SOP themes provide business context, not these parameters.",
+    "source_ids": []
+  },
+  "scope": "Service case kind: succession_refund",
+  "title": "Corporate succession and refund rights",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_corporate_entitlement"
+  ]
+}

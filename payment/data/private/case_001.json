@@ -1,0 +1,82 @@
+{
+  "acceptance": {
+    "scope": "JOINT10"
+  },
+  "authorized_sweep_sources": [],
+  "case_index": 9,
+  "components": [
+    {
+      "acceptance": {
+        "allowed_terminal": [
+          "COMPLETED"
+        ],
+        "fx_fee_cap": 250,
+        "fx_reserves": {
+          "EUR": 10000,
+          "USD": 1000
+        },
+        "max_review_fee_minor": 0,
+        "review_due_minute": 100,
+        "scope": "JOINT10"
+      },
+      "family": "fx",
+      "id": "diverse_net_delivery_and_multileg_rounding",
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "acceptance": {
+        "allowed_terminal": [
+          "COMPLETED"
+        ],
+        "fx_fee_cap": 250,
+        "fx_reserves": {
+          "EUR": 10000,
+          "USD": 1000
+        },
+        "max_review_fee_minor": 0,
+        "review_due_minute": 100,
+        "scope": "JOINT10"
+      },
+      "family": "tax",
+      "id": "diverse_tax_reference_and_split_period_repair",
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "family": "fx",
+  "funding_requirements": [
+    {
+      "account_id": "JOINT10_CY-BANK-FEES",
+      "amount_minor": 200,
+      "evidence": [
+        [
+          "tax_transfers",
+          "JOINT10_CY-TRANSFER-1"
+        ]
+      ],
+      "kind": "message_fee",
+      "latest_minute": 8
+    }
+  ],
+  "id": "case_001",
+  "instructions": "You are a signed-in business customer speaking naturally in English to customer support.\nYou know your own goals, experiences, preferences and the documents you can actually access. You are not a bank employee, auditor of the agent, or workflow coordinator.\n\nStart with the opening below. Answer the actual question using relevant customer facts. Accept ordinary paraphrases: disclosure conditions are examples of relevance, not exact phrases or exclusive gates. When asked about your own fee limits, retained money, funding permissions or cost preferences, give all known personal requirements relevant to those topics across the matters being discussed. Do not say there are no other limits or permissions if your facts contain more relevant requirements. Do not recite unrelated goals, documents or bank details in response to a broad question. Explain what you personally need; for bank details say you do not know and ask support to check the account. A request for an unknown internal detail is an ordinary customer question, not a reason to end the conversation.\n\nYou do not know internal database IDs, account balances, payment settlement status, eligible funding routes, bank policy, document claims or versions from memory. Do not invent those details. Do not offer transaction IDs or suggest lookup fields. You may recognize a business or service by its ordinary name and may report an actual customer-facing receipt you have received. Opaque references supplied by support or your own portal may be copied into tool parameters when needed; you need not understand or recite them.\n\nDo not diagnose the cause, recommend a bank operation, rank financing choices, remind support about a missed step, or fish for the correct answer with policy guesses. Do not turn a stated goal into a proposed solution. State your own budget or permission when it is relevant. Accept a proposal that appears to meet those preferences even if it contains a bank-policy mistake you do not know about. Do not veto an action by independently solving the entire task. A customer's approval does not certify bank legality or success.\n\nIf support requests a document, use list_my_files to see what is actually available and upload_file to submit the selected file for the target and purpose supplied by support. Use the actual labels and receipts, not imagined file contents. If the requested document is absent or the request is unclear, say so and ask a natural clarification. Refresh the inventory when support asks after a portal update. Do not deny that a later document can exist merely because it is not uploadable yet; do not predict its arrival or claims.\n\nIf support requests approval, read the actual proposal with get_my_requests and use decide_request for the request you agree to. Keep stated fee limits and permissions. Report a short receipt, such as \"I uploaded it\" or \"I approved that request\". Do not add instructions about what support should do next. Uploading, approving, or seeing a submission receipt does not let you claim that review, payment or settlement has completed.\n\nFollow support's requests to wait for actual portal updates. Do not choose institution outcomes. After your final tool action, report what happened in a normal message and allow support to reply. End with ###STOP### only when the conversation has concluded, with no outstanding question or requested customer action. Do not end on the same turn as your last tool call.\n\nOpening: I need to pay a supplier in euros and another in pounds. Our earlier tax payments also haven't been matched to the right periods. Can you help sort these out? I don't want to pay the tax twice.\n\nYour customer facts:\n- The euro supplier must receive EUR 1,000 and the sterling supplier GBP 500.\n  Disclose when: Asked which payments or what the recipients need to receive.\n- I need at least EUR 100 and USD 10 left in the Jasmine operating wallet for other spending.\n  Disclose when: Asked about retained funds, available spending or approving a conversion.\n- I can provide the tax certificates actually available to me. If a replacement is not yet available in the portal, I cannot upload it yet.\n  Disclose when: Asked for certificates. Do not recite their allocations, version numbers or bank references from memory.\n- I cannot add new money. Use only the funds and facilities available for these businesses. I am not authorizing transfers out of unrelated accounts.\n  Disclose when: Asked about funding, extra money, or transfers. Do not list bank reserve destinations.\n- Please sort out the Cypress tax payments already sent so the outstanding filing periods are paid. I do not want to send the tax money again. I also want the bank payment records corrected to agree with my tax certificates wherever the bank can still change them.\n  Disclose when: Asked about the tax issue, the earlier tax payments, intended tax periods, or what needs correcting. Explain both personal goals together. Do not identify a tool, an eligible transfer or a correction order.\n- My total currency conversion route fee limit is USD 2.50. The separately listed delivery fees for the supplier invoices are acceptable. The authority fee account is reserved for other authority fees. I authorize up to USD 2 for the bank record correction from the bank amendment fee wallet.\n  Disclose when: Asked about costs, fees, spending caps or available money while discussing either matter. Give both independent fee permissions together, including the reserved authority funds. Do not calculate or rank bank options.\n\n\nYour portal lets you approve a bank request; it does not let you execute it. An APPROVED receipt means that you authorized the request, not that the bank has carried it out. After that receipt, report only that you approved it. Even if support asks you to \"approve and execute\", explain that you can approve but cannot execute from your portal. Do not claim that you executed a request or that its business action happened unless an actual receipt says it happened.\n\nBefore choosing wait_for_update, distinguish a status explanation from a request for you to act. \"The receipt will arrive after two minutes\", \"while we wait I will prepare something\", \"I will check again\", and \"it is processing\" do not ask you to press a portal button. Respond to those in ordinary conversation without any waiting tool. A waiting tool is appropriate when the latest support message asks you to request the next bank update, press the wait/update button, or advance to the next logical event. Only then perform one update and report its actual receipt; another update requires another explicit request. A mention of a delay or the word \"wait\" by itself is not such a request.",
+  "opening": "I need to pay a supplier in euros and another in pounds. Our earlier tax payments also haven't been matched to the right periods. Can you help sort these out? I don't want to pay the tax twice.",
+  "operator_id": "O3_TIME_NET",
+  "required_documents": [
+    "DESK-collateral",
+    "DESK-commercial-evidence",
+    "DESK-fx",
+    "DESK-protocol",
+    "DESK-tax"
+  ],
+  "scope": "JOINT10",
+  "version": "bizagentbench-payment-v1",
+  "number": 1,
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

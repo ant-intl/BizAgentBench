@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-ROUTE-CAPACITY",
+  "title": "Shared clearing-route capacity and component settlement",
+  "topic": "Commercial contract settlement",
+  "applicability": "Purpose routes carrying a capacity_id",
+  "content": "A purpose route with capacity_id consumes one shared principal limit across all executed declarations in the session. a_request_route_capacity_review(capacity_id) starts the review; the later bank event publishes approved_limit_minor. Requested capacity is provisional. Reads do not advance time. Execution requires approved, unexpired capacity and consumes the sum of actually accepted component principal. A declaration alone reserves no capacity. Usage is not restored by changing the declaration or by paying another component on a dedicated route. Dedicated routes without capacity_id consume no shared limit. Each executed declaration, including a mixed declaration, charges its own displayed fee exactly once. Published route fees, principal limits, component amounts and purpose support are the facts used for a combined budget. Ordinary legal routes remain available when the shared limit is exhausted. Fees and completed payments cannot be undone by abandoning a later declaration. Delivery evidence remains bound to contract_id with purpose delivery_proof, as specified in the composite-contract article. The scenario customer determines the total spending allowance. All amounts are integer USD minor units.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_request_route_capacity_review`\n\nRequest bank review of shared payment-route capacity. The published requested limit is provisional; the bank event returns the actual approved amount and validity. Review does not pay any contract component.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `capacity_id` | string | yes | Shared route-capacity record ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Shared principal capacity, bank review outcomes, fee allocation, and execution history"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_request_route_capacity_review"
+  ]
+}

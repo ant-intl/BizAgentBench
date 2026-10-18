@@ -1,0 +1,13 @@
+{
+  "applicability": "Shared Payment database interface; all tasks use the same dictionary",
+  "content": "# Money, versions and processing states\n\nFor this Payment environment, monetary fields ending in `_minor` use integer minor units. Supported currency amounts are displayed by dividing these stored integers by 100. Currency wallets map each currency to its own minor-unit balance. Rates ending in `_bp` use basis points: 100 bp = 1%; a rate formula's base and rounding rule remain defined in the product article. Do not add different currencies without a supported conversion.\n\nRead the field's accounting scope: cash, remaining restricted-source balance, justified conversion capacity, reservation and payment obligation are separate quantities. Gross/net/fee fields describe different components of a movement, not independent cash credits. Signed `cash_delta_minor` adds cash when positive and removes cash when negative.\n\nIn `service_records` of kind `installment_plan`, `collected_minor` includes `historical_paid_minor`. `paid_minor` records separate additional pay_balance payments. Net paid equals `collected_minor + paid_minor - refunded_minor`. Do not add historical_paid_minor again. A pending or unpaid installment does not increase collected_minor. In kind `subscription_invoice`, the analogous extra-payment field is `additional_paid_minor`.\n\nA proposal's declared amount is what was requested or recorded; its correctness is not certified by acceptance. Approved requests, uploaded evidence, bank review and final settlement have distinct records and states. Use the recorded operation/receipt to interpret amounts and actual cash effects. A CLOSED plan flag does not by itself remove an unpaid liability.\n\nVersion/revision fields identify the named document, authorization or terms. A higher number alone does not establish applicability. Logical-minute fields refer to the environment's clock; day/date/calendar fields retain their documented calendar meaning. Query output sorted by ID is not a chronological ledger.\n",
+  "id": "DB-money-and-status",
+  "provenance": {
+    "classification": "interface_documentation",
+    "contains_task_specific_values": false,
+    "kind": "interface_documentation",
+    "source": "Public record shapes plus query/transition implementation; reviewed field semantics"
+  },
+  "title": "Money fields, cumulative values and processing states",
+  "topic": "Database interface"
+}

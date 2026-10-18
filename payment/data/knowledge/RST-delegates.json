@@ -1,0 +1,20 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "Portal staff recovery control is recorded in `portal_delegates` and the account security record's `recovery_owner`. This control is separate from changing the registered phone and separate from a current SMS verification. A new delegate begins INVITED; this inventory represents staff accounts already controlled by the customer.\n\n`propose_delegate_adoption` binds an unrevoked delegate to an account with a current, unexpired SMS verification. It marks the delegate ACTIVE and makes that delegate the recovery owner. It does not revoke existing staff. `propose_delegate_revocation` revokes one ACTIVE delegate and advances the account security epoch, invalidating current SMS proof and quotes tied to the prior epoch.\n\nRevoking the current recovery owner suspends the assisted recovery channel. If a phone recovery is pending, that recovery cannot complete successfully while suspended. Revoking a delegate who no longer owns recovery does not suspend the channel. Existing payment approvals are still governed by their own cancellation and version rules. The mere presence of a new employee name does not establish recovery ownership.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_delegate_adoption`\n\nBind a delegate to the currently SMS-verified account security context.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `delegate_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_delegate_revocation`\n\nRevoke a Portal delegate; recovery ownership and SMS proof are affected.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `delegate_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-delegates",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "Portal staff recovery control is recorded in `portal_delegates` and the account security record's `recovery_owner`. This control is separate from changing the registered phone and separate from a current SMS verification. A new delegate begins INVITED; this inventory represents staff accounts already controlled by the customer.",
+  "title": "Recovery ownership during staff handover",
+  "topic": "delegates",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_delegate_adoption",
+    "propose_delegate_revocation"
+  ]
+}

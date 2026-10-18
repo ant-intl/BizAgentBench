@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-RETURN-VALUATION",
+  "title": "Return inspection and buyer collection milestones",
+  "topic": "Commercial returns",
+  "applicability": "Returned goods under a recalled sale",
+  "content": "The original bank ownership decision and the commercial return inspection have separate authority. Receipt of a returned-goods document starts neither bank settlement nor commercial credit. a_review_sale_return schedules inspection; authorized_credit_minor is published on the sale when that inspection completes. Preliminary values do not waive debt. A subsequent credit note is irrevocable. A refund of an overpaid replacement remittance reduces that receipt's net value, including for the receipt calendar: a temporary excess receipt cannot permanently satisfy an outstanding invoice. The buyer's installment calendar applies to the remaining commercial debt after authorized returned goods. Collection service prices, capacity and booking windows are independent of the inspection completion date.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_review_sale_return`\n\nReview the returned-goods evidence against a recalled sale. The later commercial review publishes the credit-note entitlement; it does not determine ownership of the original bank remittance.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `sale_id` | string | yes | Commercial sale linked to the recalled incoming payment. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Returned goods under a recalled sale"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_review_sale_return"
+  ]
+}

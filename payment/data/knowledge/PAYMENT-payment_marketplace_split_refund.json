@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_marketplace_split_refund",
+  "content": "# Marketplace transfer reversals and buyer returns\n\nScope: `payment_marketplace_split_refund`.\n\nA combined order has a separate gross amount and commission rate for each seller. Accepted returns reduce that seller's gross sale entitlement. The seller's net entitlement is floor((gross minus accepted return) times (10000 minus commission_bp) / 10000). Platform commission is the complement. The buyer receives the full accepted returned-item price; the related seller and platform commission adjustments jointly fund that refund. Unrelated seller transfers may not be reversed under this return instruction.\n\nA pending refund is included only when the bank reports SETTLED. A FAILED refund has delivered no buyer funds. The warehouse acceptance and bank result arrive together in the scheduled return report. Historical seller transfers already count toward seller net entitlement; reversing and repaying the same funds does not create new sale proceeds. Each seller may have a different payout deadline. The bank accepts authorized transfer reversals within the originally transferred amount, so the caller must determine which seller actually owes a reversal.\n\nUnlock propose_payment_marketplace_split_refund. reverse_seller data {seller_id, amount_minor} immediately returns that seller's transferred cash to the platform wallet. pay_seller data {seller_id, amount_minor} immediately pays that seller from the wallet. refund_buyer data {amount_minor} credits the original buyer from the wallet. All amounts are positive; partial payouts and partial refunds are supported.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_marketplace_split_refund`\n\nPrepare an owner-approved marketplace split refund instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_marketplace_split_refund",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Marketplace transfer reversals and buyer returns",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_marketplace_split_refund"
+  ]
+}

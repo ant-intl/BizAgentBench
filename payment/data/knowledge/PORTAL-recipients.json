@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal API integration v4.0.0. Applies from service minute 0.",
+  "content": "`propose_portal_recipient_verification` submits assessed `recipient` evidence. It must identify the same registered holder and contain a tax identifier and bank reference. Review lasts 30 minutes; while it is UNDER_REVIEW the recipient is not yet VERIFIED.\n\nSuccessful review updates the bank reference and tax identifier and increments the recipient version. Old quotes continue to identify the old version and cannot be executed as current instructions. A file upload alone does not change the recipient record.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_portal_recipient_verification`\n\nSubmit current recipient identity and bank evidence for asynchronous verification.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `recipient_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `submission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PORTAL-recipients",
+  "provenance": {
+    "classification": "new_synthetic_portal_execution_contract"
+  },
+  "quoted_text": "`propose_portal_recipient_verification` submits assessed `recipient` evidence. It must identify the same registered holder and contain a tax identifier and bank reference. Review lasts 30 minutes; while it is UNDER_REVIEW the recipient is not yet VERIFIED.",
+  "title": "Current recipient identity and bank evidence",
+  "topic": "portal_recipients",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_portal_recipient_verification"
+  ]
+}

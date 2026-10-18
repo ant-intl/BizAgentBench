@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "CORE collection accounts may be PROVISIONED, ACTIVATING, OPEN or CLOSED. propose_account_activation requires PROVISIONED status and schedules activation after 20 minutes.\n\nA provisioning record is not a usable collection destination. The final OPEN status is observable in accounts.\n\nA platform can acknowledge a different collection route only after the destination is open. Existing balances, current routing and already transmitted settlements are separate resources.\n\nA platform label by itself does not prove that an account belongs to the required legal entity.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_account_activation`\n\nPropose activation of an already provisioned collection account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-accounts-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "CORE collection accounts may be PROVISIONED, ACTIVATING, OPEN or CLOSED. propose_account_activation requires PROVISIONED status and schedules activation after 20 minutes.",
+  "title": "Activating a CORE collection account",
+  "topic": "accounts",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_account_activation"
+  ]
+}

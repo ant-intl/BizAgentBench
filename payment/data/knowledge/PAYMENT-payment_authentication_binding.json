@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_authentication_binding",
+  "content": "# Issuer verification and amended checkouts\n\nScope: `payment_authentication_binding`.\n\nEach verification binds a merchant, an order and a maximum cumulative captured amount. The recorded maximum includes any tolerance already granted to the old checkout; it must not be expanded a second time. Order amendments within that maximum can use the same live verification. A customer may verify a disclosed upper amount from a merchant's possible price range while the final invoice is pending. Verification does not charge the card or promise the merchant's final price.\n\nThe issuer accepts captures against live, verified, matching records up to their cumulative maximum and the aggregate card_limit_minor. It does not compare an authorized capture to the customer's final economic order. A cancelled verification is unavailable. New verifications cost challenge_fee_minor each, including unnecessary duplicates. Customer availability governs when the private challenge can actually be completed. An existing verified record does not require a second private challenge.\n\nUnlock propose_payment_authentication_binding. prepare_verification data {order_id, maximum_minor} creates an unverified authentication record and charges its fee. cancel_verification data {authentication_id} cancels it. pay_checkout data {order_id, authentication_id, amount_minor} performs an immediate card capture. The customer alone uses authenticate_payment(authentication_id) to complete a requested private challenge during the available period; credentials never appear in chat. Ordinary request approval is separate from issuer authentication. Final order revisions are published by the scheduled merchant event.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_authentication_binding`\n\nPrepare an owner-approved authentication binding instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_authentication_binding",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Issuer verification and amended checkouts",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_authentication_binding"
+  ]
+}

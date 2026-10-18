@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-PVP-PREPARATION",
+  "title": "Reserved source cash and reverse-leg confirmations",
+  "topic": "PvP partial exchange preparation reverse leg capacity source cash finality",
+  "applicability": "Enrolled partial PvP schedules",
+  "content": "Enrolled partial-exchange schedules use the original prepare_currency_leg with optional amount_minor on the source leg. Source preparation charges its usual fee and moves that amount from available cash into a segregated hold. Counterparty preparation requires a live nonzero source hold for that pair, charges its usual fee and starts that dealer’s fixed reverse-capacity confirmation after delay_minutes; published ranges precede the receipt. Counterparty capacity is not funded merely by preparing our source. Source and counterparty fees are not refundable. A released or fully consumed pair is closed and cannot be prepared again.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `prepare_currency_leg`\n\nPrepare the named settlement pair's source or counterparty leg. Counterparty readiness comes from its published bank receipt; preparation charges prepare_fee_minor once per attempt, even if unavailable. Enrolled partial PvP schedules allow amount_minor on source preparation, moving that exact principal into a real segregated hold. Counterparty preparation confirms actual capacity asynchronously.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `pair_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `leg` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `amount_minor` | integer | no | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional dealer capacity, segregated holds and value dates."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "prepare_currency_leg"
+  ]
+}

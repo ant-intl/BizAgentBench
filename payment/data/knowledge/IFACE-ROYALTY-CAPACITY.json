@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-ROYALTY-CAPACITY",
+  "title": "Royalty capacity release service interfaces",
+  "topic": "royalty settlement unused capacity cancellation",
+  "applicability": "PSP product accounts; Unused royalty processing capacity and the settlement rights attached to it.",
+  "content": "Unused royalty processing capacity and the settlement rights attached to it.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `cancel_unused_royalty_capacity`\n\nRelease one unused payout reservation. Its service fee is not refunded. Submitted instructions still consume the shared execution slot and cannot be erased by cancellation.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `booking_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "cancel_unused_royalty_capacity"
+  ],
+  "business_area": "royalty_settlement",
+  "service": "capacity_release",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "SUPPLEMENT-4ee26dfa4a1d",
+  "title": "Screened goods and carrier departure commitments",
+  "topic": "screened goods and carrier departure commitments",
+  "applicability": "Current-customer linked records marked reasoning_version c-reasoning-v2 only.",
+  "content": "A carrier booking is a paid commercial commitment distinct from supplier identity clearance. Freight contracts publish booking fees, final pickup times and arrival times. Freight cannot collect unaccepted goods, and a replacement request publishes actual availability only when its supplier notice arrives. Fees are final once booked; an unused booking may be abandoned, and another can be bought. A confirmed screening clearance cannot move a departure window or waive the warranty. dispatch_screened_goods requires the invoice paid and accepted goods; the actual arrival must meet the customer delivery deadline.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `dispatch_screened_goods`\n\nDispatch paid and accepted goods on the selected booking, if its published collection window remains open. The resulting arrival time is fixed by that departure.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `booking_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Linked commercial contract terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "dispatch_screened_goods"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_cheque_stop_and_replacement",
+  "content": "# Electronic cheques, endorsement and replacement payments\n\nScope: `payment_cheque_stop_and_replacement`.\n\nAn endorsed cheque pays its current lawful holder, which may differ from the original invoice seller. Endorsement transfers collection entitlement without creating a second invoice. Historical invoice payment, actual original-cheque clearing and any replacement payment jointly discharge the same underlying obligation. Accepted replacement payments to a registered former seller do not discharge the assignee's entitlement.\n\nA stop request is not a successful stop. The bank charges the recorded stop fee when it accepts the request. At the presentment event it reports STOPPED or PRESENTED. A successful stop releases the held cheque amount to the case wallet. If presentment wins, the original cheque actually pays its holder and releases no cash to the wallet. An in-flight cheque can clear partially; only its cleared portion is an invoice payment. Its remaining hold returns through the later bank-return event.\n\nOpening cheque holds are separate from opening free cash. The bank accepts a replacement payment from available cash, even if the original cheque is unresolved; the caller is responsible for avoiding duplicate settlement. Registered beneficiary names are SUPPLIER, FACTOR and PACKAGER; use the actual invoice holder relationship.\n\nUnlock propose_payment_cheque_stop_and_replacement. request_stop data {cheque_id}; replacement_payment data {invoice_id, payee, amount_minor}; pay_bill uses the common schema. A stop can be requested only for an issued, not already requested cheque. Positive partial replacements are permitted. Bank receipts, invoice relationships, cash and earlier service deadlines are independently queryable.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_cheque_stop_and_replacement`\n\nPrepare an owner-approved cheque stop and replacement instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_cheque_stop_and_replacement",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Electronic cheques, endorsement and replacement payments",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_cheque_stop_and_replacement"
+  ]
+}

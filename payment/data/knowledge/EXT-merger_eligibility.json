@@ -1,0 +1,17 @@
+{
+  "applicability": "Only merger_eligibility service cases; synthetic contract edition 8.0.",
+  "content": "# Merger account eligibility\n\nScope: the merger_eligibility service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nA share purchase changes ownership but preserves the company's legal identity and existing product entitlement. A statutory merger into a successor terminates the disappearing company's identity; its old product entitlement does not survive. A grandfathered service is available to the continuing original entity only. For a continuing entity, keeping its service incurs no setup fee. A disappeared entity needs a new application for the recorded successor, with the service's stated setup fee. Current corporate registry correspondence establishes which event occurred.\n\n`retain` and `new_application` each take {record_id, entity}. Either is a one-time administrative resolution. A new application charges new_fee_minor and establishes an ordinary service; retention records continuity without charging it. Administrative acceptance alone does not certify legal continuity or that a customer obtained the least-cost valid resolution.\n\nService interface: `propose_merger_eligibility_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_merger_eligibility_instruction`\n\nMerger account eligibility. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-merger_eligibility",
+  "scope": "merger_eligibility",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Merger account eligibility",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_merger_eligibility_instruction"
+  ]
+}

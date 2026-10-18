@@ -1,0 +1,62 @@
+{
+  "id": "case_044",
+  "number": 44,
+  "family": "carrier_cash_custody",
+  "opening": "Our courier collected cash from buyers but the remittance looks short. Please reconcile the parcels and recover the amount the business is owed. Our agreement charges commission only on delivered parcels. Allocate the recovered money against those buyer invoices, and do not accept a new fee for the unpaid return. Please include the new buyer return and our replenishment invoice in the use of these same collection proceeds.",
+  "instructions": "Play the actual business customer, not a banking operator. The courier, not your business, is contractually responsible for cash after buyer collection. A returned parcel was never paid. Recover the full contractual net proceeds, with no more than USD 2.00 in investigation fees. You have not received the carrier's actual inventory yet. Disclose these facts when relevant questions are asked; never volunteer internal record IDs, bank outcomes you have not received, or a tool sequence. Use list_my_files and upload_file when real evidence is requested. Approve only a request consistent with the disclosed commercial limits; otherwise explain the specific mismatch. Correct misunderstandings when relevant evidence becomes available; do not repeatedly recreate a misunderstanding that has already been resolved. After each user tool, report what happened in ordinary language and allow the assistant to respond before ending the conversation. Our agreement charges commission only on delivered parcels. Allocate the recovered money against those buyer invoices, and do not accept a new fee for the unpaid return. A buyer has now returned some of the delivered Parcel A goods. Refund the independently confirmed return to that same buyer, keep the carrier shortage claim intact, and use these proceeds plus our USD 10 float to pay the USD 150 replenishment invoice. A carrier offset or a direct buyer refund is acceptable, but do not refund the same claim twice.",
+  "required_documents": [
+    "PX-C-44",
+    "PX-C-R44",
+    "IFACE-CARRIER-COD-RETURN",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 44,
+    "account_id": "C44-USD",
+    "target": "C44-BATCH",
+    "fee_cap_minor": 200,
+    "linked_contract_id": "C44-LINKED-CONTRACT",
+    "reasoning_id": "C44-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R44"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [
+    {
+      "id": "process.044.posted_cash_at_replenishment_preparation",
+      "predicate_type": "posted_cash_at_payment_preparation",
+      "parameters": {
+        "account_id": "C44-USD",
+        "initial_balance_minor": 1000,
+        "guarded": {
+          "operation": "pay_cod_replenishment",
+          "arguments": {
+            "return_id": "C44-REASONING"
+          }
+        }
+      },
+      "time_or_event_window": "payment_preparation",
+      "rule_documents": [
+        "PX-C-R44"
+      ],
+      "observable_fact_sources": [
+        "operating cash account",
+        "actual cash postings",
+        "payment request preparation receipt"
+      ]
+    }
+  ],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "commerce"
+}

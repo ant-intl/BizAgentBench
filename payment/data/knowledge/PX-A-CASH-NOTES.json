@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-CASH-NOTES",
+  "title": "Cash pickup authority and denomination inventory",
+  "topic": "Physical cash delivery",
+  "applicability": "Cash agents with cash_authority_id",
+  "content": "cash_authority_id links to the maximum principal permitted in one pickup; multiple pickups are allowed. Agent total cash and denominations are separate resources. a_request_cash_inventory(agent_id) obtains a physical count after count_delay_minutes. The result publishes notes_available keyed by denomination in currency minor units, and inventory_version. Provisional notes may differ from counted inventory. a_reserve_cash_pickup holds total capacity and immediately charges a nonrefundable fee. a_allocate_cash_notes(reservation_id,notes) assigns counted denomination stock with matching total value. Delivery consumes those assigned notes and requires the normal beneficiary, mode and expiry conditions. a_deliver_reserved_cash creates the physical handover receipt. A customer denomination request applies to the sum of delivered notes. Wrong but available note mixes are operationally deliverable. The cash authority limit applies to every pickup, independently of the wallet balance limit. DIRECT reservations charge their direct fee per pickup; WALLET reservations charge their wallet fee and each funding transaction has an additional transfer fee. Digital wallet value cannot be returned during this window. Amounts and denominations are integer minor currency units.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_allocate_cash_notes`\n\nAllocate physically counted banknotes to a paid cash reservation. Allocation consumes denomination stock; it cannot be changed after handover. A reservation alone holds total cash, not a specific denomination mix.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | Cash reservation. |\n| `notes` | object | yes | Map of denomination minor units to positive integer note counts, for example {\"500\":4}. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_request_cash_inventory`\n\nRequest a physical denomination count from one cash agent. The bank publishes actual notes and a confirmed count version after its stated delay. Provisional cash totals do not guarantee a denomination mix.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `agent_id` | string | yes | Cash agent ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Physical inventory, pickup authority, denomination needs, repeated fees"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_allocate_cash_notes",
+    "a_request_cash_inventory"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-PURPOSE",
+  "title": "Composite-contract purpose declarations",
+  "topic": "Goods, licensing and services in one contract",
+  "applicability": "Goods, licensing and services in one contract",
+  "content": "Synthetic payment routes: each route lists supported_purposes and fee_minor; declared_purpose must be supported. Contract components disclose their true purpose and principal. a_declare_contract_payment requires composite_contract evidence and publishes accepted component IDs; delivery_proof may unlock a pending service component. Upload both composite_contract and delivery_proof to target_id equal to the declaration contract_id, not a component_id or invoice_id. The bank reviews these contract-bound submissions when a_declare_contract_payment executes; uploading alone does not schedule a separate review. Read accepted_component_ids before paying. a_execute_contract_declaration pays only accepted IDs, records declaration_id and component_id on each payment, and charges one route fee. Every component governed by this contract must be paid through an accepted declaration; an ordinary commercial transfer can execute but does not fulfill its purpose-declaration obligation. A MIXED declaration is truthful for heterogeneous components only on a route supporting MIXED. Bank acceptance of a declared category does not make a false category truthful. A later declaration may pay remaining components, but another payment of an accepted component duplicates that obligation. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_declare_contract_payment`\n\nDeclare selected contract components and a purpose to a supported route. The banking route accepts its supported declared purposes; the customer remains responsible for truthful component classification. Published review acceptance can be partial.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Composite commercial contract ID. |\n| `component_ids` | array | yes | Contract component IDs. |\n| `route_id` | string | yes | Purpose-capable payment route ID. |\n| `declared_purpose` | string | yes | GOODS, LICENSE, SERVICE, or MIXED. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_execute_contract_declaration`\n\nPay the accepted components of a reviewed declaration and charge its route fee once. Components not accepted remain unpaid; a supplemental declaration can cover them later.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `declaration_id` | string | yes | Reviewed declaration ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_declare_contract_payment",
+    "a_execute_contract_declaration"
+  ]
+}

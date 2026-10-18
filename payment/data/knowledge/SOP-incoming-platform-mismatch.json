@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "A `claim fail` case can arise where the account's collection platform differs from the actual source. Examples include e-commerce proceeds sent to a same-name collection account, or same-name receipts sent to an e-commerce/PSP account.\n\nEstablish the actual source platform and the destination account. Apply for the account corresponding to that platform and complete the platform-side rebinding. Support can then investigate whether the payment can be credited to the correct arrangement. Creating the new account does not itself move the existing payment.\n\nFor a ledger adjustment to a same-name arrangement that is subsequently held, support may issue an explanatory email. The customer must submit the requested screenshot showing sender, recipient and subject against the affected payment. This document submission is separate from confirmation that the adjustment has completed.",
+  "id": "SOP-incoming-platform-mismatch",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "A `claim fail` case can arise where the account's collection platform differs from the actual source. Examples include e-commerce proceeds sent to a same-name collection account, or same-name receipts sent to an e-commerce/PSP account.",
+  "source_ids": [
+    "B05",
+    "C05"
+  ],
+  "title": "Incoming payments posted to the wrong platform arrangement",
+  "topic": "corrections"
+}

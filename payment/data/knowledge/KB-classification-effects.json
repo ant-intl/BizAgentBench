@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An approved source_goods submission targets the batch and identifies the same sample/reference and goods_amount_minor supported by item-level evidence. propose_source_reclassification takes a SERVICE lot from that batch, a positive supported amount and the submission.\n\nIt costs 100 cents, takes 5 minutes, and creates a separate MARKET_B lot for that amount; cash is neither created nor removed. Evidence support cannot be reused beyond its supported amount.\n\nReclassification is not a quota import. The original batch quota may be used for the resulting convertible cash, subject to normal validity and availability.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_source_reclassification`\n\nSubmit source evidence for a specified portion of an existing settlement lot. Approved reclassification creates a separate traceable lot.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `lot_id` | string | yes | The source lot to inspect or use. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n| `submission_id` | string | yes | The actual uploaded evidence submission. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-classification-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "An approved source_goods submission targets the batch and identifies the same sample/reference and goods_amount_minor supported by item-level evidence. propose_source_reclassification takes a SERVICE lot from that batch, a positive supported amount and the submission.",
+  "title": "Reclassifying supported goods receipts",
+  "topic": "classification",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_source_reclassification"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "PX-BR-ROYALTY-CAPACITY",
+  "title": "Royalty payment service capacity and charges",
+  "topic": "royalty payout capacity fee batch instant execution",
+  "applicability": "Royalties with a delivery service contract",
+  "content": "The distribution pool holds beneficiary principal. Delivery fees use the separate source-cash balance left after conversion; fees never reduce a beneficiary entitlement or withholding liability. Each listed channel specifies a cutoff, fee, delivery timing and capacity group. Services in one group share the contract’s daily instruction limit. A reserved slot consumes one instruction; cancellation restores an unused slot but not its fee. A submitted instruction retains its slot even if the beneficiary later cannot receive it. Batch channels also cap the sum of net amounts submitted through that channel. Splitting one beneficiary across instructions consumes one slot and fee for each actual instruction. The bank checks cash and technical capacity, not a customer’s earlier beneficiary receipt deadline. reserve_royalty_payout_capacity and select_royalty_payout_booking precede an original disburse_allocation instruction; selection does not deliver money. An unused reservation may be cancelled in any order.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `disburse_allocation`\n\nPay amount_minor from a converted pool to allocation_id. Bank permits any positive amount within remaining cash; contractual largest-remainder rights must be calculated separately. Transfers are irreversible.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `allocation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `reserve_royalty_payout_capacity`\n\nReserve a delivery route for one beneficiary allocation. The public service fee is immediately debited. channel_id specifies the service and shared capacity_group; all services in that group consume the same finite instruction slots. Batch channels additionally cap the total net amount submitted. Reservation is not payment or confirmation of final beneficiary eligibility.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `allocation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `select_royalty_payout_booking`\n\nSelect an unsubmitted capacity booking for the next disburse_allocation instruction of its beneficiary. Selection does not change the beneficiary, monetary amount, channel rules or delivery deadline.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `booking_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Payment-channel capacities and fees; no claim about a real provider."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "disburse_allocation",
+    "reserve_royalty_payout_capacity",
+    "select_royalty_payout_booking"
+  ]
+}

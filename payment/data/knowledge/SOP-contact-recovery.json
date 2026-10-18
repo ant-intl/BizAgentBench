@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "If the old phone or email can still receive verification codes, use My Account → Security Centre → Change, enter the new contact and complete verification.\n\nIf the old phone is unavailable, submit the old and new numbers, the account holder's dated identity photograph, the company certificate for a company account, the platform page showing the collection-account binding, and the most recent platform remittance screenshot. Submit the request through the registered email.\n\nIf the old email is unavailable, submit the old and new email addresses, the dated identity photograph and the company certificate where applicable. Use an available email address or the reset entry in the client.\n\n## Photograph requirements\n\nUse a clear, unedited photograph showing the account holder, the portrait side of the identity document and a white paper bearing the handwritten submission date. Take the photograph on the submission date. Identity-document images must be clear, show all corners and have no glare. Where a company certificate photograph is requested, provide a photograph of the original, not an electronic certificate or screenshot.\n\nReview normally takes two business days. Rejected material must be corrected and resubmitted; the review period restarts. An urgent request can be forwarded for faster handling, but has no guaranteed one-day completion.",
+  "id": "SOP-contact-recovery",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "If the old phone or email can still receive verification codes, use My Account → Security Centre → Change, enter the new contact and complete verification.",
+  "source_ids": [
+    "A14",
+    "A17"
+  ],
+  "title": "Changing an account's phone number or email",
+  "topic": "identity"
+}

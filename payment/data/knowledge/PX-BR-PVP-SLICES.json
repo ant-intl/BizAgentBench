@@ -1,0 +1,21 @@
+{
+  "id": "PX-BR-PVP-SLICES",
+  "title": "Partial synchronous settlement and preparation release",
+  "topic": "PvP partial exchange preparation reverse leg capacity source cash finality",
+  "applicability": "Enrolled partial PvP schedules",
+  "content": "For enrolled schedules, settle_currency_pair accepts source_minor. Synchronous settlement consumes that much real source hold and confirmed reverse capacity atomically, and delivers floor(source_minor * original target/source). For these schedules the synchronous fee on each slice is pair.sync_fee_minor plus floor(source_minor * dealer.execution_rate_bps / 10000). The fee is charged on actual executed principal; holding a larger source amount does not by itself incur an execution fee. Unilateral execution is permitted by the network but exposes the executed source amount before the reverse transfer, even if a later receipt covers it. release_currency_preparations returns only still-held source principal to original available cash, closes unused commitments, and never refunds preparation fees. Prepared cash is unavailable to another pair until released. Several pairs can jointly fulfill one exchange; overbuying remains an economic error.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `release_currency_preparations`\n\nRelease prepared legs on an unsettled pair. Preparation fees are not refunded. Releasing leaves the source principal available for another pair.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `pair_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `settle_currency_pair`\n\nSettle both currency legs synchronously, requiring both prepared, or release source principal unilaterally. unilateral is legal but creates irreversible principal exposure if the counterparty is unavailable. Fees/principal are published on the pair. A linked currency window must be unexpired and assigned to this exact pair. Enrolled partial PvP schedules allow source_minor for a slice, consuming source hold and actual confirmed reverse capacity; see partial settlement terms.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `pair_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `mode` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `source_minor` | integer | no | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional dealer capacity, segregated holds and value dates."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "release_currency_preparations",
+    "settle_currency_pair"
+  ]
+}

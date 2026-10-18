@@ -1,0 +1,17 @@
+{
+  "applicability": "Payment service supplement payment_subscription_proration",
+  "content": "# Mid-period service changes and delayed collections\n\nScope: `payment_subscription_proration`.\n\nA 30-day service period is priced using the actual old-plan days and the remaining new-plan days: floor((old_monthly_minor times old_days plus new_monthly_minor times (days minus old_days)) / days), plus actual final usage_units times usage_unit_minor. The final usage report is a separate event from the plan change. No unobserved usage value is final. An invoice amendment records a declared receivable; it does not refund or collect cash.\n\nHistorical and actually settled pending collections both count as payment. A processing collection is neither a failure nor a delivered payment. An accepted recall stops the pending collection but charges its nonrefundable recall_fee_minor. Refunds credit the customer payment wallet from the provider's captured funds; a balance payment debits that wallet. A refund cannot exceed actual captured funds, but the provider does not decide whether a customer's manually requested refund is the correct overcollection.\n\nThe next-period renewal is a separate service obligation. The scheduled renewal event debits its recorded price only if renewal remains active and cash is available. Cancelling renewal avoids the debit but also prevents the agreed service continuation. Current-period corrections and renewal must therefore be reconciled separately.\n\nUnlock propose_payment_subscription_proration. amend_invoice data {amount_minor}; refund and pay_balance data {amount_minor}; recall_collection data {}; set_renewal data {active: boolean}. These actions require ordinary owner approval. The usage/collection update and renewal update report their actual outcomes.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_payment_subscription_proration`\n\nPrepare an owner-approved subscription proration instruction. Applicable contract documents define individual actions and their local effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PAYMENT-payment_subscription_proration",
+  "provenance": {
+    "kind": "synthetic_product_contract",
+    "real_world_claim": false
+  },
+  "title": "Mid-period service changes and delayed collections",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_payment_subscription_proration"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-CAMPAIGN-REALLOCATION",
+  "title": "Cancellation of accepted advertising and usable credit",
+  "topic": "campaign search display capacity cancellation advertising wallet",
+  "applicability": "Campaigns with separate channel delivery mandates",
+  "content": "Unserved capacity can be released using the original release operation. Accepted but unactivated capacity may also be cancelled channel by channel. Cancellation removes that service commitment, permanently loses cancellation_bps of its amount from the prepaid wallet, and makes the remainder usable for another channel. Further merchant payment and application can replace lost usable credit, under the original merchant/subaccount/hold rules. Payment to the provider alone is not usable wallet credit. The old archived campaign and another legal merchant remain separate accounts.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional allocation ranges, channel obligations, cancellation loss and inventory delivery delays."
+    }
+  ]
+}

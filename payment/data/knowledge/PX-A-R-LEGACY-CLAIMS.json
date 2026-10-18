@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-R-LEGACY-CLAIMS",
+  "title": "Old marketplace order claims and retained servicing",
+  "topic": "Old marketplace order claims and retained servicing",
+  "applicability": "An existing quality claim during an exclusive payment-provider migration.",
+  "content": "Changing a payment binding does not transfer an old provider quality claim to the new provider. a_request_legacy_order_claim(contract_id) registers the existing claim while the original binding is active, pays its published review charge and retains servicing for that claim after unbinding. This does not settle accepted order principal or dispose an existing deposit; those remain separate original commercial rights. The supplier notice publishes the actual allowance and cash service terms at notice_minute, or at registration if that date has already passed while the old binding is still active. a_dispose_legacy_order_claim(contract_id,order_id,disposition) supports APPLY to the designated unpaid new order, cash refund services, and FUTURE credit. APPLY directly reduces that original invoice principal and cannot be used after it is paid. Cash refund fees debit immediately, with allowance principal arriving only on the scheduled value date. Neither disposition may be repeated.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_dispose_legacy_order_claim`\n\nUse a confirmed old-order allowance as a credit on the designated unpaid new order, or request a standard/express cash refund. Applying it reduces actual invoice principal; a cash refund arrives only on its value-date event. Future-order credit is also supported but gives neither current cash nor current purchase credit.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Confirmed old-order claim. |\n| `order_id` | string | yes | Marketplace order associated with the allowance. |\n| `disposition` | string | yes | APPLY, CASH_STANDARD, CASH_EXPRESS, CASH_PRIORITY or FUTURE. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_request_legacy_order_claim`\n\nSubmit the existing old-order quality claim to the original marketplace provider. Review costs are paid now. The provider retains servicing for this registered claim when the payment binding is later removed, and publishes its actual allowance after the old order result.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Existing old-order claim agreement. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_dispose_legacy_order_claim",
+    "a_request_legacy_order_claim"
+  ]
+}

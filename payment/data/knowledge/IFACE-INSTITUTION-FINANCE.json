@@ -1,0 +1,21 @@
+{
+  "id": "IFACE-INSTITUTION-FINANCE",
+  "title": "Institution receivable and payroll service interfaces",
+  "topic": "institution receivable finance payroll repayment",
+  "applicability": "PSP product accounts; Institution-owned receivable finance, operating payroll and credit repayment.",
+  "content": "Institution-owned receivable finance, operating payroll and credit repayment.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `finance_institution_receivable`\n\nAssign the institutional receivable without recourse, draw its offered credit line, or collect it at maturity. Assignment consumes the receivable; a credit line preserves it and creates real repayable principal.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `finance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `method` | string: `nonrecourse_assignment`, `credit_line`, `collection` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `pay_institution_payroll`\n\nPay institution employees from institution-owned operating cash. The actual payment minute remains visible even when submitted after the contractual due time.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `finance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `repay_institution_credit`\n\nRepay drawn institutional credit principal from real operating cash. This does not forgive a remaining balance.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `finance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "finance_institution_receivable",
+    "pay_institution_payroll",
+    "repay_institution_credit"
+  ],
+  "business_area": "institution_finance",
+  "service": "receivable_payroll",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

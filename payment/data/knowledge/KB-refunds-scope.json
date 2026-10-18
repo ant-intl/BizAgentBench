@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_order_refund refunds the recorded refund_minor of a REFUND_REQUESTED order to its original payer. It enters REFUND_PROCESSING and completes after 30 minutes, provided cash remains available.\n\nCompletion reduces the original source lot, the account cash and the original order quota by the same USD principal. Conversion can consume that quota before the refund completes, but doing so can leave a negative remaining quota afterward.\n\nThe refund is an independent commercial obligation, not a mechanism for obtaining new quota.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_order_refund`\n\nRefund a recorded sale to its original payer; the order quota is reduced at completion even if already consumed.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `order_id` | string | yes | The order whose refund is requested. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-refunds-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_order_refund refunds the recorded refund_minor of a REFUND_REQUESTED order to its original payer. It enters REFUND_PROCESSING and completes after 30 minutes, provided cash remains available.",
+  "title": "Settling an order refund",
+  "topic": "refunds",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_order_refund"
+  ]
+}

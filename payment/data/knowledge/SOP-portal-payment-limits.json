@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Select the beneficiary's receiving currency. CNY, offshore CNH and foreign-currency payments have different availability and evidence requirements.\n\n| Item | Portal term |\n|---|---|\n| Minimum CNY conversion payment | CNY 15 |\n| Maximum single CNY conversion payment | CNY 5,000,000 |\n| Minimum foreign-currency payment | USD 50 or its equivalent |\n| Maximum JPY payment | JPY 900,000,000 |\n| Maximum other foreign-currency payment | 90,000,000 units, subject to the transaction page's applicable limit |\n\nIncoming collection has no general maximum in this Portal limit table. A beneficiary bank may have its own daily receipt limit; payments on different dates may be needed for that bank's limit.\n\nCNH cannot be converted directly to THB through the Portal route described here. THB-to-THB is not available through same-name withdrawal: the supported alternatives are a third-party transfer arrangement or conversion to a supported G10 currency before withdrawal, subject to the actual recipient and route requirements. EGP is available where the transaction page offers the currency pair.\n\n## Payment verification\n\nUse the CedarPay payment password. The security setting can allow system-selected additional verification or require password plus SMS for every payment. When the bank-payment flow requires a phone code, email cannot replace it. World Card's separate 3DS flow has its own delivery options.\n\nFor a balance below the CNY 15 minimum, account closure, specified card FX-difference repayment or an exceptional service case can be referred for a small-payment exception. An exception request is not approval to bypass the minimum.",
+  "id": "SOP-portal-payment-limits",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Select the beneficiary's receiving currency. CNY, offshore CNH and foreign-currency payments have different availability and evidence requirements.",
+  "source_ids": [
+    "B03",
+    "A15"
+  ],
+  "title": "Portal withdrawals: currencies, amounts and verification",
+  "topic": "payments"
+}

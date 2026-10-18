@@ -1,0 +1,16 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Ask for the platform, payment date, receiving currency, actual collection-account number and whether this is its first payment. Platform-to-Portal collection normally takes three to five business days; first payments may take five to seven. Consider the relevant countries' and currencies' holidays.\n\nCheck for an incoming-payment record and its actual status. A payment already recorded as awaiting documents follows `SOP-incoming-statuses`, rather than an ordinary transfer-delay enquiry.\n\nIf no incoming record can be located, obtain the remittance evidence and submit an investigation. An absent record does not prove that the platform has not sent the funds. If the record says credited, check the account movement details for that actual payment.\n\nFor PayPal, establish whether this is the first receipt or whether the account has been unused for more than six months. Match the VA reported by PayPal with the intended collection account, especially when the customer has several PayPal accounts. Request the ACH reference where applicable. Missing or unavailable ACH evidence requires further investigation, not a definitive statement that nothing was sent.",
+  "id": "SOP-incoming-timing",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Ask for the platform, payment date, receiving currency, actual collection-account number and whether this is its first payment. Platform-to-Portal collection normally takes three to five business days; first payments may take five to seven. Consider the relevant countries' and currencies' holidays.",
+  "source_ids": [
+    "C10",
+    "B10",
+    "A15"
+  ],
+  "title": "Platform payout sent but no collection is visible",
+  "topic": "tracing"
+}

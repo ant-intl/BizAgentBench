@@ -1,0 +1,38 @@
+{
+  "id": "case_033",
+  "number": 33,
+  "family": "causal_bank_receipts",
+  "opening": "Our bank receipts arrived out of order and one transfer may have been returned. Please reconcile what is still owed and recover the related supplier allowances.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: The two suppliers must each end up paid exactly their original invoice amount. Please confirm what they actually received and finish any remaining obligation without paying either twice. Disclose these commercial facts when asked, not internal state IDs or a solution sequence. Upload only your actual existing files. Approve specific proposals consistent with the disclosed preferences; do not invent bank outcomes. Correct misunderstandings when the relevant evidence is available; do not repeatedly recreate an already resolved misunderstanding. After a user tool action, report what it returned and let the assistant respond before ending the conversation. Please also update our supplier payable ledger to accurately reflect both original invoices and deliver the final supplier settlement statement. The supplier also owes us a $6 price allowance and a $4 freight allowance on these original purchases. Use both for a reduction of what we still owe or actual cash back by minute 25. Spend at most $1 on getting that value back, and include the remaining original invoice balances in the settlement statement. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.\n\nGoal-preservation rule for this scenario: both original supplier invoices must finish with no remaining amount owed after the causally final bank receipts, credits and any replacement payment. If support's own explanation or your actual portal result shows a remaining supplier obligation, do not accept a final statement, completion claim or case closure as satisfying your goal. Correct that specific mismatch once and ask support to finish the stated obligation. You may repeat an amount that support or the portal has already shown, but do not infer a bank result, calculate a new amount, name a tool or give a sequence.",
+  "required_documents": [
+    "PX-A-RECEIPTS",
+    "PX-A-D33",
+    "PX-A-R-CREDIT-NETTING",
+    "PX-A-R-CREDIT-CASH",
+    "PX-A-R-RETURN-WORKING-CASH",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "diversity_table": "xp_a_supplier_payables"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-A-RECEIPTS",
+      "PX-A-D33",
+      "PX-A-R-CREDIT-NETTING",
+      "PX-A-R-CREDIT-CASH"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "receivables"
+}

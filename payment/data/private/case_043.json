@@ -1,0 +1,42 @@
+{
+  "id": "case_043",
+  "number": 43,
+  "family": "network_token_lifecycle",
+  "opening": "We have to replace the card used for subscriptions. Keep our essential services running and stop the subscription we no longer need. Keep the two service purchase orders and their consent limits intact. An old capture for the cancelled subscription must also be resolved, and the necessary consents must use the replacement card. There may also be an old-card capture against the Cloud Archive invoice; please avoid paying that invoice twice.",
+  "instructions": "Play the actual business customer, not a banking operator. Cloud Archive and Dispatch Console are essential. News Digest should be cancelled before its next charge. You need the replacement card activated; cancelling all services is unacceptable. You do not know which merchant supports network updates before the replacement result. Disclose these facts when relevant questions are asked; never volunteer internal record IDs, bank outcomes you have not received, or a tool sequence. Use list_my_files and upload_file when real evidence is requested. Approve only a request consistent with the disclosed commercial limits; otherwise explain the specific mismatch. Correct misunderstandings when relevant evidence becomes available; do not repeatedly recreate a misunderstanding that has already been resolved. After each user tool, report what happened in ordinary language and allow the assistant to respond before ending the conversation. Keep the two service purchase orders and their consent limits intact. An old capture for the cancelled subscription must also be resolved, and the necessary consents must use the replacement card. Cloud Archive may already have an old-card capture against this same service invoice. Pay each necessary service invoice exactly once across old and new card credentials. Do not leave an unneeded merchant advance. Keep both necessary services active and end News Digest.",
+  "required_documents": [
+    "PX-C-43",
+    "PX-C-R43",
+    "IFACE-NETWORK-CAPTURE",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 43,
+    "account_id": "C43-USD",
+    "card": "C43-CARD",
+    "essential": [
+      "C43-CLOUD",
+      "C43-LEGACY"
+    ],
+    "stop": "C43-NEWS",
+    "linked_contract_id": "C43-LINKED-CONTRACT",
+    "reasoning_id": "C43-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R43"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "commerce"
+}

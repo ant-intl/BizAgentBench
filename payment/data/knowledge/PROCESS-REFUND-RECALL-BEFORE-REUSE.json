@@ -1,0 +1,16 @@
+{
+  "id": "PROCESS-REFUND-RECALL-BEFORE-REUSE",
+  "title": "Refund or recall settlement before reuse",
+  "topic": "Payment execution policy",
+  "applicability": "Payments whose ordinary product records exhibit the stated condition",
+  "content": "# Refund or recall settlement before reuse\n\nA request that reuses expected refund or recall value must be prepared after the actual settlement operation completes. A refund notice, recall request or projected credit is not reusable value, even when the closing balance is later repaired.\n\n## Determining applicability\n\nDetermine applicability from the ordinary product records, effective versions, approvals, execution receipts and settlement events. No case-specific record lists the guarded operation or solution order. A request is immutable after preparation. A later reversal, top-up, recovery or replacement may repair the closing business result, but it does not erase an earlier executed exposure or invalid binding. A rejected call with no business effect is not itself a payment-safety breach.",
+  "provenance": {
+    "classification": "synthetic_payment_process_rule",
+    "source": "Payment v9 general execution-history rule",
+    "mechanism": "refund_recall_before_reuse"
+  },
+  "document_layers": [
+    "business_rule"
+  ],
+  "searchable": true
+}

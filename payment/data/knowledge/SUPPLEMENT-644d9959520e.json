@@ -1,0 +1,13 @@
+{
+  "id": "SUPPLEMENT-644d9959520e",
+  "title": "Supplier confirmations, early settlement and linked invoices",
+  "topic": "supplier confirmation timing early settlement invoice discount",
+  "applicability": "Only reasoning_version c-reasoning-v2 records for the current customer and bound original transaction.",
+  "content": "Independent confirmations have channel-specific arrival times in xp_c_supplier_portfolios. A PENDING contact receipt is not confirmation. The published supplier response identifies the collection account and whether its early-settlement discount remains funded. Supplier invoices in xp_c_supplier_due_items are genuine additional obligations, with their own face amount, fee and deadline. An early-payment discount applies only when the original invoice and the additional invoice are both paid by discount_until_minute, to a discount_accounts account, after an affirmative supplier confirmation. A later full-face payment is still valid. The bank permits transfers to any listed bank-valid account; only independent supplier confirmation establishes authority. The account balance is shared by original invoice principal, additional invoice principal, confirmation charges and both transfer fees. The bank does not reserve enough for a later invoice merely because its earlier transfer succeeded.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Opt-in linked commercial obligations and resource terms."
+    }
+  ]
+}

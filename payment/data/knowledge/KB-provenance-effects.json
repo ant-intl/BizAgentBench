@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "remaining_minor includes any held_minor. Active source reservations reduce spendability separately.\n\nQuotes reserve no money. An executed payment consumes its actual source allocations immediately, even though settlement occurs later.\n\nAggregate account balances cannot override a source restriction. Source classifications survive transfers; the source_goods review is the specified way to correct a supported classification rather than wash provenance through another account.",
+  "id": "KB-provenance-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "remaining_minor includes any held_minor. Active source reservations reduce spendability separately.",
+  "title": "Source availability and consumed principal",
+  "topic": "provenance"
+}

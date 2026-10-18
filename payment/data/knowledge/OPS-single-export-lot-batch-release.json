@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An ordinary batch review creates one EXPORT lot and conversion quota. Its first release is spendable, while the remaining portion is held until the release event.\n\nA classification-review batch can produce MARKET_B and SERVICE lots plus a delayed held portion. The total cash released does not identify its convertible share. The review response and subsequent lot records carry the actual source classifications and batch links.",
+  "id": "OPS-single-export-lot-batch-release",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "An ordinary batch review creates one EXPORT lot and conversion quota. Its first release is spendable, while the remaining portion is held until the release event.",
+  "title": "Ordinary and classification-review batches",
+  "topic": "batches"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-STATEMENT-DISTRIBUTION",
+  "title": "Statement-supported distribution service interfaces",
+  "topic": "treasury redemption owner distribution supplier invoice",
+  "applicability": "PSP product accounts; Encumbered deposit redemption and payments supported by consolidated statement income.",
+  "content": "Encumbered deposit redemption and payments supported by consolidated statement income.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `pay_statement_supported_distribution`\n\nPay an installment of the owner distribution or supplier invoice using unencumbered cash. The owner amount derives from actual consolidated external income; supplier settlement can claim its public early discount or pay full face.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `distribution_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `obligation` | string: `OWNER`, `SUPPLIER` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n| `supplier_terms` | string: `early_discount`, `full_face` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `submit_treasury_redemption`\n\nCommit the encumbered deposit to standard or accelerated redemption. The selected fee and due date are final; the independent notice releases the actual held amount.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `distribution_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel` | string: `standard`, `accelerated` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "pay_statement_supported_distribution",
+    "submit_treasury_redemption"
+  ],
+  "business_area": "treasury_statement",
+  "service": "distribution_settlement",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

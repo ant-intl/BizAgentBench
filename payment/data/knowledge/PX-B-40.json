@@ -1,0 +1,35 @@
+{
+  "id": "PX-B-40",
+  "title": "Minimum disclosure bank evidence",
+  "topic": "Minimum disclosure bank evidence",
+  "applicability": "Only the named synthetic benchmark product and its published customer records; no claim of real law or present provider availability.",
+  "content": "create_bank_evidence creates documents with explicit fields and transaction scope. A receipt proves one payment; a statement includes every transaction in all_transaction_ids; a certificate proves account ownership only. Only pdf is sealed. The recipient's required_fields and required_kind are public in xp_b_evidence_requests; customer authorization is separate and must be obtained in conversation. deliver_bank_evidence irreversibly reveals all selected fields and transaction IDs. Redaction can remove permitted fields but must retain acceptance fields. Original bank transaction records are immutable.\n\nCoupled business records: xp_b_proof_access. The recipient verification event may revise required_fields in the SAME original bank proof request. It cannot expand customer allowed_fields. Evidence creation/delivery must therefore use the verified necessary fields within consent. A temporary proof link also has named authorized readers; public or other-company readership constitutes additional disclosure even when field redaction is correct. Revoke future access only after the intended recipient read receipt, preserving the delivered document.\nverify_bank_proof_recipient: Verify the recipient through one listed channel, paying its fee. The signed receipt may add fields that the buyer needs; it does not expand customer disclosure consent. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nset_bank_proof_access_scope: Choose a reader policy from access_policies. The transport can support public/team/named readers; only customer-approved recipients may receive this payment proof. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nissue_scoped_bank_proof_link: Issue an access link to an actually delivered bank evidence ID. Its immutable fields and reader policy apply until revoked; the recipient read arrives as an event. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\nrevoke_delivered_bank_proof_link: Revoke the temporary link after the genuine recipient receipt. This closes future access without pretending to undo information already disclosed. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `issue_scoped_bank_proof_link`\n\nIssue an access link to an actually delivered bank evidence ID. Its immutable fields and reader policy apply until revoked; the recipient read arrives as an event. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `choice` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `revoke_delivered_bank_proof_link`\n\nRevoke the temporary link after the genuine recipient receipt. This closes future access without pretending to undo information already disclosed. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `set_bank_proof_access_scope`\n\nChoose a reader policy from access_policies. The transport can support public/team/named readers; only customer-approved recipients may receive this payment proof. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `choice` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `verify_bank_proof_recipient`\n\nVerify the recipient through one listed channel, paying its fee. The signed receipt may add fields that the buyer needs; it does not expand customer disclosure consent. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `choice` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "State transitions, numeric terms, review outcomes and deadlines"
+    },
+    {
+      "kind": "source-derived",
+      "file": "electronic-seal-transaction-documents.sop.md",
+      "scope": "N3-N7 statement PDF seal vs transaction receipt; explicit disclosure model synthetic",
+      "line_start": 18,
+      "line_end": 111,
+      "normalization": "Only the node/merged-rule scope stated beside this citation is adopted; all synthetic extensions are separately labeled."
+    },
+    {
+      "kind": "synthetic",
+      "scope": "Coupled business state, resources, deadlines and authority evidence introduced in candidate v4."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "issue_scoped_bank_proof_link",
+    "revoke_delivered_bank_proof_link",
+    "set_bank_proof_access_scope",
+    "verify_bank_proof_recipient"
+  ]
+}

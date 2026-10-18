@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-INCIDENT-FINALITY",
+  "title": "Credential families and surviving network commitments",
+  "topic": "credential families and surviving network commitments",
+  "applicability": "Synthetic current-customer incident or delegation records with reasoning_version b-reasoning-1.",
+  "content": "The identified integration family includes every sibling credential. Family revocation blocks new use of that family, but accepted network instructions and a separate bank standing authority survive. The suspect settlement event runs at its published due minute: accepted instructions can settle despite credential revocation, while queued instructions require an active credential. Explicit cancellation is distinct and charges each instruction fee. The genuine supplier instruction was already accepted before the incident. It cannot be accelerated by another execute request; the network finality event publishes its actual settled or rejected result. A pending original may be explicitly cancelled before that event. A settled original is actual supplier payment and must never be paid again.\n\nCancellation of a suspicious queued or accepted transfer may be completed before or after credential-family revocation; it is not a new payment instruction.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Network finality, emergency replacement and revision-bound disclosure contracts."
+    }
+  ]
+}

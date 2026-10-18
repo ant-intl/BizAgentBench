@@ -1,0 +1,11 @@
+{
+  "id": "PX-A-R-COLLECTION-COSTS",
+  "title": "Invoice collection deadlines and combined instruction expenses",
+  "topic": "Invoice collection deadlines and combined instruction expenses",
+  "applicability": "Supplier payment instructions and merchant application bought from one operating account.",
+  "content": "Customer collection deadlines refer to actual commercial invoice application, not sending-bank settlement. Application fees and all original authority application/reservation fees share the stated combined customer ceiling; the original authority sublimit also remains applicable. An authorization application already paid before an account timetable changes remains a real expense. Faster application can justify a different same-entity account and therefore a different bound beneficiary on the approved instruction. A valid but slow service may miss the invoice commitment. An immediate service remains bank-supported even where its fee makes the overall instruction unaffordable under the customer limit.",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  }
+}

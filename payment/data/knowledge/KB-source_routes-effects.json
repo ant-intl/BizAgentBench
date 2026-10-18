@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "inspect_source_payment takes a beneficiary_id and an object mapping source lot IDs to positive USD cents. All lots must be in one account.\n\npropose_source_payment charges the sum of the per-source charges, once for each nonzero source allocation: MARKET_A/B 100 cents, SERVICE/CAPITAL 200, REIMBURSEMENT 300. It deducts each allocation and settles after 10 minutes.\n\nQuotes last 20 minutes and reserve nothing. Bank payments cannot debit pooled source-restricted principal without a source allocation.\n\nA conversion-triggered source review may establish a SERVICE hold; its actual held amount is in the later source record. Other source balances cannot satisfy that source-specific reserve.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_source_payment`\n\nExecute a current source-allocation quote; source classifications and current availability apply.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `quote_id` | string | yes | The quote whose recorded terms are to be used. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-source_routes-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "inspect_source_payment takes a beneficiary_id and an object mapping source lot IDs to positive USD cents. All lots must be in one account.",
+  "title": "Pricing and executing an allocated source payment",
+  "topic": "source_routes",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_source_payment"
+  ]
+}

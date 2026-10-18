@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tau2"
+version = "1.0.1"
+description = "Vendored Tau text interaction runner for benchmark reproduction"
+requires-python = ">=3.12,<3.14"
+readme = "README.md"
+license = "MIT"
+dependencies = [
+  "pandas>=2.2.3", "loguru>=0.7.3",
+  "docstring-parser>=0.16", "litellm>=1.80.15,<1.82.7",
+  "deepdiff>=8.4.2", "addict>=2.4.0",
+  "PyYAML>=6.0.2", "toml>=0.10.2", "python-dotenv>=1.0.0",
+  "numpy>=1.24.0",
+  "httpx>=0.24.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tau2"]

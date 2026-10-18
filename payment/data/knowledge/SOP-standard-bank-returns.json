@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Locate the transaction's recorded return reason. If it is unavailable, submit the transaction ID and details for investigation.\n\n| Reason | Local handling |\n|---|---|\n| `DUE TO ACCT CLOSED` | Confirm account status with the recipient bank and use another account. |\n| `OUT OF OPERATION` | Contact the recipient. |\n| `Internal Policy`, `RR04 REGULATORY REASON`, `RTN RSN AS PER BBK RQST`, `RC07` | Obtain further details from the recipient bank. |\n| `BENEFICIARY DETAILS MISMATCH` or `RTN RSN ACC NOT HELD` | Check the recipient's bank information. |\n| `AS REQUESTED DETAILS NOT RECEIVED` | A new payment can be attempted; respond promptly to any new bank information request. |\n| `Beneficiary Bank Name is not valid. It contains invalid characters` | Replace the relevant spaces in the beneficiary or bank name with standard half-width English spaces. |\n| Other standard reasons | Obtain the specific reason from the bank. |\n\nFor `REASON CANCELLED BY CHATS` or `FALSE HIT CONFIRMATION AFTER CHATS CUTOFF`, use the separate CHATS support investigation during the first three business days after the return. After three business days, an alternative receiving account may be used for a new attempt once the actual returned funds are confirmed. Acceptance remains subject to the bank's processing.\n\nIf a same-name withdrawal was returned because the registered holder names differ, verify the names and submit the appropriate name-update evidence. Re-create an incorrect recipient where the affected field cannot be edited.",
+  "id": "SOP-standard-bank-returns",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Locate the transaction's recorded return reason. If it is unavailable, submit the transaction ID and details for investigation.",
+  "source_ids": [
+    "B06",
+    "B03"
+  ],
+  "title": "Foreign-currency bank returns: reason codes",
+  "topic": "payments"
+}

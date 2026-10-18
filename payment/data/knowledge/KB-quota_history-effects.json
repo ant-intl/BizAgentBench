@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Fresh order quotas record valid_from_minute. File validity is distinct from the dates of its underlying sales.\n\nCapacity from a sale after a historical conversion cannot support that conversion retrospectively, even if the quota is valid today. Current conversion must also be within the quota validity interval.\n\nRefunds reduce the original order quota at refund settlement, independent of allocation changes or positive capacity on another quota. A negative source quota remains debt and is not automatically offset against another source.",
+  "id": "KB-quota_history-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Fresh order quotas record valid_from_minute. File validity is distinct from the dates of its underlying sales.",
+  "title": "Quota validity dates and historical use",
+  "topic": "quota_history"
+}

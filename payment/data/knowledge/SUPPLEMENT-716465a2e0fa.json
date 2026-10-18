@@ -1,0 +1,13 @@
+{
+  "id": "SUPPLEMENT-716465a2e0fa",
+  "title": "Institution payroll and ownership-specific receivable finance",
+  "topic": "institution payroll and ownership-specific receivable finance",
+  "applicability": "Current customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "Institution payroll and safeguarding topups draw on the same operating cash. Payroll remains an institution obligation and cannot use customer liabilities or another customer reserve. The institution owns a separate receivable. A nonrecourse assignment consumes the whole receivable in exchange for its published advance; the discount is a real finance cost. A credit-line drawing preserves the receivable, charges its posted origination fee and creates an equal principal debt; collection of the eventual receivable can repay that debt. Waiting for collection creates no spendable cash before its due notice. Bank payment may succeed after the payroll deadline, but the timestamp remains. Safeguarding coverage continues to be evaluated at every customer-cash movement.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Additional commercial rights, funding and due dates."
+    }
+  ]
+}

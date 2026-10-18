@@ -1,0 +1,20 @@
+{
+  "id": "SUPPLEMENT-05673bf10a1d",
+  "title": "Vault denomination inventory and funded staff floats",
+  "topic": "vault denomination cash inventory staff float allocation",
+  "applicability": "Only reasoning_version c-reasoning-v2 records for the current customer and bound original transaction.",
+  "content": "xp_c_vault_allocations binds a cash-recovery transaction and a separate already-funded staff float to one real bank vault note_stock. The stock describes notes available for exchanges and float delivery. A recovery exchange returns the old notes to this same stock and removes the issued notes. The cash-room notice supplies actual float amount and packaging requirements. Denomination totals may be sufficient while particular small-note combinations are exhausted. dispense_staff_float permits any identity-checked collector and any available equal-value note bundle; the customer and the staff float notice determine the acceptable recipient, maximum denomination and maximum note count. The float debit occurred before this episode; no new withdrawal is needed. Its physical handover debits the bank vault reserve and cannot also be used for a recovery claim. The unrelated airport bag retains its own ownership and cannot fund either allocation.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `dispense_staff_float`\n\nDeliver the funded staff float from the same vault denomination inventory used by recovery exchanges. note_counts maps denomination minor units to a positive integer count; customer preferences may be narrower than bank-permitted collectors.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `allocation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `collector_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `note_counts` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Opt-in linked commercial obligations and resource terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "dispense_staff_float"
+  ]
+}

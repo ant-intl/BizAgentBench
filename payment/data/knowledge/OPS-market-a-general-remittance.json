@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "MARKET_A can pay a GENERAL USD beneficiary for a 100-cent source-allocation charge. It is not an eligible source for a LICENSED beneficiary.\n\n`inspect_source_payment` takes the beneficiary and a positive allocation map for lots in one account. Execution consumes the approved allocations and settlement follows ten minutes later. MARKET_A also permits conversion; either use consumes the same remaining principal.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `inspect_source_payment`\n\nQuote one recipient payment with an explicit allocation across eligible source lots.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `beneficiary_id` | string | yes | The receiving bank record. |\n| `allocations` | object | yes | Map of source-lot IDs to positive USD cents, all in the same account. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n",
+  "id": "OPS-market-a-general-remittance",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "MARKET_A can pay a GENERAL USD beneficiary for a 100-cent source-allocation charge. It is not an eligible source for a LICENSED beneficiary.",
+  "title": "MARKET_A payments to a general supplier",
+  "topic": "source_routes",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "inspect_source_payment"
+  ]
+}

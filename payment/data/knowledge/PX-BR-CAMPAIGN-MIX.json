@@ -1,0 +1,20 @@
+{
+  "id": "PX-BR-CAMPAIGN-MIX",
+  "title": "Campaign channel commitments and provider allocation",
+  "topic": "campaign search display capacity cancellation advertising wallet",
+  "applicability": "Campaigns with separate channel delivery mandates",
+  "content": "Search and display rights are distinct deliverables of the same prepaid launch. The schedule publishes each channel’s minimum delivered service value and deadline. A total service value does not substitute for a missing channel. Allocation offers have public acceptance ranges and a nonrefundable service charge; the original reserve_campaign_launch_capacity publishes actual accepted channel quantities. Accepted capacity consumes the same wallet rights as makegood bookings. Once activated, accepted advertising cannot be recalled.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `reserve_campaign_launch_capacity`\n\nReserve provider capacity against real usable credit in wallet_id; allocation event publishes accepted capacity. Reserving does not itself activate advertising. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional allocation ranges, channel obligations, cancellation loss and inventory delivery delays."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "reserve_campaign_launch_capacity"
+  ]
+}

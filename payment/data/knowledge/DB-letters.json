@@ -1,0 +1,13 @@
+{
+  "applicability": "Shared Payment database interface; all tasks use the same dictionary",
+  "content": "> Inherited interface: no populated public shape in this release's admitted workflow inventory. See DB-inherited-collections and the product entry points in DB-index.\n\n# letters\n\nLetters records in CORE and product extensions. Product articles define their operational scope.\n\nRead this collection using `search_records(resource=\"letters\", filters={}, cursor=0, limit=20)` or `get_record(resource=\"letters\", record_id=\"<returned id>\")`.\n\n**Filters:** exact scalar equality; in, contains, gte and lte operator objects on supported top-level fields. See DB-query-syntax for type and null behavior.\n\nSearch returns selected summary fields, so omission from a summary is not proof of absence from the complete record. Read detail before interpreting an optional field. Fields depend on the record type and processing stage; null and absent fields are not zero amounts. Types below describe public record shapes, rather than mandatory properties on every row.\n\nThis inherited collection has no populated public-record shape in the current admitted workflow inventory. Its query entry remains available. No empty collection is treated as evidence about a particular customer enquiry; the actual query determines accessible matches. Its producers and product articles govern any records it creates.",
+  "id": "DB-letters",
+  "provenance": {
+    "classification": "interface_documentation",
+    "contains_task_specific_values": false,
+    "kind": "interface_documentation",
+    "source": "Public record shapes plus query/transition implementation; reviewed field semantics"
+  },
+  "title": "Database reference: letters",
+  "topic": "Database interface"
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A credited incoming can be reversed after approval when the current account has sufficient available principal and the incoming has no active source reservation. The service provides no temporary overdraft for corrections.\n\nReversal deducts cash and the incoming's quota contribution and records REVERSED. Reassignment is a separate operation that immediately credits its selected destination. Each reversal uses the available amount in its own account at execution; balances across several accounts are not a shared correction facility.",
+  "id": "OPS-cash-sufficient-correction-order",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A credited incoming can be reversed after approval when the current account has sufficient available principal and the incoming has no active source reservation. The service provides no temporary overdraft for corrections.",
+  "title": "Cash checks during a posting correction",
+  "topic": "corrections"
+}

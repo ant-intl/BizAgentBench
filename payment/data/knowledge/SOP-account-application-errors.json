@@ -1,0 +1,16 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Different failure messages identify different situations.\n\n| Message or condition | Handling |\n|---|---|\n| Cannot apply for more collection accounts | The account is not currently approved for additional accounts; request review if needed. |\n| Accumulate more active transactions | Existing collection accounts are insufficiently active for further applications. |\n| More store material required | Supply the requested public store URL, administration screenshot or settlement records. |\n| Unreachable or mismatched store link | Supply the public store homepage corresponding to the store. |\n| Duplicate application | Check whether the same store material has already been used for an account application. |\n\nFor an account-count extension offered by the Portal, select the platform and currency, add the requested collection account and material, preview the submission and submit it. The result is normally available on the next business day through the message centre.\n\nA new or incomplete store may need its webpage and product information completed. A risk rejection is not always caused by missing products; obtain the actual reason where available. One store-material package cannot be reused to claim several independent stores.",
+  "id": "SOP-account-application-errors",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Different failure messages identify different situations.",
+  "source_ids": [
+    "B20",
+    "B22",
+    "B12"
+  ],
+  "title": "Collection-account limits and application failures",
+  "topic": "accounts"
+}

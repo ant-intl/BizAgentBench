@@ -1,0 +1,21 @@
+{
+  "id": "PX-BR-CAMPAIGN-DELIVERY",
+  "title": "Makegood inventory timing and launch delivery",
+  "topic": "campaign search display capacity cancellation advertising wallet",
+  "applicability": "Campaigns with separate channel delivery mandates",
+  "content": "Each makegood placement records campaign, channel, booking fee and actual delivery delay. The original book_campaign_makegood books the presently uncommitted usable wallet balance; it cannot reuse already accepted capacity. A placement can be transport-valid while belonging to an unsuitable channel or campaign. activate_campaign_launch consumes booked wallet credit and starts actual delivery; accepted capacity is delivered then, and replacement placement delivery occurs after its listed delay. Each channel’s receipt, not total booked value or bank transfer amount, must satisfy the commercial channel deadline. Service fees use source cash rather than reducing the requested advertising value.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `activate_campaign_launch`\n\nConsume the actual booked provider credits and activate the selected campaigns. Original wallet cash cannot be spent a second time; wrong-campaign booking remains a real loss. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `book_campaign_makegood`\n\nBook released capacity into one listed placement. Placement campaign and booking fee are public; a different campaign consumes credit without advancing this launch. record_id identifies the named public business record. Amounts are integer USD minor units unless the record names a target currency.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `record_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `choice` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional allocation ranges, channel obligations, cancellation loss and inventory delivery delays."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "activate_campaign_launch",
+    "book_campaign_makegood"
+  ]
+}

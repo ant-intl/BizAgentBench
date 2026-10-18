@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Where a RETURNED payment has `refund_minor` equal to its original amount, the full principal has been credited. The payment-return event records the status and cash change together. New-payment fees remain separate.\n\nOther returns may have a smaller refund amount. RETURN_PENDING is not yet cash, and a returned payment does not cancel another transfer against the same obligation. Use each transfer's actual refund or settlement record.",
+  "id": "OPS-return-without-a-principal-deduction",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Where a RETURNED payment has `refund_minor` equal to its original amount, the full principal has been credited. The payment-return event records the status and cash change together. New-payment fees remain separate.",
+  "title": "A bank return for the full principal",
+  "topic": "payments"
+}

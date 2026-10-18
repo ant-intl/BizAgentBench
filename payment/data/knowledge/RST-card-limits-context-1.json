@@ -1,0 +1,12 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "Capacity can be transferred between cards in the same company pool. When the donor has no later commitment, its unused allocation may be freely reassigned subject to current system limits. The transfer moves spending capacity, not principal balances or existing holds.\n\nDetailed local effects and operation names: `RST-card-limits`.",
+  "id": "RST-card-limits-context-1",
+  "provenance": {
+    "classification": "functional_scope_distractor",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "Capacity can be transferred between cards in the same company pool. When the donor has no later commitment, its unused allocation may be freely reassigned subject to current system limits. The transfer moves spending capacity, not principal balances or existing holds.",
+  "title": "Moving uncommitted card capacity",
+  "topic": "card-limits"
+}

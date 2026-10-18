@@ -1,0 +1,1495 @@
+{
+  "case_id": "D34-AUTH-CASE",
+  "components": [
+    {
+      "case_id": "D34-AUTH-CASE",
+      "extension_service": true,
+      "family": " Identity validity × Signing scope × Version change ",
+      "id": "extension_dual_approval",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-AUTH-EVENT-AMENDMENT": {
+            "event_kind": "authority_amendment"
+          },
+          "D34-AUTH-EVENT-EARLY": {
+            "event_kind": "authority_window"
+          },
+          "D34-AUTH-EVENT-FINAL": {
+            "event_kind": "authority_window"
+          }
+        },
+        "events": {
+          "D34-AUTH-EVENT-AMENDMENT": {
+            "due_minute": 3,
+            "event_category": "authority_amendment",
+            "id": "D34-AUTH-EVENT-AMENDMENT",
+            "kind": "authority_event",
+            "scope": "LINK16-33",
+            "status": "SCHEDULED",
+            "target_id": "D34-AUTH-CASE"
+          },
+          "D34-AUTH-EVENT-EARLY": {
+            "due_minute": 2,
+            "event_category": "authority_window",
+            "id": "D34-AUTH-EVENT-EARLY",
+            "kind": "authority_event",
+            "scope": "LINK16-33",
+            "status": "SCHEDULED",
+            "target_id": "D34-AUTH-CASE"
+          },
+          "D34-AUTH-EVENT-FINAL": {
+            "due_minute": 5,
+            "event_category": "authority_window",
+            "id": "D34-AUTH-EVENT-FINAL",
+            "kind": "authority_event",
+            "scope": "LINK16-33",
+            "status": "SCHEDULED",
+            "target_id": "D34-AUTH-CASE"
+          }
+        },
+        "service_records": {
+          "D34-AUTH-COMPONENTS": {
+            "_amendment": null,
+            "amendment_minute": null,
+            "amendment_status": "NONE",
+            "attached_signature_refs": [],
+            "bank_version": 1,
+            "case_id": "D34-AUTH-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "due_minute": 4,
+            "face_minor": 70000,
+            "fee_minor": 300,
+            "fee_paid_minor": 0,
+            "id": "D34-AUTH-COMPONENTS",
+            "kind": "controlled_invoice",
+            "name": "Cedar components supplier invoice",
+            "paid_minor": 0,
+            "possible_amendments": [],
+            "prior_paid_minor": 0,
+            "reference": "COMPONENTS",
+            "registered_bank_versions": [
+              1,
+              2
+            ],
+            "remittance_note": "Original reference",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-COMPONENTS_IRIS_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "COMPONENTS",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-COMPONENTS_IRIS_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Components authorization from Iris (director)",
+            "reference": "COMPONENTS_IRIS_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-COMPONENTS_IRIS_TREASURY": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "COMPONENTS",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-COMPONENTS_IRIS_TREASURY",
+            "kind": "signed_instrument",
+            "name": "Components authorization from Iris (treasury)",
+            "reference": "COMPONENTS_IRIS_TREASURY",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-COMPONENTS_MAYA_TREASURY": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "COMPONENTS",
+              "person": "MAYA",
+              "signed_minute": 3,
+              "staff_login": "MAYA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-COMPONENTS_MAYA_TREASURY",
+            "kind": "signed_instrument",
+            "name": "Components authorization from Maya (treasury)",
+            "reference": "COMPONENTS_MAYA_TREASURY",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-COMPONENTS_NINA_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "COMPONENTS",
+              "person": "NINA",
+              "signed_minute": 3,
+              "staff_login": "NINA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-COMPONENTS_NINA_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Components authorization from Nina (director)",
+            "reference": "COMPONENTS_NINA_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-COMPONENTS_OLIVER_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "COMPONENTS",
+              "person": "OLIVER",
+              "signed_minute": 3,
+              "staff_login": "OLIVER"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-COMPONENTS_OLIVER_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Components authorization from Oliver (director)",
+            "reference": "COMPONENTS_OLIVER_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-ELENA": {
+            "capacities": [
+              "DIRECTOR"
+            ],
+            "case_id": "D34-AUTH-CASE",
+            "ceiling_minor": 120000,
+            "committed_invoice_refs": [],
+            "committed_minor": {
+              "EUR": 0,
+              "USD": 0
+            },
+            "currencies": [
+              "EUR"
+            ],
+            "customer_access": true,
+            "daily_limit_minor": {
+              "EUR": 200000,
+              "USD": 200000
+            },
+            "effective_from": 0,
+            "effective_until": 3,
+            "id": "D34-AUTH-ELENA",
+            "kind": "authority_person",
+            "name": "Elena",
+            "reference": "ELENA",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-EQUIPMENT": {
+            "_amendment": "BANK_DETAILS",
+            "amendment_minute": 3,
+            "amendment_status": "PENDING",
+            "attached_signature_refs": [],
+            "bank_version": 1,
+            "case_id": "D34-AUTH-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "due_minute": 5,
+            "face_minor": 150000,
+            "fee_minor": 500,
+            "fee_paid_minor": 0,
+            "id": "D34-AUTH-EQUIPMENT",
+            "kind": "controlled_invoice",
+            "name": "Cedar equipment supplier invoice",
+            "paid_minor": 30000,
+            "possible_amendments": [
+              "BANK_DETAILS",
+              "REMITTANCE_NOTE"
+            ],
+            "prior_paid_minor": 30000,
+            "reference": "EQUIPMENT",
+            "registered_bank_versions": [
+              1,
+              2
+            ],
+            "remittance_note": "Original reference",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-EQ_ALIAS": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "Iris finance login"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_ALIAS",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Iris (treasury)",
+            "reference": "EQ_ALIAS",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_EXPIRED": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_EXPIRED",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Leo (treasury)",
+            "reference": "EQ_EXPIRED",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_NEW_IRIS": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_NEW_IRIS",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Iris (director)",
+            "reference": "EQ_NEW_IRIS",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_NEW_MAYA": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "MAYA",
+              "signed_minute": 3,
+              "staff_login": "MAYA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_NEW_MAYA",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Maya (treasury)",
+            "reference": "EQ_NEW_MAYA",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_NEW_NINA": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "NINA",
+              "signed_minute": 3,
+              "staff_login": "NINA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_NEW_NINA",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Nina (director)",
+            "reference": "EQ_NEW_NINA",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_OLD_IRIS": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "IRIS"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_OLD_IRIS",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Iris (director)",
+            "reference": "EQ_OLD_IRIS",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_OLD_LEO": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_OLD_LEO",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Leo (treasury)",
+            "reference": "EQ_OLD_LEO",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-EQ_OLD_NINA": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 125000,
+              "currency": "USD",
+              "payment": "EQUIPMENT",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-EQ_OLD_NINA",
+            "kind": "signed_instrument",
+            "name": "Equipment authorization from Nina (director)",
+            "reference": "EQ_OLD_NINA",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-FREIGHT": {
+            "_amendment": null,
+            "amendment_minute": null,
+            "amendment_status": "NONE",
+            "attached_signature_refs": [],
+            "bank_version": 1,
+            "case_id": "D34-AUTH-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "due_minute": 5,
+            "face_minor": 81000,
+            "fee_minor": 100,
+            "fee_paid_minor": 0,
+            "id": "D34-AUTH-FREIGHT",
+            "kind": "controlled_invoice",
+            "name": "Cedar freight supplier invoice",
+            "paid_minor": 0,
+            "possible_amendments": [],
+            "prior_paid_minor": 0,
+            "reference": "FREIGHT",
+            "registered_bank_versions": [
+              1,
+              2
+            ],
+            "remittance_note": "Original reference",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-FREIGHT_IRIS_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "FREIGHT",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-FREIGHT_IRIS_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Freight authorization from Iris (director)",
+            "reference": "FREIGHT_IRIS_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-FREIGHT_IRIS_TREASURY": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "FREIGHT",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-FREIGHT_IRIS_TREASURY",
+            "kind": "signed_instrument",
+            "name": "Freight authorization from Iris (treasury)",
+            "reference": "FREIGHT_IRIS_TREASURY",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-FREIGHT_MAYA_TREASURY": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "FREIGHT",
+              "person": "MAYA",
+              "signed_minute": 3,
+              "staff_login": "MAYA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-FREIGHT_MAYA_TREASURY",
+            "kind": "signed_instrument",
+            "name": "Freight authorization from Maya (treasury)",
+            "reference": "FREIGHT_MAYA_TREASURY",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-FREIGHT_NINA_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "FREIGHT",
+              "person": "NINA",
+              "signed_minute": 3,
+              "staff_login": "NINA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-FREIGHT_NINA_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Freight authorization from Nina (director)",
+            "reference": "FREIGHT_NINA_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-FREIGHT_OLIVER_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "FREIGHT",
+              "person": "OLIVER",
+              "signed_minute": 3,
+              "staff_login": "OLIVER"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-FREIGHT_OLIVER_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Freight authorization from Oliver (director)",
+            "reference": "FREIGHT_OLIVER_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-IRIS": {
+            "capacities": [
+              "DIRECTOR",
+              "TREASURY"
+            ],
+            "case_id": "D34-AUTH-CASE",
+            "ceiling_minor": 500000,
+            "committed_invoice_refs": [],
+            "committed_minor": {
+              "EUR": 0,
+              "USD": 0
+            },
+            "currencies": [
+              "USD",
+              "EUR"
+            ],
+            "customer_access": true,
+            "daily_limit_minor": {
+              "EUR": 200000,
+              "USD": 261800
+            },
+            "effective_from": 0,
+            "effective_until": 99,
+            "id": "D34-AUTH-IRIS",
+            "kind": "authority_person",
+            "name": "Iris",
+            "reference": "IRIS",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-LEO": {
+            "capacities": [
+              "TREASURY"
+            ],
+            "case_id": "D34-AUTH-CASE",
+            "ceiling_minor": 500000,
+            "committed_invoice_refs": [],
+            "committed_minor": {
+              "EUR": 0,
+              "USD": 0
+            },
+            "currencies": [
+              "USD",
+              "EUR"
+            ],
+            "customer_access": true,
+            "daily_limit_minor": {
+              "EUR": 200000,
+              "USD": 200000
+            },
+            "effective_from": 0,
+            "effective_until": 3,
+            "id": "D34-AUTH-LEO",
+            "kind": "authority_person",
+            "name": "Leo",
+            "reference": "LEO",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-MAINTENANCE": {
+            "_amendment": null,
+            "amendment_minute": null,
+            "amendment_status": "NONE",
+            "attached_signature_refs": [],
+            "bank_version": 2,
+            "case_id": "D34-AUTH-CASE",
+            "currency": "EUR",
+            "customer_access": true,
+            "due_minute": 2,
+            "face_minor": 90000,
+            "fee_minor": 300,
+            "fee_paid_minor": 0,
+            "id": "D34-AUTH-MAINTENANCE",
+            "kind": "controlled_invoice",
+            "name": "Cedar maintenance supplier invoice",
+            "paid_minor": 30000,
+            "possible_amendments": [],
+            "prior_paid_minor": 30000,
+            "reference": "MAINTENANCE",
+            "registered_bank_versions": [
+              1,
+              2
+            ],
+            "remittance_note": "Original reference",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-MAYA": {
+            "capacities": [
+              "TREASURY"
+            ],
+            "case_id": "D34-AUTH-CASE",
+            "ceiling_minor": 500000,
+            "committed_invoice_refs": [],
+            "committed_minor": {
+              "EUR": 0,
+              "USD": 0
+            },
+            "currencies": [
+              "USD",
+              "EUR"
+            ],
+            "customer_access": true,
+            "daily_limit_minor": {
+              "EUR": 200000,
+              "USD": 231700
+            },
+            "effective_from": 3,
+            "effective_until": 99,
+            "id": "D34-AUTH-MAYA",
+            "kind": "authority_person",
+            "name": "Maya",
+            "reference": "MAYA",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-MT_ELENA": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 61000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "ELENA",
+              "signed_minute": 0,
+              "staff_login": "ELENA"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 61000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "ELENA",
+              "signed_minute": 0,
+              "staff_login": "ELENA"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-MT_ELENA",
+            "kind": "signed_instrument",
+            "name": "Maintenance authorization from Elena (director)",
+            "reference": "MT_ELENA",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-MT_LEO": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 63000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 63000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-MT_LEO",
+            "kind": "signed_instrument",
+            "name": "Maintenance authorization from Leo (treasury)",
+            "reference": "MT_LEO",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-MT_LEO_NET": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 60000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 60000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "LEO",
+              "signed_minute": 0,
+              "staff_login": "LEO"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-MT_LEO_NET",
+            "kind": "signed_instrument",
+            "name": "Maintenance authorization from Leo (treasury)",
+            "reference": "MT_LEO_NET",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-MT_NINA": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-MT_NINA",
+            "kind": "signed_instrument",
+            "name": "Maintenance authorization from Nina (director)",
+            "reference": "MT_NINA",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-MT_OLD": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "EUR",
+              "payment": "MAINTENANCE",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "IRIS"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-MT_OLD",
+            "kind": "signed_instrument",
+            "name": "Maintenance authorization from Iris (director)",
+            "reference": "MT_OLD",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-NINA": {
+            "capacities": [
+              "DIRECTOR"
+            ],
+            "case_id": "D34-AUTH-CASE",
+            "ceiling_minor": 300000,
+            "committed_invoice_refs": [],
+            "committed_minor": {
+              "EUR": 0,
+              "USD": 0
+            },
+            "currencies": [
+              "USD"
+            ],
+            "customer_access": true,
+            "daily_limit_minor": {
+              "EUR": 200000,
+              "USD": 271900
+            },
+            "effective_from": 0,
+            "effective_until": 99,
+            "id": "D34-AUTH-NINA",
+            "kind": "authority_person",
+            "name": "Nina",
+            "reference": "NINA",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-OLIVER": {
+            "capacities": [
+              "DIRECTOR"
+            ],
+            "case_id": "D34-AUTH-CASE",
+            "ceiling_minor": 80000,
+            "committed_invoice_refs": [],
+            "committed_minor": {
+              "EUR": 0,
+              "USD": 0
+            },
+            "currencies": [
+              "USD"
+            ],
+            "customer_access": true,
+            "daily_limit_minor": {
+              "EUR": 200000,
+              "USD": 101100
+            },
+            "effective_from": 3,
+            "effective_until": 99,
+            "id": "D34-AUTH-OLIVER",
+            "kind": "authority_person",
+            "name": "Oliver",
+            "reference": "OLIVER",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-PACKAGING": {
+            "_amendment": null,
+            "amendment_minute": null,
+            "amendment_status": "NONE",
+            "attached_signature_refs": [],
+            "bank_version": 2,
+            "case_id": "D34-AUTH-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "due_minute": 4,
+            "face_minor": 60000,
+            "fee_minor": 200,
+            "fee_paid_minor": 0,
+            "id": "D34-AUTH-PACKAGING",
+            "kind": "controlled_invoice",
+            "name": "Cedar packaging supplier invoice",
+            "paid_minor": 0,
+            "possible_amendments": [],
+            "prior_paid_minor": 0,
+            "reference": "PACKAGING",
+            "registered_bank_versions": [
+              1,
+              2
+            ],
+            "remittance_note": "Original reference",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-PK_IRIS_D": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 65000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "Iris board login"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 65000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "Iris board login"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-PK_IRIS_D",
+            "kind": "signed_instrument",
+            "name": "Packaging authorization from Iris (director)",
+            "reference": "PK_IRIS_D",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-PK_IRIS_T": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 65000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "Iris finance login"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 65000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "IRIS",
+              "signed_minute": 0,
+              "staff_login": "Iris finance login"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-PK_IRIS_T",
+            "kind": "signed_instrument",
+            "name": "Packaging authorization from Iris (treasury)",
+            "reference": "PK_IRIS_T",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-PK_MAYA": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "TREASURY",
+              "ceiling_minor": 65000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "MAYA",
+              "signed_minute": 3,
+              "staff_login": "MAYA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-PK_MAYA",
+            "kind": "signed_instrument",
+            "name": "Packaging authorization from Maya (treasury)",
+            "reference": "PK_MAYA",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-PK_NET": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 60000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 60000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-PK_NET",
+            "kind": "signed_instrument",
+            "name": "Packaging authorization from Nina (director)",
+            "reference": "PK_NET",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-PK_OLD": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 70000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "available_minute": 0,
+            "body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 70000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "NINA",
+              "signed_minute": 0,
+              "staff_login": "NINA"
+            },
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-PK_OLD",
+            "kind": "signed_instrument",
+            "name": "Packaging authorization from Nina (director)",
+            "reference": "PK_OLD",
+            "scope": "LINK16-33",
+            "status": "AVAILABLE",
+            "verified_genuine": true
+          },
+          "D34-AUTH-PK_OLIVER": {
+            "_body": {
+              "bank_version": 2,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 65000,
+              "currency": "USD",
+              "payment": "PACKAGING",
+              "person": "OLIVER",
+              "signed_minute": 3,
+              "staff_login": "OLIVER"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-PK_OLIVER",
+            "kind": "signed_instrument",
+            "name": "Packaging authorization from Oliver (director)",
+            "reference": "PK_OLIVER",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-POLICY": {
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-POLICY",
+            "kind": "corporate_control",
+            "name": "Cedar Works payment control mandate",
+            "ordinary_people": 2,
+            "reference": "POLICY",
+            "required_capacities": [
+              "DIRECTOR",
+              "TREASURY"
+            ],
+            "scope": "LINK16-33",
+            "threshold_minor": {
+              "EUR": 100000,
+              "USD": 100000
+            },
+            "upper_tier_people": 3
+          },
+          "D34-AUTH-WAREHOUSE": {
+            "_amendment": null,
+            "amendment_minute": null,
+            "amendment_status": "NONE",
+            "attached_signature_refs": [],
+            "bank_version": 1,
+            "case_id": "D34-AUTH-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "due_minute": 4,
+            "face_minor": 60000,
+            "fee_minor": 400,
+            "fee_paid_minor": 0,
+            "id": "D34-AUTH-WAREHOUSE",
+            "kind": "controlled_invoice",
+            "name": "Cedar warehouse supplier invoice",
+            "paid_minor": 19500,
+            "possible_amendments": [],
+            "prior_paid_minor": 19500,
+            "reference": "WAREHOUSE",
+            "registered_bank_versions": [
+              1,
+              2
+            ],
+            "remittance_note": "Original reference",
+            "scope": "LINK16-33"
+          },
+          "D34-AUTH-WAREHOUSE_IRIS_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "WAREHOUSE",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-WAREHOUSE_IRIS_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Warehouse authorization from Iris (director)",
+            "reference": "WAREHOUSE_IRIS_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-WAREHOUSE_IRIS_TREASURY": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "WAREHOUSE",
+              "person": "IRIS",
+              "signed_minute": 3,
+              "staff_login": "IRIS"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-WAREHOUSE_IRIS_TREASURY",
+            "kind": "signed_instrument",
+            "name": "Warehouse authorization from Iris (treasury)",
+            "reference": "WAREHOUSE_IRIS_TREASURY",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-WAREHOUSE_MAYA_TREASURY": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "TREASURY",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "WAREHOUSE",
+              "person": "MAYA",
+              "signed_minute": 3,
+              "staff_login": "MAYA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-WAREHOUSE_MAYA_TREASURY",
+            "kind": "signed_instrument",
+            "name": "Warehouse authorization from Maya (treasury)",
+            "reference": "WAREHOUSE_MAYA_TREASURY",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-WAREHOUSE_NINA_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "WAREHOUSE",
+              "person": "NINA",
+              "signed_minute": 3,
+              "staff_login": "NINA"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-WAREHOUSE_NINA_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Warehouse authorization from Nina (director)",
+            "reference": "WAREHOUSE_NINA_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          },
+          "D34-AUTH-WAREHOUSE_OLIVER_DIRECTOR": {
+            "_body": {
+              "bank_version": 1,
+              "capacity": "DIRECTOR",
+              "ceiling_minor": 100000,
+              "currency": "USD",
+              "payment": "WAREHOUSE",
+              "person": "OLIVER",
+              "signed_minute": 3,
+              "staff_login": "OLIVER"
+            },
+            "available_minute": 3,
+            "body": null,
+            "case_id": "D34-AUTH-CASE",
+            "customer_access": true,
+            "id": "D34-AUTH-WAREHOUSE_OLIVER_DIRECTOR",
+            "kind": "signed_instrument",
+            "name": "Warehouse authorization from Oliver (director)",
+            "reference": "WAREHOUSE_OLIVER_DIRECTOR",
+            "scope": "LINK16-33",
+            "status": "AWAITING_COPY",
+            "verified_genuine": true
+          }
+        }
+      },
+      "kind": "versioned_authority",
+      "scope": "LINK16-33",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY50-CASE",
+      "extension_service": true,
+      "family": " Electronic check stop payment, Endorsement rights and substitute payment ",
+      "id": "payment_cheque_stop_and_replacement",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY50-EVENT-1": {
+            "contract_scope": "LINK16-33",
+            "event_kind": "cheque_presentment"
+          },
+          "PAY50-EVENT-2": {
+            "contract_scope": "LINK16-33",
+            "event_kind": "cheque_return"
+          },
+          "PAY50-EVENT-3": {
+            "contract_scope": "LINK16-33",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY50-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY50-EVENT-1",
+            "kind": "payment_cheque_stop_and_replacement_event",
+            "name": "Stop decision, endorsements and partial clearing",
+            "scope": "LINK16-33",
+            "status": "SCHEDULED",
+            "target_id": "PAY50-CASE"
+          },
+          "PAY50-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY50-EVENT-2",
+            "kind": "payment_cheque_stop_and_replacement_event",
+            "name": "Uncleared cheque balance returned",
+            "scope": "LINK16-33",
+            "status": "SCHEDULED",
+            "target_id": "PAY50-CASE"
+          },
+          "PAY50-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY50-EVENT-3",
+            "kind": "payment_cheque_stop_and_replacement_event",
+            "name": "Payment reconciliation checkpoint",
+            "scope": "LINK16-33",
+            "status": "SCHEDULED",
+            "target_id": "PAY50-CASE"
+          }
+        },
+        "service_records": {
+          "PAY50-A": {
+            "case_id": "PAY50-CASE",
+            "current_holder": "FACTOR",
+            "customer_access": true,
+            "due_minute": 2,
+            "face_minor": 60000,
+            "historical_paid_minor": 10000,
+            "id": "PAY50-A",
+            "kind": "cheque_invoice",
+            "name": "Equipment supplier invoice assigned to Harbor Finance",
+            "original_payee": "SUPPLIER",
+            "paid_minor": 10000,
+            "payments": [],
+            "reference": "A",
+            "scope": "LINK16-33"
+          },
+          "PAY50-B": {
+            "case_id": "PAY50-CASE",
+            "current_holder": "PACKAGER",
+            "customer_access": true,
+            "due_minute": 2,
+            "face_minor": 30000,
+            "historical_paid_minor": 0,
+            "id": "PAY50-B",
+            "kind": "cheque_invoice",
+            "name": "Packaging supplier invoice",
+            "original_payee": "PACKAGER",
+            "paid_minor": 0,
+            "payments": [],
+            "reference": "B",
+            "scope": "LINK16-33"
+          },
+          "PAY50-CHEQUE-A": {
+            "_stop_result": "STOPPED",
+            "amount_minor": 50000,
+            "case_id": "PAY50-CASE",
+            "current_holder": "FACTOR",
+            "customer_access": true,
+            "held_minor": 50000,
+            "id": "PAY50-CHEQUE-A",
+            "invoice_ref": "A",
+            "kind": "electronic_cheque",
+            "name": "Equipment cheque endorsed to Harbor Finance",
+            "possible_stop_results": [
+              "STOPPED",
+              "PRESENTED"
+            ],
+            "reference": "CHEQUE-A",
+            "scope": "LINK16-33",
+            "status": "ISSUED",
+            "stop_fee_minor": 1000,
+            "stop_requested": false,
+            "stop_result": null
+          },
+          "PAY50-CHEQUE-B": {
+            "_cleared_minor": 20000,
+            "amount_minor": 30000,
+            "case_id": "PAY50-CASE",
+            "cleared_minor": 0,
+            "current_holder": "PACKAGER",
+            "customer_access": true,
+            "held_minor": 30000,
+            "id": "PAY50-CHEQUE-B",
+            "invoice_ref": "B",
+            "kind": "electronic_cheque",
+            "name": "Packaging cheque with partial clearing",
+            "possible_cleared_minor": [
+              20000,
+              30000
+            ],
+            "reference": "CHEQUE-B",
+            "scope": "LINK16-33",
+            "status": "PROCESSING"
+          },
+          "PAY50-SERVICE": {
+            "amount_minor": 20000,
+            "case_id": "PAY50-CASE",
+            "customer_access": true,
+            "due_minute": 0,
+            "id": "PAY50-SERVICE",
+            "kind": "bill",
+            "name": "Urgent equipment inspection fee",
+            "paid_minor": 0,
+            "reference": "SERVICE",
+            "scope": "LINK16-33"
+          },
+          "PAY50-TERMS": {
+            "case_id": "PAY50-CASE",
+            "customer_access": true,
+            "final_cash_floor_minor": 5000,
+            "id": "PAY50-TERMS",
+            "kind": "cheque_terms",
+            "name": "Cheque and replacement payment terms",
+            "reference": "TERMS",
+            "scope": "LINK16-33"
+          }
+        }
+      },
+      "kind": "payment_cheque_stop_and_replacement",
+      "number": 30,
+      "payment_service": true,
+      "scope": "LINK16-33",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Identity validity × Signing scope × Version change × Independent approval binding ",
+  "id": "case_022",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Disclose your identity, commercial goal and company control requirement when asked about the payments, authorization or constraints. You do not know the bank's record IDs, internal staff identifiers, authority join, valid signer combination, remaining corporate authorization allowances or the pending supplier update. Other employees' genuine signed instruments come from the bank records, not from your assertions. You may approve the bank request as owner without claiming to provide somebody else's corporate signature. Do not calculate which signatures qualify or prompt the agent to replace a particular signature.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Several staff logins show approvals for our supplier payments, but the payments still need finishing. Could you check them and get the suppliers paid? I also need help with a related matter: our contractor says one of our electronic cheques went to the wrong place. There is another cheque due soon as well. Please make sure the right people are paid without paying either bill twice.\n\nYour own facts and preferences: I am Nina from Cedar Works. Please finish the supplier invoices in this payment batch: packaging, maintenance, equipment, components, warehouse services and freight. Meet their recorded deadlines and pay the currently confirmed bank details. Some of the invoices were partly paid earlier. Follow our company payment-control mandate, including its independent-person and capacity requirements. I can approve payments as the account owner and sign only in my own capacity; I cannot sign for colleagues. We already have money in the two wallets. The equipment supplier said an update was being confirmed, but I do not know whether it changes their bank details or just their payment reference. Please use genuine signed evidence and keep valid earlier payments unchanged.\n\nFor the related matter: Settle both supplier invoices with the people currently entitled to the money, and pay the urgent inspection fee on time. I want the equipment cheque stopped and replaced if the bank can still stop it; if it has already been presented, count its actual payment and do not pay it again. Keep at least USD 50 available at completion. I have no extra funding and do not know the bank’s actual stop or clearing result.\n\nI can approve my own requests, but the bank must determine which existing approval is valid for the linked execution.",
+  "kind": "versioned_authority",
+  "link_contract_id": "LINK16-33-LINK",
+  "link_operator": {
+    "category": "signatures",
+    "id": "independent_approval_binding",
+    "relation": "primary_approval_before_secondary_execution"
+  },
+  "number": 22,
+  "opening": "Several staff logins show approvals for our supplier payments, but the payments still need finishing. Could you check them and get the suppliers paid? I also need help with a related matter: our contractor says one of our electronic cheques went to the wrong place. There is another cheque due soon as well. Please make sure the right people are paid without paying either bill twice.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-versioned_authority",
+    "PAYMENT-common",
+    "PAYMENT-payment_cheque_stop_and_replacement",
+    "LINK-independent_approval_binding",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-33",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

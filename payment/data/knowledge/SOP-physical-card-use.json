@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Physical World Card does not support ATM cash withdrawal under this service schedule.\n\nWhether a point-of-sale transaction requests a PIN depends on the acquiring side and the applicable local arrangement. There is no separate World Card “small amount without PIN” toggle.\n\nThe physical-card issuance fee can be paid from the e-commerce balance or the eligible same-name balance. E-commerce is the default selection; where the Portal offers a choice, select the intended funding account before issuance.\n\nFor a failed physical-card transaction, retain its actual error and the merchant context for investigation. A physical card's possession does not change the balance, limit or verification requirements of the account funding it.",
+  "id": "SOP-physical-card-use",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Physical World Card does not support ATM cash withdrawal under this service schedule.",
+  "source_ids": [
+    "B09"
+  ],
+  "title": "Physical World Card use and issuance charges",
+  "topic": "cards"
+}

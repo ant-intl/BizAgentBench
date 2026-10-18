@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An INVITED operator is not active. The user accepts its real invitation through accept_operator_invitation, which activates the initial recorded roles.\n\nADMIN does not imply PAY. propose_operator_role grants PAY after a 30-minute review.\n\nThe user can switch_operator to an active identity they control. Approval of propose_authorized_disbursement requires PAY at both approval and execution.\n\nThe owner can administer accessible accounts. Payment approvals record the actual portal identity.\n\nEach obligation explicitly lists accepted_payment_methods. BANK, AUTHORIZED_BANK, PLAN_BANK and CARD are distinct recipient instructions.\n\nA bank-only invoice cannot be paid as a card merchant purchase; an operator-authorized or plan-priced obligation must use its declared method.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_authorized_disbursement`\n\nPrepare a specific obligation payment requiring an active PAY operator at approval and execution.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `beneficiary_id` | string | yes | The receiving bank record. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_operator_role`\n\nGrant PAY to an already accepted active operator after a review delay.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `operator_id` | string | yes | The operator identity. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-permissions-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "An INVITED operator is not active. The user accepts its real invitation through accept_operator_invitation, which activates the initial recorded roles.",
+  "title": "Operator invitation, PAY activation and portal identity",
+  "topic": "permissions",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_authorized_disbursement",
+    "propose_operator_role"
+  ]
+}

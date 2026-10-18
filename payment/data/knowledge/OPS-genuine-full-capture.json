@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A full capture converts an authorization hold into an equal posted debit. With no other event, releasing the hold and deducting the same amount leaves spendable principal unchanged.\n\nA partial capture instead releases the unused portion. The authorization amount is not a guaranteed final charge. Refund eligibility depends on merchant advice; a genuine capture is not refundable merely because another record has the same merchant name.",
+  "id": "OPS-genuine-full-capture",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A full capture converts an authorization hold into an equal posted debit. With no other event, releasing the hold and deducting the same amount leaves spendable principal unchanged.",
+  "title": "Full capture and available card balance",
+  "topic": "cards"
+}

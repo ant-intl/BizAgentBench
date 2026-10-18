@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A merchant void request takes 15 minutes. The acknowledgement can be a full void or a partial capture followed by release of the uncaptured authorization balance.\n\nIn the latter case the authorization becomes SETTLED, held_minor is zero, captured_minor is a real principal debit, and merchant_advice can identify a duplicate refundable capture. The acknowledged refundable_minor is the amount eligible for propose_capture_refund.\n\nA request alone is not a cash refund.",
+  "id": "KB-card_adjustments-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A merchant void request takes 15 minutes. The acknowledgement can be a full void or a partial capture followed by release of the uncaptured authorization balance.",
+  "title": "Merchant void results and partial capture",
+  "topic": "card_adjustments"
+}

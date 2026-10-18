@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Incoming-payment restrictions, conversion-quota restrictions and collection-account usage restrictions are separate review categories.\n\nOpen the relevant item in the Portal's outstanding tasks or Account Settings → Security Centre → Account Risk Management. Select the affected task and upload the requested trade evidence. For a collection-account usage review, identify the collection accounts the customer wants to retain.\n\nThe normal appeal-review period is five business days. Approval restores the function covered by that review. It does not imply that every other restriction on the account has been removed.\n\nAn urgent review request can be forwarded to the account manager. Report the actual review state and any new material request; the forwarding of an urgent request does not establish approval.",
+  "id": "SOP-risk-restrictions",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Incoming-payment restrictions, conversion-quota restrictions and collection-account usage restrictions are separate review categories.",
+  "source_ids": [
+    "A17"
+  ],
+  "title": "Account restrictions and supporting-document appeals",
+  "topic": "evidence"
+}

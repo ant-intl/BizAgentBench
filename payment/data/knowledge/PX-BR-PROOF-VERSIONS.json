@@ -1,0 +1,25 @@
+{
+  "id": "PX-BR-PROOF-VERSIONS",
+  "title": "Single-payment seals and bank advice versions",
+  "topic": "Single-payment seals and bank advice versions",
+  "applicability": "Enrolled preliminary and final payment-proof delivery.",
+  "content": "A preliminary receipt may truthfully establish the original debit before final receiving advice. Recipient verification publishes the current advice version, required fields and payment-specific net_received_minor and transfer_fee_minor. Original transactions are not rewritten. purchase_payment_proof_seal(schedule_id,product_id) pays for a fixed or flexible license. Fixed licenses seal only their current version; migrate_payment_proof_seal(seal_id,channel) charges an irreversible fee and becomes usable at its actual completion. Flexible licenses use the current version without migration. create_bank_evidence still charges the per-document fee; unused drafts and previously delivered copies retain their fees. A current rendering requires a current ready license; an archived rendering can issue the licensed historical facts but does not claim later advice. Final recipient acceptance requires current-version payment facts. Already exposed information is not recalled by creating a corrected copy.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `create_bank_evidence`\n\nCreate a signed receipt, signed statement or account certificate for evidence_request_id. field_names selects disclosed fields; statement includes all transactions, receipt only the requested transaction, and certificate proves ownership only. Format must be pdf for a seal. Creation charges the public fee and does not deliver it.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `evidence_request_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `kind` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `field_names` | array | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `format` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `migrate_payment_proof_seal`\n\nMigrate a fixed bank proof license to the currently published advice version. The service fee is spent now; the license becomes ready only on its migration completion event. Existing issued copies and past disclosure remain unchanged.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `seal_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `purchase_payment_proof_seal`\n\nPurchase a bank proof sealing license for this one original payment. A fixed-version license requires paid migration when the bank advice version changes; a flexible license follows that payment’s current version. This fee does not create or deliver a document.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `product_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "normalized_source"
+    },
+    {
+      "kind": "synthetic",
+      "scope": "All review amounts, minute clocks, costs, installment channels, sealing licenses, field lineage and consent semantics are fictional commercial product extensions."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "create_bank_evidence",
+    "migrate_payment_proof_seal",
+    "purchase_payment_proof_seal"
+  ]
+}

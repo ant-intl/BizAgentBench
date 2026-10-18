@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A settled conversion retains its amount, cash leg, submitted_minute and quota allocation. propose_conversion_allocation_amendment replaces the complete allocation map and costs 200 USD cents.\n\nIt restores old allocations, consumes the replacement allocations and leaves cash unchanged. Each replacement quota must belong to the account, cover the original submitted_minute within its validity interval, still be unexpired at amendment time, and have sufficient capacity net of reservations.\n\nPreviously allocated capacity on the same quota counts toward that availability.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_conversion_allocation_amendment`\n\nReplace the quota allocation of an existing settled conversion without changing its cash leg.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `payment_id` | string | yes | The settled conversion to amend. |\n| `quota_allocations` | object | yes | Map of quota IDs to allocated USD cents; the map supplies the complete allocation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-quota_history-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A settled conversion retains its amount, cash leg, submitted_minute and quota allocation. propose_conversion_allocation_amendment replaces the complete allocation map and costs 200 USD cents.",
+  "title": "Amending a historical conversion allocation",
+  "topic": "quota_history",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_conversion_allocation_amendment"
+  ]
+}

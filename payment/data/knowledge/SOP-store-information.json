@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Enter the buyer-facing store homepage, rather than a seller-administration page. General store-information requests do not accept a single-product URL. The specified TikTok authorization flow permits an active product link as an alternative; that exception is limited to that flow.\n\nObtain the seller ID or merchant ID from the platform's account information or its support team. Only where the platform cannot supply an identifier should the store's registration email or name be used as the fallback identifier.\n\nSome platforms require their own identifier conventions: Fnac supplies a Shop ID; Shopify and Shoplazza use their platform-domain store references. Enter the appropriate platform identifier rather than substituting the business's CedarPay Account ID.",
+  "id": "SOP-store-information",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Enter the buyer-facing store homepage, rather than a seller-administration page. General store-information requests do not accept a single-product URL. The specified TikTok authorization flow permits an active product link as an alternative; that exception is limited to that flow.",
+  "source_ids": [
+    "B12",
+    "A05",
+    "A06",
+    "A09",
+    "A10"
+  ],
+  "title": "Store links and seller identifiers",
+  "topic": "evidence"
+}

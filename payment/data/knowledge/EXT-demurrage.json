@@ -1,0 +1,17 @@
+{
+  "applicability": "Only demurrage service cases; synthetic contract edition 8.0.",
+  "content": "# Container appointments\n\nScope: the demurrage service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nA container incurs no terminal storage cost through free_through. The first day beyond it costs first_daily_minor; each additional day costs later_daily_minor. Collection is priced at its actual appointment minute. Appointment fees are charged per collection, and slot capacity is shared across all containers in the case. Each container has its own inclusive contractual deadline. Updated terminal correspondence may add slots. A cheaper appointment fee alone does not establish a cheaper total collection cost.\n\n`book_collection` takes {record_id, slot_ref}. It reserves a still-available future slot, charges appointment plus storage, and creates a firm collection order for that minute. It cannot be cancelled through this service. Distinct containers can share a slot only up to its capacity. Contractual lateness is recorded even when the terminal accepts an order.\n\nService interface: `propose_demurrage_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_demurrage_instruction`\n\nContainer appointments. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-demurrage",
+  "scope": "demurrage",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Container appointments",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_demurrage_instruction"
+  ]
+}

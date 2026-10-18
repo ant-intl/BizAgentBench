@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Fee balances are separate from principal balances in CORE. A proposal and a quote do not reserve cash, while an executed payment deducts its principal before settlement.\n\nScheduled holds, release events and settlements update the available amount when those events occur.",
+  "id": "KB-occupancy-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Fee balances are separate from principal balances in CORE. A proposal and a quote do not reserve cash, while an executed payment deducts its principal before settlement.",
+  "title": "Principal, fee balances and payment availability",
+  "topic": "occupancy"
+}

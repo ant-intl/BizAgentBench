@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-WALLET-PAYROLL",
+  "title": "Wallet-funded payroll service interfaces",
+  "topic": "wallet payroll funding settlement",
+  "applicability": "PSP product accounts; Payroll funded from a designated business wallet under its published restrictions.",
+  "content": "Payroll funded from a designated business wallet under its published restrictions.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `fund_wallet_payroll`\n\nTransfer explicit operating cash into the payroll wallet, charging the disclosed manual funding fee. This is separate from configured automatic topups.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `payroll_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "fund_wallet_payroll"
+  ],
+  "business_area": "wallet_operations",
+  "service": "payroll",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "`propose_credit_assignment` takes a REVERSED incoming and an open destination. It credits the principal and moves the derived quota. An incoming already in that state does not require a second reversal.\n\nThe destination must be supported by its bank advice and any applicable mandate. Assignment checks the state and destination; it does not establish commercial entitlement. A different same-amount incoming is still a separate record.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_credit_assignment`\n\nAssign an unapplied or reversed incoming to an accessible open account. Operator must establish the correct ownership.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `incoming_id` | string | yes | The specific incoming transfer. |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "OPS-reassign-an-already-reversed-credit",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "`propose_credit_assignment` takes a REVERSED incoming and an open destination. It credits the principal and moves the derived quota. An incoming already in that state does not require a second reversal.",
+  "title": "Assigning an already reversed incoming",
+  "topic": "corrections",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_credit_assignment"
+  ]
+}

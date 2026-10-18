@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-R-CREDIT-NETTING",
+  "title": "Supplier credit instruments and reopened invoice principal",
+  "topic": "Supplier credit instruments and reopened invoice principal",
+  "applicability": "Confirmed credit notes linked to original supplier invoices.",
+  "content": "a_request_supplier_credit_confirmation(contract_id) obtains current terms for the original purchase credits. Bank return receipts and supplier credits are separate economic events. A genuine bank return reopens the original debt; applying a confirmed supplier credit reduces that debt and the cash amount still payable. a_apply_supplier_credit_note(credit_note_id,invoice_id) requires a confirmed AVAILABLE note and a reopened eligible original invoice. Its amount reduces both the actual invoice principal and supplier payable. The contract max_instruments_per_invoice governs combination eligibility. This legacy merchant application interface accepts an additional stacked instrument, but under nonstacking terms the additional instrument is consumed without further principal reduction, and the response reports CONSUMED_WITHOUT_CREDIT. Unused notes remain available for cash redemption. Repeated receipt projection must use the resulting net invoice principal and bank causal sequence; it cannot manufacture a second debt or undo a supplier credit.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_apply_supplier_credit_note`\n\nApply one confirmed unused credit note to a reopened original supplier invoice. The merchant permits the published number of instruments per invoice; additional stacked instruments are consumed without discharging further principal under nonstacking terms.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `credit_note_id` | string | yes | Confirmed supplier credit-note ID. |\n| `invoice_id` | string | yes | Original supplier invoice receiving the credit. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_request_supplier_credit_confirmation`\n\nRequest the supplier confirmation of the listed original-purchase credit notes. The response publishes current refund fees and value dates; it neither reduces an invoice nor creates cash.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Supplier credit-note agreement. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic trustee onboarding and supplier credit terms added to the original bank products."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_apply_supplier_credit_note",
+    "a_request_supplier_credit_confirmation"
+  ]
+}

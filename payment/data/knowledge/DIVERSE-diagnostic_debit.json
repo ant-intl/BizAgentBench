@@ -1,0 +1,20 @@
+{
+  "applicability": "Service case kind: diagnostic_debit",
+  "category": "Specialist service contracts",
+  "content": "# Collection investigation\n\nApplies to `diagnostic_debit`. A collection is duplicated when multiple bank postings represent the same merchant authorization, clearing instruction and invoice period. The first ordinal in that group is the original collection; a later ordinal is an extra posting. A same-amount collection for another authorization or period is a separate obligation. Merchant evidence in the processor correspondence is the basis for a dispute, including credits already made. A customer-authorized dispute must describe an actual remaining overcharge. Authorized genuine collections are not dispute candidates merely because their amounts match.\n\n`challenge` accepts `record_id, amount_minor` for one collection. It files one irrevocable signed claim per posting, no more than its unrefunded amount. The bank evaluates it two minutes later. A correct duplicate claim credits its remaining overcharge; an unsupported claim is rejected and incurs USD 4 if funds are available. A later recovery does not make an unsupported declaration correct.\n\n`cancel_mandate(record_id)` stops future instructions. It does not cancel an instruction already accepted. `recall(record_id)` recalls an accepted pending debit through its recorded deadline. At its processing event an un-recalled instruction can debit cash; an active mandate can produce a later instruction. `pay_bill(record_id, amount_minor)` transfers cash against another supplier bill. Inspect actual collection credits, mandate status and pending-debit status separately.\n\n## Service interface\n\nUnlock `propose_collection_investigation` and pass `case_id`, `action`, and an object `data` containing exactly the action fields above. The action name omits the parenthesized fields. Each proposed instruction requires a separate portal approval.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_collection_investigation`\n\nDuplicate collection investigation and mandate control. Prepares one local instruction; see the product document for action fields and effects.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-diagnostic_debit",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "note": "New author-defined mechanism; earlier SOP themes provide business context, not these parameters.",
+    "source_ids": []
+  },
+  "scope": "Service case kind: diagnostic_debit",
+  "title": "Collection investigation",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_collection_investigation"
+  ]
+}

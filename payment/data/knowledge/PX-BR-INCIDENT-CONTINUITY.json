@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-INCIDENT-CONTINUITY",
+  "title": "Incident replacement channels and supplier receipt continuity",
+  "topic": "incident replacement channels and supplier receipt continuity",
+  "applicability": "Synthetic current-customer incident or delegation records with reasoning_version b-reasoning-1.",
+  "content": "An independent replacement uses an active uncompromised credential and reserves the full original supplier principal. The selected service determines nonrefundable fee and actual delivery delay. Earlier submission on the regular service can meet the same deadline as a later priority submission. Neither service automatically cancels an old instruction. Received principal, not a submitted replacement or a cancelled original, discharges the invoice. Supplier confirmation may refer to the original commercial invoice while listing the actual original or replacement receipt IDs. Every confirmation must use the intended supplier callback entity; rotating a secret does not make another destination appropriate. The original callback secret and independent standing authority must be retired while the interactive finance credential remains available.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Network finality, emergency replacement and revision-bound disclosure contracts."
+    }
+  ]
+}

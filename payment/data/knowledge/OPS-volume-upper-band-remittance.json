@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "VOLUME charges twelve basis points on principal within the first 1,000,000 cents of period remittances and six on the portion above. For an invoice crossing the threshold, add the percentage charges for both portions, round upward once and apply the 150-cent minimum.\n\nPrior-tariff remittances count toward period volume. Switching into VOLUME costs 2,400 cents; retaining the same plan at another slot does not charge activation again. VOLUME payments do not earn a COMMIT rebate.",
+  "id": "OPS-volume-upper-band-remittance",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "VOLUME charges twelve basis points on principal within the first 1,000,000 cents of period remittances and six on the portion above. For an invoice crossing the threshold, add the percentage charges for both portions, round upward once and apply the 150-cent minimum.",
+  "title": "VOLUME charges across the marginal threshold",
+  "topic": "tariffs"
+}

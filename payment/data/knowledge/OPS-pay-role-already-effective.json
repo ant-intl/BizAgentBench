@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An ACTIVE operator with PAY can approve an authorized payment without another role-grant review. Switch the Portal to that controlled identity before it approves the request.\n\nAn accepted invitation may confer only ADMIN. A requested PAY grant becomes effective at its review event. Scope, capacity and epoch checks still apply after PAY is active; revocation invalidates earlier approvals.",
+  "id": "OPS-pay-role-already-effective",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "An ACTIVE operator with PAY can approve an authorized payment without another role-grant review. Switch the Portal to that controlled identity before it approves the request.",
+  "title": "An operator whose PAY role is already active",
+  "topic": "permissions"
+}

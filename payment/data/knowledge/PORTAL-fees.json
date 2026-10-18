@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal API integration v4.0.0. Applies from service minute 0.",
+  "content": "`propose_portal_fee_share` applies for a named agreement using assessed `fee_relationship` evidence. A USD2.50 application fee is charged from the fee wallet on submission and is not refunded if review rejects it. Review finishes480 minutes later. Do not confuse a fee-sharing application with the CORE SHARED subscription.\n\nThe evidence must connect the agreement holder and target account holder through associated-company, employment, spouse or supported close-family relationship. An ordinary agency or commercial partnership does not qualify. The API accepts such a submitted case for review but rejects the application when the relationship does not qualify. Generic evidence assessment is not a relationship approval.\n\nOn approval the target rate is the greater of the source agreement's basis-point rate and the target account's corridor floor. Its separate per-payment minimum still applies. The new tariff version becomes effective at the review event and does not reprice old charges or old quotes. Each Portal bank quote reports the current effective charge for one payment. An unsuccessful application and a later successful one incur two separate application charges.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_portal_fee_share`\n\nRequest a relationship-based tariff; an application fee is charged even if review rejects it.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `agreement_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `submission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "PORTAL-fees",
+  "provenance": {
+    "classification": "new_synthetic_portal_execution_contract"
+  },
+  "quoted_text": "`propose_portal_fee_share` applies for a named agreement using assessed `fee_relationship` evidence. A USD2.50 application fee is charged from the fee wallet on submission and is not refunded if review rejects it. Review finishes480 minutes later. Do not confuse a fee-sharing application with the CORE SHARED subscription.",
+  "title": "Relationship-based fee review and effective tariff",
+  "topic": "portal_fees",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_portal_fee_share"
+  ]
+}

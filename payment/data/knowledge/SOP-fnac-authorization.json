@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Before authorizing a Fnac store, arrange the CedarPay collection binding with Fnac and obtain the store's Shop ID. Enter the buyer-facing store homepage URL, rather than the seller-administration URL.\n\nIn CedarPay, select the relevant store and complete authorization. Quota processing normally takes about 24 hours after authorization. When a shortfall persists beyond that period, provide the original sales records, seller ID and collection-account details to support.\n\nIf the issue is the store link, confirm that the URL opens the public shop page. If the issue is the Shop ID, ask Fnac to confirm the identifier associated with the collection binding.",
+  "id": "SOP-fnac-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Before authorizing a Fnac store, arrange the CedarPay collection binding with Fnac and obtain the store's Shop ID. Enter the buyer-facing store homepage URL, rather than the seller-administration URL.",
+  "source_ids": [
+    "A05"
+  ],
+  "title": "Fnac store identifiers and authorization",
+  "topic": "quota"
+}

@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_card_funding_source changes the source account for new charges only. Existing authorizations continue to occupy their original account.\n\npropose_card_purchase submits a specified merchant invoice and deducts principal from the card current source, plus 500 USD cents from that source fee wallet. It settles after 10 minutes.\n\nChanging the card default does not move holds into another wallet, and a new purchase must not be mistaken for capture of an older authorization.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_card_funding_source`\n\nChange the account used for new card charges. Existing holds keep their original account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `card_id` | string | yes | The selected card. |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_card_purchase`\n\nPay a specified existing merchant invoice using the card current funding account.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `card_id` | string | yes | The selected card. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-cards-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_card_funding_source changes the source account for new charges only. Existing authorizations continue to occupy their original account.",
+  "title": "Card funding selection and new purchases",
+  "topic": "cards",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_card_funding_source",
+    "propose_card_purchase"
+  ]
+}

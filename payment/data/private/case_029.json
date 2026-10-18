@@ -1,0 +1,598 @@
+{
+  "case_id": "PAY49-CASE",
+  "components": [
+    {
+      "case_id": "PAY49-CASE",
+      "extension_service": true,
+      "family": " Group buy formed., Participant contributions and exit refunds ",
+      "id": "payment_group_purchase_commitment",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY49-EVENT-1": {
+            "contract_scope": "LINK16-49",
+            "event_kind": "group_changes"
+          },
+          "PAY49-EVENT-2": {
+            "contract_scope": "LINK16-49",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY49-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY49-EVENT-1",
+            "kind": "payment_group_purchase_commitment_event",
+            "name": "Participant withdrawal and new bank contribution",
+            "scope": "LINK16-49",
+            "status": "SCHEDULED",
+            "target_id": "PAY49-CASE"
+          },
+          "PAY49-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY49-EVENT-2",
+            "kind": "payment_group_purchase_commitment_event",
+            "name": "Group delivery and participant refund deadline",
+            "scope": "LINK16-49",
+            "status": "SCHEDULED",
+            "target_id": "PAY49-CASE"
+          }
+        },
+        "service_records": {
+          "PAY49-A": {
+            "_withdraws": false,
+            "amount_minor": 30000,
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "group": "G1",
+            "id": "PAY49-A",
+            "incoming": false,
+            "kind": "group_contribution",
+            "merchant_used_minor": 0,
+            "name": "Alder",
+            "received_minor": 30000,
+            "reference": "A",
+            "refund_minor": 0,
+            "scope": "LINK16-49",
+            "withdrawn": false
+          },
+          "PAY49-B": {
+            "_withdraws": false,
+            "amount_minor": 20000,
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "group": "G1",
+            "id": "PAY49-B",
+            "incoming": false,
+            "kind": "group_contribution",
+            "merchant_used_minor": 0,
+            "name": "Birch",
+            "received_minor": 20000,
+            "reference": "B",
+            "refund_minor": 0,
+            "scope": "LINK16-49",
+            "withdrawn": false
+          },
+          "PAY49-C": {
+            "_withdraws": true,
+            "amount_minor": 10000,
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "group": "G1",
+            "id": "PAY49-C",
+            "incoming": false,
+            "kind": "group_contribution",
+            "merchant_used_minor": 0,
+            "name": "Cedar",
+            "received_minor": 10000,
+            "reference": "C",
+            "refund_minor": 0,
+            "scope": "LINK16-49",
+            "withdrawn": false
+          },
+          "PAY49-D": {
+            "_withdraws": false,
+            "amount_minor": 25000,
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "group": "G2",
+            "id": "PAY49-D",
+            "incoming": false,
+            "kind": "group_contribution",
+            "merchant_used_minor": 0,
+            "name": "Dahlia",
+            "received_minor": 25000,
+            "reference": "D",
+            "refund_minor": 0,
+            "scope": "LINK16-49",
+            "withdrawn": false
+          },
+          "PAY49-E": {
+            "_withdraws": false,
+            "amount_minor": 15000,
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "group": "G2",
+            "id": "PAY49-E",
+            "incoming": false,
+            "kind": "group_contribution",
+            "merchant_used_minor": 0,
+            "name": "Elm",
+            "received_minor": 15000,
+            "reference": "E",
+            "refund_minor": 0,
+            "scope": "LINK16-49",
+            "withdrawn": false
+          },
+          "PAY49-F": {
+            "_withdraws": false,
+            "amount_minor": 20000,
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "group": "G2",
+            "id": "PAY49-F",
+            "incoming": true,
+            "kind": "group_contribution",
+            "merchant_used_minor": 0,
+            "name": "Fir",
+            "received_minor": 0,
+            "reference": "F",
+            "refund_minor": 0,
+            "scope": "LINK16-49",
+            "withdrawn": false
+          },
+          "PAY49-G1": {
+            "case_id": "PAY49-CASE",
+            "committed": false,
+            "customer_access": true,
+            "deposit_minor": 12000,
+            "due_minute": 2,
+            "group_price_minor": 40000,
+            "id": "PAY49-G1",
+            "kind": "purchase_group",
+            "merchant_paid_minor": 0,
+            "minimum_contribution_minor": 50000,
+            "minimum_people": 3,
+            "name": "Morning equipment group",
+            "price_minor": null,
+            "reference": "G1",
+            "retail_price_minor": 60000,
+            "scope": "LINK16-49"
+          },
+          "PAY49-G2": {
+            "case_id": "PAY49-CASE",
+            "committed": false,
+            "customer_access": true,
+            "deposit_minor": 15000,
+            "due_minute": 2,
+            "group_price_minor": 50000,
+            "id": "PAY49-G2",
+            "kind": "purchase_group",
+            "merchant_paid_minor": 0,
+            "minimum_contribution_minor": 50000,
+            "minimum_people": 3,
+            "name": "Afternoon accessories group",
+            "price_minor": null,
+            "reference": "G2",
+            "retail_price_minor": 75000,
+            "scope": "LINK16-49"
+          },
+          "PAY49-TERMS": {
+            "case_id": "PAY49-CASE",
+            "customer_access": true,
+            "id": "PAY49-TERMS",
+            "kind": "group_terms",
+            "name": "Group purchase funding contract",
+            "no_cross_group_funding": true,
+            "rebate_rounding": "floor_then_largest_remainder",
+            "reference": "TERMS",
+            "refund_due_minute": 2,
+            "scope": "LINK16-49"
+          }
+        }
+      },
+      "kind": "payment_group_purchase_commitment",
+      "number": 29,
+      "payment_service": true,
+      "scope": "LINK16-49",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "D34-CURRENCY-REFUND-CASE",
+      "family": " historical payment amount in original currency, Merchant fund deduction and dashboard display amount are not the same; In-transit partial receipt and return at the original exchange rate determine the true remaining balance and available funds. ",
+      "id": "extension_currency_refund",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-CURRENCY-REFUND-EVENT-0": {
+            "transfers": [
+              "A_PENDING",
+              "B_PENDING"
+            ]
+          },
+          "D34-CURRENCY-REFUND-EVENT-1": {
+            "transfers": []
+          }
+        },
+        "events": {
+          "D34-CURRENCY-REFUND-EVENT-0": {
+            "due_minute": 1,
+            "id": "D34-CURRENCY-REFUND-EVENT-0",
+            "kind": "origin_currency_refunds_event",
+            "name": "Dated bank processing",
+            "scope": "LINK16-49",
+            "status": "SCHEDULED",
+            "target_id": "D34-CURRENCY-REFUND-CASE"
+          },
+          "D34-CURRENCY-REFUND-EVENT-1": {
+            "due_minute": 2,
+            "id": "D34-CURRENCY-REFUND-EVENT-1",
+            "kind": "origin_currency_refunds_event",
+            "name": "Dated bank processing",
+            "scope": "LINK16-49",
+            "status": "SCHEDULED",
+            "target_id": "D34-CURRENCY-REFUND-CASE"
+          }
+        },
+        "service_records": {
+          "D34-CURRENCY-REFUND-ALDER": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "charge_currency": "EUR",
+            "charge_minor": 10000,
+            "customer_access": true,
+            "display_currency": "USD",
+            "due_minute": 2,
+            "id": "D34-CURRENCY-REFUND-ALDER",
+            "kind": "refund_purchase",
+            "merchant_settlement_currency": "USD",
+            "name": "Alder cancelled order",
+            "new_credits": [],
+            "reference": "ALDER",
+            "refund_routes": [
+              {
+                "account": "USD_WALLET",
+                "currency": "EUR",
+                "denominator": 10,
+                "numerator": 11
+              },
+              {
+                "account": "EUR_WALLET",
+                "currency": "EUR",
+                "denominator": 1,
+                "numerator": 1
+              },
+              {
+                "account": "USD_WALLET",
+                "currency": "USD",
+                "denominator": 1,
+                "numerator": 1
+              }
+            ],
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-ARCHIVE": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "charge_currency": "EUR",
+            "charge_minor": 10000,
+            "customer_access": true,
+            "id": "D34-CURRENCY-REFUND-ARCHIVE",
+            "kind": "historical_refund_purchase",
+            "name": "Archive",
+            "reference": "ARCHIVE",
+            "scope": "LINK16-49",
+            "status": "CLOSED"
+          },
+          "D34-CURRENCY-REFUND-A_ADVICE": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 2000,
+            "currency": "EUR",
+            "customer_access": true,
+            "id": "D34-CURRENCY-REFUND-A_ADVICE",
+            "kind": "remittance_advice",
+            "name": "A Advice",
+            "physical_transfer_ref": "A_OLD",
+            "reference": "A_ADVICE",
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-A_OLD": {
+            "_actual_credited_minor": 2000,
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 2000,
+            "currency": "EUR",
+            "customer_access": true,
+            "decision_minute": null,
+            "funded_minor": 2200,
+            "funding_account": "USD_WALLET",
+            "funding_denominator": 10,
+            "funding_numerator": 11,
+            "id": "D34-CURRENCY-REFUND-A_OLD",
+            "intended_minor": 2000,
+            "kind": "physical_refund",
+            "name": "A Old",
+            "possible_credited_minor": [],
+            "purchase_ref": "ALDER",
+            "reference": "A_OLD",
+            "returned_minor": 0,
+            "scope": "LINK16-49",
+            "status": "POSTED"
+          },
+          "D34-CURRENCY-REFUND-A_PENDING": {
+            "_actual_credited_minor": 3000,
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 0,
+            "currency": "EUR",
+            "customer_access": true,
+            "decision_minute": 1,
+            "funded_minor": 5500,
+            "funding_account": "USD_WALLET",
+            "funding_denominator": 10,
+            "funding_numerator": 11,
+            "id": "D34-CURRENCY-REFUND-A_PENDING",
+            "intended_minor": 5000,
+            "kind": "physical_refund",
+            "name": "A Pending",
+            "possible_credited_minor": [
+              0,
+              3000,
+              5000
+            ],
+            "purchase_ref": "ALDER",
+            "reference": "A_PENDING",
+            "returned_minor": 0,
+            "scope": "LINK16-49",
+            "status": "IN_FLIGHT"
+          },
+          "D34-CURRENCY-REFUND-A_STATEMENT": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 2000,
+            "currency": "EUR",
+            "customer_access": true,
+            "id": "D34-CURRENCY-REFUND-A_STATEMENT",
+            "kind": "refund_statement",
+            "name": "A Statement",
+            "physical_transfer_ref": "A_OLD",
+            "reference": "A_STATEMENT",
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-BIRCH": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "charge_currency": "EUR",
+            "charge_minor": 12000,
+            "customer_access": true,
+            "display_currency": "USD",
+            "due_minute": 2,
+            "id": "D34-CURRENCY-REFUND-BIRCH",
+            "kind": "refund_purchase",
+            "merchant_settlement_currency": "USD",
+            "name": "Birch cancelled order",
+            "new_credits": [],
+            "reference": "BIRCH",
+            "refund_routes": [
+              {
+                "account": "USD_WALLET",
+                "currency": "EUR",
+                "denominator": 10,
+                "numerator": 11
+              },
+              {
+                "account": "EUR_WALLET",
+                "currency": "EUR",
+                "denominator": 1,
+                "numerator": 1
+              },
+              {
+                "account": "USD_WALLET",
+                "currency": "USD",
+                "denominator": 1,
+                "numerator": 1
+              }
+            ],
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-B_PENDING": {
+            "_actual_credited_minor": 0,
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 0,
+            "currency": "EUR",
+            "customer_access": true,
+            "decision_minute": 1,
+            "funded_minor": 3000,
+            "funding_account": "EUR_WALLET",
+            "funding_denominator": 1,
+            "funding_numerator": 1,
+            "id": "D34-CURRENCY-REFUND-B_PENDING",
+            "intended_minor": 3000,
+            "kind": "physical_refund",
+            "name": "B Pending",
+            "possible_credited_minor": [
+              0,
+              3000
+            ],
+            "purchase_ref": "BIRCH",
+            "reference": "B_PENDING",
+            "returned_minor": 0,
+            "scope": "LINK16-49",
+            "status": "IN_FLIGHT"
+          },
+          "D34-CURRENCY-REFUND-CEDAR": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "charge_currency": "USD",
+            "charge_minor": 15000,
+            "customer_access": true,
+            "display_currency": "USD",
+            "due_minute": 0,
+            "id": "D34-CURRENCY-REFUND-CEDAR",
+            "kind": "refund_purchase",
+            "merchant_settlement_currency": "USD",
+            "name": "Cedar cancelled order",
+            "new_credits": [],
+            "reference": "CEDAR",
+            "refund_routes": [
+              {
+                "account": "USD_WALLET",
+                "currency": "USD",
+                "denominator": 1,
+                "numerator": 1
+              }
+            ],
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-C_OLD": {
+            "_actual_credited_minor": 5000,
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 5000,
+            "currency": "USD",
+            "customer_access": true,
+            "decision_minute": null,
+            "funded_minor": 5000,
+            "funding_account": "USD_WALLET",
+            "funding_denominator": 1,
+            "funding_numerator": 1,
+            "id": "D34-CURRENCY-REFUND-C_OLD",
+            "intended_minor": 5000,
+            "kind": "physical_refund",
+            "name": "C Old",
+            "possible_credited_minor": [],
+            "purchase_ref": "CEDAR",
+            "reference": "C_OLD",
+            "returned_minor": 0,
+            "scope": "LINK16-49",
+            "status": "POSTED"
+          },
+          "D34-CURRENCY-REFUND-ELM": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "charge_currency": "EUR",
+            "charge_minor": 8000,
+            "customer_access": true,
+            "display_currency": "USD",
+            "due_minute": 2,
+            "id": "D34-CURRENCY-REFUND-ELM",
+            "kind": "refund_purchase",
+            "merchant_settlement_currency": "USD",
+            "name": "Elm cancelled order",
+            "new_credits": [],
+            "reference": "ELM",
+            "refund_routes": [
+              {
+                "account": "USD_WALLET",
+                "currency": "EUR",
+                "denominator": 10,
+                "numerator": 11
+              },
+              {
+                "account": "EUR_WALLET",
+                "currency": "EUR",
+                "denominator": 1,
+                "numerator": 1
+              },
+              {
+                "account": "USD_WALLET",
+                "currency": "USD",
+                "denominator": 1,
+                "numerator": 1
+              }
+            ],
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-EUR_WALLET": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "cash_minor": 6000,
+            "currency": "EUR",
+            "customer_access": true,
+            "id": "D34-CURRENCY-REFUND-EUR_WALLET",
+            "kind": "refund_wallet",
+            "name": "Merchant euro wallet",
+            "reference": "EUR_WALLET",
+            "scope": "LINK16-49"
+          },
+          "D34-CURRENCY-REFUND-E_OLD": {
+            "_actual_credited_minor": 8000,
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "credited_minor": 8000,
+            "currency": "EUR",
+            "customer_access": true,
+            "decision_minute": null,
+            "funded_minor": 8000,
+            "funding_account": "EUR_WALLET",
+            "funding_denominator": 1,
+            "funding_numerator": 1,
+            "id": "D34-CURRENCY-REFUND-E_OLD",
+            "intended_minor": 8000,
+            "kind": "physical_refund",
+            "name": "E Old",
+            "possible_credited_minor": [],
+            "purchase_ref": "ELM",
+            "reference": "E_OLD",
+            "returned_minor": 0,
+            "scope": "LINK16-49",
+            "status": "POSTED"
+          },
+          "D34-CURRENCY-REFUND-LIVE_FX": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "customer_access": true,
+            "denominator": 10,
+            "from_account": "USD_WALLET",
+            "id": "D34-CURRENCY-REFUND-LIVE_FX",
+            "kind": "refund_fx_quote",
+            "name": "Live Fx",
+            "numerator": 9,
+            "reference": "LIVE_FX",
+            "scope": "LINK16-49",
+            "to_account": "EUR_WALLET"
+          },
+          "D34-CURRENCY-REFUND-USD_WALLET": {
+            "case_id": "D34-CURRENCY-REFUND-CASE",
+            "cash_minor": 28000,
+            "currency": "USD",
+            "customer_access": true,
+            "id": "D34-CURRENCY-REFUND-USD_WALLET",
+            "kind": "refund_wallet",
+            "name": "Merchant dollar wallet",
+            "reference": "USD_WALLET",
+            "scope": "LINK16-49"
+          }
+        }
+      },
+      "kind": "origin_currency_refunds",
+      "reserves": {
+        "EUR_WALLET": 1000,
+        "USD_WALLET": 2000
+      },
+      "scope": "LINK16-49",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Group buy formed., Participant contributions and exit refunds × Quote version refresh ",
+  "id": "case_029",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. State your own business goals and preferences. You do not know the bank's rules, internal record identifiers, future corporate-action results, or which operational strategy will work. Report an event result only after it appears in an actual response.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: I am organizing two group orders. One person has pulled out and another payment still says pending. Please help the groups complete their purchases and return the money that should go back. I also need help with a related matter: we cancelled several overseas orders, but some buyers say they only received part of their money back. Please finish the refunds in the currencies they originally paid.\n\nYour own facts and preferences: Complete both group purchases at their available group prices and settle every participant’s entitlement. A participant leaving after commitment is still entitled to a full contribution refund; distribute each completed group’s remaining savings among its continuing contributors in proportion to their contributions. Keep the two groups’ money separate and do not ask anyone for more. I have a withdrawal request and an incoming contribution, but their final statuses must be checked in the portal.\n\nFor the related matter: I manage Laurel Online. Finish the remaining refunds for the current cancellations by their agreed dates. Keep at least USD 20 and EUR 10 in our merchant wallets throughout. We cannot add money or ask buyers to return a refund. The dollar figures on my dashboard may just be converted display amounts. I can approve refunds and currency conversions, but I do not know the actual bank credits or the old conversion rates.\n\nThe commercial terms for the second matter may change after the first is executed. I need the current recorded terms used.",
+  "kind": "payment_group_purchase_commitment",
+  "link_contract_id": "LINK16-49-LINK",
+  "link_operator": {
+    "category": "pricing",
+    "id": "quote_version_refresh",
+    "relation": "primary_execution_before_secondary_proposal"
+  },
+  "number": 29,
+  "opening": "I am organizing two group orders. One person has pulled out and another payment still says pending. Please help the groups complete their purchases and return the money that should go back. I also need help with a related matter: we cancelled several overseas orders, but some buyers say they only received part of their money back. Please finish the refunds in the currencies they originally paid.",
+  "payment_service": true,
+  "required_documents": [
+    "PAYMENT-common",
+    "PAYMENT-payment_group_purchase_commitment",
+    "DIVERSE-common",
+    "DIVERSE-origin_currency_refunds",
+    "LINK-quote_version_refresh",
+    "DESK-protocol"
+  ],
+  "scope": "LINK16-49",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

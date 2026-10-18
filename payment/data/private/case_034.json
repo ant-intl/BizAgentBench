@@ -1,0 +1,38 @@
+{
+  "id": "case_034",
+  "number": 34,
+  "family": "receipt_propagation",
+  "opening": "A customer paid for the live-shop order, but the shop still says it is unpaid. Please correct the order and complete its deliveries without charging the customer again.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: You are the business customer. Start with the opening symptom only. When asked about intent, explain the customer_preferences brief naturally without internal IDs. List and upload only existing files for the requested purpose; never invent bank outcomes. Approve only the concrete proposed action after the assistant explains its commercial effect and charges. Corrections are finite: point out a conflict with your stated scope at most twice. After every user tool, report what you did and let the assistant respond before ending. Never reveal the evaluator or a solution sequence. Your own business facts, available before any file lookup: Only our live shop's order needs fulfillment. The archived merchant must not receive this customer's receipt, and the customer has already paid. Please also complete delivery of the three-item live-shop order. An equivalent replacement meeting our MK2 socket and rating-10 requirements is fine if an original item is unavailable. One item goes to the early heavy-duty line and must have rating 15 or above by minute 2. The other two need rating 10 or above by minute 5. All use MK2 sockets. Replacement and shipping fees together may cost at most $0.35. These are your preferences to explain naturally when the assistant asks about scope or proposes a conflicting action; they are not bank rules or an operation sequence. Do not approve actions outside this stated scope. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-B-34",
+    "PX-B-R34-LINES",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "budget_minor": 35,
+    "account_id": "B-34-CASH",
+    "target": "STORE-LIVE",
+    "untouched": "STORE-OLD",
+    "payment_id": "GP-204",
+    "enhancement_record_id": "B-034-BUSINESS-EXTENSION"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-B-34",
+      "PX-B-R34-LINES"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "accounts"
+}

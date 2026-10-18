@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-BILLING-CALENDAR",
+  "title": "Billing correction deadlines and statement delivery",
+  "topic": "billing fee investigation one shot capacity final tier rebate deadline",
+  "applicability": "Enrolled billing review schedules",
+  "content": "The customer’s review schedule binds an earlier correction deadline to one named bill and a later completion deadline to the full bank-fee review. Actual correction posting time is recorded per bill. A consolidated investigation does not require simultaneous monetary claims: each included bill may be claimed when its own evidence supports it. Original review fees, tracing charges and investigation fees all debit the same customer account. The final statement must reconcile every bank line, preserve third-party and optional-coupon charges, and go only to the customer’s company.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Finite review file capacity and deadlines; not a statutory appeal limit."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "For mainland accounts, use a mainland CNY bank account for the small-payment verification. For Hong Kong accounts, a same-name withdrawal to a mainland or Hong Kong bank can establish verification, without a minimum amount or specific currency requirement for that verification route.\n\nSmall verification payments normally arrive within one to two business days. If a payment fails, check the account information and card type. An unsupported credit card must be replaced with a supported debit/savings account. If the information and type are correct, submit the failure details for investigation.\n\n## Bank-statement route\n\nUse the submission entry under Processing recipients. If no entry is available, submit a manual-verification request from the registered email, identifying the recipient account and registration phone. Bind an email first if none is registered.\n\nThe statement must have been issued by the bank within the preceding three months and show the bank name, account name and bank account/card number. Accepted formats are JPG, PDF and PNG, at no more than 20 MB.\n\n## Amazon collection accounts\n\nAt least one same-name bank recipient must be added and verified before the supported new Amazon collection account can be activated. Allow up to 24 hours for activation after the condition is met; if activation remains unresolved, provide the binding evidence to support.",
+  "id": "SOP-same-name-verification",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "For mainland accounts, use a mainland CNY bank account for the small-payment verification. For Hong Kong accounts, a same-name withdrawal to a mainland or Hong Kong bank can establish verification, without a minimum amount or specific currency requirement for that verification route.",
+  "source_ids": [
+    "B11",
+    "B15",
+    "B20"
+  ],
+  "title": "Same-name bank verification and Amazon activation",
+  "topic": "beneficiaries"
+}

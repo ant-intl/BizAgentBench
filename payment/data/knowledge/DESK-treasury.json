@@ -1,0 +1,26 @@
+{
+  "applicability": "Operations Desk evidence edition 6.4; local economic parameters retain the Desk 5.3 contract.",
+  "capability": null,
+  "content": "Account login, ownership relationship and institutional payment authority are separate. A treasury_mandate identifies the payer entity, executor, beneficiary and purposes, plus an amount limit, a version and validity interval. A mandate authorizes only its stated scope. A mandate from A to B and another from B to C do not implicitly authorize C to pay A's obligations. Explicit subdelegation is valid only if a separately effective institution mandate names that executor and payer.\n\npropose_treasury_mandate lodges approved signed mandate evidence. Its reviewed fields become effective after review_delay; old versions stay historical. A scheduled mandate replacement invalidates only the replaced institutional version. A prepared payment captures the selected mandate's current version, which must still be current and effective at execution. Customer approval alone does not replace this institution mandate.\n\npropose_treasury_payment requires matching payer-account entity, effective executor, beneficiary, purpose, sufficient principal and mandate capacity. Capacity counts actual payments under the mandate in its active interval. The supplier invoice states the commercial bill-to registration number. An obligation may name a permitted institutional payer different from that bill-to party, but customer instructions still determine which company should economically fund it. The institution can accept a legally authorized payment that does not satisfy that customer's funding preference. Group balances are not automatically pooled, and payments do not move outstanding obligation ownership.\n\nSource-document interpretation follows Commercial source records and bank payment responsibility (Operations Desk evidence edition 6.4).\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_treasury_mandate`\n\nLodge an institution mandate from assessed signed evidence. Permissions become effective only after the recorded review.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `mandate_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `submission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_treasury_payment`\n\nPay from an account under one effective institutional mandate. The executor, payer, purpose, beneficiary and amount must fit that mandate.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `obligation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `mandate_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `executor_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-treasury",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-treasury"
+  ],
+  "source_ids": [
+    "A17",
+    "B03",
+    "C05"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Institution mandates for group-company payments",
+  "topic": "treasury",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_treasury_mandate",
+    "propose_treasury_payment"
+  ]
+}

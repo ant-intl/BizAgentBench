@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "issue_bank_letter creates an immutable certificate from the current bank profile of an open account. It records account ID, entity, bank version, legal name and issue time.\n\nThe certificate copies the bank profile as it exists at issuance. Bank synchronization and platform acceptance are separate operations.\n\nExisting letters are immutable. See OPS-bank-and-legal-identity-aligned for the handling of bank-profile updates.",
+  "id": "KB-letters-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "issue_bank_letter creates an immutable certificate from the current bank profile of an open account. It records account ID, entity, bank version, legal name and issue time.",
+  "title": "Issuing a bank-profile certificate",
+  "topic": "letters"
+}

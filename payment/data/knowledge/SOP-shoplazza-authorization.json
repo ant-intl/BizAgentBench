@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Check the store name against the prefix of its `.myshoplaza.com` address, particularly if the store was renamed.\n\n## Platform setup\n\n1. Create a private application in Shoplazza.\n2. Supply the application name and support email.\n3. Grant the required read access to orders.\n4. Copy the application token into the CedarPay authorization form.\n\nThese steps apply to supported Shoplazza, Shoplazza Payments and PayPal collection arrangements. Authorization normally processes within about 24 hours.\n\nFor an authorization error, provide the error screenshot, store name and store link. For a quota shortfall, support may request the original sales records, the relevant store-connection reference and the collection account. Enter application credentials only in the connection fields provided for authorization.",
+  "id": "SOP-shoplazza-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Check the store name against the prefix of its `.myshoplaza.com` address, particularly if the store was renamed.",
+  "source_ids": [
+    "A09"
+  ],
+  "title": "Shoplazza private-application authorization",
+  "topic": "quota"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "PX-A-R-MARKET-CLAIM-CASH",
+  "title": "Quality allowance value dates and original order funding",
+  "topic": "Quality allowance value dates and original order funding",
+  "applicability": "Current-purchase credit or cash realization of an old-order allowance.",
+  "content": "Published cash_services specify CASH_STANDARD, CASH_EXPRESS or CASH_PRIORITY fee and delay. FUTURE retains rights for another purchase and does not realize the allowance for the current objective. The review fee, cash-service fee, original accepted order and current new order draw from the same operating cash. A separately held old deposit can still be applied or refunded under its own contract, and must not be confused with the quality allowance. Paying the new invoice before allowance disposition can remove its APPLY option and leave too little cash for a faster refund. The customer may prefer an immediate current-invoice reduction or a real cash refund that arrives before funding the remaining new invoice. Actual cash-service fees can violate a final operating reserve even though the bank accepts them. Customer allowance and payment dates refer to actual value realization and original order payment.",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  }
+}

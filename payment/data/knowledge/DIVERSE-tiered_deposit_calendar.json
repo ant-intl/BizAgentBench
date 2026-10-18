@@ -1,0 +1,19 @@
+{
+  "applicability": "tiered_deposit_calendar contracts.",
+  "content": "Scope: `tiered_deposit_calendar`.\n\n# Term-deposit relationship tiers\n\nEach active term deposit pays principal plus its applicable interest automatically at its recorded maturity processing. Full early redemption pays `principal_minor - break_charge_minor` immediately and forfeits all interest on that deposit. New partial redemptions, reinstatement and borrowing are unavailable. A redemption after maturity is unavailable because the original deposit has already paid out.\n\nPremium deposits share one relationship test. Count the original principal of group deposits that have not been redeemed early; an on-time matured deposit continues to count. Before the qualification period ends, the test is applied to the then-known redemption history at each maturity. At `qualification_through` processing the result is finalized for later maturities. The test passes if the counted principal meets `qualifying_original_principal_minor`. A qualifying maturity receives its recorded base interest plus tier bonus; otherwise it receives base interest only. Standard deposits have no tier bonus. Interest already paid is not clawed back when the group later loses its tier.\n\nScheduled processing at a minute applies the actual reimbursement decision first, finalizes a due tier test, pays all deposits maturing at that minute, and then attempts the automatic debit. A pending reimbursement is not spendable cash. An automatic debit with insufficient wallet cash remains unpaid and is not retried in this episode. Customer instructions given after that processing cannot alter the debit's result. Manual payments accept positive partial amounts; the complete obligation is due by the recorded inclusive minute. Excess payments cannot be recalled.\n\nThe recorded principal, interest, charges, actual payout and payment amounts are USD cents. The customer defines reserve and retained-cash preferences. Expected interest does not count toward an intermediate reserve.\n\nUnlock `propose_deposit_calendar`, passing `case_id`, `action`, `data`:\n\n| action | data |\n| --- | --- |\n| `redeem_early` | `deposit_id` |\n| `pay_obligation` | `obligation_id`, `amount_minor` |\n\nPreparation and approval do not hold a maturity rate or reserve funds. The time of actual execution determines whether a deposit can still be redeemed early.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_deposit_calendar`\n\nPrepare a full early term-deposit redemption or a registered operating obligation payment.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DIVERSE-tiered_deposit_calendar",
+  "provenance": {
+    "kind": "synthetic_extension",
+    "parent_documents": [
+      "TRADE-term_deposit"
+    ]
+  },
+  "title": "Term-deposit relationship tiers and dated operating payments",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_deposit_calendar"
+  ]
+}

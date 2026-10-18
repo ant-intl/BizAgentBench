@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Personal accounts can withdraw to the registered person's own supported bank account. Company accounts can use a matching company account and the applicable legal representative's or director's account. A third-party transfer is a separate business-payment arrangement.\n\nSupported business relationships include suppliers, logistics providers, advertising and other service providers, employees receiving contracted remuneration or reimbursement, and qualifying related companies. A genuine business relationship may require evidence or bank review; a submitted payment is not a guarantee of acceptance.\n\nMainland personal CNY withdrawals can use the holder's bank or HarborPay account. Mainland company CNY withdrawals can use the registered company's or its mainland legal representative's supported account. Eligible supplier and employee transfers use the corresponding third-party category.\n\nHong Kong personal accounts cannot use CNY conversion. Hong Kong companies need the RMB service described in `SOP-hk-rmb-service` before using its CNY recipient arrangements.\n\nFor CNH paid to a mainland bank, confirm the bank accepts cross-border CNH from the payment institution and identify its document/declaration requirements. Mainland accounts cannot pay an international HarborPay account through the described direct route. Hong Kong customers should confirm the international HarborPay bank-transfer requirements, generally including same-name receipt, with that provider.",
+  "id": "SOP-withdrawal-recipients",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Personal accounts can withdraw to the registered person's own supported bank account. Company accounts can use a matching company account and the applicable legal representative's or director's account. A third-party transfer is a separate business-payment arrangement.",
+  "source_ids": [
+    "B03",
+    "B14"
+  ],
+  "title": "Recipients supported by Portal withdrawals and transfers",
+  "topic": "beneficiaries"
+}

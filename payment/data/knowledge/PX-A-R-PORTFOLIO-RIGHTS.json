@@ -1,0 +1,11 @@
+{
+  "id": "PX-A-R-PORTFOLIO-RIGHTS",
+  "title": "Partial succession, original claim money and mandate fees",
+  "topic": "Partial succession, original claim money and mandate fees",
+  "applicability": "Collection portfolios following a limited corporate reorganization.",
+  "content": "Determine each original claim owner from its original dispatch and the authentic deed. The final bank correction of a delayed receipt can change which payee needs an active collection scope. A separate retained claim carries its own original dispatch and legal payee and does not inherit a delayed receipt correction. A mandate that covers several claims can be used until revoked, but replacing it for a transferred claim also removes its unspent retained-claim scope. Compare preserving the original scope with paying an already due retained claim before replacing it. Both modes may be valid if actual payees, dates and cumulative fees satisfy the customer. Subsequent paid corrections do not erase earlier nonrefundable fees.",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New portfolio mandates and desk capacity; preserves source bank identity, succession and original execution semantics."
+  }
+}

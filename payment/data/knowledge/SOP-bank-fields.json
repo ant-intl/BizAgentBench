@@ -1,0 +1,17 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Open Store Management → Details → View account details for the actual account. Available fields include the account number, IBAN, SWIFT/BIC, account creation date, bank location and the routing codes supported by that account.\n\n| Account/channel | Relevant field |\n|---|---|\n| USD ACH | Nine-digit ACH routing number |\n| USD Wire | Wire routing information |\n| CAD | Institution and transit numbers |\n| GBP | Sort code |\n| AUD/NZD where provided | The displayed bank/branch routing field |\n| SGD/HKD | Bank and branch codes |\n\nIf a USD account lists both ACH and Wire information, select the route supported by the paying platform. Confirm the platform's requirement if it is unclear. The account's currency alone is not sufficient to select the route.\n\nThe account number and bank location must be read from the selected account, not inferred from a commonly seen prefix. Account-number ranges and banks cannot be chosen on request when applying for a new account.\n\nFor ordinary virtual collection binding, use the holder information required by the platform and account. Amazon JPY uses the `World First Japan K.K.` exception. An unavailable field should be reported as unavailable, rather than invented from another account's details.",
+  "id": "SOP-bank-fields",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Open Store Management → Details → View account details for the actual account. Available fields include the account number, IBAN, SWIFT/BIC, account creation date, bank location and the routing codes supported by that account.",
+  "source_ids": [
+    "B13",
+    "C04",
+    "B02",
+    "B04"
+  ],
+  "title": "Finding bank details for a collection account",
+  "topic": "accounts"
+}

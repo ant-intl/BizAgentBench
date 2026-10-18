@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-INVOICE-PHASES",
+  "title": "Initial invoice evidence and final period completion",
+  "topic": "fee invoice initial deadline period credit note refund correction",
+  "applicability": "Enrolled fee-invoice schedules with line-linked adjustments",
+  "content": "The customer’s fee-invoice schedule identifies an early required fee line, its first-delivery deadline, and a later complete-period deadline. A partial-period invoice can validly provide early evidence, provided later documents cover every remaining positive net bank-fee line exactly once. Later void/reissue may replace a genuinely delivered early document without erasing its historical delivery. Company name and current buyer address apply to both phases. A scheduled fee refund changes the fee ledger when finalized; it does not rewrite an earlier delivered amount.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional phased evidence and credit-note terms; not a tax-law claim."
+    }
+  ]
+}

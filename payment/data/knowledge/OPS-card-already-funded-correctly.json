@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "An ACTIVE card can pay a CARD obligation using its existing funding account when principal and fee balances are sufficient. A funding-source update is not a prerequisite if that account is already selected.\n\nThe purchase debits the account selected at execution. Existing authorizations remain on the accounts where they originated, even if the card's default is changed for later purchases.",
+  "id": "OPS-card-already-funded-correctly",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "An ACTIVE card can pay a CARD obligation using its existing funding account when principal and fee balances are sufficient. A funding-source update is not a prerequisite if that account is already selected.",
+  "title": "Paying from a card's existing funding account",
+  "topic": "cards"
+}

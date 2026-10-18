@@ -1,0 +1,20 @@
+{
+  "id": "SUPPLEMENT-242deb902122",
+  "title": "Hotel deposits, checkout bills and onward booking cash",
+  "topic": "hotel deposits, checkout bills and onward booking cash",
+  "applicability": "Current-customer linked records marked reasoning_version c-reasoning-v2 only.",
+  "content": "The hotel deposit is an existing asset, separate from the disputed conversion charge. The checkout notice states legitimate incidentals. settle_hotel_deposit can pay those incidentals in cash and return the whole deposit, or use deposit_offset and return the unused deposit. Both are final merchant settlements. The onward booking has its own price and cancellation terms. Its payment and any cash checkout payment draw on the same bank balance that receives the conversion adjustment; an expected deposit refund is not spendable before settlement. Contracted booking plans and fees are public, and the customer chooses the acceptable cancellation terms. Conversion refunds cannot be counted twice as both an unpaid dispute and cash available for new obligations.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `settle_hotel_deposit`\n\nSettle the legitimate checkout amount using bank cash or the existing deposit, and return the remaining deposit as a real cash credit. No conversion claim is included in this calculation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `deposit_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `method` | string: `cash`, `deposit_offset` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Linked commercial contract terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "settle_hotel_deposit"
+  ]
+}

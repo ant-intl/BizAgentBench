@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "`propose_credit_note_allocation` identifies a note, eligible obligation and amount. The note balance falls and the obligation's `credit_minor` rises. Cash and `paid_minor` do not change. Partial use leaves the unused credit on the note.\n\nIf the invoice has no cash concession, there is no concession to remove. If it has claimed a cash-only concession, applying commercial credit removes that concession and restores the unreduced invoice amount before recording the credit.",
+  "id": "OPS-credit-on-an-ordinary-invoice",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "`propose_credit_note_allocation` identifies a note, eligible obligation and amount. The note balance falls and the obligation's `credit_minor` rises. Cash and `paid_minor` do not change. Partial use leaves the unused credit on the note.",
+  "title": "Applying credit to an ordinary invoice",
+  "topic": "credits"
+}

@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Approved account retirement closes an OPEN account with zero USD and CNY balances immediately and records the closure time. There is no additional twenty-minute retirement review.\n\nClosure does not redirect incoming payments already sent to that account. Check their actual destinations and states, along with applicable reserve covenants. An activation or routing approval is not approval of the separate closure request.",
+  "id": "OPS-retiring-an-empty-route",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Approved account retirement closes an OPEN account with zero USD and CNY balances immediately and records the closure time. There is no additional twenty-minute retirement review.",
+  "title": "Closure timing and transmitted collections",
+  "topic": "accounts"
+}

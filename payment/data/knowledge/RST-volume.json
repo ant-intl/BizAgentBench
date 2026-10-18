@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "Groups may obtain review evidence using `propose_volume_certificate`. CURRENT_ROLLING is an observation of current source records. It does not fix the review's later rolling cutoff. LOCKED_PERIOD certifies the qualifying external settled source rows at its issue time and remains usable for the duration recorded in the group. Internal transfers and already-expired rows do not contribute.\n\nPending external negative items scheduled within the certificate validity interval are deducted in a locked certificate even if they have not settled yet. This provision prevents a known pending customer refund from temporarily inflating certified turnover. Pending positive items do not contribute before actual settlement. Source values, settlement events and deductions are retained in the certificate.\n\nAt review an unexpired LOCKED_PERIOD certificate can support the certified net volume rather than the later rolling total. The group must still have at least ten active children at review and satisfy the strict net threshold. An expired certificate provides no locked-period benefit. Where multiple unexpired locked certificates exist, the latest issued certificate applies. Certification does not expand capacity, accept an invitation or cancel a customer refund.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_volume_certificate`\n\nCertify CURRENT_ROLLING or LOCKED_PERIOD qualifying source rows and active membership.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `group_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `basis` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "RST-volume",
+  "provenance": {
+    "classification": "synthetic_execution_extension",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "Groups may obtain review evidence using `propose_volume_certificate`. CURRENT_ROLLING is an observation of current source records. It does not fix the review's later rolling cutoff. LOCKED_PERIOD certifies the qualifying external settled source rows at its issue time and remains usable for the duration recorded in the group. Internal transfers and already-expired rows do not contribute.",
+  "title": "Capacity certification across a rolling turnover window",
+  "topic": "volume",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_volume_certificate"
+  ]
+}

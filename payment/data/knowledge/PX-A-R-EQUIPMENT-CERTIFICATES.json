@@ -1,0 +1,19 @@
+{
+  "id": "PX-A-R-EQUIPMENT-CERTIFICATES",
+  "title": "Replacement component certificates and complete-set usability",
+  "topic": "Replacement component certificates and complete-set usability",
+  "applicability": "Original atomic equipment purchases with replacement commissioning requirements.",
+  "content": "Original controller and sensor compatibility remains required. A short delivery can replace a component from a different production batch. replacement_offers distinguish calibrated factory components from raw components needing set commissioning, and specify actual delivery_minutes. A certificate_pending warehouse offer is not yet accepted under the existing certificate. The supplier dispatch result publishes the actual certificate recognition result. a_order_replacement_units buys real replacement principal and schedules its actual physical availability; an order is not physically ready before that event. A complete set is usable when all selected replacement units have arrived and have valid calibration. a_accept_supplier_delivery requires those facts in addition to the original full-quantity and compatibility conditions. If the original supplier delivers the full already-certified set, no replacement commissioning is required.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_accept_supplier_delivery`\n\nRecord actual delivered original and replacement units against the commercial purchase. The receiving service reports their quantity and compatibility; it does not waive the customer's required specification or budget.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `delivery_id` | string | yes | Supplier fulfillment record ID. |\n| `replacement_order_ids` | array | yes | Distinct actually delivered replacement-order IDs; empty when original supply was complete. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_order_replacement_units`\n\nPurchase replacement units under a published offer. Compatibility, available quantity, expiry and accepted refund-credit type are public. A technically valid replacement can be incompatible with the customer's original purchase.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `delivery_id` | string | yes | Fulfillment record with remaining undelivered units. |\n| `offer_id` | string | yes | Replacement supply offer ID. |\n| `quantity` | integer | yes | Positive integer replacement-unit quantity. |\n| `funding` | string | yes | CASH or STORE_CREDIT. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_accept_supplier_delivery",
+    "a_order_replacement_units"
+  ]
+}

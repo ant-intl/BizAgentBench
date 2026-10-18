@@ -1,0 +1,17 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "An account's legal owner cannot be replaced by another individual or company. A name change for the same company can be reviewed where the registration identifier remains the same. This includes a registered change of company name and appropriate changes between a Chinese name, its transliteration and its English form.\n\nProvide the current business licence or company-registration certificate. For a company licence update, the unified registration identifier must match the existing company. A change of legal representative is a separate change request and must be identified as such. Personal identity-document updates must refer to the existing account holder.\n\n## Portal changes\n\nThe English business address can be edited under My Account. Other address or legal-name changes use support review, with the registered entity and the type of address identified. If a company name beginning with a number cannot be entered in the English-name form, provide the company certificate and requested identity evidence for manual handling.\n\nA security rejection when setting an English name may permit another attempt after 24 hours. A submitted name change normally receives a review result within one business day. If the error persists, supply its screenshot rather than repeatedly changing the legal name to an unrelated value.\n\nShareholder updates require the new shareholder's identity-document images, submitted through the registered email. A business-profile update is not a change to the owner of the account.",
+  "id": "SOP-legal-profile-changes",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "An account's legal owner cannot be replaced by another individual or company. A name change for the same company can be reviewed where the registration identifier remains the same. This includes a registered change of company name and appropriate changes between a Chinese name, its transliteration and its English form.",
+  "source_ids": [
+    "A14",
+    "A17",
+    "B07",
+    "B08"
+  ],
+  "title": "Updating a company's name and legal information",
+  "topic": "identity"
+}

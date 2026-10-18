@@ -1,0 +1,17 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "E-commerce collection receives physical-goods proceeds from supported marketplaces and payment gateways. It does not operate as a general-purpose bank deposit account. Direct personal or company top-ups, offline PayPal transfers and unrestricted transfers between customer wallets are outside this product's collection scope.\n\nIndependent-store merchants receive customer funds through a supported gateway such as PayPal, Stripe or Adyen, then use the gateway's supported payout to the collection account. The underlying proceeds must still relate to eligible physical-goods sales. Offline B2B receipts use the B2B trade product; application and advertising-platform income use the developer product.\n\nPlatform deposits returned as security deposits, virtual-goods proceeds, collectible physical stamps and commemorative currency are not accepted by the e-commerce arrangement described here. E-cigarette sales proceeds are not eligible for its inbound conversion service.\n\nThe library's restrictions cover payments directly or indirectly involving Iran, North Korea, Syria, Cuba, Crimea, Luhansk, Donetsk, Kherson and Zaporizhzhia, and designated restricted persons or entities. A third-party payer or transit route does not remove a restricted underlying connection. Other transactions remain subject to their product and evidence requirements.\n\nA WeChat collection arrangement in this product is for eligible import-goods sales through a self-built mini-program; it does not provide a general WeChat top-up facility. Import proceeds remain distinct from export proceeds for conversion-quota purposes.",
+  "id": "SOP-collection-sources",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "E-commerce collection receives physical-goods proceeds from supported marketplaces and payment gateways. It does not operate as a general-purpose bank deposit account. Direct personal or company top-ups, offline PayPal transfers and unrestricted transfers between customer wallets are outside this product's collection scope.",
+  "source_ids": [
+    "B07",
+    "B13",
+    "B17",
+    "B23"
+  ],
+  "title": "Permitted funds for Marketplace Portal collection",
+  "topic": "provenance"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "IFACE-CARRIER-COD-RETURN",
+  "title": "Carrier COD return service interfaces",
+  "topic": "carrier cash on delivery return refund replenishment",
+  "applicability": "PSP product accounts; Accepted COD returns, buyer refunds, carrier remittance and replenishment payments.",
+  "content": "Accepted COD returns, buyer refunds, carrier remittance and replenishment payments.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `pay_cod_replenishment`\n\nPay the replenishment invoice from the same carrier-proceeds account. A valid partial amount reduces the still-open invoice but does not settle the rest.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `return_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `request_cod_return_notice`\n\nObtain the accepted return attached to the original buyer order; the carrier will publish actual refundable value.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `return_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `select_cod_return_channel`\n\nChoose carrier net remittance or merchant cash refund for the accepted buyer return before carrier cash is remitted.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `return_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `channel` | string: `net_remittance`, `cash_refund` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `send_cod_buyer_refund`\n\nSend a direct merchant refund to a delivered buyer. The bank validates its prior collected limit; the caller must separately reconcile the original accepted return and any carrier offset.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `return_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `order_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "pay_cod_replenishment",
+    "request_cod_return_notice",
+    "select_cod_return_channel",
+    "send_cod_buyer_refund"
+  ],
+  "business_area": "carrier_cod",
+  "service": "return_settlement",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

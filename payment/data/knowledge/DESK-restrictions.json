@@ -1,0 +1,28 @@
+{
+  "applicability": "Operations Desk evidence edition 6.4; local economic parameters retain the Desk 5.3 contract.",
+  "capability": null,
+  "content": "A restricted_lot represents a distinguishable line of received proceeds. It has an amount, remaining balance and bank_permitted_purposes. Its proceeds_assignment separately states the commercial expenditure uses. Fund_restrictions and receivable_rights each identify the lots in their scope. Their scopes may overlap. Availability is determined per lot, not by subtracting the sum of every headline restriction amount. A lot is unavailable while any active restriction or unreleased receivable right covers it.\n\npropose_restriction_review applies assessed evidence for one restriction. Review occurs after its review_delay and releases only that restriction's covered lot IDs explicitly named by the evidence. Other restrictions remain independent. propose_receivable_release similarly applies assignee evidence only to that right and only to its named lots. A document for an older contract version cannot release a current right. A receivable right may publish release_requires: the specified instruction must already have received at least paid_minor in actual settled payments before its release application is accepted. Partial releases are stored as released_lot_ids; a headline PARTIAL status does not mean the entire amount is available.\n\npropose_purpose_payment accepts an explicit positive amount per source lot. All selected lots must be available and allow that instruction's purpose under bank_permitted_purposes. The bank does not validate the separate commercial proceeds_assignment; compliance with that assignment remains the payment initiator's responsibility. Amounts cannot exceed remaining balances. The system supports partial and successive payments and does not reserve another instruction's future funds. A legal payment from a versatile lot can therefore leave another obligation without enough eligible proceeds. A completed payment cannot be recalled in this service. A transfer, renamed account or completed evidence review does not amend the commercial proceeds assignment.\n\nSource-document interpretation follows Commercial source records and bank payment responsibility (Operations Desk evidence edition 6.4).\n\n## Exact service interfaces\n\n- Use `propose_attempt_trace(attempt_id)` for an exact payment-attempt trace; it does not itself repay the item.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_purpose_payment`\n\nPay a purpose instruction using an explicit map of eligible source-lot amounts. Different instructions can consume the same available lots over time.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `instruction_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `allocations` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_receivable_release`\n\nApply assessed assignee evidence to release the specifically named receivable lots, after institution review.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `right_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `submission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_restriction_review`\n\nSubmit evidence to lift one specified restriction. Other restrictions and assigned receivable rights remain in force.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `restriction_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `submission_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-restrictions",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-restrictions"
+  ],
+  "source_ids": [
+    "A17",
+    "B05",
+    "B13",
+    "B17"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Independent fund restrictions and receivable-right releases",
+  "topic": "restrictions",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_purpose_payment",
+    "propose_receivable_release",
+    "propose_restriction_review"
+  ]
+}

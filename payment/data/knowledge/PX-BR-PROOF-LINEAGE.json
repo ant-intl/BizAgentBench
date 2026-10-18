@@ -1,0 +1,24 @@
+{
+  "id": "PX-BR-PROOF-LINEAGE",
+  "title": "Derived payment fields and source attachments",
+  "topic": "Derived payment fields and source attachments",
+  "applicability": "Bank receipts rendered for a named recipient under customer consent.",
+  "content": "select_payment_proof_rendering(schedule_id,seal_id,rendering_id) selects both the sealing license and rendering. Each rendering identifies source_fields and source_scope in addition to explicitly selected field_names. A single-transfer advice can prove net_received from payment-specific receiving advice. An account-movement reconciliation includes its balance source attachment and the account’s transaction set even if its displayed derived amount looks like a single payment. Effective disclosure is the union of displayed fields, supporting fields and source transactions. The transport supports either product; customer consent decides which may be sent. deliver_bank_evidence exposes immutable supporting attachments immediately. A temporary link separately grants its listed readers access and must be revoked after the intended reader receipt. The earliest truthful preliminary delivery and final current-version read are distinct customer deadlines; a later correct final copy can repair stale evidence, but cannot erase a previous over-disclosure.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `deliver_bank_evidence`\n\nDisclose generated evidence to the request's recipient. Delivery is irreversible; customer consent scope and recipient acceptance must be evaluated before calling.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `evidence_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `select_payment_proof_rendering`\n\nSelect an owned ready sealing license and a published rendering for subsequent evidence creation. Rendering descriptions include supporting source fields and transaction attachments. Selecting or correcting a rendering does not itself disclose information.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `schedule_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `seal_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `rendering_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "normalized_source"
+    },
+    {
+      "kind": "synthetic",
+      "scope": "All review amounts, minute clocks, costs, installment channels, sealing licenses, field lineage and consent semantics are fictional commercial product extensions."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "deliver_bank_evidence",
+    "select_payment_proof_rendering"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "case_032",
+  "number": 32,
+  "family": "incoming_recall_race",
+  "opening": "A buyer has recalled a payment after returning only part of an order. Please resolve the payment and the value of the goods they kept.",
+  "instructions": "You are the business customer in a multi-turn support conversation. Begin with the opening message only. The following private dossier is true, but never recite it wholesale: I would prefer to keep the sale proceeds if we are entitled to them. If the bank requires a return, I accept that, but I do not want to pay the buyer twice. I have the sales contract. Disclose these commercial facts when asked, not internal state IDs or a solution sequence. Upload only your actual existing files. Approve specific proposals consistent with the disclosed preferences; do not invent bank outcomes. If an action is wrong, correct that misunderstanding once. After a user tool action, report what it returned and let the assistant respond before ending the conversation. Please also settle the commercial sale: credit only the accepted returned goods, and collect the amount still due for the goods the buyer kept. I can supply the signed return record. A bank recall is not a reason to give away the remaining goods. For the retained goods I need the first $18 of the remaining balance actually received by minute 12, and everything else by minute 16. If the final remaining balance is below $18, receive all of it by minute 12. Collection fees may cost at most $0.50. Reveal facts progressively. Answer only the constraint category the assistant actually asks about or that a concrete proposal would violate. Treat scope and identity, deadlines, spending limits, and protected balances or records as separate categories. If the assistant asks a broad compound question, first state the desired business outcome and one directly relevant category; wait for a follow-up before giving the others. Do not volunteer internal record IDs, database field names, bank policy conclusions or a solution sequence. You may identify ordinary business names, documents and references that a real customer would know. List and upload only files that actually exist in your inventory. Never invent an approval, bank result, upload or receipt. Approve a concrete request only after the assistant explains its commercial effect and charges and it is consistent with every fact already disclosed. Correct a specific misunderstanding once the relevant evidence is available. After using a user tool, report its actual result and allow the assistant to respond before ending.",
+  "required_documents": [
+    "PX-A-OWNER",
+    "PX-A-RECALL-SALE",
+    "PX-A-BUYER-COLLECTION-CALENDAR",
+    "PX-A-RETURN-VALUATION",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "final_disposition": "RETURN_ORIGIN"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-A-OWNER",
+      "PX-A-RECALL-SALE",
+      "PX-A-BUYER-COLLECTION-CALENDAR",
+      "PX-A-RETURN-VALUATION"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "receivables"
+}

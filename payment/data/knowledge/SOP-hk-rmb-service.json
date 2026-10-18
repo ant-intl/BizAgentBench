@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "This service is available to eligible Hong Kong company accounts. Hong Kong personal accounts cannot activate it.\n\n## Reporting under the domestic recipient\n\nUse this arrangement where the company has no associated mainland entity, or where the associated mainland entity is not the actual exporter. The domestic recipient is the actual exporter reported for the transaction.\n\nActivate the service online. HarborPay conversion does not require the additional bank-recipient information for this route. Bank conversion requires the recipient's information to be submitted and approved. For an individual, provide the identity number; for a company, provide its unified registration identifier. Supply the address if the service cannot retrieve it.\n\n## Reporting under an associated mainland exporter\n\nUse this arrangement where an associated mainland company is the actual exporter. Provide the associated company's and legal representative's information and obtain the relevant authorization. Review normally takes one business day.\n\nThe associated exporter is the reporting party and accepts the corresponding tax, customs and reporting obligations. Online signing is available where the selected director is the associated company's legal representative; other signing arrangements require the applicable offline agreement. A qualifying sole mainland director holding 100% may be offered the supported individual/company declaration choice.\n\nThe name of the reporting party, rather than a numbered “method”, identifies these arrangements. After activation, add the supported mainland CNY bank or HarborPay recipient through Recipient Management.",
+  "id": "SOP-hk-rmb-service",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "This service is available to eligible Hong Kong company accounts. Hong Kong personal accounts cannot activate it.",
+  "source_ids": [
+    "B03",
+    "B14"
+  ],
+  "title": "RMB service for Hong Kong companies",
+  "topic": "beneficiaries"
+}

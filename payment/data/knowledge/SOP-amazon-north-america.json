@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Select the Amazon store's actual seller type: third-party Seller Central or Vendor. For North America, new USD and CAD collection accounts are available. Existing MXN collection accounts can be bound, but new MXN accounts are not currently offered. A Mexico store may use a supported USD or CAD account with the platform's own currency conversion.\n\n## Ordinary store binding\n\nUse the bank fields supplied for the selected account. Where Amazon asks for the financial institution, select CedarPay; if the option is difficult to find, switch the platform to English and disable automatic browser translation. The holder information should match the platform's registered identity.\n\nFor a rejected letter or statement, compare its holder name and address with the seller's identity information. If they match, obtain the specific rejection reason from Amazon. Notify Amazon before changing the bound collection account and follow its instructions.\n\n## Buy With Prime\n\nApply for an Amazon North America USD collection account, selecting the option to defer store authorization. In Amazon Pay, enter the bank details under Deposit Method; the nine-digit routing number is the account's ACH routing number. Use Amazon Pay rather than the ordinary Seller Central deposit page.\n\nIf a normal Seller Central deposit method is missing, check the entered information and retry in a clean session. A different collection account may be attempted; unresolved binding errors should be investigated with Amazon.",
+  "id": "SOP-amazon-north-america",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Select the Amazon store's actual seller type: third-party Seller Central or Vendor. For North America, new USD and CAD collection accounts are available. Existing MXN collection accounts can be bound, but new MXN accounts are not currently offered. A Mexico store may use a supported USD or CAD account with the platform's own currency conversion.",
+  "source_ids": [
+    "B01",
+    "A13"
+  ],
+  "title": "Binding Amazon North America and Buy With Prime accounts",
+  "topic": "accounts"
+}

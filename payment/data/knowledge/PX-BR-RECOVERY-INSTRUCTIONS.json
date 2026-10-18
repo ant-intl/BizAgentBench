@@ -1,0 +1,21 @@
+{
+  "id": "PX-BR-RECOVERY-INSTRUCTIONS",
+  "title": "Outstanding balances and immutable payment instructions",
+  "topic": "recovery balance amendment instruction challenge binding",
+  "applicability": "Supplier recovery contracts with an accepted-advance schedule",
+  "content": "An accepted advance does not automatically edit an existing held full-invoice instruction. apply_supplier_advance_receipt reduces the original obligation by the actual receipt, and amend_held_supplier_balance can revise its held instruction to that outstanding amount. Migration or paid replacement still preserves the old instruction’s current business amount and creates current-version execution authority. A challenge copies amount, obligation, instruction and credential version at creation; later reconciliation does not rewrite it. A revised balance may be paid once with a matching current challenge. The old unrelated quotation remains a different obligation.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `amend_held_supplier_balance`\n\nRevise a held instruction to the original invoice’s presently outstanding amount, after applying actual supplier advance receipts. This preserves the obligation and old credential epoch; migrate or replace still establishes a current execution instruction. Existing challenges keep their original amounts.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `instruction_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `apply_supplier_advance_receipt`\n\nApply one actual settled advance to the original supplier invoice. Only received principal reduces the remaining invoice; a reserved amount or service charge is not supplier payment. This does not rewrite the amount in an earlier held instruction or authentication challenge.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `advance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional advance settlement, instruction and corporate execution mandate terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "amend_held_supplier_balance",
+    "apply_supplier_advance_receipt"
+  ]
+}

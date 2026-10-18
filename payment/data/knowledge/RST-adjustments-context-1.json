@@ -1,0 +1,12 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "A service fee pays for platform service and does not reduce sales principal. SERVICE_FEE booking records the notice without changing sales quota. For instance, a fulfillment service charge remains distinct from a customer refund even if both are netted in the same marketplace statement.\n\nDetailed local effects and operation names: `RST-adjustments`.",
+  "id": "RST-adjustments-context-1",
+  "provenance": {
+    "classification": "functional_scope_distractor",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "A service fee pays for platform service and does not reduce sales principal. SERVICE_FEE booking records the notice without changing sales quota. For instance, a fulfillment service charge remains distinct from a customer refund even if both are netted in the same marketplace statement.",
+  "title": "Service fee debit notices",
+  "topic": "adjustments"
+}

@@ -1,0 +1,28 @@
+{
+  "release_version": "bizagentbench-payment-v1",
+  "seed": 0,
+  "max_errors": 16,
+  "episode_timeout_seconds": 5400,
+  "agent": {
+    "api_key_env": "AGENT_API_KEY",
+    "base_url": "https://model-host.example.invalid/v1",
+    "model": "AGENT_MODEL_ID",
+    "max_tokens": 262144,
+    "timeout_seconds": 600,
+    "trust_env": false,
+    "extra_body": {},
+    "send_seed": false,
+    "temperature": null
+  },
+  "user": {
+    "api_key_env": "USER_API_KEY",
+    "base_url": "https://user-host.example.invalid/v1",
+    "model": "deepseek-flash",
+    "max_tokens": 393216,
+    "timeout_seconds": 600,
+    "trust_env": false,
+    "extra_body": {},
+    "send_seed": false,
+    "temperature": null
+  }
+}

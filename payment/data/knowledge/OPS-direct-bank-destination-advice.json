@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A non-mandate trace at READY reports `intended_account_id`, transmission reference and amount. The current incoming `account_id` remains the book entry; the two can differ.\n\nMandate-based advice uses `mandate_id` and bank value time instead of a direct destination field. Its entitlement is established by dated SIGNED claims. A trace does not itself reverse a posting or release its source reservation.",
+  "id": "OPS-direct-bank-destination-advice",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A non-mandate trace at READY reports `intended_account_id`, transmission reference and amount. The current incoming `account_id` remains the book entry; the two can differ.",
+  "title": "Advice with a direct intended-account field",
+  "topic": "tracing"
+}

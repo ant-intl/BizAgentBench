@@ -1,0 +1,57 @@
+{
+  "agreement_id": "JOINT14-16-AGREEMENT",
+  "case_id": "D34-COVER-CASE",
+  "components": [
+    {
+      "case_id": "D34-COVER-CASE",
+      "extension_service": true,
+      "family": " Obligation recalculation × Insurance period × Subsequent recovery ",
+      "id": "trade_insurance",
+      "kind": "shared_indemnity",
+      "scope": "JOINT14-16",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY44-CASE",
+      "extension_service": true,
+      "family": " Mixed payment and original route recovery for stored-value wallet ",
+      "id": "payment_stored_value_restitution",
+      "kind": "payment_stored_value_restitution",
+      "number": 44,
+      "payment_service": true,
+      "scope": "JOINT14-16",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Obligation recalculation × Insurance period × Subsequent recovery ",
+  "id": "case_013",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\n\nOpening: Please finish the insurance recoveries for our damaged equipment and stock. We need the replacement payments made on time, and the suppliers may still send compensation. Also, i used my wallet and card together for two orders. One order was cancelled, and a top-up now looks wrong. Can you fix the balances and finish the order I am keeping? These are part of the same business spending plan.\n\nYour own facts and preferences: I manage Cedar Manufacturing. Obtain the full indemnity available under our existing cover, sell the listed salvage, pay the registered replacement invoices on time, and reconcile any later supplier compensation with the insurers. Keep USD 100 in the wallet. I thought an expired policy could no longer pay any claim; please check the actual coverage. Use our existing funds and the real claim proceeds. I do not know the final supplier compensation or how primary and excess insurance interact.\n\nFor the related procurement matter: Restore the cancelled order to the original types of wallet funds, correct only the bank-confirmed duplicate top-up, and complete the order I am keeping by its order date. Keep at least USD 200 of ordinary cash in the wallet when everything is settled. Promotional value is not cash, and I do not agree to replacing one with the other. No new top-up is available.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "shared_indemnity",
+  "number": 13,
+  "opening": "Please finish the insurance recoveries for our damaged equipment and stock. We need the replacement payments made on time, and the suppliers may still send compensation. Also, i used my wallet and card together for two orders. One order was cancelled, and a top-up now looks wrong. Can you fix the balances and finish the order I am keeping? These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-shared_indemnity",
+    "PAYMENT-common",
+    "PAYMENT-payment_stored_value_restitution",
+    "JOINT-CASH-delivery",
+    "TRADE-common",
+    "DESK-protocol"
+  ],
+  "scope": "JOINT14-16",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

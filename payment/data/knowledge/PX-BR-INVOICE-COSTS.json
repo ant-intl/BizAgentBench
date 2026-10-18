@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-INVOICE-COSTS",
+  "title": "Invoice correction charges and disclosure boundaries",
+  "topic": "fee invoice initial deadline period credit note refund correction",
+  "applicability": "Enrolled fee-invoice schedules with line-linked adjustments",
+  "content": "Issuing an invoice consumes the profile issue fee; voiding a delivered parent consumes its void fee. An issued credit note consumes credit_note_fee_minor even when the buyer cannot accept that format. These charges use the same finite source cash. Current-address correction is prospective: a profile change does not repair old documents. A previously disclosed full-period invoice can therefore be more expensive to replace than issuing separate phases, while a supported credit note can preserve the disclosed parent at lower cost. Only the registered company’s agreed receiving route may receive the documents.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional phased evidence and credit-note terms; not a tax-law claim."
+    }
+  ]
+}

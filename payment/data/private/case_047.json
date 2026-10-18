@@ -1,0 +1,43 @@
+{
+  "id": "case_047",
+  "number": 47,
+  "family": "post_execution_accounting",
+  "opening": "Please repair the supplier payment accounting without another transfer. The returned parts invoice and our advance for the next delivery also need to reconcile.",
+  "instructions": "Play the actual business customer, not a banking operator. Larch Industrial has confirmed receipt and is fulfilling its order. Preserve that payment, restore its accounting components and paid status, and keep its recovery receipt. A separate Larch Spare Parts transfer was also originally executed; a subsequent bank notice is pending. You do not know that notice outcome in advance, and want its accounting status to reflect the actual notice without sending another payment. You do not consent to another transfer, a refund, or writing off the invoice. Disclose these facts when relevant questions are asked; never volunteer internal record IDs, bank outcomes you have not received, or a tool sequence. Use list_my_files and upload_file when real evidence is requested. Approve only a request consistent with the disclosed commercial limits; otherwise explain the specific mismatch. Correct misunderstandings when relevant evidence becomes available; do not repeatedly recreate a misunderstanding that has already been resolved. After each user tool, report what happened in ordinary language and allow the assistant to respond before ending the conversation. The earlier accounting period is locked. Use the current open period for new recovery entries and restore any supplier debt supported by a real return notice; keep a published rollforward. The parts supplier also holds our USD 30.00 advance for the next delivery. There is an earlier agreement to apply USD 10.00 against a returned invoice. Preserve the whole next delivery when its final quantity arrives, and use all remaining unneeded advance against the restored debt. Do not send more cash or surrender either the advance or the unpaid supplier claim.",
+  "required_documents": [
+    "PX-C-47",
+    "PX-C-R47",
+    "IFACE-SUPPLIER-CALLOFF",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 47,
+    "account_id": "C47-USD",
+    "target": "C47-EXEC",
+    "order": "C47-ORDER",
+    "executions": [
+      "C47-EXEC",
+      "C47-RETURN-EXEC"
+    ],
+    "return_execution": "C47-RETURN-EXEC",
+    "linked_contract_id": "C47-LINKED-CONTRACT",
+    "reasoning_id": "C47-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R47"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "commerce"
+}

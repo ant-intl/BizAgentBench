@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Proposals identify a specific operation and immutable arguments. The user reads the actual proposal and can approve, decline or revoke it.\n\nApproval is stored with the portal operator ID and that operator authorization epoch. execute_request requires an approved request and an active operator with the same epoch.\n\nAn executed request can be retried idempotently; a newly created proposal is a different action. General customer permission to solve a problem does not let support create its own approval or treat a natural-language statement as a portal state change.",
+  "id": "KB-consent-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Proposals identify a specific operation and immutable arguments. The user reads the actual proposal and can approve, decline or revoke it.",
+  "title": "Customer approval of an execution request",
+  "topic": "consent"
+}

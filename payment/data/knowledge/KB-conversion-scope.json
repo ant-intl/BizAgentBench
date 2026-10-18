@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "CORE conversion uses a fixed rational rate of 7 CNY per USD. inspect_conversion takes a fund lot, USD principal in cents and a map from quota IDs to allocated USD cents.\n\nAllocations must sum to principal. propose_conversion consumes a current quote; each quota must belong to the lot account, be unexpired and have sufficient amount after reservations.\n\nIMPORT and SERVICES source cash is ineligible. A quote is valid for 20 logical minutes, including its expiry minute, and does not reserve money or quota.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `inspect_conversion`\n\nObtain an executable USD-to-CNY quote for a specified fund lot and quota allocation.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `lot_id` | string | yes | The source lot to inspect or use. |\n| `amount_minor` | integer | yes | The requested principal in USD cents. |\n| `quota_allocations` | object | yes | Map of quota IDs to allocated USD cents; the map supplies the complete allocation. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n\n### `propose_conversion`\n\nPropose execution of one unexpired conversion quote.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `quote_id` | string | yes | The quote whose recorded terms are to be used. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-conversion-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "CORE conversion uses a fixed rational rate of 7 CNY per USD. inspect_conversion takes a fund lot, USD principal in cents and a map from quota IDs to allocated USD cents.",
+  "title": "CORE conversion quotes and quota allocation",
+  "topic": "conversion",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "inspect_conversion",
+    "propose_conversion"
+  ]
+}

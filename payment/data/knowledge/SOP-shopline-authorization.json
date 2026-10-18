@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Open Store Management, select the Shopline store and choose Authorize. Complete the platform sign-in and authorization prompts.\n\nSales data normally becomes available for quota processing within 24 hours. If authorization was completed less than 24 hours ago, allow the processing period to finish. If the period has passed and quota remains missing, provide support with the original sales export, seller ID and the collection-account number.\n\nThe support request should identify the affected store. A store display name alone may not distinguish several stores operated by the same business.",
+  "id": "SOP-shopline-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Open Store Management, select the Shopline store and choose Authorize. Complete the platform sign-in and authorization prompts.",
+  "source_ids": [
+    "A02"
+  ],
+  "title": "Connecting a Shopline store",
+  "topic": "quota"
+}

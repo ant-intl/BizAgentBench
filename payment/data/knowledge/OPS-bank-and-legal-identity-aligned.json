@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Issuance copies `bank_version` and `bank_legal_name` from the account. A submitted synchronization changes those fields only when its event completes. Issuing before that event can therefore produce a new letter with the earlier name.\n\nIf the bank profile already matches the required registered identity, a further synchronization is not required for issuance. Later legal revisions do not rewrite an existing letter. A reviewing platform separately checks identity, addressee and letter age at its review time.",
+  "id": "OPS-bank-and-legal-identity-aligned",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Issuance copies `bank_version` and `bank_legal_name` from the account. A submitted synchronization changes those fields only when its event completes. Issuing before that event can therefore produce a new letter with the earlier name.",
+  "title": "Why can a new letter still show an earlier name?",
+  "topic": "identity"
+}

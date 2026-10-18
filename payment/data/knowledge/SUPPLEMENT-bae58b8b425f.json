@@ -1,0 +1,24 @@
+{
+  "id": "SUPPLEMENT-bae58b8b425f",
+  "title": "Mixed-schema payment file compilation",
+  "topic": "Mixed-schema payment file compilation",
+  "applicability": "Mixed-schema payment file compilation business records.",
+  "content": "xp_a_batch_schema_contracts preserves untouched source_rows. Each row has independent unit_code MAJOR/MINOR and fee_code NET/GROSS; these refer to that row, not the file total. MAJOR multiplies the decimal number by100; MINOR leaves it in minor units; GROSS subtracts the row fee to obtain beneficiary net; NET pays that number and adds sender fee. source_reference and obligation_reference identify the original invoice. a_compile_batch_line records the chosen interpretation and rewrites only the executable canonical row to MAJOR_NET. It can be corrected before successful payment. Preview and original execution thereafter use MAJOR_NET, retain original obligation keys, and repair only failed recipient branches. Compilation cannot recall successful payments or change what the employee or supplier is owed.\na_compile_batch_line: Compile one untouched source row into canonical major-unit net payment. MAJOR or MINOR selects numeric scale; NET adds sender fee, GROSS includes beneficiary fee. Each row has independent source semantics. Recompilation is allowed before successful execution. Parameters: file_record_id — Original uploaded export ID., line_id — Source line ID., units — MAJOR or MINOR., fee_mode — NET or GROSS., invoice_id — Original commercial obligation ID mapped to this row.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_compile_batch_line`\n\nCompile one untouched source row into canonical major-unit net payment. MAJOR or MINOR selects numeric scale; NET adds sender fee, GROSS includes beneficiary fee. Each row has independent source semantics. Recompilation is allowed before successful execution.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `file_record_id` | string | yes | Original uploaded export ID. |\n| `line_id` | string | yes | Source line ID. |\n| `units` | string | yes | MAJOR or MINOR. |\n| `fee_mode` | string | yes | NET or GROSS. |\n| `invoice_id` | string | yes | Original commercial obligation ID mapped to this row. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "source_derived_with_synthetic_extension",
+    "source_files": [
+      "03_medium_30_to_50pct/batch-payment-function.sop.md:N2-N4; lines32-52; merged knowledge lines70-88"
+    ],
+    "source_nodes_and_rows": [
+      "03_medium_30_to_50pct/batch-payment-function.sop.md:N2-N4; lines32-52; merged knowledge lines70-88"
+    ],
+    "scope": "All new bank events, monetary examples, split-ownership, alias, succession, execution-epoch, row-schema, debt-posting, deposit-disposition and promotion-clawback rules are synthetic. Source-derived fragments are limited to the described evidence collection, original-route return, historical account inquiry, batch template and irreversible payment, entity/exclusive binding, and published coupon scope. The source PSP procedure ends at submission and does not establish acceptance. Source workdays are not converted into simulated-minute promises."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_compile_batch_line"
+  ]
+}

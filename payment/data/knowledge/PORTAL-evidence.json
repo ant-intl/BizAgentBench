@@ -1,0 +1,11 @@
+{
+  "applicability": "Marketplace Portal API integration v4.0.0. Applies from service minute 0.",
+  "content": "A customer uses `list_my_files` to inspect the actual file inventory and `upload_file` to submit an existing file for a named object and purpose. Support uses `assess_evidence` to check target, purpose, expiry and signature. Assessment does not rewrite a wrong file or approve the subsequent business application.\n\nEach submission preserves the file contents at upload time. An approved submission still expires at its recorded validity time. Application-specific requirements, such as a photograph date, the reporting party or the original remitter, are checked by the relevant business service. A correctly signed but commercially inapplicable document can pass generic assessment and still fail application review.\n\nThe Portal evidence purposes are `sales`, `phone_recovery`, `exporter_registration`, `recipient`, `return_instruction` and `fee_relationship`. Purpose and target must match the actual contents; a similarly named document for another object does not satisfy them.",
+  "id": "PORTAL-evidence",
+  "provenance": {
+    "classification": "new_synthetic_portal_execution_contract"
+  },
+  "quoted_text": "A customer uses `list_my_files` to inspect the actual file inventory and `upload_file` to submit an existing file for a named object and purpose. Support uses `assess_evidence` to check target, purpose, expiry and signature. Assessment does not rewrite a wrong file or approve the subsequent business application.",
+  "title": "Portal evidence submission and assessment",
+  "topic": "portal_evidence"
+}

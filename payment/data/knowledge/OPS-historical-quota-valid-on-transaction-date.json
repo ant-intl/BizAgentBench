@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A historical amendment replaces the complete allocation map, preserving the original conversion's cash leg and principal. Replacement allocations must sum to that principal, belong to the account, cover the original submission minute, remain unexpired at amendment execution and have enough unreserved capacity.\n\nThe operation restores the old allocations and consumes the replacement amounts, charging the published amendment fee. It does not issue another conversion or refund the original cash.",
+  "id": "OPS-historical-quota-valid-on-transaction-date",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A historical amendment replaces the complete allocation map, preserving the original conversion's cash leg and principal. Replacement allocations must sum to that principal, belong to the account, cover the original submission minute, remain unexpired at amendment execution and have enough unreserved capacity.",
+  "title": "Replacement quota for an old conversion",
+  "topic": "quota_history"
+}

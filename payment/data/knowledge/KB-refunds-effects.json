@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A negative quota after a refund records unsupported capacity already used. Positive capacity from a different source is not a rewrite of the original consumption history.\n\nIndependent quotas and new eligible sales retain their own validity intervals and available capacity. An expired reservation cannot provide a route around the published expiry.",
+  "id": "KB-refunds-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A negative quota after a refund records unsupported capacity already used. Positive capacity from a different source is not a rewrite of the original consumption history.",
+  "title": "Order-quota debt after refund settlement",
+  "topic": "refunds"
+}

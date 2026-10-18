@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "BASIC: no activation, 40 basis points, minimum 100 cents. VOLUME: activation 2400 cents, 12 basis points on the portion within the first 1000000 cents of period remittances and 6 on the portion above, minimum 150 cents per invoice.\n\nPeriod volume includes remittances under earlier tariffs. PARTNER: no activation, 15 basis points, minimum 200 cents; when linked settled external receipts minus refunds over 90 days fall below 15000000 cents, BASIC applies to that execution.\n\nInternal transfers and pending receipts do not count. COMMIT: activation 4500 cents, 4 basis points, minimum 400 cents.\n\nFor each invoice, sum the percentage charge over applicable portions, round up once to a whole cent, then apply the minimum. inspect_tariff_quote evaluates one invoice at the current state only.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `inspect_tariff_quote`\n\nQuote a single payable invoice under the tariff and tier currently effective.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `obligation_id` | string | yes | The commercial obligation being paid or inspected. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n",
+  "id": "KB-tariffs-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "BASIC: no activation, 40 basis points, minimum 100 cents. VOLUME: activation 2400 cents, 12 basis points on the portion within the first 1000000 cents of period remittances and 6 on the portion above, minimum 150 cents per invoice.",
+  "title": "BASIC, VOLUME, PARTNER and COMMIT tariffs",
+  "topic": "tariffs",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "inspect_tariff_quote"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-RECOVERY-SUPPLIER-ADVANCE",
+  "title": "Credential recovery supplier advance service interfaces",
+  "topic": "credential recovery accepted supplier advance",
+  "applicability": "PSP product accounts; Supplier advances accepted before credential loss and executable during recovery.",
+  "content": "Supplier advances accepted before credential loss and executable during recovery.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `release_accepted_supplier_advance`\n\nRelease one of the alternative pre-accepted supplier advances. This bank-accepted instruction predates the lost credential and remains executable during recovery. It reserves its nominal cash until the scheduled settlement and charges its own fee. The supplier may credit only the public bounded range; excess reserved principal is released. Both options belong to the same original invoice, so only one alternative is released.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `advance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "release_accepted_supplier_advance"
+  ],
+  "business_area": "credential_recovery",
+  "service": "supplier_advance",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

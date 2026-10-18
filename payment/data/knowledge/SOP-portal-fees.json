@@ -1,0 +1,18 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Check the transaction page for the account's quoted fee and the transaction record for a fee already charged. The Portal fee ceilings in this service schedule are 0.3% for e-commerce accounts, 0.7% for developer accounts and 0.4% for B2B conversion payments. These are ceilings, not a promise that every transaction is charged at the ceiling.\n\nPortal fee amounts use banker's rounding to two decimal places: an exact half is rounded to the even retained digit. Collection Profile products use their own published rounding and minimum-fee rules; CORE tariffs are also separate.\n\nCedarPay does not charge a Portal incoming-payment fee. A marketplace, remitting bank or intermediary may deduct its own charge. For a discrepancy between the platform's gross payout and the amount received, obtain the platform and bank fee details.\n\nOutgoing fees shown by CedarPay do not exclude additional intermediary or recipient-bank charges. Ordinary retention of a Portal account does not itself incur an opening or idle-account fee. A separately selected paid product remains subject to its own tariff.",
+  "id": "SOP-portal-fees",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Check the transaction page for the account's quoted fee and the transaction record for a fee already charged. The Portal fee ceilings in this service schedule are 0.3% for e-commerce accounts, 0.7% for developer accounts and 0.4% for B2B conversion payments. These are ceilings, not a promise that every transaction is charged at the ceiling.",
+  "source_ids": [
+    "A16",
+    "B03",
+    "B07",
+    "B13",
+    "C09"
+  ],
+  "title": "Portal transaction fees and external deductions",
+  "topic": "pricing"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-TAX-CAPACITY",
+  "title": "Agency processing reservations and amendments",
+  "topic": "tax agency capacity jurisdiction receipt deadline handover",
+  "applicability": "Tax handovers with a processing capacity contract",
+  "content": "An agency processing contract reserves principal capacity across its named jurisdictions. Reservations close at booking_cutoff, before the retiring agent census normally returns. Processing consumes reserved capacity in the tax jurisdiction, and all reservations share total_capacity_minor. Fees are charged from the same company cash as the original tax payments. Unused principal capacity can move between jurisdictions through transfer_cutoff for a nonrefundable amendment fee. The agency’s eventual approval and configured jurisdiction route remain separately necessary. Capacity is a service right, not an authority payment or a credit against tax. Receipt allocation does not replenish already consumed service capacity.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional service capacity, direct route limits and allocation ranges."
+    }
+  ]
+}

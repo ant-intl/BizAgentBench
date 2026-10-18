@@ -1,0 +1,20 @@
+{
+  "id": "PX-C-R47",
+  "title": "Supplier advances, restored debt and call-off deliveries",
+  "topic": "supplier advance restored payable calloff delivery allocation",
+  "applicability": "Only reasoning_version c-reasoning-v2 records for the current customer and bound original transaction.",
+  "content": "A supplier advance in xp_c_supplier_advances is an existing noncash asset claim. Its standing_application_minor is a previously authorized supplier instruction: recognition of the named returned payable automatically applies that amount, capped by the debt and available advance. The current customer may reverse this application before call-off release under the same reversal rules. It can discharge a restored supplier payable or purchase released units under the identified call-off contract, but the same amount cannot do both. The call-off notice publishes the supplier's current required units at its stated advance unit price. apply_supplier_advance decreases both the available advance and the actual open restored payable. It does not alter the bank return, original accounting reversal, or originally recognized payable amount. An application can be reversed while no call-off units have been released; a released delivery is final for the units delivered. Partial delivery is a bank-supported commercial choice. Receipts separately identify amount applied to old debt, advance consumed by delivery, and remaining unspent advance. These must sum to the original advance. Cash replay remains limited to the pre-existing bank return event; this allocation product never moves bank cash.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `apply_supplier_advance`\n\nApply amount_minor of the supplier advance to the named restored payable. It consumes an existing asset right rather than bank cash. The separate call-off commitment may still need some of that same right.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `advance_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `payable_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Opt-in linked commercial obligations and resource terms."
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "apply_supplier_advance"
+  ]
+}

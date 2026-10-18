@@ -1,0 +1,889 @@
+{
+  "case_id": "D34-INTEREST-CASE",
+  "components": [
+    {
+      "case_id": "D34-INTEREST-CASE",
+      "extension_service": true,
+      "family": " Root cause diagnosis × Historical period × Genuine refund ",
+      "id": "extension_value_date",
+      "initial_world": {
+        "_event_payloads": {
+          "D34-INTEREST-REFUND-RESULT": {
+            "event_kind": "refund_result"
+          }
+        },
+        "events": {
+          "D34-INTEREST-REFUND-RESULT": {
+            "due_minute": 1,
+            "id": "D34-INTEREST-REFUND-RESULT",
+            "kind": "interest_event",
+            "name": "Outstanding interest refund result",
+            "scope": "LINK16-25",
+            "status": "SCHEDULED",
+            "target_id": "D34-INTEREST-CASE"
+          }
+        },
+        "service_records": {
+          "D34-INTEREST-ACCOUNTANT_BALANCE": {
+            "amount_minor": 4000,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "due_minute": 2,
+            "id": "D34-INTEREST-ACCOUNTANT_BALANCE",
+            "kind": "accounting_fee_obligation",
+            "name": "Harbor Accountancy remaining balance",
+            "paid_minor": 0,
+            "payer_ref": "OPERATING",
+            "payments": [],
+            "recipient_ref": "ACCOUNTANT_BANK",
+            "reference": "ACCOUNTANT_BALANCE",
+            "scope": "LINK16-25"
+          },
+          "D34-INTEREST-ACCOUNTANT_BANK": {
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "id": "D34-INTEREST-ACCOUNTANT_BANK",
+            "kind": "interest_recipient",
+            "name": "Harbor Accountancy",
+            "reference": "ACCOUNTANT_BANK",
+            "scope": "LINK16-25",
+            "status": "VERIFIED"
+          },
+          "D34-INTEREST-ACCOUNTANT_RETAINER": {
+            "amount_minor": 6000,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "due_minute": 0,
+            "id": "D34-INTEREST-ACCOUNTANT_RETAINER",
+            "kind": "accounting_fee_obligation",
+            "name": "Harbor Accountancy initial retainer",
+            "paid_minor": 0,
+            "payer_ref": "OPERATING",
+            "payments": [],
+            "recipient_ref": "ACCOUNTANT_BANK",
+            "reference": "ACCOUNTANT_RETAINER",
+            "scope": "LINK16-25"
+          },
+          "D34-INTEREST-BANK_101": {
+            "bank_series": "NORTH-026",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 26,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-BANK_101",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 101",
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "BANK_101",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 26,
+            "settlement_reference": "S-026",
+            "status": "FINAL",
+            "verified_genuine": true,
+            "version": 1
+          },
+          "D34-INTEREST-BANK_102": {
+            "bank_series": "NORTH-026",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 24,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-BANK_102",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 102",
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "BANK_102",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 26,
+            "settlement_reference": "S-026",
+            "status": "FINAL",
+            "verified_genuine": true,
+            "version": 2
+          },
+          "D34-INTEREST-BANK_103": {
+            "bank_series": "NORTH-026",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 23,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-BANK_103",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 103",
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "BANK_103",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 26,
+            "settlement_reference": "S-026",
+            "status": "PRELIMINARY",
+            "verified_genuine": true,
+            "version": 3
+          },
+          "D34-INTEREST-BANK_204": {
+            "bank_series": "NORTH-029",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 28,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-BANK_204",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 204",
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "BANK_204",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 29,
+            "settlement_reference": "S-029",
+            "status": "FINAL",
+            "verified_genuine": true,
+            "version": 4
+          },
+          "D34-INTEREST-BANK_205": {
+            "bank_series": "NORTH-029",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 24,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-BANK_205",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 205",
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "BANK_205",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 29,
+            "settlement_reference": "S-029",
+            "status": "WITHDRAWN",
+            "verified_genuine": true,
+            "version": 5
+          },
+          "D34-INTEREST-BANK_301": {
+            "bank_series": "SOUTH-025",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 25,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-221",
+            "id": "D34-INTEREST-BANK_301",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 301",
+            "principal_minor": 1800000,
+            "receiving_route_token": "9932",
+            "reference": "BANK_301",
+            "scope": "LINK16-25",
+            "sender_bank": "SOUTH_BANK",
+            "settlement_day": 25,
+            "settlement_reference": "S-025",
+            "status": "FINAL",
+            "verified_genuine": true,
+            "version": 1
+          },
+          "D34-INTEREST-BANK_401": {
+            "bank_series": "EAST-023",
+            "case_id": "D34-INTEREST-CASE",
+            "confirmed_value_day": 24,
+            "currency": "USD",
+            "customer_access": true,
+            "end_to_end_reference": "E2E-441",
+            "id": "D34-INTEREST-BANK_401",
+            "kind": "bank_value_confirmation",
+            "name": "Bank 401",
+            "principal_minor": 1200000,
+            "receiving_route_token": "1156",
+            "reference": "BANK_401",
+            "scope": "LINK16-25",
+            "sender_bank": "EAST_BANK",
+            "settlement_day": 23,
+            "settlement_reference": "S-023",
+            "status": "FINAL",
+            "verified_genuine": true,
+            "version": 1
+          },
+          "D34-INTEREST-CLOSED": {
+            "case_id": "D34-INTEREST-CASE",
+            "current": false,
+            "customer_access": true,
+            "id": "D34-INTEREST-CLOSED",
+            "kind": "accounting_period",
+            "name": "Closed",
+            "period": "JUNE",
+            "reference": "CLOSED",
+            "scope": "LINK16-25",
+            "status": "CLOSED"
+          },
+          "D34-INTEREST-CREDIT_AMBER": {
+            "account_ref": "SALES",
+            "amendment_refs": [],
+            "booking_day": 28,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "current_economic_day": 28,
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-CREDIT_AMBER",
+            "kind": "dated_bank_item",
+            "name": "Credit Amber",
+            "original_value_day": 28,
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "CREDIT_AMBER",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 29,
+            "settlement_reference": "S-029",
+            "status": "POSTED"
+          },
+          "D34-INTEREST-CREDIT_BLUE": {
+            "account_ref": "OPERATING",
+            "amendment_refs": [],
+            "booking_day": 27,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "current_economic_day": 27,
+            "customer_access": true,
+            "end_to_end_reference": "E2E-221",
+            "id": "D34-INTEREST-CREDIT_BLUE",
+            "kind": "dated_bank_item",
+            "name": "Credit Blue",
+            "original_value_day": 27,
+            "principal_minor": 1800000,
+            "receiving_route_token": "9932",
+            "reference": "CREDIT_BLUE",
+            "scope": "LINK16-25",
+            "sender_bank": "SOUTH_BANK",
+            "settlement_day": 25,
+            "settlement_reference": "S-025",
+            "status": "POSTED"
+          },
+          "D34-INTEREST-CREDIT_GREEN": {
+            "account_ref": "SALES",
+            "amendment_refs": [
+              "DATE_OLD"
+            ],
+            "booking_day": 26,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "current_economic_day": 24,
+            "customer_access": true,
+            "end_to_end_reference": "E2E-441",
+            "id": "D34-INTEREST-CREDIT_GREEN",
+            "kind": "dated_bank_item",
+            "name": "Credit Green",
+            "original_value_day": 26,
+            "principal_minor": 1200000,
+            "receiving_route_token": "1156",
+            "reference": "CREDIT_GREEN",
+            "scope": "LINK16-25",
+            "sender_bank": "EAST_BANK",
+            "settlement_day": 23,
+            "settlement_reference": "S-023",
+            "status": "POSTED"
+          },
+          "D34-INTEREST-CREDIT_RED": {
+            "account_ref": "OPERATING",
+            "amendment_refs": [],
+            "booking_day": 28,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "current_economic_day": 28,
+            "customer_access": true,
+            "end_to_end_reference": "E2E-774",
+            "id": "D34-INTEREST-CREDIT_RED",
+            "kind": "dated_bank_item",
+            "name": "Credit Red",
+            "original_value_day": 28,
+            "principal_minor": 3000000,
+            "receiving_route_token": "8841",
+            "reference": "CREDIT_RED",
+            "scope": "LINK16-25",
+            "sender_bank": "NORTH_BANK",
+            "settlement_day": 26,
+            "settlement_reference": "S-026",
+            "status": "POSTED"
+          },
+          "D34-INTEREST-CURRENT": {
+            "case_id": "D34-INTEREST-CASE",
+            "current": true,
+            "customer_access": true,
+            "id": "D34-INTEREST-CURRENT",
+            "kind": "accounting_period",
+            "name": "Current",
+            "period": "JULY",
+            "reference": "CURRENT",
+            "scope": "LINK16-25",
+            "status": "OPEN"
+          },
+          "D34-INTEREST-DATE_OLD": {
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "id": "D34-INTEREST-DATE_OLD",
+            "item_ref": "CREDIT_GREEN",
+            "kind": "economic_date_amendment",
+            "message_ref": "BANK_401",
+            "minute": -1,
+            "name": "Date Old",
+            "reference": "DATE_OLD",
+            "scope": "LINK16-25",
+            "source": "BANK_HISTORY",
+            "status": "POSTED",
+            "value_day": 24
+          },
+          "D34-INTEREST-FUTURE": {
+            "case_id": "D34-INTEREST-CASE",
+            "current": false,
+            "customer_access": true,
+            "id": "D34-INTEREST-FUTURE",
+            "kind": "accounting_period",
+            "name": "Future",
+            "period": "AUGUST",
+            "reference": "FUTURE",
+            "scope": "LINK16-25",
+            "status": "OPEN"
+          },
+          "D34-INTEREST-OPERATING": {
+            "case_id": "D34-INTEREST-CASE",
+            "cash_minor": 6000,
+            "currency": "USD",
+            "customer_access": true,
+            "id": "D34-INTEREST-OPERATING",
+            "kind": "interest_account",
+            "name": "Rivergate operating account",
+            "reference": "OPERATING",
+            "scope": "LINK16-25",
+            "status": "OPEN"
+          },
+          "D34-INTEREST-OPERATING_JUNE": {
+            "account_ref": "OPERATING",
+            "balance_basis": "ORIGINAL_VALUE_DATES",
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "daily_balances": [
+              {
+                "balance_minor": -5000000,
+                "day": 23
+              },
+              {
+                "balance_minor": -5000000,
+                "day": 24
+              },
+              {
+                "balance_minor": -4200000,
+                "day": 25
+              },
+              {
+                "balance_minor": -4200000,
+                "day": 26
+              },
+              {
+                "balance_minor": -1800000,
+                "day": 27
+              },
+              {
+                "balance_minor": -1000000,
+                "day": 28
+              },
+              {
+                "balance_minor": 500000,
+                "day": 29
+              },
+              {
+                "balance_minor": 500000,
+                "day": 30
+              }
+            ],
+            "end_day": 30,
+            "id": "D34-INTEREST-OPERATING_JUNE",
+            "interest_charged_minor": 14532,
+            "kind": "signed_interest_statement",
+            "name": "Operating June",
+            "period": "JUNE",
+            "reference": "OPERATING_JUNE",
+            "scope": "LINK16-25",
+            "start_day": 23,
+            "status": "SIGNED"
+          },
+          "D34-INTEREST-PENDING_A": {
+            "_actual_result": "SETTLED",
+            "account_ref": "OPERATING",
+            "amount_minor": 1866,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "id": "D34-INTEREST-PENDING_A",
+            "kind": "interest_cash_adjustment",
+            "minute": -1,
+            "name": "Pending A",
+            "period_ref": "CURRENT",
+            "possible_results": [
+              "SETTLED",
+              "RETURNED"
+            ],
+            "reference": "PENDING_A",
+            "result_minute": 1,
+            "scope": "LINK16-25",
+            "source": "BANK_HISTORY",
+            "statement_ref": "OPERATING_JUNE",
+            "status": "PROCESSING"
+          },
+          "D34-INTEREST-RATE_A1": {
+            "account_ref": "OPERATING",
+            "basis_days": 360,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 1,
+            "effective_until_day": 27,
+            "excess_annual_bp": 3000,
+            "first_annual_bp": 1800,
+            "id": "D34-INTEREST-RATE_A1",
+            "kind": "debit_interest_rate",
+            "name": "Rate A1",
+            "reference": "RATE_A1",
+            "scope": "LINK16-25",
+            "tier_limit_minor": 2000000
+          },
+          "D34-INTEREST-RATE_A2": {
+            "account_ref": "OPERATING",
+            "basis_days": 360,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 27,
+            "effective_until_day": 31,
+            "excess_annual_bp": 3600,
+            "first_annual_bp": 2400,
+            "id": "D34-INTEREST-RATE_A2",
+            "kind": "debit_interest_rate",
+            "name": "Rate A2",
+            "reference": "RATE_A2",
+            "scope": "LINK16-25",
+            "tier_limit_minor": 2000000
+          },
+          "D34-INTEREST-RATE_B": {
+            "account_ref": "SALES",
+            "basis_days": 360,
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 1,
+            "effective_until_day": 31,
+            "excess_annual_bp": 2400,
+            "first_annual_bp": 1200,
+            "id": "D34-INTEREST-RATE_B",
+            "kind": "debit_interest_rate",
+            "name": "Rate B",
+            "reference": "RATE_B",
+            "scope": "LINK16-25",
+            "tier_limit_minor": 1000000
+          },
+          "D34-INTEREST-REFUND_A": {
+            "account_ref": "OPERATING",
+            "amount_minor": 2500,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "id": "D34-INTEREST-REFUND_A",
+            "kind": "interest_cash_adjustment",
+            "minute": -1,
+            "name": "Refund A",
+            "period_ref": "CURRENT",
+            "possible_results": [],
+            "reference": "REFUND_A",
+            "scope": "LINK16-25",
+            "source": "BANK_HISTORY",
+            "statement_ref": "OPERATING_JUNE",
+            "status": "POSTED"
+          },
+          "D34-INTEREST-REFUND_ADVICE": {
+            "account_ref": "OPERATING",
+            "adjustment_ref": "REFUND_A",
+            "amount_minor": 2500,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "id": "D34-INTEREST-REFUND_ADVICE",
+            "kind": "interest_refund_advice",
+            "name": "Refund Advice",
+            "reference": "REFUND_ADVICE",
+            "scope": "LINK16-25",
+            "status": "ADVICE_ONLY"
+          },
+          "D34-INTEREST-REFUND_B": {
+            "account_ref": "SALES",
+            "amount_minor": 2400,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "id": "D34-INTEREST-REFUND_B",
+            "kind": "interest_cash_adjustment",
+            "minute": -1,
+            "name": "Refund B",
+            "period_ref": "CURRENT",
+            "possible_results": [],
+            "reference": "REFUND_B",
+            "scope": "LINK16-25",
+            "source": "BANK_HISTORY",
+            "statement_ref": "SALES_JUNE",
+            "status": "POSTED"
+          },
+          "D34-INTEREST-ROUTING_1": {
+            "account_ref": "OPERATING",
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 1,
+            "effective_until_day": 27,
+            "id": "D34-INTEREST-ROUTING_1",
+            "kind": "historical_bank_routing",
+            "name": "Routing 1",
+            "reference": "ROUTING_1",
+            "route_token": "8841",
+            "scope": "LINK16-25"
+          },
+          "D34-INTEREST-ROUTING_2": {
+            "account_ref": "SALES",
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 27,
+            "effective_until_day": 99,
+            "id": "D34-INTEREST-ROUTING_2",
+            "kind": "historical_bank_routing",
+            "name": "Routing 2",
+            "reference": "ROUTING_2",
+            "route_token": "8841",
+            "scope": "LINK16-25"
+          },
+          "D34-INTEREST-ROUTING_3": {
+            "account_ref": "OPERATING",
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 1,
+            "effective_until_day": 99,
+            "id": "D34-INTEREST-ROUTING_3",
+            "kind": "historical_bank_routing",
+            "name": "Routing 3",
+            "reference": "ROUTING_3",
+            "route_token": "9932",
+            "scope": "LINK16-25"
+          },
+          "D34-INTEREST-ROUTING_4": {
+            "account_ref": "SALES",
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "effective_from_day": 1,
+            "effective_until_day": 99,
+            "id": "D34-INTEREST-ROUTING_4",
+            "kind": "historical_bank_routing",
+            "name": "Routing 4",
+            "reference": "ROUTING_4",
+            "route_token": "1156",
+            "scope": "LINK16-25"
+          },
+          "D34-INTEREST-SALES": {
+            "case_id": "D34-INTEREST-CASE",
+            "cash_minor": 2200,
+            "currency": "USD",
+            "customer_access": true,
+            "id": "D34-INTEREST-SALES",
+            "kind": "interest_account",
+            "name": "Rivergate sales account",
+            "reference": "SALES",
+            "scope": "LINK16-25",
+            "status": "OPEN"
+          },
+          "D34-INTEREST-SALES_JUNE": {
+            "account_ref": "SALES",
+            "balance_basis": "ORIGINAL_VALUE_DATES",
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "daily_balances": [
+              {
+                "balance_minor": -2500000,
+                "day": 23
+              },
+              {
+                "balance_minor": -2500000,
+                "day": 24
+              },
+              {
+                "balance_minor": -2500000,
+                "day": 25
+              },
+              {
+                "balance_minor": -500000,
+                "day": 26
+              },
+              {
+                "balance_minor": -500000,
+                "day": 27
+              },
+              {
+                "balance_minor": 500000,
+                "day": 28
+              },
+              {
+                "balance_minor": 500000,
+                "day": 29
+              },
+              {
+                "balance_minor": 500000,
+                "day": 30
+              }
+            ],
+            "end_day": 30,
+            "id": "D34-INTEREST-SALES_JUNE",
+            "interest_charged_minor": 4331,
+            "kind": "signed_interest_statement",
+            "name": "Sales June",
+            "period": "JUNE",
+            "reference": "SALES_JUNE",
+            "scope": "LINK16-25",
+            "start_day": 23,
+            "status": "SIGNED"
+          },
+          "D34-INTEREST-SIMILAR_BANK": {
+            "case_id": "D34-INTEREST-CASE",
+            "currency": "USD",
+            "customer_access": true,
+            "id": "D34-INTEREST-SIMILAR_BANK",
+            "kind": "interest_recipient",
+            "name": "Harbor Business Consulting",
+            "reference": "SIMILAR_BANK",
+            "scope": "LINK16-25",
+            "status": "VERIFIED"
+          },
+          "D34-INTEREST-VOID_A": {
+            "account_ref": "OPERATING",
+            "amount_minor": 900,
+            "case_id": "D34-INTEREST-CASE",
+            "customer_access": true,
+            "id": "D34-INTEREST-VOID_A",
+            "kind": "interest_cash_adjustment",
+            "minute": -1,
+            "name": "Void A",
+            "period_ref": "CURRENT",
+            "possible_results": [],
+            "reference": "VOID_A",
+            "scope": "LINK16-25",
+            "source": "BANK_HISTORY",
+            "statement_ref": "OPERATING_JUNE",
+            "status": "VOID"
+          }
+        }
+      },
+      "kind": "dated_interest",
+      "reserves_minor": {
+        "OPERATING": 2000,
+        "SALES": 1000
+      },
+      "scope": "LINK16-25",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY50-CASE",
+      "extension_service": true,
+      "family": " Electronic check stop payment, Endorsement rights and substitute payment ",
+      "id": "payment_cheque_stop_and_replacement",
+      "initial_world": {
+        "_event_payloads": {
+          "PAY50-EVENT-1": {
+            "contract_scope": "LINK16-25",
+            "event_kind": "cheque_presentment"
+          },
+          "PAY50-EVENT-2": {
+            "contract_scope": "LINK16-25",
+            "event_kind": "cheque_return"
+          },
+          "PAY50-EVENT-3": {
+            "contract_scope": "LINK16-25",
+            "event_kind": "deadline"
+          }
+        },
+        "events": {
+          "PAY50-EVENT-1": {
+            "due_minute": 1,
+            "id": "PAY50-EVENT-1",
+            "kind": "payment_cheque_stop_and_replacement_event",
+            "name": "Stop decision, endorsements and partial clearing",
+            "scope": "LINK16-25",
+            "status": "SCHEDULED",
+            "target_id": "PAY50-CASE"
+          },
+          "PAY50-EVENT-2": {
+            "due_minute": 2,
+            "id": "PAY50-EVENT-2",
+            "kind": "payment_cheque_stop_and_replacement_event",
+            "name": "Uncleared cheque balance returned",
+            "scope": "LINK16-25",
+            "status": "SCHEDULED",
+            "target_id": "PAY50-CASE"
+          },
+          "PAY50-EVENT-3": {
+            "due_minute": 3,
+            "id": "PAY50-EVENT-3",
+            "kind": "payment_cheque_stop_and_replacement_event",
+            "name": "Payment reconciliation checkpoint",
+            "scope": "LINK16-25",
+            "status": "SCHEDULED",
+            "target_id": "PAY50-CASE"
+          }
+        },
+        "service_records": {
+          "PAY50-A": {
+            "case_id": "PAY50-CASE",
+            "current_holder": "FACTOR",
+            "customer_access": true,
+            "due_minute": 2,
+            "face_minor": 60000,
+            "historical_paid_minor": 10000,
+            "id": "PAY50-A",
+            "kind": "cheque_invoice",
+            "name": "Equipment supplier invoice assigned to Harbor Finance",
+            "original_payee": "SUPPLIER",
+            "paid_minor": 10000,
+            "payments": [],
+            "reference": "A",
+            "scope": "LINK16-25"
+          },
+          "PAY50-B": {
+            "case_id": "PAY50-CASE",
+            "current_holder": "PACKAGER",
+            "customer_access": true,
+            "due_minute": 2,
+            "face_minor": 30000,
+            "historical_paid_minor": 0,
+            "id": "PAY50-B",
+            "kind": "cheque_invoice",
+            "name": "Packaging supplier invoice",
+            "original_payee": "PACKAGER",
+            "paid_minor": 0,
+            "payments": [],
+            "reference": "B",
+            "scope": "LINK16-25"
+          },
+          "PAY50-CHEQUE-A": {
+            "_stop_result": "STOPPED",
+            "amount_minor": 50000,
+            "case_id": "PAY50-CASE",
+            "current_holder": "FACTOR",
+            "customer_access": true,
+            "held_minor": 50000,
+            "id": "PAY50-CHEQUE-A",
+            "invoice_ref": "A",
+            "kind": "electronic_cheque",
+            "name": "Equipment cheque endorsed to Harbor Finance",
+            "possible_stop_results": [
+              "STOPPED",
+              "PRESENTED"
+            ],
+            "reference": "CHEQUE-A",
+            "scope": "LINK16-25",
+            "status": "ISSUED",
+            "stop_fee_minor": 1000,
+            "stop_requested": false,
+            "stop_result": null
+          },
+          "PAY50-CHEQUE-B": {
+            "_cleared_minor": 20000,
+            "amount_minor": 30000,
+            "case_id": "PAY50-CASE",
+            "cleared_minor": 0,
+            "current_holder": "PACKAGER",
+            "customer_access": true,
+            "held_minor": 30000,
+            "id": "PAY50-CHEQUE-B",
+            "invoice_ref": "B",
+            "kind": "electronic_cheque",
+            "name": "Packaging cheque with partial clearing",
+            "possible_cleared_minor": [
+              20000,
+              30000
+            ],
+            "reference": "CHEQUE-B",
+            "scope": "LINK16-25",
+            "status": "PROCESSING"
+          },
+          "PAY50-SERVICE": {
+            "amount_minor": 20000,
+            "case_id": "PAY50-CASE",
+            "customer_access": true,
+            "due_minute": 0,
+            "id": "PAY50-SERVICE",
+            "kind": "bill",
+            "name": "Urgent equipment inspection fee",
+            "paid_minor": 0,
+            "reference": "SERVICE",
+            "scope": "LINK16-25"
+          },
+          "PAY50-TERMS": {
+            "case_id": "PAY50-CASE",
+            "customer_access": true,
+            "final_cash_floor_minor": 5000,
+            "id": "PAY50-TERMS",
+            "kind": "cheque_terms",
+            "name": "Cheque and replacement payment terms",
+            "reference": "TERMS",
+            "scope": "LINK16-25"
+          }
+        }
+      },
+      "kind": "payment_cheque_stop_and_replacement",
+      "number": 30,
+      "payment_service": true,
+      "scope": "LINK16-25",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "extension_service": true,
+  "family": " Root cause diagnosis × Historical period × Genuine refund × Rolling obligation replanning ",
+  "id": "case_018",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. Explain your own accountant-payment requirements, reserve amounts and authority when asked. Do not match bank correspondence, calculate interest, determine an effective date, diagnose a duplicate refund or recommend a journal amount. Use ordinary account names in conversation; internal IDs only come from a concrete portal request or receipt.\nTreat the related matter as a second genuine customer goal. Answer only from your own goals, preferences, authority and portal results. Do not provide internal IDs, bank-only status, the link rule, a sequence, an allocation, fee arithmetic or a diagnostic conclusion. If support asks for a bank fact, say you do not know and ask them to check the records. Do not remind support what remains to be done.\n\nOpening: Our accountant says the interest on our June statements still does not look right. Some of it was supposed to be refunded. Could you sort that out and pay their bill? I also need help with a related matter: our contractor says one of our electronic cheques went to the wrong place. There is another cheque due soon as well. Please make sure the right people are paid without paying either bill twice.\n\nYour own facts and preferences: I handle finance for Rivergate. Please put both our operating and sales interest accounts right and pay Harbor Accountancy from the operating account. Their USD 60 retainer is due now and the remaining USD 40 is due at the recorded later deadline. Keep at least USD 20 available in operating and USD 10 in sales throughout. I cannot add money or borrow. We already signed the June accounts; the accountant needs the correction recorded in our current accounting period. The bank previously told me one payment date had been corrected, but I do not know whether all the related money actually arrived. I authorize correct interest credits and recovery of an actual excess interest refund. I do not know which bank reference or interest calculation is right.\n\nFor the related matter: Settle both supplier invoices with the people currently entitled to the money, and pay the urgent inspection fee on time. I want the equipment cheque stopped and replaced if the bank can still stop it; if it has already been presented, count its actual payment and do not pay it again. Keep at least USD 50 available at completion. I have no extra funding and do not know the bank’s actual stop or clearing result.\n\nPlease treat both as one operating plan and recalculate the remaining obligation from actual results as they arrive.",
+  "kind": "dated_interest",
+  "link_contract_id": "LINK16-25-LINK",
+  "link_operator": {
+    "category": "replanning",
+    "id": "rolling_obligation_replan",
+    "relation": "secondary_start_before_primary_event_before_finish"
+  },
+  "number": 18,
+  "opening": "Our accountant says the interest on our June statements still does not look right. Some of it was supposed to be refunded. Could you sort that out and pay their bill? I also need help with a related matter: our contractor says one of our electronic cheques went to the wrong place. There is another cheque due soon as well. Please make sure the right people are paid without paying either bill twice.",
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-dated_interest",
+    "PAYMENT-common",
+    "PAYMENT-payment_cheque_stop_and_replacement",
+    "LINK-rolling_obligation_replan",
+    "DESK-protocol"
+  ],
+  "reserves_minor": {
+    "OPERATING": 2000,
+    "SALES": 1000
+  },
+  "scope": "LINK16-25",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

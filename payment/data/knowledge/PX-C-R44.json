@@ -1,0 +1,13 @@
+{
+  "id": "PX-C-R44",
+  "title": "Carrier return refunds and replenishment proceeds",
+  "topic": "carrier return refunds and replenishment proceeds",
+  "applicability": "Only current-customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "A delivered buyer order can later have an accepted merchandise return. The independent return notice states its refund amount and original buyer order. Carrier net settlement pays that buyer as an agent and offsets the refund against the same remittance; The public carrier net_offset_minimum_minor applies to its aggregated offset service; smaller refunds use direct payment. cash_refund leaves the merchant to pay the buyer from collected proceeds. The bank permits a direct refund to any delivered buyer up to the amount previously collected, so original return ownership still matters. A carrier offset and a direct refund are separate economic disbursements and must not both repay the same right. Replenishment invoices use the same proceeds; carrier shortages remain independently owed regardless of the buyer return. Prepare a replenishment payment from this account only after its actually posted available cash covers the proposed amount. A return notice, expected carrier remittance, or a pending shortage claim is not available cash.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Bank cash, offset, authority and timing terms."
+    }
+  ]
+}

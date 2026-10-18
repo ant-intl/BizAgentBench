@@ -1,0 +1,19 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "The service library covers three product families. Select the terms for the product attached to the account.\n\n| Product family | Account and operation scope |\n|---|---|\n| Marketplace Portal | Marketplace and independent-store collection, store authorization, portal withdrawals, account administration and support-assisted cases. Articles beginning `SOP-` describe these services. |\n| Collection Profile | Accounts carrying a `CP-` profile identifier. The corresponding product sheet specifies the account's region, settlement currency, tariff and capacity. |\n| CORE settlement service | The settlement, evidence, approval and treasury operations described in `KB-` and `TOOL-` articles. |\n\nPortal tariffs and service times do not override the terms of a Collection Profile or CORE operation. Opening a collection account is also different from registering a customer account: a virtual collection account supplies bank details for receiving supported funds; it is not a physical payment card.\n\nPortal collection products distinguish e-commerce proceeds, B2B trade receipts and developer income. A developer account serves application and advertising-platform receipts; an e-commerce account serves supported physical-goods store proceeds. An account-registration region and a bank-account location are separate fields.\n\nUse the account record and its product identifier when selecting the applicable terms. For a Portal process, the customer completes the stated portal steps or submits a support request. The CORE function directory describes its own available operations; a portal button is not a CORE function name.",
+  "id": "SOP-service-directory",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "The service library covers three product families. Select the terms for the product attached to the account.",
+  "source_ids": [
+    "B07",
+    "B13",
+    "B23",
+    "C02",
+    "C04",
+    "C07"
+  ],
+  "title": "Collection services and account types",
+  "topic": "protocol"
+}

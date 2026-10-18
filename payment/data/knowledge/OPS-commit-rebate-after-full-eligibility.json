@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Count only rebate-qualifying invoices that have actually settled after execution under COMMIT. At 3,000,000 USD cents of qualifying settled principal, an approved rebate request credits 3,000 cents to the fee wallet.\n\nPeriod remittance volume can include other tariffs and nonqualifying invoices; the rebate count does not. Activation charges and per-invoice charges remain posted even when the separate rebate is later claimed.",
+  "id": "OPS-commit-rebate-after-full-eligibility",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "Count only rebate-qualifying invoices that have actually settled after execution under COMMIT. At 3,000,000 USD cents of qualifying settled principal, an approved rebate request credits 3,000 cents to the fee wallet.",
+  "title": "Checking COMMIT rebate eligibility",
+  "topic": "rebates"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "IFACE-NETWORK-CAPTURE",
+  "title": "Network token capture service interfaces",
+  "topic": "network token old generation capture present void",
+  "applicability": "PSP product accounts; Unpresented captures associated with old network-token generations.",
+  "content": "Unpresented captures associated with old network-token generations.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `present_essential_capture`\n\nPresent or void an unpresented old-generation essential-service capture. Presentation starts a bank notice; void removes this capture but does not cancel the current merchant invoice.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `capture_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `disposition` | string: `present`, `void` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "present_essential_capture"
+  ],
+  "business_area": "card_network",
+  "service": "capture_lifecycle",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "top-level-replace-remove-v1",
+  "base": "base_world.json",
+  "replace": {
+    "_customer_id": "B-CUSTOMER-36",
+    "xp_b_fx_requirements": {
+      "EUR-SUPPLIER": {
+        "id": "EUR-SUPPLIER",
+        "customer_id": "B-CUSTOMER-36",
+        "account_id": "B-36-CASH",
+        "currency": "EUR",
+        "name": "Orchard machinery supplier",
+        "need_minor": 800,
+        "acquired_minor": 0,
+        "rate_num": 1,
+        "rate_den": 1,
+        "fee_minor": 10,
+        "paid": false,
+        "remaining_minor": 0,
+        "source_currency": "USD"
+      }
+    }
+  },
+  "remove": []
+}

@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_netting_instruction",
+  "content": "Each current invoice names debtor, creditor and amount. `novate` takes {invoice_ids: [record IDs]}. It registers one novation, settling the selected internal invoices and calculating each participant's net amount as incoming claims minus outgoing debts. All listed group participants have current consent. A disputed but bank-valid invoice can be included by an authorized operator; whether it belongs in the agreed business scope is the customer's responsibility.\n\n`fund` takes {amount_minor}; it moves wallet cash into clearing after novation. `distribute` takes {record_id, amount_minor}; it pays a participant from clearing. Bank distributions cannot exceed clearing cash but do not enforce the participant's correct net entitlement. Partial distributions are allowed. Novation and completed distributions are irreversible here.\n\nAn outside creditor is not discharged by an internal novation. The separately recorded obligation names the subsidiary that must pay it from that subsidiary's available cash. A balanced clearing total alone does not establish correct per-entity settlement.\n\nOperations are available through `propose_netting_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_netting_instruction`\n\nMultilateral novation and settlement. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-netting",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Intercompany novation and clearing",
+  "topic": "netting",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_netting_instruction"
+  ]
+}

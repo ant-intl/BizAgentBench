@@ -1,0 +1,27 @@
+{
+  "applicability": "Operations Desk product contract edition 5.3, synthetic internal institution terms.",
+  "capability": null,
+  "content": "Desk FX routes publish source/target currencies, source minimum, fee currency, flat fee, expiry interval, settlement delay and an ordered list of rational exchange segments. Each segment multiplies its input by numerator/denominator then rounds DOWN to an integer minor unit before the next segment. A source quote is not a guaranteed-net instruction. Quoting does not reserve funds. Every currency in a wallet is separate.\n\ninspect_multicurrency_quote binds the route version, source amount, each rounded segment and the route fee. propose_fx_execution requires sufficient source and fee currency balances, a current version and an unexpired quote; it debits principal plus fees immediately. If fees use the same source currency, both debits accumulate. Target proceeds are credited only at the actual settlement event. A published PENDING route revision may change its terms at its stated event time; inspect the actual revision before assuming a new quote will have old terms. Existing valid executed trades settle at their own quoted amounts.\n\npropose_currency_payment delivers net_minor for the specified obligation and charges its published delivery_fee_minor in that obligation's currency. The account wallet must fund both. The system allows partial and successive deliveries; satisfying one invoice does not reserve source funds for another. Customer requirements may include multiple net amounts, a maximum expenditure and protected residual currency balances. A legal FX route or individually low fee does not establish overall feasibility. All routes with sufficient funds, valid terms and the agreed final amounts are acceptable; no particular sequence is required.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `inspect_multicurrency_quote`\n\nQuote a specified source amount on a published currency path, including segment rounding and fee currencies. A quote does not reserve funds.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `route_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `source_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n\n### `propose_currency_payment`\n\nDeliver an explicit net amount for a currency obligation, deducting the published delivery fee from the same currency wallet.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `obligation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `account_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `net_minor` | integer | yes | Use integer minor currency units derived from the current obligation and the published business rules. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `propose_fx_execution`\n\nExecute an unexpired exact source-amount FX quote. All source and fee currencies are debited, and the actual target amount is credited after settlement.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `quote_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "DESK-fx",
+  "provenance_note": "SOP IDs supply business mechanisms, not the numeric parameters or complete synthetic rule.",
+  "rule_ids": [
+    "DESK-fx"
+  ],
+  "source_ids": [
+    "B03",
+    "B13",
+    "A16"
+  ],
+  "source_type": "synthetic_extension_from_sop_mechanisms",
+  "title": "Exact-source FX paths and net-delivery obligations",
+  "topic": "fx",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "inspect_multicurrency_quote",
+    "propose_currency_payment",
+    "propose_fx_execution"
+  ]
+}

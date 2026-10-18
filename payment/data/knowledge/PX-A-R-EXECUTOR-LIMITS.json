@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-R-EXECUTOR-LIMITS",
+  "title": "Successor finance desk limits and original obligations",
+  "topic": "Successor finance desk limits and original obligations",
+  "applicability": "Scoped invoice and payroll execution during a finance workstation handover.",
+  "content": "A handover acknowledgement publishes each execution_desks approved_limit_minor; requested capacity is not usable capacity. The same desk limit is shared by allocations and consumed principal across all its subject_ids. a_allocate_executor_capacity(contract_id,executor_id,subject_id,amount_minor) reserves part of that limit and charges a desk access fee only on its first reservation. a_release_executor_capacity(allocation_id) restores an unused reservation, but consumed principal and access fees remain. A treasury desk may cover the supplier invoice while not having payroll scope. a_execute_transferred_payment requires real reserved invoice capacity for a new debit; an idempotent acknowledgement of a known old bank request does not consume new desk capacity.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_allocate_executor_capacity`\n\nReserve approved successor capacity for one original obligation. Reservations and consumed amounts share each executor limit. The first reservation on a charged desk incurs its published access fee; releasing unused capacity does not refund access.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original finance handover portfolio. |\n| `executor_id` | string | yes | Approved execution desk. |\n| `subject_id` | string | yes | Original invoice or payroll obligation. |\n| `amount_minor` | integer | yes | Amount of capacity in USD minor units. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_execute_transferred_payment`\n\nSubmit the original invoice under a listed adopted executor. The bank retains account-key idempotency; an unrelated fresh key remains a separate payment even if old execution settled.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `intent_id` | string | yes | Original intent ID. |\n| `executor_id` | string | yes | Adopted executor ID. |\n| `payment_key` | string | yes | Original bank key or another proposed economic key. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_release_executor_capacity`\n\nRelease an unconsumed successor allocation. Paid principal and desk access fees are not reversed.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `allocation_id` | string | yes | Unused executor allocation ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "New portfolio mandates and desk capacity; preserves source bank identity, succession and original execution semantics."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_allocate_executor_capacity",
+    "a_execute_transferred_payment",
+    "a_release_executor_capacity"
+  ]
+}

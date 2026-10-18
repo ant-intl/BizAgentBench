@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "When a retention covenant is RELEASED, it no longer imposes its earlier minimum. Compatible unrestricted cash can then be moved through an approved balance transfer without creating a receivable advance or advance fee. The fee wallets remain separate.\n\nBefore the release event, a transfer below an ACTIVE minimum causes a recorded breach and charge even if the transfer itself succeeds. Replenishing the balance later does not reverse that breach.",
+  "id": "OPS-released-retention-cash",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "When a retention covenant is RELEASED, it no longer imposes its earlier minimum. Compatible unrestricted cash can then be moved through an approved balance transfer without creating a receivable advance or advance fee. The fee wallets remain separate.",
+  "title": "Cash after a retention covenant expires",
+  "topic": "liquidity"
+}

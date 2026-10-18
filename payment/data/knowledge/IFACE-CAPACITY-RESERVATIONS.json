@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-CAPACITY-RESERVATIONS",
+  "title": "Shared processing capacity service interfaces",
+  "topic": "processing capacity reservation and release",
+  "applicability": "PSP product accounts; Capacity reservations and releases shared by the documented product services.",
+  "content": "Capacity reservations and releases shared by the documented product services.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `propose_capacity_release`\n\nRelease an unused operational coverage reservation. Consumed coverage cannot be released through this tool.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `propose_capacity_reservation`\n\nReserve a stated quantity of operational coverage from one pool for one obligation. Actual pool debit follows its published coverage ratio. A reservation is not completion.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `pool_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `obligation_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `quantity` | integer | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "propose_capacity_release",
+    "propose_capacity_reservation"
+  ],
+  "business_area": "processing_capacity",
+  "service": "reservation",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

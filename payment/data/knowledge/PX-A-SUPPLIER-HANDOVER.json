@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-SUPPLIER-HANDOVER",
+  "title": "Supplier handover services and installation inspection",
+  "topic": "Composite supplier contracts",
+  "applicability": "Contracts requiring hardware handover before licence activation",
+  "content": "xp_a_settlement_terms links the original composite contract to its performance calendar. Hardware, software licence and installation retain distinct purposes and payment obligations. A customer document may support the contract but cannot replace the supplier's actual delivery and inspection events. Hardware must be paid before a_arrange_supplier_handover(contract_id,service_id) purchases a service from xp_a_handover_services. The service charges its fixed fee immediately and creates physical handover after delay_minutes. Licence payment becomes accepted after handover. Inspection follows after inspection_delay_minutes and publishes installation_route_ids. Installation payment requires both actual inspection and the normal delivery evidence; its route must be among those accepted by that inspection. The published possible_installation_routes states the possible bank routes before inspection; which one applies is disclosed at inspection.\nA previously reviewed declaration includes only the components accepted when reviewed. Later delivery does not silently add an omitted component. A new supplemental declaration may be reviewed. No service booking changes the hardware, licence or installation deadlines in component_deadlines. Actual component payment times are compared with those deadlines. The customer fee allowance includes supplier handover and all route execution fees; each executed supplemental declaration has its own route fee. Shared route principal consumption follows the separate clearing-capacity contract.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_arrange_supplier_handover`\n\nPurchase a supplier handover service for paid hardware. Actual delivery, followed by inspection, publishes the installation acceptance. Handover fees are charged at booking; a customer-uploaded delivery document alone does not establish this supplier event.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Composite contract ID. |\n| `service_id` | string | yes | Supplier handover service ID. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": [
+    {
+      "kind": "synthetic_extension",
+      "scope": "Contracts requiring hardware handover before licence activation"
+    }
+  ],
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_arrange_supplier_handover"
+  ]
+}

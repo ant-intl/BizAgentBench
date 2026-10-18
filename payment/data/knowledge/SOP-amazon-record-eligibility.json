@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Amazon authorization normally processes within about 24 hours and retrieves eligible records from the preceding 1–180 days. Orders must be shipped or paid. `Non-Amazon` sales-channel orders do not contribute through Amazon's quota route.\n\nIf one collection account receives from several stores, each relevant store needs the appropriate authorization. A successful connection for one store does not cover every store paying that account.\n\nFor shipped or paid orders older than 180 days but within one year, supply the order evidence to support to request a manual-upload entry. Records outside the permitted date or status requirements do not qualify.\n\n## Special programs\n\n- Buy With Prime is an independent-site activity. Use its own sales records; the site cannot be authorized as an Amazon store. A request to enable uploading should include the Amazon Pay page, independent-site URL, relevant BWP product URL and sales records.\n- Amazon Vendor records use manual submission rather than this seller authorization route.\n- Amazon Associates, Kindle/KDP and virtual-goods proceeds are outside this e-commerce collection service.\n\nFor BWP bank binding, use Amazon Pay rather than the Seller Central deposit page. The binding details are described in `SOP-amazon-north-america`.",
+  "id": "SOP-amazon-record-eligibility",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Amazon authorization normally processes within about 24 hours and retrieves eligible records from the preceding 1–180 days. Orders must be shipped or paid. `Non-Amazon` sales-channel orders do not contribute through Amazon's quota route.",
+  "source_ids": [
+    "A13",
+    "B01"
+  ],
+  "title": "Amazon quota shortfalls and special programs",
+  "topic": "quota"
+}

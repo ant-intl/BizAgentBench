@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Use this specification for the generic CedarPay Excel template. Platform-specific exports have their own format and should be uploaded through their customized entry.\n\n| Required column | Content requirement |\n|---|---|\n| `Order ID` | Nonempty; at most 64 characters. |\n| `Paid Date` | Nonempty; use the date format for the relevant platform. |\n| `Order Total` | Numeric, with at most two decimal places. |\n| `Currency Code` | Three uppercase letters. |\n| `Product Title` | Nonempty; at most 512 characters. |\n| `Product Quantity` | An integer. |\n| `Buyer Name/Buyer ID` | Nonempty; at most 128 characters. |\n| `Shipping Address` | Nonempty; at most 512 characters. |\n\nA missing required column invalidates the file for quota processing. Passing the file-format checks does not establish that every order is eligible under the platform's date, status or source rules.\n\nFor a processing error, retain the original file and the generated exception file. Submit both with a screenshot of the error that includes the computer's date and time. Use the upload page's guide for platform-specific export and date-format instructions. If no download guide is available, obtain the export instructions from the platform.\n\nTo expose the generic upload entry, complete the seller ID, platform and store-link fields under Complete store information, save them and return to Upload sales records.",
+  "id": "SOP-sales-template",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Use this specification for the generic CedarPay Excel template. Platform-specific exports have their own format and should be uploaded through their customized entry.",
+  "source_ids": [
+    "B18"
+  ],
+  "title": "Generic sales-record file specification",
+  "topic": "sales"
+}

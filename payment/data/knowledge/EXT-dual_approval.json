@@ -1,0 +1,17 @@
+{
+  "applicability": "Only dual_approval service cases; synthetic contract edition 8.0.",
+  "content": "# Independent signatories\n\nScope: the dual_approval service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nIndependent approval is counted by natural person, not login. A desktop and mobile alias of the same person provide one vote. A signature must be actually received, not withdrawn, at the current payment version, and within that person's payment scope. Old-version and out-of-scope signatures do not count. Institution correspondence records what other signers actually did; a customer cannot sign on another person's behalf.\n\n`register_signature` takes {record_id} and imports a received, non-withdrawn signature from the institution. `pay` takes {amount_minor, beneficiary: \"SUPPLIER\" or \"OTHER-SUPPLIER\"}. Execution requires at least two distinct currently authorized natural persons. Both named beneficiaries are verified payees; the customer's obligation determines which is owed and how much. A new customer request approval remains necessary and does not substitute for institutional signatures.\n\nService interface: `propose_dual_approval_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_dual_approval_instruction`\n\nIndependent signatories. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-dual_approval",
+  "scope": "dual_approval",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Independent signatories",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_dual_approval_instruction"
+  ]
+}

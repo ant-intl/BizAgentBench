@@ -1,0 +1,12 @@
+{
+  "applicability": "CORE or Marketplace Portal accounts with the corresponding optional product records, service profile 4.1.0. Existing base product rules apply alongside these additional terms.",
+  "content": "CASH security is a refundable fee-wallet deposit used for administrative assurance. It does not substitute for a required principal balance. An account retaining the required balance may use its relationship tariff without MARGIN cover; the account-specific continuation test still applies.\n\nDetailed local effects and operation names: `RST-fee-guarantee`.",
+  "id": "RST-fee-guarantee-context-1",
+  "provenance": {
+    "classification": "functional_scope_distractor",
+    "source": "Primary-author synthetic extension of the frozen 4.0.2 business mechanisms; no claim of a verbatim source SOP rule."
+  },
+  "quoted_text": "CASH security is a refundable fee-wallet deposit used for administrative assurance. It does not substitute for a required principal balance. An account retaining the required balance may use its relationship tariff without MARGIN cover; the account-specific continuation test still applies.",
+  "title": "Cash security for shared tariffs",
+  "topic": "fee-guarantee"
+}

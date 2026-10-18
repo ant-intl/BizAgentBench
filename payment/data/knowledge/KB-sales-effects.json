@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "Sales records create justified conversion capacity but no cash. Import receipts identify the created quotas; conversion quotes refer to quota IDs and allocated amounts.\n\nExisting refunds may affect older quotas independently. Manual import and platform authorization are product-specific acquisition methods: a marketplace or entity region may require one rather than the other.\n\nCORE sales import is the manual submission path; the separate Collection Profile articles state which profiles use manual records, authorization or no conversion capacity. Do not apply an EXPORT policy to funds from an IMPORT source.",
+  "id": "KB-sales-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "Sales records create justified conversion capacity but no cash. Import receipts identify the created quotas; conversion quotes refer to quota IDs and allocated amounts.",
+  "title": "Sales-derived quota and product acquisition routes",
+  "topic": "sales"
+}

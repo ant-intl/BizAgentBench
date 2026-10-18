@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "propose_operator_revocation marks the selected active operator REVOKED and increments its epoch. All earlier approvals from that operator then fail execution checks.\n\nPreviously executed payments do not disappear. Revocation, role activation, portal switching and payment settlement are separate observable events.\n\nUnused requests can be inspected and cancelled separately.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_operator_revocation`\n\nRevoke an operator and increment its authorization epoch. Earlier approvals from it become invalid.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `operator_id` | string | yes | The operator identity. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-permissions-effects",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "propose_operator_revocation marks the selected active operator REVOKED and increments its epoch. All earlier approvals from that operator then fail execution checks.",
+  "title": "Revoking an operator and existing payments",
+  "topic": "permissions",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_operator_revocation"
+  ]
+}

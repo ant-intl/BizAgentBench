@@ -1,0 +1,18 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A HELD authorization reduces availability without reducing posted principal. When the merchant captures a lower amount, that captured amount is deducted and the remaining hold is released.\n\nA void request does not release a hold until acknowledged. propose_authorization_void asks the merchant and its support status determines whether the void can complete.\n\nSimilar merchant names do not establish duplicate authorizations: inspect the merchant_reference and original order. Settled captures and unacknowledged voids must not both be treated as available cash.\n\nEach obligation explicitly lists accepted_payment_methods. BANK, AUTHORIZED_BANK, PLAN_BANK and CARD are distinct recipient instructions.\n\nA bank-only invoice cannot be paid as a card merchant purchase; an operator-authorized or plan-priced obligation must use its declared method.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_authorization_void`\n\nAsk the merchant to void one authorization. Merchant acknowledgement determines whether occupancy is released.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `authorization_id` | string | yes | The existing card authorization or capture. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "KB-cards-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A HELD authorization reduces availability without reducing posted principal. When the merchant captures a lower amount, that captured amount is deducted and the remaining hold is released.",
+  "title": "Card holds, capture and accepted payment methods",
+  "topic": "cards",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_authorization_void"
+  ]
+}

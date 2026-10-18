@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A credited incoming identifies its current posting, but a similar payer name and identical amount do not establish intended ownership. Independent bank advice is obtained with propose_bank_trace and later inspected from traces.\n\nAdvice identifies the bank reference, exact amount and intended account. An operator may manually reverse and reassign credited funds.\n\nThe correction interface checks open states, occupancy and available cash; it does not decide which of two legitimate merchant accounts is the correct commercial owner. That decision must follow the bank evidence.",
+  "id": "KB-corrections-scope",
+  "provenance": {
+    "classification": "existing_synthetic_execution_contract"
+  },
+  "quoted_text": "A credited incoming identifies its current posting, but a similar payer name and identical amount do not establish intended ownership. Independent bank advice is obtained with propose_bank_trace and later inspected from traces.",
+  "title": "Evidence supporting a credit correction",
+  "topic": "corrections"
+}

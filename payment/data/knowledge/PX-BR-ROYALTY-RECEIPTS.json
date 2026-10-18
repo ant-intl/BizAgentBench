@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-ROYALTY-RECEIPTS",
+  "title": "Beneficiary receipt timing and effective routing conditions",
+  "topic": "royalty beneficiary receipt deadline residency channel eligibility",
+  "applicability": "Royalty beneficiary delivery mandates",
+  "content": "Each delivery mandate records a beneficiary receipt deadline, independently of the date a bank instruction was submitted. Fixed-arrival channels use arrival_minute; immediate channels use submission minute plus delay. The residency review also publishes actual bank-enabled routes for affected beneficiaries. Before the result, provisional route metadata is not a final authority to receive. A route with requires_final_conditions cannot be submitted as confirmed eligibility before publication. Other channels may accept an early bank instruction; its actual receipt remains subject to the beneficiary conditions then in force. The bank may transmit a technically valid route which the beneficiary cannot receive; the resulting delivery record reports received_minor zero and a reason. An unreceived transmission remains in_transit_minor on its booking until the contract’s rejected_return_delay_minutes elapses after rejection. The return event restores principal to the original converted pool and reduces the allocation’s submitted paid balance; delivery fees and consumed instruction slots are not restored. A transfer actually received is irreversible. Such transmission does not prove the original beneficial entitlement was discharged. Payment delivery and tax remittance use the same original converted proceeds, so a service fee cannot be deducted from net beneficiary rights. The final tax certificate does not replace receipt evidence.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Beneficiary-specific channel eligibility and final receipt timing."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "PX-BR-INVOICE-ADJUSTMENTS",
+  "title": "Line-linked credit notes for delivered fee invoices",
+  "topic": "fee invoice initial deadline period credit note refund correction",
+  "applicability": "Enrolled fee-invoice schedules with line-linked adjustments",
+  "content": "This enrolled invoice service supports line-linked credit notes in addition to the general void-and-reissue route. Buyer format confirmation states whether credit notes are accepted. A credit note remains attached to the parent and does not release fee occupancy. For each line, effective evidence equals its immutable issued value less accepted credit notes, and must equal the actual current net fee. Notes cannot transfer a refund between fee lines, companies or periods. Voiding a parent also voids its attached notes; reissue then uses the current net ledger. A transport-accepted credit note is not proof of refund entitlement.",
+  "provenance": [
+    {
+      "kind": "synthetic",
+      "scope": "Fictional phased evidence and credit-note terms; not a tax-law claim."
+    }
+  ]
+}

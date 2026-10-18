@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-CURRENCY-RELEASE-BRIDGE",
+  "title": "Currency release bridge service interfaces",
+  "topic": "deferred currency reservation secured bridge draw repay",
+  "applicability": "PSP product accounts; Same-currency bridge principal secured by deferred reservation releases.",
+  "content": "Same-currency bridge principal secured by deferred reservation releases.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `draw_currency_release_bridge`\n\nAdvance same-currency principal against the still-active deferred reservation after its first release notice. amount_minor cannot exceed remaining collateral. The posted fee is paid from coordination cash; loan principal must later be repaid.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `release_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `repay_currency_release_bridge`\n\nRepay the outstanding bridge from unreserved cash in its original currency after releases make that cash available. Full principal is required.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `release_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "draw_currency_release_bridge",
+    "repay_currency_release_bridge"
+  ],
+  "business_area": "currency_reservation",
+  "service": "release_bridge",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

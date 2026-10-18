@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "To hide a store, open Store/Collection Management, select the action menu, choose Hide store, select the accounts and provide the reason.\n\nHiding cancels an existing store authorization. To continue acquiring quota through authorization, complete authorization again. Hiding is appropriate for an unused store after the platform binding has been removed.\n\nA hidden account is not permanently closed. If it receives another payment, the account and store are automatically restored to the visible list and the incoming notification is issued. The customer can also restore the display from Hidden account management.\n\nUse the closure procedure for permanent retirement. A hidden store and a closed store have different receipt and recovery behavior.",
+  "id": "SOP-hiding-stores",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "To hide a store, open Store/Collection Management, select the action menu, choose Hide store, select the accounts and provide the reason.",
+  "source_ids": [
+    "B20"
+  ],
+  "title": "Hiding and restoring a store in the Portal",
+  "topic": "accounts"
+}

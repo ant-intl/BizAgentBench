@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-HOTEL-SETTLEMENT",
+  "title": "Hotel checkout and onward booking service interfaces",
+  "topic": "hotel checkout statement onward booking payment",
+  "applicability": "PSP product accounts; Current hotel checkout statements and onward-stay bookings funded from the card account.",
+  "content": "Current hotel checkout statements and onward-stay bookings funded from the card account.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `pay_onward_hotel_booking`\n\nPay a selected onward-stay booking plan from the original card account. The public plan terms state its price and cancellation charge; recipient names identify the actual hotel.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `deposit_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `plan_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `request_hotel_checkout_notice`\n\nObtain the current legitimate checkout statement for the existing hotel deposit. This statement is distinct from the card terminal currency consent evidence.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `deposit_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "pay_onward_hotel_booking",
+    "request_hotel_checkout_notice"
+  ],
+  "business_area": "card_travel",
+  "service": "hotel_settlement",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

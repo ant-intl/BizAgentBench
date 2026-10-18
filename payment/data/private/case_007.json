@@ -1,0 +1,54 @@
+{
+  "agreement_id": "JOINT14-8-AGREEMENT",
+  "case_id": "D34-DC-CASE",
+  "components": [
+    {
+      "case_id": "D34-DC-CASE",
+      "family": " Diagnosis × Partial execution × Document delivery ",
+      "id": "trade_credit_letter",
+      "kind": "documentary_imports",
+      "scope": "JOINT14-8",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    },
+    {
+      "case_id": "PAY47-CASE",
+      "extension_service": true,
+      "family": " Cross-time-zone business days and payment crediting commitments ",
+      "id": "payment_cross_calendar_delivery",
+      "kind": "payment_cross_calendar_delivery",
+      "number": 47,
+      "payment_service": true,
+      "scope": "JOINT14-8",
+      "trade_service": true,
+      "version": "bizagentbench-payment-v1"
+    }
+  ],
+  "family": " Diagnosis × Partial execution × Document delivery ",
+  "id": "case_007",
+  "instructions": "You are the customer in an English banking support conversation. Begin with the opening below. You know your own goals, preferences and commercial facts, not internal database IDs, bank rules, future outcomes or the solution. Answer relevant questions naturally. Do not volunteer a plan, enumerate tool names, invent identifiers or explain bank policy. If asked for an internal reference, say you do not know it; support can look up your business by its ordinary name. You can inspect your portal's requests and approve specific explained instructions within your authority. A financially suboptimal choice made by support is not for you to solve or reject using hidden knowledge. Do not coach support or compute allocations. Only use wait_for_update after support explicitly asks you to wait for a bank update; one call advances to the next event. Report its actual result and let support reply before considering another wait. You have no secret additional money. When a matter appears complete, allow support a final reply before ###STOP###. A failed API call or a pending review does not mean the bank approved anything. Do not end simply because you just used a user tool. Keep replies short and respond to the assistant's immediate question or request. Do not add reminders of unfinished goals, deadlines, checks or next steps after approving an instruction, reporting a tool result, or acknowledging an explanation. Do not restate or endorse the assistant's whole plan. A simple acknowledgement is sufficient. You may clarify your own goals and preferences when they are being discussed, correct a factual claim about something you personally know, ask what an unexplained charge is, or report genuinely new information from your own portal. Do not turn those exceptions into a recurring checklist. Report approvals and actual portal results without telling support what to do next. If the portal does not show a requested fact, say it is not shown; do not infer it. Discuss your own goals and spending limit when relevant. You do not know how to reconcile documentary drawings, cash postings or commercial credits. Do not infer a settlement amount or suggest a delivery instrument. Approve explained instructions without judging their financial optimality.\nThere are two linked business matters. Provide the relevant personal goal, preference, or spending limit when asked. Do not offer the bank plan, allocation arithmetic, internal IDs, or upcoming bank fee result. The support session is already authenticated. Do not invent another company or tell support to change customers. For bank facts, say you do not know and refer to the records. After a tool action report what you did before taking another action or ending.\n\nOpening: Please finish paying for our equipment orders and get the goods to the agreed depots. Some of the documentary-credit paperwork is still being processed. Also, two overseas suppliers need cleared funds before their local deadlines. The cheaper route may arrive too late; can you work out how to pay both? These are part of the same business spending plan.\n\nYour own facts and preferences: I handle imports for Harbor Machines. We need our three September equipment orders paid in full, taking account of the supplier credits and what we have already paid. The urgent pumps must reach our North depot first; the other goods have their own agreed delivery dates. Follow the signed payment directions for new transfers. Please recover any temporary delivery security by the recorded return deadline. I can spend up to USD 25 on bank service charges, with no extra funding. I do not know whether the latest drawing has settled or whether an advice is an actual payment.\n\nFor the related procurement matter: Pay both suppliers exactly in their invoice currencies, by their agreed local delivery commitments. Use only the existing USD wallet; unused money stays there. I accept the recorded currency quote ranges but cannot add funds. Please account for the actual banking calendars rather than treating a submitted transfer as delivery.\n\nThe existing cash allocation agreement covers both matters. I cannot add funds or move operating money out of one matter to cover the other. I allow up to USD 5 in the separate capital-delivery charges and need USD 4 left in uncommitted cash. Please follow the agreed dates.\nPlease settle the remaining allocation balances into the operating wallets for their respective matters when the payments are reconciled. Starting wallet balances are already usable; allocation accounts hold the rest of our existing money. No new funding is requested.",
+  "joint_capital": true,
+  "kind": "documentary_imports",
+  "number": 7,
+  "opening": "Please finish paying for our equipment orders and get the goods to the agreed depots. Some of the documentary-credit paperwork is still being processed. Also, two overseas suppliers need cleared funds before their local deadlines. The cheaper route may arrive too late; can you work out how to pay both? These are part of the same business spending plan.",
+  "payment_service": false,
+  "required_documents": [
+    "DIVERSE-common",
+    "DIVERSE-documentary_imports",
+    "PAYMENT-common",
+    "PAYMENT-payment_cross_calendar_delivery",
+    "JOINT-CASH-delivery",
+    "DESK-protocol"
+  ],
+  "scope": "JOINT14-8",
+  "trade_service": true,
+  "version": "bizagentbench-payment-v1",
+  "engine_profile": "unified",
+  "verifier_family": "formal",
+  "product_scope": "operations_desk",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "attempt_authority_policy": "fail_on_unapproved_execution"
+}

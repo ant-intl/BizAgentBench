@@ -1,0 +1,20 @@
+{
+  "id": "IFACE-TAX-REFUND-CREDIT",
+  "title": "Tax refund and generated credit service interfaces",
+  "topic": "tax overcollection refund generated credit allocation",
+  "applicability": "PSP product accounts; Prior-period tax refunds and the jurisdiction-specific credits created after certification.",
+  "content": "Prior-period tax refunds and the jurisdiction-specific credits created after certification.\n\nThese interfaces belong only to this business service. They do not authorize operations in another Payment service or portal.\nRead the related business rules for eligibility, fees, timing and state meaning. Unlocking an exact interface returns its executable JSON Schema.\nIdentifiers must come from accessible business records or prior service receipts. An identifier supplied only by an author reference is not a valid input source.\n\n## `allocate_generated_tax_credit`\n\nAssign the independently certified tax refund credit to CURRENT remittance or preserve it as CARRY_FORWARD. Only the certified jurisdiction may use it.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `refund_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `period` | string: `CURRENT`, `CARRY_FORWARD` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n| `jurisdiction` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n\n## `refund_prior_tax_overcollection`\n\nRefund a prior-period tax overcollection through the bank or card processor. Both routes return the entire entered amount; processor costs are separate. The authority review follows the actual refund.\n\n### Inputs\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `refund_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `recipient` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `route` | string: `bank`, `card_processor` | yes | Choose among the published alternatives after applying the service rules and the customer's stated constraints. |\n| `amount_minor` | integer | yes | amount minor (integer minor currency units). |\n\nThe executable schema returned by the unlock call is authoritative for types, required fields and enumerated values. This manual defines business meaning and scope; it does not select a task-specific option or execution order.\n",
+  "capabilities": [
+    "allocate_generated_tax_credit",
+    "refund_prior_tax_overcollection"
+  ],
+  "business_area": "sales_tax",
+  "service": "refund_credit",
+  "document_layers": [
+    "service_interfaces"
+  ],
+  "provenance": {
+    "classification": "interface_documentation",
+    "source": "Generated from the frozen executable catalog with authored business scope"
+  }
+}

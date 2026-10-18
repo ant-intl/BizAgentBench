@@ -1,0 +1,13 @@
+{
+  "id": "PX-C-R46",
+  "title": "Statement-supported distributions and encumbered treasury cash",
+  "topic": "statement-supported distributions and encumbered treasury cash",
+  "applicability": "Only current-customer linked records with reasoning_version c-reasoning-v2.",
+  "content": "A consolidated external-income report supports an owner distribution equal to its published distribution fraction. A separate supplier invoice has a published early-settlement discount; paying its full face is also permitted. Both obligations consume available cash from the same two reconciled bank accounts. Public hold_by_account amounts are unavailable to treasury payments even though they remain in book balance. A deposit redemption releases its actual hold amount only when its bank notice arrives. Standard redemption is free at the later date; accelerated redemption charges its posted fee and arrives sooner. Once submitted the selected redemption channel cannot be changed. Current retrieval fees also consume available cash. Partial payments can use different accounts but cannot consume held cash. A missed owner deadline remains visible even if its late bank transfer is accepted.",
+  "provenance": [
+    {
+      "type": "synthetic",
+      "scope": "Bank cash, offset, authority and timing terms."
+    }
+  ]
+}

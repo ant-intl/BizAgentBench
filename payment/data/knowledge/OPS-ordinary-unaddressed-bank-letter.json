@@ -1,0 +1,19 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "`issue_bank_letter` creates a general certificate without an addressee argument. `issue_attested_bank_letter` includes an addressee. Both use the bank profile at issuance.\n\nA platform can require the addressed form. Both documents remain immutable after later legal or bank updates. A new issue date does not change the underlying bank name being attested.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `issue_attested_bank_letter`\n\nIssue an immutable letter from the bank profile to a named addressee.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n| `addressee` | string | yes | The addressee printed on the letter. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n\n### `issue_bank_letter`\n\nIssue an immutable account certificate describing the bank profile at issue time.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `account_id` | string | yes | The account used by this operation. |\n\nRead only: `true`. Customer approval required before execution: `false`.\n",
+  "id": "OPS-ordinary-unaddressed-bank-letter",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "`issue_bank_letter` creates a general certificate without an addressee argument. `issue_attested_bank_letter` includes an addressee. Both use the bank profile at issuance.",
+  "title": "Ordinary and addressed certificates",
+  "topic": "letters",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "issue_attested_bank_letter",
+    "issue_bank_letter"
+  ]
+}

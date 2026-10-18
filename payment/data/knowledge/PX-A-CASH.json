@@ -1,0 +1,21 @@
+{
+  "id": "PX-A-CASH",
+  "title": "Mobile-wallet value and physical cash delivery",
+  "topic": "Cross-border recipient cash access",
+  "applicability": "Cross-border recipient cash access",
+  "content": "Synthetic cash network: a_fund_mobile_wallet debits amount plus transfer_fee_minor, enforces current wallet balance_limit_minor and is irrevocable. a_reserve_cash_pickup charges a nonrefundable agent fee and holds physical capacity until expires_minute for a beneficiary and WALLET or DIRECT mode. a_deliver_reserved_cash must occur before expiry: WALLET requires matching identity and wallet funds; DIRECT debits bank principal. DELIVERED with delivered_minor is the cash handover evidence. Digital wallet balance alone is not physical cash. Agent outages change unreserved capacity; already reserved capacity is retained until expiry. Once the required physical cash has been handed over, later agent-capacity updates do not invalidate delivery or require waiting before closure. Evidence uploads are not proof solely because a user labels them: bank review verifies the source file's original customer, target, intrinsic purpose and exact content against the submitted document. Relabeling an unrelated genuine file does not satisfy a required evidence type.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_deliver_reserved_cash`\n\nComplete a reserved cash handover and issue its physical-delivery receipt. Wallet mode debits the matching beneficiary's wallet; direct mode debits the remitter's bank account. An expired reservation cannot deliver cash.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `reservation_id` | string | yes | Cash reservation ID. |\n| `wallet_id` | string | yes | Wallet ID for WALLET; empty string for DIRECT. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_fund_mobile_wallet`\n\nTransfer money irrevocably into a mobile wallet within its current balance limit. Wallet receipt is digital value and is not evidence that physical cash was delivered.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `wallet_id` | string | yes | Mobile wallet ID. |\n| `amount_minor` | integer | yes | Positive amount in wallet-currency minor units. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_cash_pickup`\n\nReserve cash at an agent for a wallet withdrawal or direct remittance. Reservation consumes local cash capacity and charges the nonrefundable agent fee. The beneficiary identity and reservation expiry are binding.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `agent_id` | string | yes | Cash agent ID. |\n| `beneficiary_id` | string | yes | Cash recipient ID. |\n| `amount_minor` | integer | yes | Positive cash amount in destination currency minor units. |\n| `mode` | string | yes | WALLET or DIRECT. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source_files": [],
+    "source_nodes_and_rows": "All business rules are synthetic."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_deliver_reserved_cash",
+    "a_fund_mobile_wallet",
+    "a_reserve_cash_pickup"
+  ]
+}

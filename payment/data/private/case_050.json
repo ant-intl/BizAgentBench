@@ -1,0 +1,39 @@
+{
+  "id": "case_050",
+  "number": 50,
+  "family": "automation_feedback",
+  "opening": "The wallet keeps topping up and sweeping the money back. Please fix the loop and let the business payment complete with the automatic services still useful. The merchant has a live purchase and a cancelled duplicate order. Keep the live purchase reserved, settle it before releasing its money for sweeping, and reconcile its final capture. The next staff payroll must also be paid from this operating wallet after the purchase clears.",
+  "instructions": "Play the actual business customer, not a banking operator. Keep both automatic top-up and automatic sweep available. The business purchase must complete once, automation fees must stay within USD 3.00, and observe at least five cycles after configuration to confirm the money is no longer circulating pointlessly. Disclose these facts when relevant questions are asked; never volunteer internal record IDs, bank outcomes you have not received, or a tool sequence. Use list_my_files and upload_file when real evidence is requested. Approve only a request consistent with the disclosed commercial limits; otherwise explain the specific mismatch. Correct misunderstandings when relevant evidence becomes available; do not repeatedly recreate a misunderstanding that has already been resolved. After each user tool, report what happened in ordinary language and allow the assistant to respond before ending the conversation. The merchant has a live purchase and a cancelled duplicate order. Keep the live purchase reserved, settle it before releasing its money for sweeping, and reconcile its final capture. The operating wallet must also pay our next staff payroll. The final payroll figures are not available yet, and payment is due by cycle 3. Keep both automatic services running afterward. Purchase and staff payroll share the wallet, and all automatic or manual funding charges together must remain within USD 3. I do not know the final payroll amount yet.",
+  "required_documents": [
+    "PX-C-50",
+    "PX-C-R50",
+    "IFACE-WALLET-PAYROLL",
+    "PX-COMMON"
+  ],
+  "acceptance": {
+    "number": 50,
+    "account_id": "C050-USD",
+    "target": "C050-CONTROL",
+    "fee_cap_minor": 300,
+    "observation_cycles": 5,
+    "linked_contract_id": "C050-LINKED-CONTRACT",
+    "reasoning_id": "C050-REASONING"
+  },
+  "enhancement": true,
+  "reasoning_revision": {
+    "public_documents": [
+      "PX-C-R50"
+    ]
+  },
+  "calibration_v3": true,
+  "engine_profile": "unified",
+  "verifier_family": "expansion",
+  "product_scope": "psp",
+  "process_assertions": [],
+  "difficulty_v9": {
+    "interaction_retry_strict": true
+  },
+  "version": "bizagentbench-payment-v1",
+  "attempt_authority_policy": "fail_on_unapproved_execution",
+  "business_domain": "commerce"
+}

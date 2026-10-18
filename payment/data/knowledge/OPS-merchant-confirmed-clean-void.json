@@ -1,0 +1,11 @@
+{
+  "applicability": "CORE settlement service. Effective 2026-09-01.",
+  "content": "A completed clean void sets the authorization to VOIDED and releases its hold without a principal debit. With no capture, there is no captured amount to refund.\n\nThe merchant's acknowledgement determines this outcome. A requested void may instead produce a partial capture; its actual captured and refundable fields then determine any reimbursement. Existing holds remain attached to their original funding accounts.",
+  "id": "OPS-merchant-confirmed-clean-void",
+  "provenance": {
+    "classification": "existing_synthetic_operating_note"
+  },
+  "quoted_text": "A completed clean void sets the authorization to VOIDED and releases its hold without a principal debit. With no capture, there is no captured amount to refund.",
+  "title": "A void with no captured amount",
+  "topic": "card_adjustments"
+}

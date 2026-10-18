@@ -1,0 +1,16 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Use Recipient Management → Add new recipient and choose the bank-account or HarborPay category. For a same-name bank recipient, select the same-name type and enter the actual account details.\n\nSupported bank cards include debit, savings and corporate settlement cards. Credit cards and social-security cards are not supported recipients under this arrangement. For a personal customer, the same-name account belongs to the customer; for a company, it is the matching company bank account or the supported legal representative's account.\n\nFind existing recipients under Recipient Management → All by account number, holder name or remark. A shared bank card does not establish whether Amazon will link two seller accounts; use the correct identity for each account and obtain the platform's requirements.\n\nMainland e-commerce accounts can hold up to 500 HarborPay recipients. Batch bank/HarborPay payments do not automatically add the recipients to Recipient Management. Successful VAT payments have a separate automatic-recipient-save behavior.\n\nFor a third-party company, its registration number and registered or business address are the recipient's details, not the payer's identity number.",
+  "id": "SOP-recipient-basics",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Use Recipient Management → Add new recipient and choose the bank-account or HarborPay category. For a same-name bank recipient, select the same-name type and enter the actual account details.",
+  "source_ids": [
+    "B11",
+    "B14",
+    "B16"
+  ],
+  "title": "Adding and finding Portal recipients",
+  "topic": "beneficiaries"
+}

@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_term_deposit_instruction",
+  "content": "`register_tax` takes {}; it records the effective time of a READY exemption letter. `redeem` takes {record_id}; each deposit is indivisible and can be redeemed once. Before contractual maturity it returns principal less the deposit's break fee and pays no interest. At or after maturity it returns principal and contractual interest less withholding.\n\nOrdinary withholding is 20% of interest, rounded down. A registered exemption applies only if its effective time is no later than that deposit's contractual maturity. Redemption later than maturity does not move the tax date and does not make a later exemption retrospective. Early-break fees are non-refundable and distinct from tax withheld.\n\nA maturity notice is an event, not an automatic redemption. Whether a tenancy-security deposit may be touched is determined by the customer's authority and its separate purpose, not by the bank's ability to process a redemption.\n\nOperations are available through `propose_term_deposit_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_term_deposit_instruction`\n\nDeposit maturity, breaking and withholding. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-term_deposit",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Term deposits and tax status dates",
+  "topic": "term_deposit",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_term_deposit_instruction"
+  ]
+}

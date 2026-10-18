@@ -1,0 +1,17 @@
+{
+  "applicability": "Only dividend_grossup service cases; synthetic contract edition 8.0.",
+  "content": "# Dividend withholding\n\nScope: the dividend_grossup service contract in service_cases. This synthetic edition leaves other products unchanged. Monetary fields are integer minor units; 100 minor units equal one currency unit. Applicable account schedules and current external correspondence are available through the signed-in case.\n\nA net dividend promise is fulfilled after withholding. Use treaty_bp only when the shareholder's current residence evidence is effective on or before the distribution's payment_day; otherwise use default_bp. Corrections in registry correspondence supersede the original residence date. Withholding is gross times the applicable basis-point rate, rounded up to a whole minor unit. The contractual gross is the smallest integer gross whose value less withholding reaches the promised net. Gross cannot be reduced by pretending that withheld money was paid to the shareholder.\n\n`distribute` takes {record_id, gross_minor, tax_minor}. It debits gross from the company wallet, pays gross minus tax, and places tax in the withholding pool. A shareholder has one distribution in this cycle. `remit_tax` takes {amount_minor} and pays from that pool to the tax authority. It cannot exceed the pool and does not debit company cash twice.\n\nService interface: `propose_dividend_grossup_instruction` takes {case_id, action, data}. Unlock it with unlock_discoverable_agent_tool, prepare the instruction with call_discoverable_agent_tool, obtain the customer's approval, then execute_request. The action-specific data fields above are exact. Failed execution rolls back atomically. See Trade Services account operations (TRADE-common) for source inquiries, ordinary obligations and logical updates.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_dividend_grossup_instruction`\n\nDividend withholding. Prepare one local action, subject to customer approval and bank execution. The service policy states the supported actions and their fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "EXT-dividend_grossup",
+  "scope": "dividend_grossup",
+  "source_classification": "synthetic_extension",
+  "source_ids": [],
+  "title": "Dividend withholding",
+  "version": "8.0.0",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_dividend_grossup_instruction"
+  ]
+}

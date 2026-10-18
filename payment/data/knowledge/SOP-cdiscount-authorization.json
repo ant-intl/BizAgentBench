@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Existing CDiscount authorizations remain in service. New authorizations are temporarily unavailable under the current service notice; new stores use manual sales-record uploads.\n\nThe CDiscount connection uses platform-side authorization. The CDiscount and CedarPay registration entities must match. A successful historical connection does not establish that a new connection request will be accepted while new authorizations are unavailable.\n\nFor a new store, complete the store information and use the manual record-submission route. Contact support if the upload entry is unavailable. This notice remains applicable until replaced by a dated service update.",
+  "id": "SOP-cdiscount-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Existing CDiscount authorizations remain in service. New authorizations are temporarily unavailable under the current service notice; new stores use manual sales-record uploads.",
+  "source_ids": [
+    "A04"
+  ],
+  "title": "CDiscount connections and new-store uploads",
+  "topic": "quota"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "PROCESS-RECONCILIATION-BEFORE-DISPOSITION",
+  "title": "Reconciliation before disposition",
+  "topic": "Payment execution policy",
+  "applicability": "Payments whose ordinary product records exhibit the stated condition",
+  "content": "# Reconciliation before disposition\n\nA refund, allocation or transfer request must be prepared only after the relevant source, obligation or recipient reconciliation completes. A later matching entry can repair the ledger but does not validate disposition based on an unreconciled source.\n\n## Determining applicability\n\nDetermine applicability from the ordinary product records, effective versions, approvals, execution receipts and settlement events. No case-specific record lists the guarded operation or solution order. A request is immutable after preparation. A later reversal, top-up, recovery or replacement may repair the closing business result, but it does not erase an earlier executed exposure or invalid binding. A rejected call with no business effect is not itself a payment-safety breach.",
+  "provenance": {
+    "classification": "synthetic_payment_process_rule",
+    "source": "Payment v9 general execution-history rule",
+    "mechanism": "reconciliation_before_disposition"
+  },
+  "document_layers": [
+    "business_rule"
+  ],
+  "searchable": true
+}

@@ -1,0 +1,15 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Check whether the customer has the self-service migration feature. If it is unavailable, submit a support request identifying the proposed transfer.\n\nSupported relationship categories include employment, people working for the same company, ownership/shareholding relationships, companies with the same legal representative, a person and a company for which that person is the legal representative, and an actual transfer of the store.\n\nOpen Store/Collection Management → Store migration management → Migrate store. Access to the page does not establish relationship eligibility; identify the relationship before submitting the migration.\n\n## Migration history\n\nThe All records view includes incoming and outgoing migrations, the initiating and receiving names/accounts, store count, processing time and status. Search by date, status, name or account.\n\nStatuses include initiating, processing, receiving party declined, awaiting confirmation, cancelled and completed. A migration under way is separate from a completed migration, and a store cannot be closed while its migration remains in progress.",
+  "id": "SOP-store-migration",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Check whether the customer has the self-service migration feature. If it is unavailable, submit a support request identifying the proposed transfer.",
+  "source_ids": [
+    "C05",
+    "B20"
+  ],
+  "title": "Store migration eligibility and history",
+  "topic": "migration"
+}

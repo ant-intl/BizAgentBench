@@ -1,0 +1,17 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "A virtual collection account supplies bank details for supported receipts; it is not a new CedarPay customer registration or a physical bank card.\n\nFor marketplace proceeds, open Store Management → Add store collection account. Select the actual platform, receiving currency and store holder, then submit the application.\n\nFor an independent store, select its site builder or self-built-site category, then identify the payment gateway. Supported builder categories include Shopify, Shoplazza, Shopline, OpenCart, WooCommerce, BigCommerce and other offered site arrangements. Gateway categories include PayPal, Stripe, Adyen, Klarna and the supported builder-payment services. If the actual gateway is not listed separately, use Other and identify it accurately.\n\nLogged-in customers can use the Portal's platform lookup and account-application entry. A customer not logged in can still obtain the general platform guidance, but a knowledge answer does not create an account.\n\nAn offered application category and an approved, active collection account are distinct. Supply the requested store information and read the application result before binding the account at the platform.",
+  "id": "SOP-opening-collection-accounts",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "A virtual collection account supplies bank details for supported receipts; it is not a new CedarPay customer registration or a physical bank card.",
+  "source_ids": [
+    "B23",
+    "B13",
+    "C02",
+    "C07"
+  ],
+  "title": "Applying for a marketplace or independent-store account",
+  "topic": "accounts"
+}

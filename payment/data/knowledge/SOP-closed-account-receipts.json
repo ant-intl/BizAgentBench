@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Identify the closed account, received amount, currency and channel. A receipt below USD 1 equivalent cannot be returned through the bank payout channel described here and is not displayed in the customer's Portal. The customer should remove the old platform binding.\n\nFor larger amounts, original-route return depends on the channel. The unsupported original-return arrangements include Barclays GBP, JPY, the relevant CITI Netherlands SEPA Instant EUR route, PLN, MXN, SEK, THB, MYR, PHP, IDR and AED.\n\nWhere original-route return is supported, support can process it without an additional recipient instruction. Where it is unsupported, obtain the return confirmation form, with the required signature or company seal, for an alternative return request. Submission does not guarantee that the alternative channel will accept it.\n\nIf the customer needs the complete closed-account number, submit a support request identifying the account. A closed account cannot be made receivable by restoring its display.",
+  "id": "SOP-closed-account-receipts",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Identify the closed account, received amount, currency and channel. A receipt below USD 1 equivalent cannot be returned through the bank payout channel described here and is not displayed in the customer's Portal. The customer should remove the old platform binding.",
+  "source_ids": [
+    "B20"
+  ],
+  "title": "Funds sent after a collection account was closed",
+  "topic": "payments"
+}

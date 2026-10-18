@@ -1,0 +1,20 @@
+{
+  "applicability": "Trade Services 7.0. Effective 2026-09-01. Fictional benchmark contract; service_* records only.",
+  "capability": "propose_marine_claim_instruction",
+  "content": "Net loss equals damaged merchandise value less already received merchant recoveries and actual salvage proceeds, floored at zero. The primary layer pays net loss less its deductible, floored at zero and capped by its limit. The excess layer pays net loss above its attachment, floored at zero and capped by its own limit. It does not subtract the primary payment a second time from that attachment calculation.\n\n`sell_salvage` takes {}; it realizes the bank correspondence's agreed offer once, before recovery rights are assigned. `claim` takes {record_id, amount_minor, declared_net_loss_minor}; it submits one declared claim within the named policy limit. Insurer payment is scheduled two logical minutes later. The institution processes declared claims within local limits; the insured remains responsible for truthful loss and layer calculations.\n\n`assign_rights` takes {declared_recoveries_minor}; it irrevocably transfers remaining recovery rights and declares recoveries already realized. After assignment the insured cannot sell salvage through this service. A historical merchant recovery already included in initial cash must not be credited again.\n\nOperations are available through `propose_marine_claim_instruction`. See `TRADE-common` for approval, time and wallet semantics.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `propose_marine_claim_instruction`\n\nMarine insurance layers and recoveries. Creates an immutable request; customer approval and execute_request perform one local action. See the applicable Trade Services contract for action values and fields.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `case_id` | string | yes | Obtain the exact identifier from the applicable business record or a prior service receipt; do not ask the customer to invent an internal ID. |\n| `action` | string | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n| `data` | object | yes | Use the value established by the applicable business record, customer fact, or prior service receipt. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "id": "TRADE-insurance",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "source": "Manually authored mechanism; not attributed to original SOP"
+  },
+  "source_ids": [],
+  "title": "Marine insurance layers and recovery rights",
+  "topic": "insurance",
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "propose_marine_claim_instruction"
+  ]
+}

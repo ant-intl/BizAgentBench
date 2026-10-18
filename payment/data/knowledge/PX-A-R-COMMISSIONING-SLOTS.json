@@ -1,0 +1,20 @@
+{
+  "id": "PX-A-R-COMMISSIONING-SLOTS",
+  "title": "Equipment bench reservations, commissioning and total cost",
+  "topic": "Equipment bench reservations, commissioning and total cost",
+  "applicability": "Two-component commercial equipment commissioning.",
+  "content": "a_reserve_equipment_test_slot(contract_id,slot_id) consumes one bench capacity and charges booking_fee_minor immediately. Some low-fee windows close before the supplier confirms actual shortfall or replacement certificate recognition. The customer can instead retain flexibility for a factory-certified replacement or a later bench. a_cancel_equipment_test_slot(booking_id) restores unused capacity, but paid booking fees remain. a_commission_replacement_equipment(contract_id,booking_id,replacement_order_ids) requires the original set and its arrived compatible replacement units, charges execution_fee_minor, and finishes at start_minute plus duration_minutes. Submission must occur by the selected start. Completion certifies the listed actual replacement orders; a reservation alone does not. Merchandise reservations, original purchase, transport, actual shortfall refund, replacement purchase and all test charges belong to the same complete-set budget. A late free bench may miss the customer usability date while an immediate paid bench can exceed that total budget.\n\n## Standardized exact service interfaces\n\nThe following exact interfaces belong to this business service. Unlocking one returns the executable JSON Schema. Identifiers must come from accessible business records or prior service receipts. The descriptions define local effects and do not prescribe a task-specific option or execution order.\n\n### `a_cancel_equipment_test_slot`\n\nCancel an unexecuted equipment test reservation. Capacity returns to that bench while its nonrefundable reservation price remains spent.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `booking_id` | string | yes | Unexecuted equipment test booking. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_commission_replacement_equipment`\n\nTest the actual original equipment set with its arrived replacement components. Execution charges the booked bench fee and publishes the actual commissioning result at the slot completion time. A tested set cannot include a future or incompatible replacement.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original equipment commissioning contract. |\n| `booking_id` | string | yes | Reserved test slot. |\n| `replacement_order_ids` | array | yes | Actual replacement orders used in this equipment set. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n\n### `a_reserve_equipment_test_slot`\n\nReserve a commissioning bench for the original compatible equipment set. A nonrefundable reservation price and a later execution fee are separate. The slot does not buy merchandise or certify components that have not arrived.\n\n| Field | Type | Required | Public source and meaning |\n| --- | --- | --- | --- |\n| `contract_id` | string | yes | Original equipment commissioning contract. |\n| `slot_id` | string | yes | Published test slot. |\n\nRead only: `false`. Customer approval required before execution: `true`.\n",
+  "provenance": {
+    "classification": "synthetic_extension",
+    "boundary": "Synthetic commercial value dates, processing services, commissioning slots and old-order claim terms. Original source identity, legal-entity, equipment compatibility and marketplace rights remain governed by their original product documents."
+  },
+  "document_layers": [
+    "business_rules",
+    "service_interfaces"
+  ],
+  "capabilities": [
+    "a_cancel_equipment_test_slot",
+    "a_commission_replacement_equipment",
+    "a_reserve_equipment_test_slot"
+  ]
+}

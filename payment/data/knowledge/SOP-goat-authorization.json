@@ -1,0 +1,14 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "The available quota route depends on the store's registration region.\n\n| Store registration | Quota route |\n|---|---|\n| Mainland China | Select the CedarPay authorization option when binding the collection account on GOAT. |\n| Other regions | Submit sales records manually; this authorization route is unavailable. |\n\nIf the authorization option was not selected during binding, bind the collection account again and select the option. If an authorized store still has a quota shortfall, submit the original sales records, seller ID and collection account to support for investigation.",
+  "id": "SOP-goat-authorization",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "The available quota route depends on the store's registration region.",
+  "source_ids": [
+    "A03"
+  ],
+  "title": "GOAT authorization by registration region",
+  "topic": "quota"
+}

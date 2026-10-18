@@ -1,0 +1,16 @@
+{
+  "applicability": "Marketplace Portal service. Policy edition 2026-09-01. Collection Profile and CORE terms are separate.",
+  "content": "Requests to add or remove an authorized person are handled by support. For an addition, provide the required details in the email body with the person's identity images, or provide an authorization letter and the images as attachments. Identity images must be colour photographs of the original document, showing both sides clearly. No fixed authorized-person count limit applies in this Portal service.\n\nFor removal, include the reason and identify the person. Authorized-person records can be viewed in merchant-information management or queried through support if not shown.\n\n## Notifications and account details\n\nIncoming-payment notifications are available through SMS, email and the HarborPay mini-program; the WeChat mini-program is not supported. Request activation through support. CedarPay does not charge for the incoming alert service; a mobile operator may have its own messaging charges.\n\nOutgoing-payment notifications can be switched on or off in My Account. The SMS and email options cannot be controlled independently in that setting.\n\nFind the Account ID in My Account, balances on the home page and store collection details in Store Management. Masking of a personal name on screen is a display measure, not a truncation of the stored legal name.",
+  "id": "SOP-authorized-persons",
+  "provenance": {
+    "classification": "sop_synthesis_with_recorded_normalization"
+  },
+  "quoted_text": "Requests to add or remove an authorized person are handled by support. For an addition, provide the required details in the email body with the person's identity images, or provide an authorization letter and the images as attachments. Identity images must be colour photographs of the original document, showing both sides clearly. No fixed authorized-person count limit applies in this Portal service.",
+  "source_ids": [
+    "B07",
+    "B08",
+    "A17"
+  ],
+  "title": "Authorized people and account notifications",
+  "topic": "permissions"
+}
