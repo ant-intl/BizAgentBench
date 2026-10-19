@@ -184,7 +184,7 @@ If you use BizAgentBench in your research, please cite our [paper](https://arxiv
 ```bibtex
 @misc{zhao2026bizagentbench,
   title = {{BizAgentBench}: Unveiling Hidden Challenges in Deploying Long-Horizon Agents for Real-World Business},
-  author = {Enhan Zhao and Yongqi Tong and Xuejun Yu and Hang Wang and Pan Wang and Yichao Wang and Di He and Jianshe Li and Wei Wu},
+  author = {Enhan Zhao and Yongqi Tong and Xuejun Yu and Hang Wang and Pan Wang and Yichao Wang and Di He and Jianshe Li and Jiang-Ming Yang and Wei Wu},
   year = {2026},
   eprint = {2610.20424},
   archivePrefix = {arXiv},
