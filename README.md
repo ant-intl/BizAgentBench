@@ -1,6 +1,14 @@
-# BizAgentBench
+<h1 align="center">BizAgentBench</h1>
 
-[Paper](https://huggingface.co/papers/2610.20424) · [Dataset](https://huggingface.co/datasets/ant-intl/BizAgentBench)
+<p align="center">
+  <a href="https://huggingface.co/papers/2610.20424">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Paper-FFD21E?style=for-the-badge&amp;logo=huggingface&amp;logoColor=FFD21E&amp;labelColor=303030" alt="Hugging Face Paper" height="28" />
+  </a>
+  &nbsp;
+  <a href="https://huggingface.co/datasets/ant-intl/BizAgentBench">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?style=for-the-badge&amp;logo=huggingface&amp;logoColor=FFD21E&amp;labelColor=303030" alt="Hugging Face Dataset" height="28" />
+  </a>
+</p>
 
 BizAgentBench evaluates agents on 50 payment-service tasks through multi-turn conversations and tool use. It reports Goal (G), Process (P), Protection (F), and Strict success using deterministic checks of business states and execution histories.
 
