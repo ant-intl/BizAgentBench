@@ -1,5 +1,7 @@
 # BizAgentBench
 
+[Paper](https://huggingface.co/papers/2610.20424) · [Dataset](https://huggingface.co/datasets/ant-intl/BizAgentBench)
+
 BizAgentBench evaluates agents on 50 payment-service tasks through multi-turn conversations and tool use. It reports Goal (G), Process (P), Protection (F), and Strict success using deterministic checks of business states and execution histories.
 
 The task data, knowledge documents, simulated database, tools, and scoring rules are included. To run an evaluation, configure two models: the **agent** being tested and a **user simulator** that supplies customer information and approvals. Both roles can use a hosted API or a self-hosted model server.
